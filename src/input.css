@@ -7,6 +7,7 @@
    Klassen erkannt wird. */
 @source "../index.html";
 @source "../script.js";
+@source "../cases/*.html";
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────
    Nur die tatsächlich vorhandenen Schnitte werden eingebunden:
@@ -149,6 +150,28 @@
       linear-gradient(color-mix(in srgb, var(--color-brand-950) 6%, transparent) 1px, transparent 1px),
       linear-gradient(90deg, color-mix(in srgb, var(--color-brand-950) 6%, transparent) 1px, transparent 1px);
     background-size: 48px 48px;
+  }
+
+  /* Badges/Pills – zwei Varianten statt Farb-Mix je Kategorie:
+     .pill für dunkle Flächen (Karten-Header, Hero, Breadcrumb),
+     .pill-accent für helle Flächen (Tag unter den Stat-Zeilen). */
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 font-body text-xs font-medium uppercase tracking-wide text-white/80;
+  }
+  .pill-accent {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-transparent bg-brand-600/10 px-3 py-1 font-body text-xs font-medium text-brand-600;
+  }
+
+  /* Dezente konzentrische Kreise als Textur auf dunklen Karten-Headern –
+     bewusst nur Struktur, keine zusätzliche Farbe (brand-600, ~8 % Deckkraft). */
+  .card-texture {
+    background-image: repeating-radial-gradient(
+      circle at 88% 12%,
+      color-mix(in srgb, var(--color-brand-600) 8%, transparent) 0,
+      color-mix(in srgb, var(--color-brand-600) 8%, transparent) 1px,
+      transparent 1px,
+      transparent 22px
+    );
   }
 
   /* Endlos-Marquee für die Kunden-Logo-Leiste */
