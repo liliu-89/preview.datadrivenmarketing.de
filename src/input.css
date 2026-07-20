@@ -8,6 +8,8 @@
 @source "../index.html";
 @source "../script.js";
 @source "../cases/*.html";
+@source "../impressum.html";
+@source "../team.html";
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────
    Nur die tatsächlich vorhandenen Schnitte werden eingebunden:
