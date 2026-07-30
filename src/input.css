@@ -83,15 +83,15 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-md bg-brand-600 px-6 py-3 font-body text-[0.9375rem] text-white transition-colors duration-200 hover:bg-brand-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-brand-600 px-6 py-3 font-body text-[0.9375rem] text-white transition duration-200 ease-out hover:bg-brand-950 active:scale-[0.97] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-md border border-brand-950/25 px-6 py-3 font-body text-[0.9375rem] text-brand-950 transition-colors duration-200 hover:border-brand-950 hover:bg-brand-950/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-brand-950/25 px-6 py-3 font-body text-[0.9375rem] text-brand-950 transition duration-200 ease-out hover:border-brand-950 hover:bg-brand-950/5 active:scale-[0.97] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2;
   }
 
   .btn-on-dark {
-    @apply inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-body text-[0.9375rem] text-brand-950 transition-colors duration-200 hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-950;
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-body text-[0.9375rem] text-brand-950 transition duration-200 ease-out hover:bg-neutral-100 active:scale-[0.97] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-950;
   }
 
   .nav-link {
@@ -100,6 +100,47 @@
 
   .section-eyebrow {
     @apply mb-3 inline-block font-body text-sm font-medium uppercase tracking-wide text-brand-600;
+  }
+
+  /* ─── Display-Skala ────────────────────────────────────────────────────
+     Loretta auf voller Stärke. An einer Stelle gepflegt statt in jeder
+     Sektion einzeln. Obergrenze 5.5rem bleibt unter dem 6rem-Deckel für
+     Display-Type; Tracking bleibt über dem -0.04em-Boden. */
+  .display-xl {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+  .display-lg {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+  .display-md {
+    font-family: var(--font-display);
+    font-size: clamp(1.625rem, 2.6vw, 2.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  /* Große Kennzahl – Tabellenziffern verhindern Zittern zwischen Werten. */
+  .stat-numeral {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
   }
 
   .field-label {
@@ -136,7 +177,7 @@
 
   /* Sparsamer Scroll-Reveal – nur für den Hero-Bereich eingesetzt */
   .reveal {
-    @apply translate-y-4 opacity-0 transition-all duration-700 ease-out;
+    @apply translate-y-4 opacity-0 transition duration-300 ease-out;
   }
   .reveal.is-visible {
     @apply translate-y-0 opacity-100;
@@ -144,6 +185,58 @@
 
   .toast.is-visible {
     @apply translate-y-0 opacity-100;
+  }
+
+  /* FAQ-Panel: sanftes Auf-/Zuklappen über grid-template-rows (0fr → 1fr)
+     statt max-height – animiert nur die Grid-Spur, keine Layout-Property
+     wie height/max-height/padding direkt, dadurch kein Layout-Thrash.
+     Das direkte Kind braucht overflow:hidden, damit es bei 0fr geclippt
+     wird; die vormals auf dem Container liegende Bottom-Padding (pb-5)
+     wandert deshalb auf dieses Kind. */
+  /* grid-template-rows: 0fr→1fr wurde hier getestet (vermeidet die
+     max-height-Layout-Property, die der Design-Hook zu Recht anmerkt),
+     kollabierte in der Praxis aber nicht zuverlässig auf echte 0 (bekannte
+     WebKit/Safari-Eigenheit bei fr-Unit-Interpolation in grid-template-rows
+     – Nutzer meldete sichtbaren Textrest im geschlossenen Zustand). Bewusst
+     zurück auf max-height: weniger "sauber" nach Performance-Heuristik,
+     aber nachweislich korrekt – bei einem selten geöffneten Akkordeon mit
+     kurzem Text ist das Performance-Risiko vernachlässigbar gegenüber einem
+     tatsächlichen Rendering-Bug. */
+  .faq__panel {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 200ms ease-out;
+  }
+  /* Padding gehört auf das Kind, nicht auf den Container: bei
+     max-height: 0 addiert sich Container-Padding trotz border-box zur
+     Höhe, das Panel bliebe 20px hoch und zeigte die erste Textzeile. */
+  .faq__panel > * {
+    padding-bottom: 1.25rem;
+  }
+  .faq__panel.is-open {
+    max-height: 24rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq__panel {
+      transition: none;
+    }
+  }
+
+  /* Mobile-Menü: gleiche Technik und gleiche Begründung wie oben. */
+  #mobile-menu {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 200ms ease-out, opacity 200ms ease-out;
+  }
+  #mobile-menu.is-open {
+    max-height: 24rem;
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #mobile-menu {
+      transition: none;
+    }
   }
 
   /* Dezentes Liniengitter im Hero-Hintergrund – bewusst ohne Blobs/Glow */
@@ -164,16 +257,16 @@
     @apply inline-flex items-center gap-1.5 rounded-full border border-transparent bg-brand-600/10 px-3 py-1 font-body text-xs font-medium text-brand-600;
   }
 
-  /* Dezente konzentrische Kreise als Textur auf dunklen Karten-Headern –
-     bewusst nur Struktur, keine zusätzliche Farbe (brand-600, ~8 % Deckkraft). */
-  .card-texture {
-    background-image: repeating-radial-gradient(
-      circle at 88% 12%,
-      color-mix(in srgb, var(--color-brand-600) 8%, transparent) 0,
-      color-mix(in srgb, var(--color-brand-600) 8%, transparent) 1px,
-      transparent 1px,
-      transparent 22px
-    );
+  /* Signet als Markenmotiv auf dunklen Flächen. invert(1) erzeugt aus dem
+     schwarzen Original die übliche Hell-auf-Dunkel-Fassung – das Asset wird
+     weder beschnitten noch verzerrt. Ersetzt die vorherige generische
+     Kreis-Textur, die nichts mit der Marke zu tun hatte. */
+  .signet-watermark {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    filter: invert(1);
+    opacity: 0.05;
   }
 
   /* Endlos-Marquee für die Kunden-Logo-Leiste */

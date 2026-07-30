@@ -85,7 +85,7 @@
       </div>
     </div>
 
-    <div id="mobile-menu" class="border-t border-neutral-200 bg-white md:hidden" hidden>
+    <div id="mobile-menu" class="border-t border-neutral-200 bg-white md:hidden">
       <nav class="container-page flex flex-col py-2" aria-label="Mobile Navigation">
         <a href="#leistungen" class="border-b border-neutral-100 py-3 font-body text-brand-950">Leistungen</a>
         <a href="#prozess" class="border-b border-neutral-100 py-3 font-body text-brand-950">Prozess</a>
@@ -110,7 +110,7 @@
           </div>
           <p class="section-eyebrow">Performance Marketing für Mittelstand, B2B &amp; E-Commerce</p>
 
-          <h1 id="hero-title" class="font-display text-4xl leading-[1.1] tracking-tight text-brand-950 sm:text-5xl lg:text-6xl">
+          <h1 id="hero-title" class="display-xl text-brand-950">
             Von der Kostenstelle zum Wachstumssystem.
           </h1>
 
@@ -253,11 +253,10 @@
     </section>
 
     <!-- ===== PROBLEM ===== -->
-    <section id="problem" aria-labelledby="problem-title" class="py-20 sm:py-24">
+    <section id="problem" aria-labelledby="problem-title" class="py-16 sm:py-20">
       <div class="container-page grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-5">
-          <p class="section-eyebrow">Ausgangslage</p>
-          <h2 id="problem-title" class="font-display text-3xl text-brand-950 sm:text-4xl">
+          <h2 id="problem-title" class="display-lg text-brand-950">
             Marketing ohne saubere Datenbasis
           </h2>
         </div>
@@ -287,8 +286,7 @@
     <section id="ansatz" aria-labelledby="ansatz-title" class="bg-neutral-50 py-20 sm:py-24">
       <div class="container-page">
         <div class="max-w-2xl">
-          <p class="section-eyebrow">Der Unterschied</p>
-          <h2 id="ansatz-title" class="font-display text-3xl text-brand-950 sm:text-4xl">
+          <h2 id="ansatz-title" class="display-lg text-brand-950">
             Online-Marketing ist nicht Performance-Marketing
           </h2>
           <p class="mt-4 text-lg leading-relaxed text-brand-950/80">
@@ -296,59 +294,73 @@
           </p>
         </div>
 
-        <div class="mt-12 overflow-x-auto">
-          <table class="w-full min-w-[480px] border-collapse text-left">
+        <!-- Symmetrische Spalten mit durchgehender vertikaler Trennlinie.
+             Die Linie hält den Gegensatz auf jeder Breite lesbar – auch mobil,
+             wo die Spalten nebeneinander bleiben statt zu stapeln (gestapelt
+             las sich ein Paar als Schlussfolgerung statt als Gegensatz).
+             Unterschieden wird über Farbe und Gewicht, nicht über Größe:
+             gleich breite Spalten wirken nicht lopsided. -->
+        <div class="mt-14 max-w-5xl">
+          <table class="w-full table-fixed border-collapse text-left">
             <caption class="sr-only">Gegenüberstellung von Online-Marketing und Performance-Marketing</caption>
             <thead>
               <tr class="border-b border-neutral-300">
-                <th scope="col" class="py-3 pr-6 font-body text-sm font-medium uppercase tracking-wide text-brand-950/50">Online Marketing</th>
-                <th scope="col" class="py-3 font-body text-sm font-medium uppercase tracking-wide text-brand-600">Performance Marketing</th>
+                <th scope="col" class="pb-3 pr-5 font-body text-xs font-medium uppercase tracking-wide text-brand-950/65 sm:pr-10 sm:text-sm">Online Marketing</th>
+                <th scope="col" class="border-l border-neutral-300 pb-3 pl-5 font-body text-xs font-medium uppercase tracking-wide text-brand-600 sm:pl-10 sm:text-sm">Performance Marketing</th>
               </tr>
             </thead>
             <tbody>
               <tr class="border-b border-neutral-200">
-                <td class="py-4 pr-6 text-brand-950/70">Inhalte veröffentlichen</td>
-                <td class="py-4 font-medium text-brand-950">Nachfrage identifizieren</td>
+                <td class="py-4 pr-5 text-sm text-brand-950/65 sm:py-5 sm:pr-10 sm:text-base">Inhalte veröffentlichen</td>
+                <td class="border-l border-neutral-300 py-4 pl-5 text-sm font-medium text-brand-950 sm:py-5 sm:pl-10 sm:text-base">Nachfrage identifizieren</td>
               </tr>
               <tr class="border-b border-neutral-200">
-                <td class="py-4 pr-6 text-brand-950/70">Sichtbarkeit erzeugen</td>
-                <td class="py-4 font-medium text-brand-950">Nachfrage abfangen</td>
+                <td class="py-4 pr-5 text-sm text-brand-950/65 sm:py-5 sm:pr-10 sm:text-base">Sichtbarkeit erzeugen</td>
+                <td class="border-l border-neutral-300 py-4 pl-5 text-sm font-medium text-brand-950 sm:py-5 sm:pl-10 sm:text-base">Nachfrage abfangen</td>
               </tr>
               <tr class="border-b border-neutral-200">
-                <td class="py-4 pr-6 text-brand-950/70">Bauchgefühl</td>
-                <td class="py-4 font-medium text-brand-950">Daten</td>
+                <td class="py-4 pr-5 text-sm text-brand-950/65 sm:py-5 sm:pr-10 sm:text-base">Bauchgefühl</td>
+                <td class="border-l border-neutral-300 py-4 pl-5 text-sm font-medium text-brand-950 sm:py-5 sm:pl-10 sm:text-base">Daten</td>
               </tr>
               <tr class="border-b border-neutral-200">
-                <td class="py-4 pr-6 text-brand-950/70">Reichweite</td>
-                <td class="py-4 font-medium text-brand-950">Conversion</td>
+                <td class="py-4 pr-5 text-sm text-brand-950/65 sm:py-5 sm:pr-10 sm:text-base">Reichweite</td>
+                <td class="border-l border-neutral-300 py-4 pl-5 text-sm font-medium text-brand-950 sm:py-5 sm:pl-10 sm:text-base">Conversion</td>
               </tr>
               <tr>
-                <td class="py-4 pr-6 text-brand-950/70">Kommunikation</td>
-                <td class="py-4 font-medium text-brand-950">Geschäftslogik</td>
+                <td class="py-4 pr-5 text-sm text-brand-950/65 sm:py-5 sm:pr-10 sm:text-base">Kommunikation</td>
+                <td class="border-l border-neutral-300 py-4 pl-5 text-sm font-medium text-brand-950 sm:py-5 sm:pl-10 sm:text-base">Geschäftslogik</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <p class="mt-10 max-w-[60ch] font-display text-xl leading-snug text-brand-950 sm:text-2xl">
-          „Online Marketing beantwortet die Frage: Wo können wir sichtbar sein? Performance Marketing beantwortet die Frage: Wo entsteht Nachfrage – und wie holen wir sie zu uns?"
+      </div>
+    </section>
+
+    <!-- ===== STATEMENT-MOMENT ===== -->
+    <section aria-label="Kernaussage" class="relative overflow-hidden bg-brand-950 py-24 text-white sm:py-28">
+      <img src="Logos/signet.png" alt="" aria-hidden="true" width="844" height="844"
+           class="signet-watermark -bottom-20 -left-16 w-72 sm:w-96" />
+      <div class="container-page relative">
+        <p class="display-lg max-w-5xl">
+          „Online Marketing beantwortet die Frage: Wo können wir sichtbar sein?
+          Performance Marketing beantwortet die Frage: Wo entsteht Nachfrage –
+          und wie holen wir sie zu uns?"
         </p>
       </div>
     </section>
 
     <!-- ===== LEISTUNGEN ===== -->
-    <section id="leistungen" aria-labelledby="leistungen-title" class="py-20 sm:py-24">
+    <section id="leistungen" aria-labelledby="leistungen-title" class="py-24 sm:py-28">
       <div class="container-page">
         <div class="max-w-2xl">
-          <p class="section-eyebrow">Leistungen</p>
-          <h2 id="leistungen-title" class="font-display text-3xl text-brand-950 sm:text-4xl">Was wir liefern</h2>
+          <h2 id="leistungen-title" class="display-lg text-brand-950">Was wir liefern</h2>
         </div>
 
         <div class="mt-12 divide-y divide-neutral-200 border-t border-neutral-200">
           <article class="grid gap-4 py-10 lg:grid-cols-12 lg:gap-12">
             <div class="lg:col-span-4">
-              <span class="font-display text-2xl text-brand-600" aria-hidden="true">01</span>
-              <h3 class="mt-2 font-body text-xl font-medium text-brand-950">Performance Marketing</h3>
+              <h3 class="font-body text-xl font-medium text-brand-950">Performance Marketing</h3>
             </div>
             <div class="lg:col-span-8">
               <p class="max-w-[60ch] text-brand-950/80">
@@ -359,8 +371,7 @@
 
           <article class="grid gap-4 py-10 lg:grid-cols-12 lg:gap-12">
             <div class="lg:col-span-4">
-              <span class="font-display text-2xl text-brand-600" aria-hidden="true">02</span>
-              <h3 class="mt-2 font-body text-xl font-medium text-brand-950">Tracking &amp; Dateninfrastruktur</h3>
+              <h3 class="font-body text-xl font-medium text-brand-950">Tracking &amp; Dateninfrastruktur</h3>
             </div>
             <div class="lg:col-span-8">
               <p class="max-w-[60ch] text-brand-950/80">
@@ -371,8 +382,7 @@
 
           <article class="grid gap-4 py-10 lg:grid-cols-12 lg:gap-12">
             <div class="lg:col-span-4">
-              <span class="font-display text-2xl text-brand-600" aria-hidden="true">03</span>
-              <h3 class="mt-2 font-body text-xl font-medium text-brand-950">Growth &amp; Conversion-Optimierung</h3>
+              <h3 class="font-body text-xl font-medium text-brand-950">Growth &amp; Conversion-Optimierung</h3>
             </div>
             <div class="lg:col-span-8">
               <p class="max-w-[60ch] text-brand-950/80">
@@ -383,8 +393,7 @@
 
           <article class="grid gap-4 py-10 lg:grid-cols-12 lg:gap-12">
             <div class="lg:col-span-4">
-              <span class="font-display text-2xl text-brand-600" aria-hidden="true">04</span>
-              <h3 class="mt-2 font-body text-xl font-medium text-brand-950">Strategische Marketingberatung</h3>
+              <h3 class="font-body text-xl font-medium text-brand-950">Strategische Marketingberatung</h3>
             </div>
             <div class="lg:col-span-8">
               <p class="max-w-[60ch] text-brand-950/80">
@@ -400,8 +409,7 @@
     <section id="prozess" aria-labelledby="prozess-title" class="bg-brand-950 py-20 text-white sm:py-24">
       <div class="container-page">
         <div class="max-w-2xl">
-          <p class="font-body text-sm font-medium uppercase tracking-wide text-white/50">Arbeitsweise</p>
-          <h2 id="prozess-title" class="mt-3 font-display text-3xl sm:text-4xl">So arbeiten wir</h2>
+          <h2 id="prozess-title" class="display-lg">So arbeiten wir</h2>
           <p class="mt-4 text-lg leading-relaxed text-white/70">
             DDM arbeitet nicht kanalorientiert, sondern systemorientiert – in drei aufeinander aufbauenden Phasen.
           </p>
@@ -437,30 +445,32 @@
     </section>
 
     <!-- ===== DIFFERENZIERUNG ===== -->
-    <section id="differenzierung" aria-labelledby="diff-title" class="py-20 sm:py-24">
-      <div class="container-page grid gap-12 lg:grid-cols-12">
-        <div class="lg:col-span-6">
-          <p class="section-eyebrow">Positionierung</p>
-          <h2 id="diff-title" class="font-display text-3xl text-brand-950 sm:text-4xl">
+    <section id="differenzierung" aria-labelledby="diff-title" class="py-16 sm:py-20">
+      <div class="container-page">
+        <div>
+          <h2 id="diff-title" class="display-lg text-brand-950">
             Beratung, <em class="font-display not-italic text-brand-600">nicht</em> Agentur.
           </h2>
-          <p class="mt-5 max-w-[52ch] text-lg leading-relaxed text-brand-950/80">
+          <p class="mt-5 max-w-[60ch] text-lg leading-relaxed text-brand-950/80">
             Strategie, Umsetzung, Tracking und Datenverantwortung liegen bei derselben Instanz. Keine Key-Account-Struktur, bei der operative Arbeit an Juniors ohne Kontext ausgelagert wird – direkte Verbindung zwischen Strategie, Tracking, Kampagnen und Geschäftszielen.
           </p>
 
-          <div class="mt-8 grid gap-x-8 gap-y-4 sm:grid-cols-2">
-            <div>
-              <p class="font-body text-sm font-medium uppercase tracking-wide text-brand-950/40">Klassische Agentur</p>
-              <ul class="mt-3 space-y-2 text-sm text-brand-950/70" role="list">
+          <!-- Gleiches Gegensatz-Muster wie in der Ansatz-Sektion:
+               symmetrische Spalten, durchgehende Trennlinie, mobil nicht
+               gestapelt. -->
+          <div class="mt-12 grid max-w-5xl grid-cols-2">
+            <div class="pr-5 sm:pr-10">
+              <p class="border-b border-neutral-300 pb-3 font-body text-xs font-medium uppercase tracking-wide text-brand-950/65 sm:text-sm">Klassische Agentur</p>
+              <ul class="mt-4 space-y-3 text-sm text-brand-950/65 sm:mt-5 sm:space-y-4 sm:text-base" role="list">
                 <li>Viele Ansprechpartner</li>
                 <li>Operative Silos</li>
                 <li>Fokus auf Aktivitäten</li>
                 <li>Kampagnen ohne tiefe Datenbasis</li>
               </ul>
             </div>
-            <div>
-              <p class="font-body text-sm font-medium uppercase tracking-wide text-brand-600">DDM</p>
-              <ul class="mt-3 space-y-2 text-sm text-brand-950" role="list">
+            <div class="border-l border-neutral-300 pl-5 sm:pl-10">
+              <p class="border-b border-neutral-300 pb-3 font-body text-xs font-medium uppercase tracking-wide text-brand-600 sm:text-sm">DDM</p>
+              <ul class="mt-4 space-y-3 text-sm font-medium text-brand-950 sm:mt-5 sm:space-y-4 sm:text-base" role="list">
                 <li>Direkte strategische Zusammenarbeit</li>
                 <li>Tiefes Tracking-Verständnis</li>
                 <li>Business-Fokus &amp; Datenorientierung</li>
@@ -470,27 +480,40 @@
           </div>
         </div>
 
-        <div class="lg:col-span-6">
-          <p class="mb-4 font-body text-sm font-medium uppercase tracking-wide text-brand-950/50">Echte Kennzahlen aus laufenden Projekten</p>
-          <dl class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-            <div class="rounded-lg border border-neutral-200 bg-neutral-50 p-6">
-              <dt class="sr-only">ROAS, Home &amp; Garden E-Commerce, Microsoft Ads, 1 Monat</dt>
-              <dd class="font-display text-4xl text-brand-950">4,44×</dd>
-              <p class="mt-1 text-sm text-brand-950/60">ROAS (Home&nbsp;&amp;&nbsp;Garden E-Commerce, Microsoft&nbsp;Ads, 1&nbsp;Monat)</p>
-            </div>
-            <div class="rounded-lg border border-neutral-200 bg-neutral-50 p-6">
-              <dt class="sr-only">Domain-Autorität, B2B-Industrie, 3 bis 4 Monate</dt>
-              <dd class="font-display text-4xl text-brand-950">+55%</dd>
-              <p class="mt-1 text-sm text-brand-950/60">Domain-Autorität (B2B-Industrie, 3–4&nbsp;Monate)</p>
-            </div>
-            <div class="rounded-lg border border-neutral-200 bg-neutral-50 p-6">
-              <dt class="sr-only">AI-Citations in KI-Suchsystemen, zuvor nahezu 0, B2B-Industrie, 3 bis 4 Monate</dt>
-              <dd class="font-display text-4xl text-brand-950">10</dd>
-              <p class="mt-1 text-sm text-brand-950/60">AI-Citations in KI-Suchsystemen – zuvor nahezu 0 (B2B-Industrie, 3–4&nbsp;Monate)</p>
-            </div>
-          </dl>
-          <p class="mt-4 text-sm text-brand-950/50">„Wachstum entsteht nicht durch mehr Spend, sondern durch bessere Entscheidungen."</p>
-        </div>
+      </div>
+    </section>
+
+    <!-- ===== BEWEIS-BAND (Peak der Seite) ===== -->
+    <section aria-labelledby="kennzahlen-title" class="relative overflow-hidden bg-brand-600 py-24 text-white sm:py-32">
+      <img src="Logos/signet.png" alt="" aria-hidden="true" width="844" height="844"
+           class="signet-watermark -right-16 -top-16 w-72 sm:w-96" />
+
+      <div class="container-page relative">
+        <h2 id="kennzahlen-title" class="display-lg max-w-[18ch]">
+          Echte Kennzahlen aus laufenden Projekten.
+        </h2>
+
+        <dl class="mt-14 grid divide-y divide-white/25 sm:mt-16 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <div class="pb-8 sm:pb-0 sm:pr-8">
+            <dt class="sr-only">ROAS, Home &amp; Garden E-Commerce, Microsoft Ads, 1 Monat</dt>
+            <dd class="stat-numeral">4,44×</dd>
+            <p class="mt-3 text-sm leading-relaxed text-white/80">ROAS<br />Home&nbsp;&amp;&nbsp;Garden E-Commerce, Microsoft&nbsp;Ads, 1&nbsp;Monat</p>
+          </div>
+          <div class="py-8 sm:px-8 sm:py-0">
+            <dt class="sr-only">Domain-Autorität, B2B-Industrie, 3 bis 4 Monate</dt>
+            <dd class="stat-numeral">+55%</dd>
+            <p class="mt-3 text-sm leading-relaxed text-white/80">Domain-Autorität<br />B2B-Industrie, 3–4&nbsp;Monate</p>
+          </div>
+          <div class="pt-8 sm:pl-8 sm:pt-0">
+            <dt class="sr-only">AI-Citations in KI-Suchsystemen, zuvor nahezu 0, B2B-Industrie, 3 bis 4 Monate</dt>
+            <dd class="stat-numeral">10</dd>
+            <p class="mt-3 text-sm leading-relaxed text-white/80">AI-Citations in KI-Suchsystemen, zuvor nahezu 0<br />B2B-Industrie, 3–4&nbsp;Monate</p>
+          </div>
+        </dl>
+
+        <p class="display-md mt-16 max-w-4xl text-white/90 sm:mt-20">
+          „Wachstum entsteht nicht durch mehr Spend, sondern durch bessere Entscheidungen."
+        </p>
       </div>
     </section>
 
@@ -498,8 +521,7 @@
     <section id="cases" aria-labelledby="cases-title" class="bg-neutral-50 py-20 sm:py-24">
       <div class="container-page">
         <div class="max-w-2xl">
-          <p class="section-eyebrow">Referenzprojekte</p>
-          <h2 id="cases-title" class="font-display text-3xl text-brand-950 sm:text-4xl">Cases, die für sich sprechen.</h2>
+          <h2 id="cases-title" class="display-lg text-brand-950">Cases, die für sich sprechen.</h2>
           <p class="mt-4 text-lg leading-relaxed text-brand-950/80">Reale Projekte. Messbare Ergebnisse. Keine Hochglanz-Versprechen.</p>
         </div>
 
@@ -507,7 +529,9 @@
 
           <!-- Case 1: Microsoft Ads / E-Commerce – einzige Karte mit aktivem Link -->
           <article class="overflow-hidden rounded-lg border border-neutral-200 bg-white">
-            <div class="card-texture relative overflow-hidden bg-brand-950 p-6">
+            <div class="relative overflow-hidden bg-brand-950 p-6">
+              <img src="Logos/signet.png" alt="" aria-hidden="true" width="844" height="844"
+                   class="signet-watermark -right-8 -top-8 w-40" />
               <div class="flex flex-wrap gap-2">
                 <span class="pill">Microsoft Ads</span>
                 <span class="pill">E-Commerce</span>
@@ -542,7 +566,9 @@
 
           <!-- Case 2: AI Visibility / B2B-Industrie – Teaser -->
           <article class="overflow-hidden rounded-lg border border-neutral-200 bg-white">
-            <div class="card-texture relative overflow-hidden bg-brand-950 p-6">
+            <div class="relative overflow-hidden bg-brand-950 p-6">
+              <img src="Logos/signet.png" alt="" aria-hidden="true" width="844" height="844"
+                   class="signet-watermark -right-8 -top-8 w-40" />
               <div class="flex flex-wrap gap-2">
                 <span class="pill">AI Visibility</span>
                 <span class="pill">B2B-Industrie</span>
@@ -577,7 +603,9 @@
 
           <!-- Case 3: Google Ads / Medizin-Leadgen – Teaser -->
           <article class="overflow-hidden rounded-lg border border-neutral-200 bg-white">
-            <div class="card-texture relative overflow-hidden bg-brand-950 p-6">
+            <div class="relative overflow-hidden bg-brand-950 p-6">
+              <img src="Logos/signet.png" alt="" aria-hidden="true" width="844" height="844"
+                   class="signet-watermark -right-8 -top-8 w-40" />
               <div class="flex flex-wrap gap-2">
                 <span class="pill">Google Ads</span>
                 <span class="pill">Medizin / Leads</span>
@@ -607,7 +635,9 @@
 
           <!-- Case 4: Google Ads / D2C Beauty – Teaser -->
           <article class="overflow-hidden rounded-lg border border-neutral-200 bg-white">
-            <div class="card-texture relative overflow-hidden bg-brand-950 p-6">
+            <div class="relative overflow-hidden bg-brand-950 p-6">
+              <img src="Logos/signet.png" alt="" aria-hidden="true" width="844" height="844"
+                   class="signet-watermark -right-8 -top-8 w-40" />
               <div class="flex flex-wrap gap-2">
                 <span class="pill">Google Ads</span>
                 <span class="pill">D2C Beauty</span>
@@ -645,11 +675,10 @@
     </section>
 
     <!-- ===== WERTE ===== -->
-    <section id="werte" aria-labelledby="werte-title" class="bg-neutral-50 py-20 sm:py-24">
+    <section id="werte" aria-labelledby="werte-title" class="bg-neutral-50 py-16 sm:py-20">
       <div class="container-page">
         <div class="max-w-2xl">
-          <p class="section-eyebrow">Werte</p>
-          <h2 id="werte-title" class="font-display text-3xl text-brand-950 sm:text-4xl">Wie wir entscheiden</h2>
+          <h2 id="werte-title" class="display-lg text-brand-950">Wie wir entscheiden</h2>
         </div>
 
         <dl class="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -678,11 +707,10 @@
     </section>
 
     <!-- ===== ZIELGRUPPEN-FIT ===== -->
-    <section id="zielgruppe" aria-labelledby="zielgruppe-title" class="py-20 sm:py-24">
+    <section id="zielgruppe" aria-labelledby="zielgruppe-title" class="py-16 sm:py-20">
       <div class="container-page grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-5">
-          <p class="section-eyebrow">Für wen das passt</p>
-          <h2 id="zielgruppe-title" class="font-display text-3xl text-brand-950 sm:text-4xl">
+          <h2 id="zielgruppe-title" class="display-lg text-brand-950">
             Der richtige Zeitpunkt für DDM
           </h2>
           <p class="mt-4 max-w-[48ch] text-brand-950/80">
@@ -716,8 +744,7 @@
     <section id="faq" aria-labelledby="faq-title" class="bg-neutral-50 py-20 sm:py-24">
       <div class="container-page">
         <div class="max-w-2xl">
-          <p class="section-eyebrow">FAQ</p>
-          <h2 id="faq-title" class="font-display text-3xl text-brand-950 sm:text-4xl">Häufige Fragen</h2>
+          <h2 id="faq-title" class="display-lg text-brand-950">Häufige Fragen</h2>
         </div>
 
         <div class="mt-12 divide-y divide-neutral-200 border-t border-neutral-200">
@@ -727,11 +754,11 @@
                 <span>Ab welchem Budget ergibt eine Zusammenarbeit Sinn?</span>
                 <span class="relative flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-neutral-300 transition-colors group-aria-expanded:border-brand-600" aria-hidden="true">
                   <span class="absolute h-[1.5px] w-2.5 bg-current"></span>
-                  <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
+                  <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 ease-in-out group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
                 </span>
               </button>
             </h3>
-            <div class="faq__panel pb-5" id="faq-1" hidden>
+            <div class="faq__panel" id="faq-1">
               <p class="max-w-[65ch] text-brand-950/70">Das hängt vom Geschäftsmodell, den Zielen und dem aktuellen Stand Ihres Trackings ab. Entscheidend ist, dass Angebot und Tracking so weit stehen, dass sich Optimierung auf einer belastbaren Datenbasis lohnt – das klären wir im ersten Gespräch.</p>
             </div>
           </div>
@@ -742,11 +769,11 @@
                 <span>Wie läuft die Zusammenarbeit konkret ab?</span>
                 <span class="relative flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-neutral-300 transition-colors group-aria-expanded:border-brand-600" aria-hidden="true">
                   <span class="absolute h-[1.5px] w-2.5 bg-current"></span>
-                  <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
+                  <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 ease-in-out group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
                 </span>
               </button>
             </h3>
-            <div class="faq__panel pb-5" id="faq-2" hidden>
+            <div class="faq__panel" id="faq-2">
               <p class="max-w-[65ch] text-brand-950/70">In drei Phasen: Analyse &amp; Diagnose, Setup &amp; Systemaufbau, Skalierung &amp; Optimierung. Sie erhalten aus der Analysephase klare Prioritäten, bevor mit dem Aufbau begonnen wird.</p>
             </div>
           </div>
@@ -757,11 +784,11 @@
                 <span>Was unterscheidet DDM von einer klassischen Agentur?</span>
                 <span class="relative flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-neutral-300 transition-colors group-aria-expanded:border-brand-600" aria-hidden="true">
                   <span class="absolute h-[1.5px] w-2.5 bg-current"></span>
-                  <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
+                  <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 ease-in-out group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
                 </span>
               </button>
             </h3>
-            <div class="faq__panel pb-5" id="faq-3" hidden>
+            <div class="faq__panel" id="faq-3">
               <p class="max-w-[65ch] text-brand-950/70">Strategie, Umsetzung, Tracking und Datenverantwortung liegen bei derselben Instanz – kein Key-Account-Manager zwischen Ihnen und der operativen Arbeit, keine Auslagerung an Juniors ohne Kontext.</p>
             </div>
           </div>
@@ -772,11 +799,11 @@
                 <span>Wir haben kein eigenes Marketingteam – ist das ein Problem?</span>
                 <span class="relative flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-neutral-300 transition-colors group-aria-expanded:border-brand-600" aria-hidden="true">
                   <span class="absolute h-[1.5px] w-2.5 bg-current"></span>
-                  <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
+                  <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 ease-in-out group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
                 </span>
               </button>
             </h3>
-            <div class="faq__panel pb-5" id="faq-4" hidden>
+            <div class="faq__panel" id="faq-4">
               <p class="max-w-[65ch] text-brand-950/70">Nein. DDM arbeitet gerade mit Unternehmen, in denen ein bis zwei Personen Marketing verantworten, und ergänzt dieses Team als externe, strategisch mitdenkende Instanz.</p>
             </div>
           </div>
@@ -787,11 +814,11 @@
                 <span>Wie transparent wird über Ergebnisse berichtet?</span>
                 <span class="relative flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-neutral-300 transition-colors group-aria-expanded:border-brand-600" aria-hidden="true">
                   <span class="absolute h-[1.5px] w-2.5 bg-current"></span>
-                  <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
+                  <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 ease-in-out group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
                 </span>
               </button>
             </h3>
-            <div class="faq__panel pb-5" id="faq-5" hidden>
+            <div class="faq__panel" id="faq-5">
               <p class="max-w-[65ch] text-brand-950/70">Vollständig: Sie erfahren, warum Entscheidungen getroffen werden, welche Maßnahmen funktionieren, welche nicht – und wo Budget effizient eingesetzt wird.</p>
             </div>
           </div>
@@ -802,11 +829,11 @@
                 <span>Für welche Branchen ist DDM besonders geeignet?</span>
                 <span class="relative flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-neutral-300 transition-colors group-aria-expanded:border-brand-600" aria-hidden="true">
                   <span class="absolute h-[1.5px] w-2.5 bg-current"></span>
-                  <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
+                  <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 ease-in-out group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
                 </span>
               </button>
             </h3>
-            <div class="faq__panel pb-5" id="faq-6" hidden>
+            <div class="faq__panel" id="faq-6">
               <p class="max-w-[65ch] text-brand-950/70">Besonders hoher Fit laut bisherigen Projekten: B2B-Industrie (z.&nbsp;B. Maschinenbau, technische Dienstleistungen) und mittelgroßer E-Commerce mit 1–20 Mio.&nbsp;€ Umsatz.</p>
             </div>
           </div>
@@ -818,7 +845,7 @@
     <section aria-labelledby="cta-title" class="bg-brand-950 py-20 text-white sm:py-24">
       <div class="container-page grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-16">
         <div>
-          <h2 id="cta-title" class="font-display text-3xl sm:text-4xl">Passt das zu Ihrem Marketing?</h2>
+          <h2 id="cta-title" class="display-lg">Passt das zu Ihrem Marketing?</h2>
           <p class="mt-4 max-w-[58ch] text-lg leading-relaxed text-white/70">
             Wenn Marketing bei Ihnen noch eher nach Bauchgefühl als nach Daten gesteuert wird, sprechen wir gern über den aktuellen Stand und mögliche nächste Schritte.
           </p>

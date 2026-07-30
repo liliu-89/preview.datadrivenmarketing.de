@@ -31,14 +31,14 @@
     menuBtn.addEventListener('click', () => {
       const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
       menuBtn.setAttribute('aria-expanded', String(!isOpen));
-      mobileMenu.hidden = isOpen;
+      mobileMenu.classList.toggle('is-open', !isOpen);
     });
 
     // Close on mobile link click
     $$('a', mobileMenu).forEach(link => {
       link.addEventListener('click', () => {
         menuBtn.setAttribute('aria-expanded', 'false');
-        mobileMenu.hidden = true;
+        mobileMenu.classList.remove('is-open');
       });
     });
   }
@@ -228,13 +228,13 @@
       $$('.faq__btn').forEach(b => {
         b.setAttribute('aria-expanded', 'false');
         const p = document.getElementById(b.getAttribute('aria-controls'));
-        if (p) p.hidden = true;
+        if (p) p.classList.remove('is-open');
       });
 
       // Toggle clicked
       if (!isOpen) {
         btn.setAttribute('aria-expanded', 'true');
-        if (panel) panel.hidden = false;
+        if (panel) panel.classList.add('is-open');
       }
     });
   });
