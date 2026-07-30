@@ -15,13 +15,13 @@
   <link rel="stylesheet" href="dist/output.css" />
 </head>
 
-<body class="bg-white font-body text-brand-950 antialiased">
-  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-brand-950 focus:px-4 focus:py-2 focus:text-white">
+<body class="bg-canvas font-body text-brand-950 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-brand-950 focus:px-4 focus:py-2 focus:text-white">
     Zum Inhalt springen
   </a>
 
   <!-- ===== HEADER ===== -->
-  <header id="header" class="sticky top-0 z-40 border-b border-neutral-200 bg-white transition-shadow duration-200">
+  <header id="header" class="sticky top-0 z-40 border-b border-neutral-200 transition-shadow duration-200">
     <div class="container-page flex items-center gap-6 py-4">
       <a href="index.html" class="flex flex-shrink-0 items-center" aria-label="DDM Data Driven Marketing – Startseite">
         <img src="Logos/ddm logo.png" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="161" height="90" />
@@ -38,7 +38,7 @@
       <div class="flex items-center gap-3">
         <a href="index.html#kontakt" class="btn-primary hidden sm:inline-flex">Analyse anfragen</a>
         <button
-          class="js-menu-toggle inline-flex h-10 w-10 items-center justify-center rounded-md border border-neutral-200 md:hidden"
+          class="js-menu-toggle inline-flex h-10 w-10 items-center justify-center rounded-control border border-neutral-200 md:hidden"
           type="button"
           aria-expanded="false"
           aria-controls="mobile-menu"
@@ -65,7 +65,7 @@
     </div>
   </header>
 
-  <div class="border-b border-neutral-200 bg-neutral-50">
+  <div class="border-b border-neutral-200 bg-white">
     <div class="container-page py-3">
       <a href="index.html" class="nav-link">← Zur Startseite</a>
     </div>
@@ -85,37 +85,37 @@
     </section>
 
     <!-- ===== TEAM-ÜBERSICHT ===== -->
-    <section aria-labelledby="uebersicht-title" class="bg-neutral-50 py-16 sm:py-20">
+    <section aria-labelledby="uebersicht-title" class="py-16 sm:py-20">
       <div class="container-page">
         <h2 id="uebersicht-title" class="sr-only">Team-Übersicht</h2>
-        <div class="grid grid-cols-2 gap-x-6 gap-y-10 text-center sm:grid-cols-3 lg:grid-cols-5">
+        <div class="grid grid-cols-2 gap-4 text-center sm:grid-cols-3 lg:grid-cols-5">
 
-          <div>
+          <div class="surface p-5 sm:p-6">
             <img src="team/Li-Liu.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
             <p class="mt-4 font-body font-medium text-brand-950">Li Liu</p>
             <p class="mt-1 text-sm text-neutral-600">Geschäftsführer</p>
           </div>
 
-          <div>
+          <div class="surface p-5 sm:p-6">
             <img src="team/Dominik-Calzone.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
             <p class="mt-4 font-body font-medium text-brand-950">Dominik Calzone</p>
             <p class="mt-1 text-sm text-neutral-600">Business Development</p>
           </div>
 
-          <div>
+          <div class="surface p-5 sm:p-6">
             <img src="team/Gabriela-Nikolova.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
             <p class="mt-4 font-body font-medium text-brand-950">Gabriela Nikolova</p>
             <p class="mt-1 text-sm text-neutral-600">Chief Operating Officer</p>
             <p class="mt-0.5 text-xs text-neutral-600">Verträge, Controlling, Buchhaltung &amp; Administration</p>
           </div>
 
-          <div>
+          <div class="surface p-5 sm:p-6">
             <img src="team/Poondi-Mendy.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
             <p class="mt-4 font-body font-medium text-brand-950">Poondi Mendy</p>
             <p class="mt-1 text-sm text-neutral-600">Senior SEO &amp; GEO Consultant</p>
           </div>
 
-          <div>
+          <div class="surface p-5 sm:p-6">
             <img src="team/Theresa-Leistner.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
             <p class="mt-4 font-body font-medium text-brand-950">Theresa Leistner</p>
             <p class="mt-1 text-sm text-neutral-600">Senior SEA &amp; Performance Marketing Consultant</p>
@@ -168,7 +168,7 @@
   </footer>
 
   <!-- Toast -->
-  <div class="toast fixed bottom-5 left-1/2 z-50 min-w-60 -translate-x-1/2 translate-y-[calc(100%+1.25rem)] rounded-md border border-white/10 bg-brand-950 px-5 py-3 text-center font-body text-sm text-white opacity-0 shadow-lg transition-all duration-300" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="toast fixed bottom-5 left-1/2 z-50 min-w-60 -translate-x-1/2 translate-y-[calc(100%+1.25rem)] rounded-control border border-white/10 bg-brand-950 px-5 py-3 text-center font-body text-sm text-white opacity-0 shadow-lg transition-all duration-300" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <script src="script.js"></script>
 </body>
