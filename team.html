@@ -88,7 +88,12 @@
     <section aria-labelledby="uebersicht-title" class="py-16 sm:py-20">
       <div class="container-page">
         <h2 id="uebersicht-title" class="sr-only">Team-Übersicht</h2>
-        <div class="grid grid-cols-2 gap-4 text-center sm:grid-cols-3 lg:grid-cols-5">
+        <!-- Sechs Personen: 3×2 statt einer Reihe. Ein Sechser-Raster ließe
+             je Karte nur rund 190px, in denen lange Rollenbezeichnungen wie
+             „Senior SEA & Performance Marketing Consultant" vierzeilig
+             umbrechen würden. Die Breitenbegrenzung verhindert, dass die
+             Karten bei drei Spalten unnötig auseinanderlaufen. -->
+        <div class="mx-auto grid max-w-5xl grid-cols-2 gap-4 text-center sm:grid-cols-3">
 
           <div class="surface p-5 sm:p-6">
             <img src="team/Li-Liu.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
@@ -97,16 +102,16 @@
           </div>
 
           <div class="surface p-5 sm:p-6">
-            <img src="team/Dominik-Calzone.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
-            <p class="mt-4 font-body font-medium text-brand-950">Dominik Calzone</p>
-            <p class="mt-1 text-sm text-neutral-600">Business Development</p>
-          </div>
-
-          <div class="surface p-5 sm:p-6">
             <img src="team/Gabriela-Nikolova.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
             <p class="mt-4 font-body font-medium text-brand-950">Gabriela Nikolova</p>
             <p class="mt-1 text-sm text-neutral-600">Chief Operating Officer</p>
             <p class="mt-0.5 text-xs text-neutral-600">Verträge, Controlling, Buchhaltung &amp; Administration</p>
+          </div>
+
+          <div class="surface p-5 sm:p-6">
+            <img src="team/Dominik-Calzone.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
+            <p class="mt-4 font-body font-medium text-brand-950">Dominik Calzone</p>
+            <p class="mt-1 text-sm text-neutral-600">Business Development</p>
           </div>
 
           <div class="surface p-5 sm:p-6">
@@ -118,6 +123,12 @@
           <div class="surface p-5 sm:p-6">
             <img src="team/Theresa-Leistner.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
             <p class="mt-4 font-body font-medium text-brand-950">Theresa Leistner</p>
+            <p class="mt-1 text-sm text-neutral-600">Senior SEA &amp; Performance Marketing Consultant</p>
+          </div>
+
+          <div class="surface p-5 sm:p-6">
+            <img src="team/Adriana-Schwandt.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
+            <p class="mt-4 font-body font-medium text-brand-950">Adriana Schwandt</p>
             <p class="mt-1 text-sm text-neutral-600">Senior SEA &amp; Performance Marketing Consultant</p>
           </div>
 
