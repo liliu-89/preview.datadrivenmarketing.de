@@ -83,6 +83,12 @@
   --radius-control: 0.625rem; /* 10px – Buttons, Eingabefelder, Hinweise */
   --radius-card: 1.125rem;    /* 18px – Karten, Panels */
 
+  /* ─── Zeilenlängen ────────────────────────────────────────────────────
+     Zwei Maße statt der zuvor zehn verstreuten max-w-Werte. Überschriften
+     werden durch ihre Rasterspalte begrenzt, nicht durch ein eigenes Maß. */
+  --measure-lead: 44ch; /* Einleitungen unter der Sektionsüberschrift */
+  --measure-body: 64ch; /* Fließtext */
+
   /* ─── Elevation ───────────────────────────────────────────────────────
      Mehrstufig und im Markenton (Hue 225) statt in neutralem Schwarz –
      ein farbiger Schatten liegt im Bild, ein grauer liegt darauf.
@@ -111,6 +117,60 @@
 @layer components {
   .container-page {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ─── Sektions-Raster ─────────────────────────────────────────────────
+     Zuvor nutzten 2 von 13 Sektionen ein Zweispalter-Raster, der Rest
+     stapelte Titel über Inhalt. Dadurch begann jede Sektion an einer
+     anderen horizontalen Achse. Diese vier Klassen halten das Raster an
+     einer Stelle fest, statt es je Sektion neu zu erfinden.
+
+     Der Titel steht immer in derselben linken Spalte, der Inhalt immer in
+     derselben rechten. Auch wo der Inhalt volle Breite braucht, bleibt der
+     Titel an seiner Achse. */
+  .section-shell {
+    @apply py-20 sm:py-28;
+  }
+  .section-grid {
+    @apply grid gap-x-12 gap-y-10 lg:grid-cols-12;
+  }
+  .section-aside {
+    @apply lg:col-span-4;
+  }
+  .section-main {
+    @apply lg:col-span-8;
+  }
+
+  /* Gestapelte Variante: Titel oben, Inhalt darunter über die volle Breite.
+     Für Sektionen, deren Inhalt selbst ein Raster ist. Dort würde die
+     Titelspalte das Kartenraster auf acht von zwölf Spalten einengen, und
+     drei oder vier Karten stünden unnötig gedrängt. Der Titel beginnt an
+     derselben linken Achse wie in der zweispaltigen Variante, der
+     durchgehende Rasterbezug bleibt also erhalten. */
+  .section-head {
+    @apply mb-12;
+  }
+
+  /* Einheitliche Sektionsüberschrift. display-lg wäre in der schmaleren
+     Titelspalte zu laut; display-xl bleibt dem Hero vorbehalten. */
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.625rem, 2.6vw, 2.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    @apply text-brand-950;
+  }
+  .section-lead {
+    @apply mt-4 text-lg leading-relaxed text-brand-950/80;
+    max-width: var(--measure-lead);
+  }
+  /* Fließtext auf gut lesbare Zeilenlänge begrenzen. Ersetzt die zuvor
+     zehn verschiedenen ch- und max-w-Werte. */
+  .measure {
+    max-width: var(--measure-body);
   }
 
   /* ─── Flächen ─────────────────────────────────────────────────────────
@@ -352,8 +412,16 @@
     position: absolute;
     pointer-events: none;
     user-select: none;
-    filter: invert(1);
     opacity: 0.05;
+    /* Das frühere signet.png trug 30% Leerraum an jeder Seite, die Form füllte
+       nur 39% der Bilddatei. Die neuen SVGs der Designerin sind eng
+       beschnitten, wodurch die Form bei gleicher Breitenangabe deutlich
+       größer wirkt und an die Sektionskante rückt. Die zentrierte Skalierung
+       stellt die alte Geometrie wieder her: Das Elementkästchen behält seine
+       Maße, sodass sämtliche Positionsangaben in den Sektionen unverändert
+       gültig bleiben, nur die sichtbare Form schrumpft auf ihr früheres Maß. */
+    transform: scale(0.39);
+    transform-origin: center;
   }
 
   /* Endlos-Marquee für die Kunden-Logo-Leiste */
