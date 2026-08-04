@@ -256,4 +256,125 @@
     $$('.reveal').forEach(el => el.classList.add('is-visible'));
   }
 
+  /* ─── Hero-H1: Tippeffekt ─────────────────────────────────────────────
+     Zeichenweise Einblendung statt animierter Breite: Jedes Zeichen steht
+     von Anfang an an seiner endgültigen Position (kein Layoutsprung, kein
+     nowrap nötig), nur die Deckkraft wird nacheinander umgeschaltet. Läuft
+     einmal pro Sitzung und startet erst, wenn der Hero-Reveal durchgelaufen
+     ist, damit nicht zwei Animationen gleichzeitig laufen. */
+  (function setupHeroTyping() {
+    const h1 = document.getElementById('hero-title');
+    if (!h1 || !h1.classList.contains('js-type')) return;
+
+    const STORAGE_KEY = 'ddm_hero_typed';
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let alreadyTyped = false;
+    try { alreadyTyped = sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (_) {}
+
+    // In beiden Fällen bleibt der ursprüngliche Textknoten unangetastet
+    // stehen – er ist bereits vollständig sichtbar.
+    if (reduceMotion || alreadyTyped) return;
+
+    const fullText = h1.textContent.replace(/\s+/g, ' ').trim();
+    h1.setAttribute('aria-label', fullText);
+
+    const container = document.createElement('span');
+    container.setAttribute('aria-hidden', 'true');
+
+    const cursor = document.createElement('span');
+    cursor.className = 'type-cursor is-active';
+
+    const chars = [];
+    const words = fullText.split(' ');
+    words.forEach((word, i) => {
+      const wordEl = document.createElement('span');
+      wordEl.className = 'type-word';
+      [...word].forEach(ch => {
+        const charEl = document.createElement('span');
+        charEl.className = 'type-char';
+        charEl.textContent = ch;
+        wordEl.appendChild(charEl);
+        chars.push(charEl);
+      });
+      container.appendChild(wordEl);
+      if (i < words.length - 1) {
+        const spaceEl = document.createElement('span');
+        spaceEl.className = 'type-char type-space';
+        spaceEl.textContent = ' ';
+        container.appendChild(spaceEl);
+        chars.push(spaceEl);
+      }
+    });
+
+    container.prepend(cursor);
+    h1.textContent = '';
+    h1.appendChild(container);
+
+    const MS_PER_CHAR = 35; // 41 Zeichen ≈ 1,45s
+    let started = false;
+    let finished = false;
+
+    function finish() {
+      if (finished) return;
+      finished = true;
+      clearTimeout(failsafe);
+      chars.forEach(c => c.classList.add('is-visible'));
+      cursor.classList.remove('is-active');
+      cursor.classList.add('is-done');
+      try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (_) {}
+    }
+
+    /* Sicherheitsnetz. requestAnimationFrame ruht, solange die Seite
+       verborgen ist – etwa in einem per Mittelklick geöffneten
+       Hintergrundtab. Ohne diese Absicherung blieben alle Zeichen auf
+       opacity: 0 stehen und die Überschrift wäre dauerhaft leer. Nach
+       spätestens vier Sekunden steht sie deshalb in jedem Fall. */
+    const failsafe = setTimeout(finish, 4000);
+
+    function runTyping() {
+      if (started || finished) return;
+      started = true;
+      const start = performance.now();
+      const total = chars.length;
+
+      function tick(now) {
+        if (finished) return;
+        const shown = Math.min(total, Math.floor((now - start) / MS_PER_CHAR));
+        for (let i = 0; i < shown; i++) {
+          if (!chars[i].classList.contains('is-visible')) {
+            chars[i].classList.add('is-visible');
+            chars[i].after(cursor);
+          }
+        }
+        if (shown < total) {
+          requestAnimationFrame(tick);
+        } else {
+          finish();
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // Solange die Seite verborgen ist, würde rAF ohnehin nicht laufen –
+    // also erst beim Sichtbarwerden starten.
+    function startWhenVisible() {
+      if (finished) return;
+      if (document.visibilityState === 'hidden') {
+        document.addEventListener('visibilitychange', startWhenVisible, { once: true });
+        return;
+      }
+      runTyping();
+    }
+
+    // Erst nach dem Hero-Reveal starten (300ms-Übergang), mit
+    // Sicherheitsnetz, falls transitionend aus irgendeinem Grund ausbleibt.
+    const revealWrap = h1.closest('.reveal');
+    if (revealWrap && !revealWrap.classList.contains('is-visible')) {
+      revealWrap.addEventListener('transitionend', startWhenVisible, { once: true });
+      setTimeout(startWhenVisible, 700);
+    } else {
+      startWhenVisible();
+    }
+  })();
+
 })();
