@@ -1,2 +1,16 @@
+# Vorschau-Umgebung (preview.datadrivenmarketing.de)
+#
+# Crawling ist bewusst erlaubt. Ein Disallow würde verhindern, dass Google
+# die Seiten überhaupt abruft, und damit könnte die noindex-Anweisung im
+# Quelltext nicht gelesen werden. Eine gesperrte URL kann bei externer
+# Verlinkung trotzdem als reiner URL-Eintrag im Index erscheinen.
+# Zuverlässig aus dem Index hält die Seiten nur ein lesbares noindex.
+#
+# Achtung: Das schützt vor Indexierung, nicht vor Zugriff. Wer die URL
+# kennt, sieht die Seite.
+#
+# Für die Produktionsdomain gilt diese Datei nicht. Dort entfallen die
+# noindex-Angaben und es kommt ein Sitemap-Verweis hinzu.
+
 User-agent: *
-Disallow: /
+Allow: /

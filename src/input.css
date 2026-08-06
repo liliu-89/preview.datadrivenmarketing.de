@@ -451,14 +451,19 @@
      Wortgrenzen erfolgt statt mitten im Wort. */
   /* Reiner Gruppierungscontainer ohne eigenes Wrapping-Verhalten: hyphens
      und overflow-wrap von .display-xl sind vererbte Eigenschaften und
-     wirken über diese Spans hindurch weiter. white-space: nowrap stünde
-     dem entgegen und ließe lange Komposita (z. B. „Wachstumssystem.")
-     auf schmalen Bildschirmen über den Viewport hinausragen. */
+     wirken über diese Spans hindurch weiter. */
   .type-word {
     display: inline;
   }
+  /* Bewusst inline, nicht inline-block. Inline-Block-Elemente gelten dem
+     Browser als einzeln umbrechbare Einheiten, wodurch er zwischen
+     beliebigen Zeichen umbricht statt an Wortgrenzen. Bei einer langen
+     Wortmarke wie „Performance-Marketing-Beratung" führte das zu Brüchen
+     mitten im Wort. Inline-Elemente erzeugen keine solchen Umbruchstellen,
+     die normalen Regeln für Leerzeichen und Bindestriche greifen wieder.
+     Für die reine Deckkraft-Animation ist inline ausreichend. */
   .type-char {
-    display: inline-block;
+    display: inline;
     opacity: 0;
   }
   .type-char.type-space {
