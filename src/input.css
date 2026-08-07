@@ -451,9 +451,18 @@
      Wortgrenzen erfolgt statt mitten im Wort. */
   /* Reiner Gruppierungscontainer ohne eigenes Wrapping-Verhalten: hyphens
      und overflow-wrap von .display-xl sind vererbte Eigenschaften und
-     wirken über diese Spans hindurch weiter. */
+     wirken über diese Spans hindurch weiter.
+
+     overflow-wrap: anywhere zusätzlich erzwungen, weil der reine
+     Bindestrich-Umbruch nicht browserübergreifend verlässlich ist: Chromium
+     bricht "Performance-Marketing-Beratung" zuverlässig an den Bindestrichen,
+     iOS Safari behandelte denselben Text als ein einziges unbrechbares Wort
+     und lief über den mobilen Viewport hinaus. anywhere erlaubt als letzten
+     Ausweg einen Bruch an jeder Stelle und verkleinert zusätzlich die
+     min-content-Breite, die break-word allein nicht anfasst. */
   .type-word {
     display: inline;
+    overflow-wrap: anywhere;
   }
   /* Bewusst inline, nicht inline-block. Inline-Block-Elemente gelten dem
      Browser als einzeln umbrechbare Einheiten, wodurch er zwischen
@@ -466,9 +475,14 @@
     display: inline;
     opacity: 0;
   }
-  .type-char.type-space {
-    white-space: pre;
-  }
+  /* type-space trägt bewusst KEIN white-space: pre. Das stand hier zuvor,
+     um zu verhindern, dass ein isolierter Leerzeichen-Span kollabiert –
+     dabei wurde aber auch die normale Zeilenumbruch-Kollabierung
+     ausgehebelt: Fiel ein Leerzeichen exakt an eine Umbruchstelle, blieb es
+     sichtbar und erzeugte ein Leerzeichen am Zeilenanfang (sichtbar vor
+     „den" in "Beratung für / den Mittelstand"). Mit normalem white-space
+     kollabiert der Browser das Leerzeichen am Zeilenumbruch wie bei
+     gewöhnlichem Text, bleibt aber innerhalb einer Zeile sichtbar. */
   .type-char.is-visible {
     opacity: 1;
   }
