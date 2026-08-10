@@ -12,10 +12,34 @@
 @source "../team.html";
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────
-   Nur die tatsächlich vorhandenen Schnitte werden eingebunden:
-   - Loretta: ausschließlich Regular (400) – kein Bold/Italic vorhanden
-   - ITC Franklin Gothic Pro: ausschließlich "Bk" / Book (400) – kein Bold vorhanden
-   Hierarchie wird daher über Größe, Spacing und Farbe erzeugt, nicht über Font-Weight.
+   Die Design Guidelines schreiben vier Schnitte vor:
+
+     Headline / Zahlen / Hervorhebungen  Loretta Bold
+     Subheadline / Zitate                Loretta Regular          ✓ vorhanden
+     Fließtext                           Franklin Gothic Book     ✓ vorhanden
+     Highlighting                        Franklin Gothic Demi
+
+   Lizenziert sind bislang nur die beiden mit ✓. Es fehlen Loretta Bold,
+   Loretta Bold Italic (für Wort-Hervorhebungen im Stil von "Beratung,
+   nicht Agentur.") und Franklin Gothic Demi. Alle Überschriften und
+   Kennzahlen laufen deshalb derzeit in Regular statt Bold.
+
+   ── Aktivierung nach dem Lizenzkauf ──────────────────────────────────
+   Bezug: Loretta über novatypefoundry.com (42 €/Schnitt),
+          ITC Franklin Gothic LT Pro Demi über myfonts.com (51 €/Schnitt).
+
+   1. Dateien nach fonts/ legen, benannt wie in den @font-face unten.
+   2. Die drei auskommentierten @font-face-Blöcke aktivieren.
+   3. Die auskommentierten font-weight-Zeilen bei .display-xl/lg/md,
+      .section-title und .stat-numeral aktivieren.
+   4. font-synthesis unten kann bleiben – sie schadet mit echten
+      Schnitten nicht und schützt weiterhin vor gefälschten.
+   5. npm run build.
+
+   Franklin Demi ist bewusst als Weight 500 registriert: Die 86 bereits
+   im Markup stehenden font-medium-Klassen greifen damit automatisch. Sie
+   sind aktuell wirkungslos (nachgemessen: identische Glyphenbreite bei
+   400/500/700) und wurden deshalb absichtlich nicht entfernt.
    ────────────────────────────────────────────────────────────────────── */
 
 @font-face {
@@ -25,6 +49,24 @@
   font-style: normal;
   font-display: swap;
 }
+
+/*
+@font-face {
+  font-family: "Loretta";
+  src: url("../fonts/loretta-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loretta";
+  src: url("../fonts/loretta-bold-italic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+*/
 
 @font-face {
   font-family: "ITC Franklin Gothic Pro Bk";
@@ -37,13 +79,44 @@
   font-display: swap;
 }
 
+/*
+@font-face {
+  font-family: "ITC Franklin Gothic Pro Bk";
+  src:
+    url("../fonts/itc-franklin-gothic-demi.woff2") format("woff2"),
+    url("../fonts/itc-franklin-gothic-demi.woff") format("woff"),
+    url("../fonts/itc-franklin-gothic-demi.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+@layer base {
+  /* Keine synthetischen Schnitte. Ohne diese Regel würden Safari und
+     Firefox bei font-weight: 700 aus Loretta Regular ein verzerrtes
+     Pseudo-Bold rechnen – eine Schrift, die die Marke nicht besitzt.
+     Chromium tut das aktuell nicht, verlassen kann man sich darauf nicht.
+     Damit ist es auch gefahrlos, die Bold-Regeln unten vorzubereiten:
+     Solange die Schnitte fehlen, bleibt die Darstellung schlicht Regular
+     statt gefälscht fett. */
+  html {
+    font-synthesis-weight: none;
+    font-synthesis-style: none;
+    -webkit-font-synthesis: none;
+  }
+}
+
 /* ─── Design Tokens ──────────────────────────────────────────────────────
    Verbindliche Markenbasis: bläuliches Grau #1b1e27, Blau #3354a1.
-   Neutrale Grautöne sind rechnerisch aus dem Farbton der Basis
-   (Hue ~225°) abgeleitet, keine beliebige Tailwind-Standardpalette.
-   Transparenzstufen (/10 … /100) funktionieren für alle Farben unten
-   automatisch über Tailwinds native Opacity-Modifier-Syntax, z. B.
-   bg-brand-600/20, text-brand-950/70, border-brand-950/10.
+
+   Farbtöne werden über die Stufen der beiden Leitern gewählt, nicht über
+   Opazitätsmodifier. Tailwinds /10…/100-Syntax funktioniert weiterhin,
+   ist für Farbtöne aber bewusst nicht mehr im Einsatz: Ein transparenter
+   Wert verrechnet sich mit dem Untergrund und ergibt je Sektion eine
+   andere Farbe. Opazität bleibt den Fällen vorbehalten, in denen das
+   Durchscheinen die eigentliche Absicht ist – etwa der Hover-Schleier
+   auf .btn-secondary oder die halbtransparente Header-Fläche.
    ────────────────────────────────────────────────────────────────────── */
 
 @theme {
@@ -51,27 +124,59 @@
   --font-display: "Loretta", Georgia, "Times New Roman", serif;
   --font-body: "ITC Franklin Gothic Pro Bk", "Franklin Gothic Medium", Arial, sans-serif;
 
-  /* Marke */
-  --color-brand-950: #1b1e27; /* Bläuliches Grau – Text, dunkle Flächen, Footer/Header */
-  --color-brand-600: #3354a1; /* Blau – Akzent, CTA, Links */
+  /* ─── Markenfarben: zwei vollständige Tonleitern ──────────────────────
+     Die Guidelines führen für beide Markenfarben je eine Leiter. Die
+     Website hatte davon nur die beiden Ankerwerte und erzeugte alle
+     Zwischentöne über Transparenz. Das ist nicht dasselbe: Ein
+     transparenter Ton verrechnet sich mit dem Untergrund und ist damit
+     nicht stabil. Das zuvor verwendete text-brand-950/70 ergab auf weißem
+     Grund rgb(95,98,104), auf Canvas rgb(90,93,101) – dieselbe Klasse,
+     zwei Farben. Definierte Stufen sind untergrundunabhängig.
 
-  /* Seitengrund. Bewusst tiefer als neutral-50: bei 97% Helligkeit liegt
+       ink    = Primärfarbe (dunkelgrau), Anker ist ink-950 = #1b1e27
+       accent = Sekundärfarbe (blau),     Anker ist accent-600 = #3354a1
+
+     Beide Leitern halten den Farbton ihres Ankers konstant (ink 225°,
+     accent 222°), damit keine Zwischenstufe ins Neutrale kippt. Die
+     Guidelines schreiben "immer anstelle von schwarz/grau verwenden" –
+     genau deshalb gibt es hier keine ungetönten Graustufen.
+
+     Die Zwischenstufen sind aus den Ankern abgeleitet, nicht aus dem
+     Guidelines-Dokument abgelesen. Liegen die exakten Werte der Leiter
+     vor, sind sie hier austauschbar, ohne das Markup anzufassen.
+     ────────────────────────────────────────────────────────────────── */
+
+  --color-ink-50:  hsl(225 18% 97%);
+  --color-ink-100: hsl(225 13% 94%);
+  --color-ink-200: hsl(225 12% 88%);
+  --color-ink-300: hsl(225 10% 78%);
+  --color-ink-400: hsl(225 9%  62%);
+  --color-ink-500: hsl(225 9%  48%);
+  --color-ink-600: hsl(225 10% 36%);
+  --color-ink-700: hsl(225 12% 26%);
+  --color-ink-800: hsl(225 14% 17%);
+  /* 15% statt der früheren 12%: bei 12% lag die Stufe faktisch auf ink-950
+     (11,4%) und war als eigene Stufe wirkungslos. Bisher ungenutzt, die
+     Korrektur ändert daher nichts am Bestand. */
+  --color-ink-900: hsl(225 16% 15%);
+  --color-ink-950: #1b1e27; /* Anker – Guidelines primary */
+
+  --color-accent-50:  hsl(222 60% 97%);
+  --color-accent-100: hsl(222 58% 93%);
+  --color-accent-200: hsl(222 55% 86%);
+  --color-accent-300: hsl(222 52% 76%);
+  --color-accent-400: hsl(222 50% 64%);
+  --color-accent-500: hsl(222 50% 52%);
+  --color-accent-600: #3354a1; /* Anker – Guidelines secondary */
+  --color-accent-700: hsl(222 54% 34%);
+  --color-accent-800: hsl(222 56% 26%);
+  --color-accent-900: hsl(222 58% 19%);
+
+  /* Seitengrund. Bewusst tiefer als ink-50: bei 97% Helligkeit liegt
      eine weiße Karte nur 1,07:1 über dem Grund und ist schlicht nicht als
      Fläche erkennbar – das Figur-Grund-Prinzip liefe leer. 95% ergeben
      zusammen mit dem Schatten eine klare, aber ruhige Trennung. */
   --color-canvas: hsl(225 16% 95%);
-
-  /* Aus der Basisfarbe abgeleitete neutrale Flächen (gleicher Hue ~225°) */
-  --color-neutral-50:  hsl(225 18% 97%);
-  --color-neutral-100: hsl(225 13% 94%);
-  --color-neutral-200: hsl(225 12% 88%);
-  --color-neutral-300: hsl(225 10% 78%);
-  --color-neutral-400: hsl(225 9%  62%);
-  --color-neutral-500: hsl(225 9%  48%);
-  --color-neutral-600: hsl(225 10% 36%);
-  --color-neutral-700: hsl(225 12% 26%);
-  --color-neutral-800: hsl(225 14% 17%);
-  --color-neutral-900: hsl(225 18% 12%);
 
   /* Funktionale Statusfarben – ausschließlich für Formular-Feedback */
   --color-success: #1a7f4b;
@@ -109,7 +214,7 @@
    erzeugte kein reduziertes, sondern ein flaches Design.
 
    Tiefe entsteht jetzt über Figur-Grund statt über Striche: der Grund ist
-   getönt (neutral-50 auf body), die Karte ist weiß. Sie hebt sich durch
+   getönt (ink-50 auf body), die Karte ist weiß. Sie hebt sich durch
    Helligkeit und Schatten ab; die Kante ist nur noch eine Andeutung.
    Bitte nicht erneut auf randlose Flächen zurückbauen.
    ────────────────────────────────────────────────────────────────────── */
@@ -152,8 +257,16 @@
   }
 
   /* Einheitliche Sektionsüberschrift. display-lg wäre in der schmaleren
-     Titelspalte zu laut; display-xl bleibt dem Hero vorbehalten. */
+     Titelspalte zu laut; display-xl bleibt dem Hero vorbehalten.
+
+     Bewusst ohne eigene Farbangabe: Die Klasse setzte zuvor hart
+     text-ink-950 und übersteuerte damit auch das von einer dunklen Sektion
+     geerbte Weiß – die CTA-Überschrift der Case Study stand dadurch
+     dunkelgrau auf dunkelgrau und war unsichtbar (1,00:1). Geerbt wird die
+     Farbe jetzt vom Kontext: auf hellem Grund vom body (ink-950), auf
+     dunklen Sektionen deren text-white. */
   .section-title {
+    /* font-weight: 700; */ /* Loretta Bold – nach Lizenzkauf aktivieren, siehe Fonts-Block oben */
     font-family: var(--font-display);
     font-size: clamp(1.625rem, 2.6vw, 2.25rem);
     line-height: 1.15;
@@ -161,10 +274,9 @@
     text-wrap: balance;
     hyphens: auto;
     overflow-wrap: break-word;
-    @apply text-brand-950;
   }
   .section-lead {
-    @apply mt-4 text-lg leading-relaxed text-brand-950/80;
+    @apply mt-4 text-lg leading-relaxed text-ink-700;
     max-width: var(--measure-lead);
   }
   /* Fließtext auf gut lesbare Zeilenlänge begrenzen. Ersetzt die zuvor
@@ -177,7 +289,7 @@
      Bewusst ohne Padding: die Sektionen setzen ihres selbst, weil eine
      Case-Karte mit dunklem Kopf anderes braucht als eine Wertekachel. */
   .surface {
-    @apply rounded-card border border-neutral-200/60 bg-white;
+    @apply rounded-card border border-ink-100 bg-white;
     box-shadow: var(--shadow-card);
   }
 
@@ -197,33 +309,58 @@
   }
 
   .surface-dark {
-    @apply rounded-card bg-brand-950 text-white;
+    @apply rounded-card bg-ink-950 text-white;
     box-shadow: var(--shadow-accent);
   }
 
   .surface-accent {
-    @apply rounded-card bg-brand-600 text-white;
+    @apply rounded-card bg-accent-600 text-white;
     box-shadow: var(--shadow-accent);
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-control bg-brand-600 px-6 py-3 font-body text-[0.9375rem] text-white transition duration-200 ease-out hover:bg-brand-950 active:scale-[0.97] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 rounded-control bg-accent-600 px-6 py-3 font-body text-[0.9375rem] text-white transition duration-200 ease-out hover:bg-ink-950 active:scale-[0.97] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-600 focus-visible:ring-offset-2;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-control border border-brand-950/25 px-6 py-3 font-body text-[0.9375rem] text-brand-950 transition duration-200 ease-out hover:border-brand-950 hover:bg-brand-950/5 active:scale-[0.97] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 rounded-control border border-ink-950/25 px-6 py-3 font-body text-[0.9375rem] text-ink-950 transition duration-200 ease-out hover:border-ink-950 hover:bg-ink-950/5 active:scale-[0.97] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-600 focus-visible:ring-offset-2;
   }
 
   .btn-on-dark {
-    @apply inline-flex items-center justify-center gap-2 rounded-control bg-white px-6 py-3 font-body text-[0.9375rem] text-brand-950 transition duration-200 ease-out hover:bg-neutral-100 active:scale-[0.97] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-950;
+    @apply inline-flex items-center justify-center gap-2 rounded-control bg-white px-6 py-3 font-body text-[0.9375rem] text-ink-950 transition duration-200 ease-out hover:bg-ink-100 active:scale-[0.97] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950;
   }
 
   .nav-link {
-    @apply font-body text-[0.9375rem] text-brand-950/70 transition-colors hover:text-brand-950;
+    @apply font-body text-[0.9375rem] text-ink-600 transition-colors hover:text-ink-950;
   }
 
   .section-eyebrow {
-    @apply mb-3 inline-block font-body text-sm font-medium uppercase tracking-wide text-brand-600;
+    @apply mb-3 inline-block font-body text-sm font-medium uppercase tracking-wide text-accent-600;
+  }
+
+  /* ─── Zitat-Karte ─────────────────────────────────────────────────────
+     Muster aus den Design Guidelines: großes blaues Anführungszeichen als
+     grafisches Element, darunter das Zitat, abgeschlossen von einer feinen
+     blauen Linie.
+
+     Das Zeichen trägt visuell das öffnende Anführungszeichen, steht aber
+     auf aria-hidden – im Text bleibt nur das schließende “, sonst läse ein
+     Screenreader das Zitat mit zwei Öffnungszeichen vor. Die Semantik
+     liefert das <blockquote>, nicht die Glyphe.
+
+     accent-500 statt des Ankers accent-600: Als Vollton konkurriert das
+     Zeichen mit der Überschriftenebene und liest sich wie Text. Eine Stufe
+     heller bleibt es das, was es sein soll – ein grafisches Element.
+
+     line-height unter 1, weil die Glyphe nur die obere Hälfte ihres
+     Em-Kastens füllt; bei normaler Zeilenhöhe klaffte darunter eine Lücke,
+     die den Abstand zum Zitat verdoppelt hätte. */
+  .quote-mark {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 6vw, 5rem);
+    line-height: 0.62;
+    color: var(--color-accent-500);
   }
 
   /* ─── Display-Skala ────────────────────────────────────────────────────
@@ -231,6 +368,7 @@
      Sektion einzeln. Obergrenze 5.5rem bleibt unter dem 6rem-Deckel für
      Display-Type; Tracking bleibt über dem -0.04em-Boden. */
   .display-xl {
+    /* font-weight: 700; */ /* Loretta Bold – nach Lizenzkauf aktivieren, siehe Fonts-Block oben */
     font-family: var(--font-display);
     font-size: clamp(2.75rem, 7vw, 5.5rem);
     line-height: 0.95;
@@ -240,6 +378,7 @@
     overflow-wrap: break-word;
   }
   .display-lg {
+    /* font-weight: 700; */ /* Loretta Bold – nach Lizenzkauf aktivieren, siehe Fonts-Block oben */
     font-family: var(--font-display);
     font-size: clamp(2rem, 4vw, 3.25rem);
     line-height: 1.05;
@@ -249,6 +388,7 @@
     overflow-wrap: break-word;
   }
   .display-md {
+    /* font-weight: 700; */ /* Loretta Bold – nach Lizenzkauf aktivieren, siehe Fonts-Block oben */
     font-family: var(--font-display);
     font-size: clamp(1.625rem, 2.6vw, 2.25rem);
     line-height: 1.15;
@@ -260,6 +400,7 @@
 
   /* Große Kennzahl – Tabellenziffern verhindern Zittern zwischen Werten. */
   .stat-numeral {
+    /* font-weight: 700; */ /* Loretta Bold – nach Lizenzkauf aktivieren, siehe Fonts-Block oben */
     font-family: var(--font-display);
     font-size: clamp(3rem, 7vw, 5rem);
     line-height: 1;
@@ -268,11 +409,11 @@
   }
 
   .field-label {
-    @apply block font-body text-sm font-medium text-brand-950;
+    @apply block font-body text-sm font-medium text-ink-950;
   }
 
   .field-input {
-    @apply w-full rounded-control border border-neutral-300 bg-white px-4 py-3 font-body text-[0.9375rem] text-brand-950 transition-colors placeholder:text-neutral-400 focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/20;
+    @apply w-full rounded-control border border-ink-300 bg-white px-4 py-3 font-body text-[0.9375rem] text-ink-950 transition-colors placeholder:text-ink-400 focus:border-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-200;
   }
   .field-input.is-invalid {
     @apply border-error;
@@ -389,8 +530,8 @@
   /* Dezentes Liniengitter im Hero-Hintergrund – bewusst ohne Blobs/Glow */
   .hero-grid {
     background-image:
-      linear-gradient(color-mix(in srgb, var(--color-brand-950) 6%, transparent) 1px, transparent 1px),
-      linear-gradient(90deg, color-mix(in srgb, var(--color-brand-950) 6%, transparent) 1px, transparent 1px);
+      linear-gradient(color-mix(in srgb, var(--color-ink-950) 6%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--color-ink-950) 6%, transparent) 1px, transparent 1px);
     background-size: 48px 48px;
   }
 
@@ -398,10 +539,10 @@
      .pill für dunkle Flächen (Karten-Header, Hero, Breadcrumb),
      .pill-accent für helle Flächen (Tag unter den Stat-Zeilen). */
   .pill {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 font-body text-xs font-medium uppercase tracking-wide text-white/80;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-ink-700 bg-ink-800 px-3 py-1 font-body text-xs font-medium uppercase tracking-wide text-ink-200;
   }
   .pill-accent {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-transparent bg-brand-600/10 px-3 py-1 font-body text-xs font-medium text-brand-600;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-transparent bg-accent-50 px-3 py-1 font-body text-xs font-medium text-accent-600;
   }
 
   /* Signet als Markenmotiv auf dunklen Flächen. invert(1) erzeugt aus dem
@@ -491,7 +632,7 @@
     width: 0.06em;
     margin-left: 0.02em;
     background: currentColor;
-    color: var(--color-brand-600);
+    color: var(--color-accent-600);
     opacity: 0;
     vertical-align: -0.05em;
     animation: type-cursor-blink 0.8s step-end infinite;
