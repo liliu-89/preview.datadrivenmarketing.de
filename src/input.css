@@ -124,53 +124,55 @@
   --font-display: "Loretta", Georgia, "Times New Roman", serif;
   --font-body: "ITC Franklin Gothic Pro Bk", "Franklin Gothic Medium", Arial, sans-serif;
 
-  /* ─── Markenfarben: zwei vollständige Tonleitern ──────────────────────
-     Die Guidelines führen für beide Markenfarben je eine Leiter. Die
-     Website hatte davon nur die beiden Ankerwerte und erzeugte alle
-     Zwischentöne über Transparenz. Das ist nicht dasselbe: Ein
-     transparenter Ton verrechnet sich mit dem Untergrund und ist damit
-     nicht stabil. Das zuvor verwendete text-brand-950/70 ergab auf weißem
-     Grund rgb(95,98,104), auf Canvas rgb(90,93,101) – dieselbe Klasse,
-     zwei Farben. Definierte Stufen sind untergrundunabhängig.
+  /* ─── Markenfarben: zwei Tonleitern nach dem Tint-Modell ──────────────
+     Die Leitern in den Guidelines sind die jeweilige Markenfarbe mit
+     sinkender Deckkraft über Weiß. Genau so sind die Stufen unten
+     gerechnet: ink-700 ist rgba(27,30,39,0.7) über Weiß, ausgerechnet zu
+     #5f6268. Die Prozentangabe hinter jedem Wert ist die Deckkraft.
+
+     Warum als fester Hex-Wert und nicht als rgba() im Markup: Auf weißem
+     Grund sind beide identisch, auf jedem anderen Grund nicht. Ein
+     transparenter Ton verrechnet sich mit dem, was zufällig dahinterliegt –
+     dieselbe Klasse ergab auf Weiß rgb(95,98,104) und auf Canvas
+     rgb(90,93,101). Der ausgerechnete Wert ist überall derselbe.
 
        ink    = Primärfarbe (dunkelgrau), Anker ist ink-950 = #1b1e27
        accent = Sekundärfarbe (blau),     Anker ist accent-600 = #3354a1
 
-     Beide Leitern halten den Farbton ihres Ankers konstant (ink 225°,
-     accent 222°), damit keine Zwischenstufe ins Neutrale kippt. Die
-     Guidelines schreiben "immer anstelle von schwarz/grau verwenden" –
-     genau deshalb gibt es hier keine ungetönten Graustufen.
-
-     Die Zwischenstufen sind aus den Ankern abgeleitet, nicht aus dem
-     Guidelines-Dokument abgelesen. Liegen die exakten Werte der Leiter
-     vor, sind sie hier austauschbar, ohne das Markup anzufassen.
+     Eine frühere Fassung hatte die Stufen stattdessen in HSL über
+     Helligkeit und Sättigung konstruiert. Das lag in der Leitermitte bis zu
+     37 RGB-Punkte daneben und war durchweg zu dunkel und zu blaustichig –
+     die Guidelines-Felder sind neutrale, gleichmäßig gestufte Grautöne.
      ────────────────────────────────────────────────────────────────── */
 
-  --color-ink-50:  hsl(225 18% 97%);
-  --color-ink-100: hsl(225 13% 94%);
-  --color-ink-200: hsl(225 12% 88%);
-  --color-ink-300: hsl(225 10% 78%);
-  --color-ink-400: hsl(225 9%  62%);
-  --color-ink-500: hsl(225 9%  48%);
-  --color-ink-600: hsl(225 10% 36%);
-  --color-ink-700: hsl(225 12% 26%);
-  --color-ink-800: hsl(225 14% 17%);
-  /* 15% statt der früheren 12%: bei 12% lag die Stufe faktisch auf ink-950
-     (11,4%) und war als eigene Stufe wirkungslos. Bisher ungenutzt, die
-     Korrektur ändert daher nichts am Bestand. */
-  --color-ink-900: hsl(225 16% 15%);
+  --color-ink-50:  #f4f4f4; /*  5% */
+  --color-ink-100: #e8e8e9; /* 10% */
+  --color-ink-200: #d1d2d4; /* 20% */
+  --color-ink-300: #bbbcbe; /* 30% */
+  --color-ink-400: #a4a5a9; /* 40% */
+  --color-ink-500: #8d8e93; /* 50% */
+  --color-ink-600: #76787d; /* 60% */
+  --color-ink-700: #5f6268; /* 70% */
+  --color-ink-800: #494b52; /* 80% */
+  --color-ink-900: #32343d; /* 90% */
   --color-ink-950: #1b1e27; /* Anker – Guidelines primary */
 
-  --color-accent-50:  hsl(222 60% 97%);
-  --color-accent-100: hsl(222 58% 93%);
-  --color-accent-200: hsl(222 55% 86%);
-  --color-accent-300: hsl(222 52% 76%);
-  --color-accent-400: hsl(222 50% 64%);
-  --color-accent-500: hsl(222 50% 52%);
+  --color-accent-50:  #f1f3f8; /*  7% */
+  --color-accent-100: #dee4f0; /* 16% */
+  --color-accent-200: #c2cce3; /* 30% */
+  --color-accent-300: #a1b0d4; /* 46% */
+  --color-accent-400: #7c92c3; /* 64% */
+  --color-accent-500: #5873b2; /* 82% */
   --color-accent-600: #3354a1; /* Anker – Guidelines secondary */
-  --color-accent-700: hsl(222 54% 34%);
-  --color-accent-800: hsl(222 56% 26%);
-  --color-accent-900: hsl(222 58% 19%);
+
+  /* Dunkler als der Anker: In den Guidelines endet die Blau-Leiter beim
+     Vollton, nach unten gibt es nichts. Für Hover- und Pressed-States
+     braucht es das aber. Diese drei Stufen sind deshalb eine bewusste
+     Erweiterung – der Anker Richtung ink-950 gemischt, damit sie im
+     Markenraum bleiben und nicht in ein fremdes Dunkelblau kippen. */
+  --color-accent-700: #2d4682; /* Anker 75% + ink-950 25% */
+  --color-accent-800: #273964; /* Anker 50% + ink-950 50% */
+  --color-accent-900: #222e4c; /* Anker 30% + ink-950 70% */
 
   /* Seitengrund. Bewusst tiefer als ink-50: bei 97% Helligkeit liegt
      eine weiße Karte nur 1,07:1 über dem Grund und ist schlicht nicht als
@@ -276,7 +278,7 @@
     overflow-wrap: break-word;
   }
   .section-lead {
-    @apply mt-4 text-lg leading-relaxed text-ink-700;
+    @apply mt-4 text-lg leading-relaxed text-ink-800;
     max-width: var(--measure-lead);
   }
   /* Fließtext auf gut lesbare Zeilenlänge begrenzen. Ersetzt die zuvor
@@ -331,7 +333,7 @@
   }
 
   .nav-link {
-    @apply font-body text-[0.9375rem] text-ink-600 transition-colors hover:text-ink-950;
+    @apply font-body text-[0.9375rem] text-ink-700 transition-colors hover:text-ink-950;
   }
 
   .section-eyebrow {
@@ -339,28 +341,74 @@
   }
 
   /* ─── Zitat-Karte ─────────────────────────────────────────────────────
-     Muster aus den Design Guidelines: großes blaues Anführungszeichen als
-     grafisches Element, darunter das Zitat, abgeschlossen von einer feinen
-     blauen Linie.
+     Muster aus den Design Guidelines: sehr großes blaues Anführungszeichen
+     als grafisches Element, darunter das Zitat groß und eng gesetzt auf
+     schmalem Satzspiegel.
 
      Das Zeichen trägt visuell das öffnende Anführungszeichen, steht aber
      auf aria-hidden – im Text bleibt nur das schließende “, sonst läse ein
      Screenreader das Zitat mit zwei Öffnungszeichen vor. Die Semantik
      liefert das <blockquote>, nicht die Glyphe.
 
-     accent-500 statt des Ankers accent-600: Als Vollton konkurriert das
-     Zeichen mit der Überschriftenebene und liest sich wie Text. Eine Stufe
-     heller bleibt es das, was es sein soll – ein grafisches Element.
-
      line-height unter 1, weil die Glyphe nur die obere Hälfte ihres
      Em-Kastens füllt; bei normaler Zeilenhöhe klaffte darunter eine Lücke,
-     die den Abstand zum Zitat verdoppelt hätte. */
+     die den Abstand zum Zitat verdoppelt hätte.
+
+     Vorbehalt: In der Vorlage steht das Zitat in Loretta Bold. Der Schnitt
+     ist nicht lizenziert, deshalb bleibt es hier Regular und wirkt
+     zwangsläufig leichter. Größenverhältnis, Satzspiegel und Zeilenführung
+     sind angeglichen, das Gewicht nicht. */
   .quote-mark {
     display: block;
     font-family: var(--font-display);
-    font-size: clamp(3.5rem, 6vw, 5rem);
+    font-size: clamp(4.5rem, 8vw, 7rem);
     line-height: 0.62;
-    color: var(--color-accent-500);
+    color: var(--color-accent-600);
+  }
+
+  /* Schmaler Satzspiegel ist hier Absicht, nicht Nachlässigkeit: In der
+     Vorlage bricht das Zitat nach wenigen Wörtern um, was ihm den
+     plakativen Charakter gibt. Über die volle Kartenbreite gesetzt liest es
+     sich wie Fließtext. */
+  .quote-text {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.2vw, 2.625rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    max-width: 24ch;
+    color: var(--color-ink-950);
+    text-wrap: balance;
+  }
+
+  /* ─── Markenverlauf ───────────────────────────────────────────────────
+     Nachbau des Verlaufs von der Farbseite der Guidelines: oben das Grau
+     der Primärfarbe, nach unten in das Periwinkle der Sekundärfarbe.
+     Ausschließlich aus Leiterstufen gemischt, damit kein Ton entsteht, den
+     die Marke nicht kennt. */
+     Das Ende liegt bewusst auf accent-100 und nicht auf accent-200: Über
+     accent-200 fällt der Eyebrow auf 4,46:1 und die Sekundärtexte auf
+     3,80:1, beides unter der Lesbarkeitsschwelle. Der Hero trägt viel Text
+     über die volle Breite, deshalb entscheidet hier die Lesbarkeit über die
+     Verlaufstiefe. */
+  .brand-gradient {
+    background-image: linear-gradient(
+      165deg,
+      var(--color-ink-50) 0%,
+      var(--color-accent-50) 42%,
+      var(--color-accent-100) 100%
+    );
+  }
+
+  /* Dunkle Fassung für Sektionen, die ihr Gewicht behalten sollen. Der
+     Verlauf bleibt lange auf ink-950 und kippt erst spät ins Blau, damit
+     weißer Text durchgehend sicher liest. */
+  .brand-gradient-dark {
+    background-image: linear-gradient(
+      160deg,
+      var(--color-ink-950) 0%,
+      var(--color-ink-950) 42%,
+      var(--color-accent-900) 100%
+    );
   }
 
   /* ─── Display-Skala ────────────────────────────────────────────────────
@@ -539,7 +587,7 @@
      .pill für dunkle Flächen (Karten-Header, Hero, Breadcrumb),
      .pill-accent für helle Flächen (Tag unter den Stat-Zeilen). */
   .pill {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-ink-700 bg-ink-800 px-3 py-1 font-body text-xs font-medium uppercase tracking-wide text-ink-200;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-ink-800 bg-ink-900 px-3 py-1 font-body text-xs font-medium uppercase tracking-wide text-ink-200;
   }
   .pill-accent {
     @apply inline-flex items-center gap-1.5 rounded-full border border-transparent bg-accent-50 px-3 py-1 font-body text-xs font-medium text-accent-600;
