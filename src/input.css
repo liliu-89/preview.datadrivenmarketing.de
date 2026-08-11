@@ -12,48 +12,51 @@
 @source "../team.html";
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────
-   Die Design Guidelines schreiben vier Schnitte vor:
+   Alle fünf von den Guidelines geforderten Schnitte sind lizenziert und
+   liegen flach in font/:
 
-     Headline / Zahlen / Hervorhebungen  Loretta Bold
-     Subheadline / Zitate                Loretta Regular          ✓ vorhanden
-     Fließtext                           Franklin Gothic Book     ✓ vorhanden
-     Highlighting                        Franklin Gothic Demi
+     Headline / Zahlen / Hervorhebungen  Loretta Bold          700
+     Wort-Hervorhebung in fettem Satz    Loretta Bold Italic   700 italic
+     Subheadline / Zitate                Loretta Regular       400
+     Highlighting                        Franklin Gothic Demi  500
+     Fließtext                           Franklin Gothic Book  400
 
-   Lizenziert sind bislang nur die beiden mit ✓. Es fehlen Loretta Bold,
-   Loretta Bold Italic (für Wort-Hervorhebungen im Stil von "Beratung,
-   nicht Agentur.") und Franklin Gothic Demi. Alle Überschriften und
-   Kennzahlen laufen deshalb derzeit in Regular statt Bold.
+   Zwei Familien, nicht fünf: Die Schnitte werden als Gewichte derselben
+   Familie deklariert, damit font-weight sie auswählt. Franklin Demi liegt
+   deshalb auf Weight 500 – so greifen die 86 font-medium-Klassen, die
+   bereits im Markup stehen, ohne dass dort etwas geändert werden muss.
+   Vor der Lizenzierung waren sie wirkungslos (nachgemessen: identische
+   Glyphenbreite bei 400/500/700) und wurden bewusst stehen gelassen.
 
-   ── Aktivierung nach dem Lizenzkauf ──────────────────────────────────
-   Bezug: Loretta über novatypefoundry.com (42 €/Schnitt),
-          ITC Franklin Gothic LT Pro Demi über myfonts.com (51 €/Schnitt).
+   Loretta Bold Italic ist deklariert, wird aktuell aber von keiner Regel
+   angesprochen. Ein ungenutztes @font-face lädt der Browser nicht, es
+   kostet also nichts. Vorgesehener Einsatz laut Guidelines ist das eine
+   Wort, an dem eine Aussage kippt ("Beratung, nicht Agentur.") – kursiv
+   und blau innerhalb einer fetten Zeile.
 
-   1. Dateien nach fonts/ legen, benannt wie in den @font-face unten.
-   2. Die drei auskommentierten @font-face-Blöcke aktivieren.
-   3. Die auskommentierten font-weight-Zeilen bei .display-xl/lg/md,
-      .section-title und .stat-numeral aktivieren.
-   4. font-synthesis unten kann bleiben – sie schadet mit echten
-      Schnitten nicht und schützt weiterhin vor gefälschten.
-   5. npm run build.
+   Pfade sind relativ zu dieser Datei notiert und gelten unverändert auch
+   für das gebaute dist/output.css: Tailwind reicht url() durch, und src/
+   wie dist/ liegen beide eine Ebene tief.
 
-   Franklin Demi ist bewusst als Weight 500 registriert: Die 86 bereits
-   im Markup stehenden font-medium-Klassen greifen damit automatisch. Sie
-   sind aktuell wirkungslos (nachgemessen: identische Glyphenbreite bei
-   400/500/700) und wurden deshalb absichtlich nicht entfernt.
+   Loretta liegt nur als woff2 vor. Bei rund 98 % Browserunterstützung
+   unkritisch; Franklin bringt zusätzlich woff mit und behält es.
+
+   Lizenz Franklin: MyFonts Webfont Build ID 3867246 (2020-12-16),
+   ITC Franklin Gothic LT Pro Book + Demi by ITC, myfonts.com.
+   Lizenz Loretta: Novatypefoundry, novatypefoundry.com.
    ────────────────────────────────────────────────────────────────────── */
 
 @font-face {
   font-family: "Loretta";
-  src: url("../fonts/loretta-regular.otf") format("opentype");
+  src: url("../font/loretta-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-/*
 @font-face {
   font-family: "Loretta";
-  src: url("../fonts/loretta-bold.otf") format("opentype");
+  src: url("../font/loretta-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -61,45 +64,39 @@
 
 @font-face {
   font-family: "Loretta";
-  src: url("../fonts/loretta-bold-italic.otf") format("opentype");
+  src: url("../font/loretta-bold-italic.woff2") format("woff2");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
-*/
 
 @font-face {
   font-family: "ITC Franklin Gothic Pro Bk";
   src:
-    url("../fonts/itc-franklin-gothic-bk.woff2") format("woff2"),
-    url("../fonts/itc-franklin-gothic-bk.woff") format("woff"),
-    url("../fonts/itc-franklin-gothic-bk.ttf") format("truetype");
+    url("../font/franklin-gothic-book.woff2") format("woff2"),
+    url("../font/franklin-gothic-book.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-/*
 @font-face {
   font-family: "ITC Franklin Gothic Pro Bk";
   src:
-    url("../fonts/itc-franklin-gothic-demi.woff2") format("woff2"),
-    url("../fonts/itc-franklin-gothic-demi.woff") format("woff"),
-    url("../fonts/itc-franklin-gothic-demi.ttf") format("truetype");
+    url("../font/franklin-gothic-demi.woff2") format("woff2"),
+    url("../font/franklin-gothic-demi.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
-*/
 
 @layer base {
-  /* Keine synthetischen Schnitte. Ohne diese Regel würden Safari und
-     Firefox bei font-weight: 700 aus Loretta Regular ein verzerrtes
-     Pseudo-Bold rechnen – eine Schrift, die die Marke nicht besitzt.
-     Chromium tut das aktuell nicht, verlassen kann man sich darauf nicht.
-     Damit ist es auch gefahrlos, die Bold-Regeln unten vorzubereiten:
-     Solange die Schnitte fehlen, bleibt die Darstellung schlicht Regular
-     statt gefälscht fett. */
+  /* Keine synthetischen Schnitte. Vor der Lizenzierung verhinderte diese
+     Regel, dass Safari und Firefox aus Loretta Regular ein verzerrtes
+     Pseudo-Bold rechnen. Sie bleibt aus demselben Grund aktiv: Gerendert
+     wird ausschließlich, was auch lizenziert ist. Fordert eine Regel eine
+     Kombination, die es nicht gibt – etwa Regular kursiv –, fällt der
+     Browser auf den echten aufrechten Schnitt zurück, statt zu schrägen. */
   html {
     font-synthesis-weight: none;
     font-synthesis-style: none;
@@ -222,6 +219,22 @@
    ────────────────────────────────────────────────────────────────────── */
 
 @layer components {
+  /* Loretta trägt laut Guidelines "Headline / Zahlen / Hervorhebungen" –
+     also praktisch alles, wofür die Display-Schrift überhaupt eingesetzt
+     wird – in Bold. Statt das an jeder Überschrift und jeder Kennzahl
+     einzeln zu setzen (allein die Case Study hat über 60 solcher Stellen),
+     steht es einmal hier auf der Utility selbst.
+
+     Ausnahme ist das Zitat: Die Guidelines weisen "Subheadline / Zitate"
+     ausdrücklich Regular zu. .quote-text setzt sein Gewicht deshalb selbst
+     und ist unten explizit auf 400 festgelegt.
+
+     Eine Tailwind-Gewichtsklasse im Markup sticht diese Regel weiterhin,
+     weil Utilities nach Components liegen. */
+  .font-display {
+    font-weight: 700;
+  }
+
   .container-page {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
   }
@@ -268,7 +281,7 @@
      Farbe jetzt vom Kontext: auf hellem Grund vom body (ink-950), auf
      dunklen Sektionen deren text-white. */
   .section-title {
-    /* font-weight: 700; */ /* Loretta Bold – nach Lizenzkauf aktivieren, siehe Fonts-Block oben */
+    font-weight: 700; /* Loretta Bold – Guidelines: Headline / Zahlen / Hervorhebungen */
     font-family: var(--font-display);
     font-size: clamp(1.625rem, 2.6vw, 2.25rem);
     line-height: 1.15;
@@ -361,6 +374,7 @@
   .quote-mark {
     display: block;
     font-family: var(--font-display);
+    font-weight: 700;
     font-size: clamp(4.5rem, 8vw, 7rem);
     line-height: 0.62;
     color: var(--color-accent-600);
@@ -372,6 +386,9 @@
      sich wie Fließtext. */
   .quote-text {
     font-family: var(--font-display);
+    /* Guidelines: "Subheadline / Zitate" ist Regular, nicht Bold. Explizit
+       gesetzt, damit die Bold-Regel auf .font-display hier nicht greift. */
+    font-weight: 400;
     font-size: clamp(1.75rem, 3.2vw, 2.625rem);
     line-height: 1.12;
     letter-spacing: -0.02em;
@@ -446,7 +463,7 @@
      Sektion einzeln. Obergrenze 5.5rem bleibt unter dem 6rem-Deckel für
      Display-Type; Tracking bleibt über dem -0.04em-Boden. */
   .display-xl {
-    /* font-weight: 700; */ /* Loretta Bold – nach Lizenzkauf aktivieren, siehe Fonts-Block oben */
+    font-weight: 700; /* Loretta Bold – Guidelines: Headline / Zahlen / Hervorhebungen */
     font-family: var(--font-display);
     font-size: clamp(2.75rem, 7vw, 5.5rem);
     line-height: 0.95;
@@ -456,7 +473,7 @@
     overflow-wrap: break-word;
   }
   .display-lg {
-    /* font-weight: 700; */ /* Loretta Bold – nach Lizenzkauf aktivieren, siehe Fonts-Block oben */
+    font-weight: 700; /* Loretta Bold – Guidelines: Headline / Zahlen / Hervorhebungen */
     font-family: var(--font-display);
     font-size: clamp(2rem, 4vw, 3.25rem);
     line-height: 1.05;
@@ -466,7 +483,7 @@
     overflow-wrap: break-word;
   }
   .display-md {
-    /* font-weight: 700; */ /* Loretta Bold – nach Lizenzkauf aktivieren, siehe Fonts-Block oben */
+    font-weight: 700; /* Loretta Bold – Guidelines: Headline / Zahlen / Hervorhebungen */
     font-family: var(--font-display);
     font-size: clamp(1.625rem, 2.6vw, 2.25rem);
     line-height: 1.15;
@@ -478,7 +495,7 @@
 
   /* Große Kennzahl – Tabellenziffern verhindern Zittern zwischen Werten. */
   .stat-numeral {
-    /* font-weight: 700; */ /* Loretta Bold – nach Lizenzkauf aktivieren, siehe Fonts-Block oben */
+    font-weight: 700; /* Loretta Bold – Guidelines: Headline / Zahlen / Hervorhebungen */
     font-family: var(--font-display);
     font-size: clamp(3rem, 7vw, 5rem);
     line-height: 1;
