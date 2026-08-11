@@ -367,17 +367,33 @@
      Em-Kastens füllt; bei normaler Zeilenhöhe klaffte darunter eine Lücke,
      die den Abstand zum Zitat verdoppelt hätte.
 
-     Vorbehalt: In der Vorlage steht das Zitat in Loretta Bold. Der Schnitt
-     ist nicht lizenziert, deshalb bleibt es hier Regular und wirkt
-     zwangsläufig leichter. Größenverhältnis, Satzspiegel und Zeilenführung
-     sind angeglichen, das Gewicht nicht. */
+     Das Zeichen ragt über die obere Kartenkante hinaus, wie in der Vorlage.
+     Umgesetzt über ein negatives margin-top, das die Innenpolsterung der
+     Karte überschreitet. Zwei Stufen, weil die Polsterung an der
+     sm-Grenze wechselt (py-12 = 48px, sm:py-16 = 64px).
+
+     Werte in rem, nicht in em: Die Schriftgröße folgt einem clamp(), die
+     Kartenpolsterung nicht. Ein em-Wert würde je nach Viewport
+     unterschiedlich weit über die Kante ragen.
+
+     Die Tinte des Zeichens misst nur rund 26 % der Schriftgröße – eine
+     Anführungsglyphe füllt ihren Em-Kasten kaum aus. Deshalb ist der
+     Schriftgrad deutlich größer als er wirkt; bei den vorherigen 4,5–7rem
+     blieben davon nur 27px sichtbare Tinte, zu wenig um als grafisches
+     Element gegen den Zitattext zu bestehen. */
   .quote-mark {
     display: block;
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: clamp(4.5rem, 8vw, 7rem);
-    line-height: 0.62;
+    font-size: clamp(9rem, 17vw, 14rem);
+    line-height: 0.42;
     color: var(--color-accent-600);
+    margin-top: -2.55rem;
+  }
+  @media (min-width: 40rem) {
+    .quote-mark {
+      margin-top: -3.3rem;
+    }
   }
 
   /* Schmaler Satzspiegel ist hier Absicht, nicht Nachlässigkeit: In der
