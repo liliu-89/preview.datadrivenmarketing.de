@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Team | DDM Data Driven Marketing</title>
-  <meta name="description" content="Das Team von DDM Data Driven Marketing – Strategie, Tracking und Umsetzung aus einer Hand." />
+  <title>Team für datengetriebenes Marketing | DDM</title>
+  <meta name="description" content="Lernen Sie das DDM-Team kennen: Spezialisten für Google Ads, Tracking und datengetriebenes Marketing für mittelständische Unternehmen." />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#1b1e27" />
 
@@ -74,91 +74,373 @@
 
   <main id="main">
 
-    <!-- ===== INTRO ===== -->
-    <section class="section-shell">
-      <div class="container-page max-w-2xl">
+    <!-- ===== HERO =====
+         Bewusst flacher als section-shell: Die Seite hatte hier zuvor eine
+         zentrierte Schmalspalte mit sehr viel Leerfläche. Titel und Subline
+         sitzen jetzt auf derselben linken Achse wie auf allen anderen
+         Seiten, der Abstand nach unten ist auf das Nötige reduziert. -->
+    <section class="pb-12 pt-14 sm:pb-16 sm:pt-16">
+      <div class="container-page">
         <p class="section-eyebrow">Team</p>
-        <h1 class="font-display text-3xl text-ink-950 sm:text-4xl">Unser Team</h1>
-        <p class="mt-4 text-lg leading-relaxed text-ink-800">
-          Strategie, Tracking und Umsetzung liegen bei einem kleinen, eingespielten Team.
+        <h1 class="section-title max-w-[30ch]">
+          Das Team hinter Google Ads, Tracking und datengetriebenem Marketing
+        </h1>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Strategie, operative Steuerung und Datenkompetenz liegen bei festen Ansprechpartnern.
+          Sie sprechen mit den Personen, die Ihre Kampagnen tatsächlich betreuen.
         </p>
       </div>
     </section>
 
-    <!-- ===== TEAM-ÜBERSICHT ===== -->
-    <section aria-labelledby="uebersicht-title" class="section-shell">
+    <!-- ===== EXPERTISE-STRIP =====
+         Bewusst ohne Kennzahlen: Zu Teamgröße, betreuten Accounts oder
+         verwaltetem Budget liegen im Projekt keine belastbaren Zahlen vor.
+         Erfundene Statistiken wären an dieser Stelle das Gegenteil eines
+         Trust-Signals. Die Leiste zeigt deshalb nur die Disziplinen. -->
+    <section aria-labelledby="expertise-title" class="border-y border-ink-200 bg-white py-8 sm:py-10">
       <div class="container-page">
-        <h2 id="uebersicht-title" class="sr-only">Team-Übersicht</h2>
-        <!-- Sechs Personen: 3×2 statt einer Reihe. Ein Sechser-Raster ließe
-             je Karte nur rund 190px, in denen lange Rollenbezeichnungen wie
-             „Senior SEA & Performance Marketing Consultant" vierzeilig
-             umbrechen würden. Die Breitenbegrenzung verhindert, dass die
-             Karten bei drei Spalten unnötig auseinanderlaufen.
+        <h2 id="expertise-title" class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">
+          Disziplinen im Team
+        </h2>
+        <ul class="mt-4 flex flex-wrap gap-x-3 gap-y-2" role="list">
+          <li><span class="pill-accent">Google Ads</span></li>
+          <li><span class="pill-accent">Performance Marketing</span></li>
+          <li><span class="pill-accent">Tracking &amp; Measurement</span></li>
+          <li><span class="pill-accent">Data &amp; Analytics</span></li>
+          <li><span class="pill-accent">Strategie</span></li>
+          <li><span class="pill-accent">SEO &amp; GEO</span></li>
+        </ul>
+      </div>
+    </section>
 
-             team/placeholder-team.png wird derzeit von keiner Karte genutzt
-             und liegt absichtlich im Ordner: Neuzugänge ohne Portrait
-             verweisen darauf, bis ein Foto vorliegt. Nicht aufräumen. -->
-        <div class="mx-auto grid max-w-5xl grid-cols-2 gap-4 text-center sm:grid-cols-3">
+    <!-- ===== TEAM-GRID =====
+         Portraits auf 132px statt der früheren 112px. Das Quellmaterial ist
+         271×271px; bei doppelter Pixeldichte liegt die Schärfegrenze bei
+         rund 135px. Größere Portraits, wie sie für eine Teamseite naheliegen
+         wären, würden hier sichtbar weich – die visuelle Aufwertung läuft
+         deshalb über Kartenlayout, Typografie und Weißraum.
 
-          <div class="surface p-5 sm:p-6">
-            <img src="team/Li-Liu.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
-            <p class="mt-4 font-body font-medium text-ink-950">Li Liu</p>
-            <p class="mt-1 text-sm text-ink-700">Geschäftsführer</p>
-            <p class="mt-0.5 text-xs text-ink-700">Seit 2015 im Performance Marketing, Schwerpunkt Google Ads und Tracking-Architekturen</p>
-          </div>
+         Karten linksbündig statt zentriert: Ein Expertenprofil mit Rolle,
+         Fachgebieten und Verantwortungstext liest sich linksbündig deutlich
+         besser als zentriert, und die Textkanten fluchten mit dem Raster.
 
-          <div class="surface p-5 sm:p-6">
-            <img src="team/Gabriela-Nikolova.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
-            <p class="mt-4 font-body font-medium text-ink-950">Gabriela Nikolova</p>
-            <p class="mt-1 text-sm text-ink-700">Chief Operating Officer</p>
-            <p class="mt-0.5 text-xs text-ink-700">Verantwortet Verträge, Controlling, Buchhaltung und Administration</p>
-          </div>
+         team/placeholder-team.png wird derzeit von keiner Karte genutzt und
+         liegt absichtlich im Ordner: Neuzugänge ohne Portrait verweisen
+         darauf, bis ein Foto vorliegt. Nicht aufräumen. -->
+    <section aria-labelledby="personen-title" class="section-shell">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="personen-title" class="section-title">Die Menschen hinter den Projekten</h2>
+          <p class="section-lead">
+            Feste Zuständigkeiten für Strategie, Kampagnensteuerung, Tracking und organische Sichtbarkeit.
+          </p>
+        </div>
 
-          <div class="surface p-5 sm:p-6">
-            <img src="team/Dominik-Calzone.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
-            <p class="mt-4 font-body font-medium text-ink-950">Dominik Calzone</p>
-            <p class="mt-1 text-sm text-ink-700">Business Development</p>
-            <p class="mt-0.5 text-xs text-ink-700">Verbindet Strategie und operative Umsetzung, von Positionierung bis Projektsteuerung</p>
-          </div>
+        <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" role="list">
 
-          <div class="surface p-5 sm:p-6">
-            <img src="team/Theresa-Leistner.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
-            <p class="mt-4 font-body font-medium text-ink-950">Theresa Leistner</p>
-            <p class="mt-1 text-sm text-ink-700">Senior SEA &amp; Performance Marketing Consultant</p>
-            <p class="mt-0.5 text-xs text-ink-700">Begleitet Unternehmen, die mit uns zusammenarbeiten, im Performance Marketing</p>
-          </div>
+          <li class="surface flex flex-col p-6 sm:p-7">
+            <img src="team/Li-Liu.png" alt="Li Liu, Geschäftsführer von DDM"
+                 class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" />
+            <h3 class="mt-5 font-body text-lg font-medium text-ink-950">Li Liu</h3>
+            <p class="mt-1 font-body text-sm text-accent-600">Geschäftsführer</p>
+            <p class="mt-4 text-ink-800">
+              Seit 2015 im Performance Marketing. Verantwortet Account-Strategie und die
+              Tracking-Architektur, auf der die Budgetentscheidungen im Projekt beruhen.
+            </p>
+            <ul class="mt-5 flex flex-wrap gap-2 border-t border-ink-100 pt-5" role="list">
+              <li><span class="pill-accent">Google Ads</span></li>
+              <li><span class="pill-accent">Tracking-Architektur</span></li>
+              <li><span class="pill-accent">Strategie</span></li>
+            </ul>
+          </li>
 
-          <div class="surface p-5 sm:p-6">
-            <img src="team/Adriana-Schwandt.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
-            <p class="mt-4 font-body font-medium text-ink-950">Adriana Schwandt</p>
-            <p class="mt-1 text-sm text-ink-700">Senior SEA &amp; Performance Marketing Consultant</p>
-            <p class="mt-0.5 text-xs text-ink-700">Begleitet Unternehmen, die mit uns zusammenarbeiten, im Performance Marketing</p>
-          </div>
+          <li class="surface flex flex-col p-6 sm:p-7">
+            <img src="team/Theresa-Leistner.png" alt="Theresa Leistner, Senior SEA &amp; Performance Marketing Consultant bei DDM"
+                 class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" />
+            <h3 class="mt-5 font-body text-lg font-medium text-ink-950">Theresa Leistner</h3>
+            <p class="mt-1 font-body text-sm text-accent-600">Senior SEA &amp; Performance Marketing Consultant</p>
+            <p class="mt-4 text-ink-800">
+              Verantwortet Kampagnenstruktur, Gebotsstrategien und die laufende Optimierung
+              in Google Ads, ausgerichtet am wirtschaftlichen Beitrag je Kampagne.
+            </p>
+            <ul class="mt-5 flex flex-wrap gap-2 border-t border-ink-100 pt-5" role="list">
+              <li><span class="pill-accent">Google Ads</span></li>
+              <li><span class="pill-accent">Kampagnensteuerung</span></li>
+              <li><span class="pill-accent">Optimierung</span></li>
+            </ul>
+          </li>
 
-          <div class="surface p-5 sm:p-6">
-            <img src="team/Poondi-Mendy.png" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" width="271" height="271" loading="lazy" />
-            <p class="mt-4 font-body font-medium text-ink-950">Poondi Mendy</p>
-            <p class="mt-1 text-sm text-ink-700">Senior SEO &amp; GEO Consultant</p>
-            <p class="mt-0.5 text-xs text-ink-700">Schwerpunkt insbesondere Content-Strategie und Struktur</p>
-          </div>
+          <li class="surface flex flex-col p-6 sm:p-7">
+            <img src="team/Adriana-Schwandt.png" alt="Adriana Schwandt, Senior SEA &amp; Performance Marketing Consultant bei DDM"
+                 class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" loading="lazy" />
+            <h3 class="mt-5 font-body text-lg font-medium text-ink-950">Adriana Schwandt</h3>
+            <p class="mt-1 font-body text-sm text-accent-600">Senior SEA &amp; Performance Marketing Consultant</p>
+            <p class="mt-4 text-ink-800">
+              Verantwortet Kampagnenstruktur, Gebotsstrategien und die laufende Optimierung
+              in Google Ads, ausgerichtet am wirtschaftlichen Beitrag je Kampagne.
+            </p>
+            <ul class="mt-5 flex flex-wrap gap-2 border-t border-ink-100 pt-5" role="list">
+              <li><span class="pill-accent">Google Ads</span></li>
+              <li><span class="pill-accent">Kampagnensteuerung</span></li>
+              <li><span class="pill-accent">Optimierung</span></li>
+            </ul>
+          </li>
 
+          <li class="surface flex flex-col p-6 sm:p-7">
+            <img src="team/Poondi-Mendy.png" alt="Poondi Mendy, Senior SEO &amp; GEO Consultant bei DDM"
+                 class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" loading="lazy" />
+            <h3 class="mt-5 font-body text-lg font-medium text-ink-950">Poondi Mendy</h3>
+            <p class="mt-1 font-body text-sm text-accent-600">Senior SEO &amp; GEO Consultant</p>
+            <p class="mt-4 text-ink-800">
+              Schwerpunkt redaktionelles SEO: Content-Strategie und Struktur. Arbeitet an der
+              Sichtbarkeit in der organischen Suche und in KI-Suchsystemen.
+            </p>
+            <ul class="mt-5 flex flex-wrap gap-2 border-t border-ink-100 pt-5" role="list">
+              <li><span class="pill-accent">Content-Strategie</span></li>
+              <li><span class="pill-accent">Struktur</span></li>
+              <li><span class="pill-accent">GEO</span></li>
+            </ul>
+          </li>
+
+          <li class="surface flex flex-col p-6 sm:p-7">
+            <img src="team/Dominik-Calzone.png" alt="Dominik Calzone, Business Development bei DDM"
+                 class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" loading="lazy" />
+            <h3 class="mt-5 font-body text-lg font-medium text-ink-950">Dominik Calzone</h3>
+            <p class="mt-1 font-body text-sm text-accent-600">Business Development</p>
+            <p class="mt-4 text-ink-800">
+              Verbindet Strategie und operative Umsetzung. Begleitet Projekte von der
+              Positionierung bis zur Steuerung im laufenden Betrieb.
+            </p>
+            <ul class="mt-5 flex flex-wrap gap-2 border-t border-ink-100 pt-5" role="list">
+              <li><span class="pill-accent">Positionierung</span></li>
+              <li><span class="pill-accent">Projektsteuerung</span></li>
+            </ul>
+          </li>
+
+          <li class="surface flex flex-col p-6 sm:p-7">
+            <img src="team/Gabriela-Nikolova.png" alt="Gabriela Nikolova, Chief Operating Officer von DDM"
+                 class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" loading="lazy" />
+            <h3 class="mt-5 font-body text-lg font-medium text-ink-950">Gabriela Nikolova</h3>
+            <p class="mt-1 font-body text-sm text-accent-600">Chief Operating Officer</p>
+            <p class="mt-4 text-ink-800">
+              Verantwortet Verträge, Controlling und Buchhaltung. Sorgt dafür, dass
+              Abrechnung und Abläufe in der Zusammenarbeit nachvollziehbar bleiben.
+            </p>
+            <ul class="mt-5 flex flex-wrap gap-2 border-t border-ink-100 pt-5" role="list">
+              <li><span class="pill-accent">Verträge</span></li>
+              <li><span class="pill-accent">Controlling</span></li>
+              <li><span class="pill-accent">Prozesse</span></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== TEAMKOMPETENZ =====
+         SEO & Sichtbarkeit bleibt bewusst unverlinkt: Auf der Startseite
+         sind vier Leistungsbereiche gelistet, SEO gehört nicht dazu. Belegt
+         sind die Rolle von Poondi Mendy und ein GEO-Case. Die Kompetenz wird
+         deshalb genannt, aber nicht als beworbene Leistung verlinkt. -->
+    <section aria-labelledby="kompetenz-title" class="section-shell bg-ink-100">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="kompetenz-title" class="section-title">Ein Team für den gesamten Performance-Marketing-Prozess</h2>
+          <p class="section-lead">
+            Die Bereiche greifen in den meisten Projekten ineinander. Welche zum Einsatz kommen, ergibt die Analyse.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <article class="surface p-7 sm:p-8">
+            <h3 class="font-body text-lg font-medium text-ink-950">Strategie &amp; Google Ads</h3>
+            <p class="mt-3 text-ink-800">
+              Account-Strategie, Kampagnenstruktur und die Frage, ab welchem Punkt zusätzliches
+              Budget noch profitabel arbeitet.
+            </p>
+            <p class="mt-4">
+              <a href="index.html#leistungen" class="inline-flex min-h-11 items-center font-body text-sm text-accent-600 underline underline-offset-4 hover:text-ink-950">
+                Leistungen im Performance Marketing
+              </a>
+            </p>
+          </article>
+
+          <article class="surface p-7 sm:p-8">
+            <h3 class="font-body text-lg font-medium text-ink-950">Tracking &amp; Daten</h3>
+            <p class="mt-3 text-ink-800">
+              Messkonzepte und Tracking-Architekturen, damit Käufe und Conversion-Werte
+              zuverlässig im Werbekonto ankommen.
+            </p>
+            <p class="mt-4">
+              <a href="index.html#leistungen" class="inline-flex min-h-11 items-center font-body text-sm text-accent-600 underline underline-offset-4 hover:text-ink-950">
+                Tracking und Dateninfrastruktur ansehen
+              </a>
+            </p>
+          </article>
+
+          <article class="surface p-7 sm:p-8">
+            <h3 class="font-body text-lg font-medium text-ink-950">Operative Steuerung</h3>
+            <p class="mt-3 text-ink-800">
+              Laufende Optimierung, Testing und die Bewertung von Kampagnen nach ihrem
+              wirtschaftlichen Beitrag.
+            </p>
+            <p class="mt-4">
+              <a href="index.html#prozess" class="inline-flex min-h-11 items-center font-body text-sm text-accent-600 underline underline-offset-4 hover:text-ink-950">
+                So läuft die Zusammenarbeit ab
+              </a>
+            </p>
+          </article>
+
+          <article class="surface p-7 sm:p-8">
+            <h3 class="font-body text-lg font-medium text-ink-950">SEO &amp; Sichtbarkeit</h3>
+            <p class="mt-3 text-ink-800">
+              Content-Strategie und Struktur für die organische Suche, dazu Sichtbarkeit in
+              KI-Suchsystemen.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== KARRIERE / INITIATIVBEWERBUNG =====
-         Bewusst ohne Bezug auf "offene Stellen" o. Ä. formuliert: Es gibt
-         noch keine Jobs-Seite mit einzelnen Positionen, nur diese generische
-         Initiativ-Einladung. Eine stellenspezifische Formulierung gehört auf
-         die spätere Jobs-Seite, nicht hierher. -->
-    <section aria-labelledby="jobs-title" class="section-shell">
-      <div class="container-page max-w-2xl">
-        <p class="section-eyebrow">Karriere</p>
-        <h2 id="jobs-title" class="font-display text-2xl text-ink-950 sm:text-3xl">Teil des Teams werden?</h2>
-        <p class="mt-4 text-lg leading-relaxed text-ink-800">
-          Wir freuen uns über Initiativbewerbungen von Menschen, die zu unserem Team passen.
+    <!-- ===== ARBEITSWEISE / VERANTWORTLICHKEITEN =====
+         Ausschließlich aus den dokumentierten Rollen abgeleitet. Insbesondere
+         gibt es keinen eigenen Tracking-Spezialisten neben der
+         Geschäftsführung – Li Lius Profil nennt Tracking-Architekturen
+         ausdrücklich, deshalb liegt der Bereich dort. Keine erfundene
+         Organisationsstruktur. -->
+    <section aria-labelledby="arbeitsweise-title" class="section-shell">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="arbeitsweise-title" class="section-title">Wer an Ihrem Projekt arbeitet</h2>
+          <p class="section-lead">
+            Strategie, Umsetzung, Tracking und Datenverantwortung liegen bei derselben Instanz.
+            Zwischen Ihnen und der operativen Arbeit steht keine weitere Ebene.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <dl class="divide-y divide-ink-200 border-t border-ink-300">
+            <div class="grid gap-2 py-6 sm:grid-cols-[13rem_1fr] sm:gap-8">
+              <dt class="font-body font-medium text-ink-950">Strategie &amp; Tracking</dt>
+              <dd class="text-ink-800">
+                Geschäftsführung. Account-Strategie, Messkonzept und die Datengrundlage,
+                auf der Budgetentscheidungen getroffen werden.
+              </dd>
+            </div>
+            <div class="grid gap-2 py-6 sm:grid-cols-[13rem_1fr] sm:gap-8">
+              <dt class="font-body font-medium text-ink-950">Operative Steuerung</dt>
+              <dd class="text-ink-800">
+                Senior SEA &amp; Performance Marketing Consultants. Kampagnenstruktur,
+                Gebotsstrategien und laufende Optimierung.
+              </dd>
+            </div>
+            <div class="grid gap-2 py-6 sm:grid-cols-[13rem_1fr] sm:gap-8">
+              <dt class="font-body font-medium text-ink-950">Organische Sichtbarkeit</dt>
+              <dd class="text-ink-800">
+                Senior SEO &amp; GEO Consultant. Content-Strategie, Struktur und Sichtbarkeit
+                in KI-Suchsystemen, wenn der Kanal zum Projekt gehört.
+              </dd>
+            </div>
+            <div class="grid gap-2 py-6 sm:grid-cols-[13rem_1fr] sm:gap-8">
+              <dt class="font-body font-medium text-ink-950">Kaufmännische Abwicklung</dt>
+              <dd class="text-ink-800">
+                Chief Operating Officer. Verträge, Controlling und Abrechnung,
+                damit die organisatorische Seite nachvollziehbar bleibt.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROOF =====
+         Nur der Microsoft-Ads-Case ist verlinkt, weil nur er eine eigene
+         Seite hat. Die drei übrigen Cases auf der Startseite sind mit
+         "In Kürze" markiert und bekommen hier bewusst keinen toten Link. -->
+    <section aria-labelledby="proof-title" class="brand-gradient-dark section-shell text-white">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="proof-title" class="section-title text-white">Aus Projekten mit anspruchsvollen Marketing-Setups</h2>
+          <p class="section-lead text-ink-300">
+            Kennzahlen aus laufender und abgeschlossener Zusammenarbeit.
+          </p>
+        </div>
+
+        <dl class="grid gap-4 sm:grid-cols-3">
+          <div class="rounded-card border border-ink-800 bg-ink-900 p-6 sm:p-7">
+            <dt class="sr-only">ROAS im 4. Monat, High-Ticket-E-Commerce, Microsoft Ads</dt>
+            <dd class="stat-numeral">9,17×</dd>
+            <p class="mt-3 text-sm leading-relaxed text-ink-100">ROAS im 4.&nbsp;Monat<br />High-Ticket-E-Commerce, Microsoft&nbsp;Ads</p>
+          </div>
+          <div class="rounded-card border border-ink-800 bg-ink-900 p-6 sm:p-7">
+            <dt class="sr-only">Domain-Autorität, B2B-Industrie, 3 bis 4 Monate</dt>
+            <dd class="stat-numeral">+55&nbsp;%</dd>
+            <p class="mt-3 text-sm leading-relaxed text-ink-100">Domain-Autorität<br />B2B-Industrie, 3–4&nbsp;Monate</p>
+          </div>
+          <div class="rounded-card border border-ink-800 bg-ink-900 p-6 sm:p-7">
+            <dt class="sr-only">AI-Citations in KI-Suchsystemen, zuvor nahezu 0, B2B-Industrie, 3 bis 4 Monate</dt>
+            <dd class="stat-numeral">10</dd>
+            <p class="mt-3 text-sm leading-relaxed text-ink-100">AI-Citations in KI-Suchsystemen, zuvor nahezu 0<br />B2B-Industrie, 3–4&nbsp;Monate</p>
+          </div>
+        </dl>
+
+        <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <a href="cases/microsoft-ads-tracking.html" class="btn-on-dark">
+            Microsoft-Ads-Case lesen
+          </a>
+          <a href="index.html#cases" class="inline-flex min-h-11 items-center font-body text-ink-300 underline decoration-ink-600 underline-offset-4 transition-colors duration-200 hover:text-white hover:decoration-white">
+            Alle Projekte ansehen
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== B2B-CTA =====
+         Steht bewusst vor der Karriere-Sektion: Der wichtigste
+         Conversion-Pfad dieser Seite ist der potenzielle Kunde, nicht die
+         Bewerbung. js-cta setzt nur die Quelle in den sessionStorage und
+         verhindert die Navigation nicht – gleiches Muster wie in der
+         Case Study. -->
+    <section aria-labelledby="cta-title" class="section-shell bg-white">
+      <div class="container-page">
+        <h2 id="cta-title" class="section-title max-w-[24ch]">
+          Wissen Sie, was in Ihrem Google-Ads-Setup noch möglich ist?
+        </h2>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Wir sehen uns Accounts, Tracking und Datenbasis gemeinsam an und benennen die
+          größten Hebel für Ihr Marketing.
         </p>
-        <a href="mailto:preview-jobs-or-carreer@datadrivenmarketing.de" class="btn-primary mt-6">Initiativbewerbung senden</a>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="index.html#kontakt" class="js-cta btn-primary" data-source="team_cta">Analyse anfragen</a>
+          <a href="index.html#cases" class="btn-secondary">Cases ansehen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KARRIERE =====
+         Sekundär und visuell zurückgenommen. Bewusst ohne Aufzählung von
+         Arbeitgebervorteilen: Im Projekt ist keiner dokumentiert, und
+         erfundene Benefits wären hier besonders schnell durchschaubar.
+         Es gibt noch keine Jobs-Seite mit einzelnen Positionen, deshalb
+         bleibt es bei der Initiativ-Einladung. -->
+    <section aria-labelledby="jobs-title" class="section-shell bg-ink-100">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <p class="section-eyebrow">Karriere</p>
+          <h2 id="jobs-title" class="font-display text-2xl text-ink-950 sm:text-3xl">
+            Lust, Performance Marketing wirklich zu verstehen?
+          </h2>
+        </div>
+        <div class="section-main">
+          <p class="measure text-lg leading-relaxed text-ink-800">
+            Wir arbeiten nah an Accounts, Daten und Geschäftsmodellen und geben unseren
+            Consultants Verantwortung. Wenn du Performance Marketing nicht nur bedienen,
+            sondern fachlich weiterdenken willst, sollten wir uns kennenlernen.
+          </p>
+          <a href="mailto:preview-jobs-or-carreer@datadrivenmarketing.de" class="btn-secondary mt-6">
+            Initiativ bewerben
+          </a>
+        </div>
       </div>
     </section>
 
