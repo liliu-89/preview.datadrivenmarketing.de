@@ -389,6 +389,13 @@
     line-height: 0.42;
     color: var(--color-accent-600);
     margin-top: -2.55rem;
+    /* Die Glyphe schleppt unter ihrer Tinte rund 0,32 em leeren
+       Zeilenkasten mit – sie sitzt im oberen Bereich ihres Em-Kastens.
+       Ohne Ausgleich stand der Zitattext dadurch 86px tief, das
+       Eineinhalbfache der Tintenhöhe; die Vorlage liegt bei knapp zwei
+       Dritteln. Der Wert ist in em notiert, damit das Verhältnis über den
+       gesamten clamp()-Bereich konstant bleibt. */
+    margin-bottom: -0.19em;
   }
   @media (min-width: 40rem) {
     .quote-mark {
