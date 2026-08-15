@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marketing-Analyse und Customer Profiling | DDM</title>
+  <meta name="description" content="Wie DDM aus CRM-, Vertriebs- und Suchdaten ein Kundenprofil und die Customer Journey ableitet – und was in Phase 01 einer Zusammenarbeit konkret passiert." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1b1e27" />
+
+  <link rel="icon" href="Logos/ddm Logo svg/Signet_darkgrey.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="Logos/ddm Logo svg/png/Signet_darkgrey.png" />
+
+  <link rel="stylesheet" href="dist/output.css" />
+</head>
+
+<body class="bg-canvas font-body text-ink-950 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-ink-950 focus:px-4 focus:py-2 focus:text-white">
+    Zum Inhalt springen
+  </a>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header" class="sticky top-0 z-40 border-b border-ink-200 transition-shadow duration-200">
+    <div class="container-page flex items-center gap-6 py-4">
+      <a href="/" class="flex flex-shrink-0 items-center" aria-label="DDM Data Driven Marketing – Startseite">
+        <img src="Logos/ddm Logo svg/ddm_Logo_darkgrey.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+      </a>
+
+      <nav class="ml-auto hidden items-center gap-8 md:flex" aria-label="Hauptnavigation">
+        <a href="/#leistungen" class="nav-link">Leistungen</a>
+        <a href="/#prozess" class="nav-link">Prozess</a>
+        <a href="/#cases" class="nav-link">Cases</a>
+        <a href="/#werte" class="nav-link">Werte</a>
+        <a href="/team" class="nav-link">Team</a>
+        <a href="/#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-3 md:ml-0">
+        <a href="/#kontakt" class="btn-primary hidden sm:inline-flex">Analyse anfragen</a>
+        <button
+          class="js-menu-toggle inline-flex h-10 w-10 items-center justify-center rounded-control border border-ink-200 md:hidden"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Menü öffnen"
+        >
+          <span class="relative block h-3.5 w-4" aria-hidden="true">
+            <span class="absolute inset-x-0 top-0 h-[1.5px] bg-ink-950"></span>
+            <span class="absolute inset-x-0 top-1/2 h-[1.5px] -translate-y-1/2 bg-ink-950"></span>
+            <span class="absolute inset-x-0 bottom-0 h-[1.5px] bg-ink-950"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="border-t border-ink-200 bg-white md:hidden">
+      <nav class="container-page flex flex-col py-2" aria-label="Mobile Navigation">
+        <a href="/#leistungen" class="border-b border-ink-100 py-3 font-body text-ink-950">Leistungen</a>
+        <a href="/#prozess" class="border-b border-ink-100 py-3 font-body text-ink-950">Prozess</a>
+        <a href="/#cases" class="border-b border-ink-100 py-3 font-body text-ink-950">Cases</a>
+        <a href="/#werte" class="border-b border-ink-100 py-3 font-body text-ink-950">Werte</a>
+        <a href="/team" class="border-b border-ink-100 py-3 font-body text-ink-950">Team</a>
+        <a href="/#faq" class="border-b border-ink-100 py-3 font-body text-ink-950">FAQ</a>
+        <a href="/#kontakt" class="py-3 font-body font-medium text-accent-600">Analyse anfragen</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="border-b border-ink-200 bg-white">
+    <div class="container-page py-3">
+      <a href="/" class="nav-link">← Zur Startseite</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO =====
+         Flacher als section-shell, gleiches Muster wie team.html: Titel auf
+         derselben linken Achse wie überall, Abstand nach unten auf das
+         Nötige reduziert. -->
+    <section class="pb-12 pt-14 sm:pb-16 sm:pt-16">
+      <div class="container-page">
+        <p class="section-eyebrow">Phase 01 · Analyse &amp; Diagnose</p>
+        <h1 class="section-title max-w-[26ch]">
+          Aus Kundendaten werden Kampagnenentscheidungen
+        </h1>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Welcher Kanal sinnvoll ist, lässt sich erst beantworten, wenn klar ist, wer entscheidet
+          und wie diese Entscheidung zustande kommt. Die Analyse klärt das, bevor Budget fließt.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== EINORDNUNG =====
+         Nicht dekorativ: Diese Leiste verhindert, dass die Seite als
+         eigenständige vierte Leistung gelesen wird. Wer hier landet, sieht
+         sofort, dass es Phase 01 von drei ist. Die beiden anderen Phasen
+         verlinken zurück auf den Prozess-Abschnitt der Startseite. -->
+    <section aria-labelledby="einordnung-title" class="border-y border-ink-200 bg-white py-8 sm:py-10">
+      <div class="container-page">
+        <h2 id="einordnung-title" class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">
+          Einordnung
+        </h2>
+        <ol class="mt-5 grid gap-6 sm:grid-cols-3 sm:gap-8" role="list">
+          <li class="border-t-2 border-accent-600 pt-4">
+            <span class="font-display text-xl text-accent-600" aria-hidden="true">01</span>
+            <p class="mt-1 font-body font-medium text-ink-950">Analyse &amp; Diagnose</p>
+            <p class="mt-1 text-sm text-ink-700">Sie sind hier.</p>
+          </li>
+          <li class="border-t border-ink-300 pt-4">
+            <span class="font-display text-xl text-ink-600" aria-hidden="true">02</span>
+            <p class="mt-1 font-body font-medium text-ink-950">Setup &amp; Systemaufbau</p>
+            <p class="mt-1 text-sm text-ink-700">
+              <a href="/#prozess" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Im Prozess ansehen</a>
+            </p>
+          </li>
+          <li class="border-t border-ink-300 pt-4">
+            <span class="font-display text-xl text-ink-600" aria-hidden="true">03</span>
+            <p class="mt-1 font-body font-medium text-ink-950">Skalierung &amp; Optimierung</p>
+            <p class="mt-1 text-sm text-ink-700">
+              <a href="/#prozess" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Im Prozess ansehen</a>
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== CUSTOMER PROFILING =====
+         Von der Startseite hierher umgezogen. Gezeigt werden ausschließlich
+         Inputs – woraus ein Profil entsteht. Wie daraus eine Entscheidung
+         wird, steht bewusst auch hier nicht. -->
+    <section id="profiling" aria-labelledby="profiling-title" class="section-shell">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="profiling-title" class="section-title">Customer Profiling</h2>
+          <p class="section-lead">
+            Das Bild entsteht aus vorhandenen Daten, wo nötig ergänzt durch Workshops mit Ihrem Team.
+          </p>
+        </div>
+
+        <div class="surface overflow-hidden">
+          <div class="p-7 sm:p-9">
+            <!-- Spaltenüberschriften. Ohne sie liest sich die rechte Spalte
+                 als Antwort auf die Frage links: „Wer entscheidet? → CRM"
+                 klang so, als sei das CRM die Entscheiderin. Mobil stapeln
+                 die Zeilen einspaltig, dort trägt eine einzelne Zeile
+                 denselben Rahmen. -->
+            <div class="border-b border-ink-200 pb-2 sm:grid sm:grid-cols-[17rem_1fr] sm:gap-8">
+              <p class="font-body text-[0.6875rem] uppercase tracking-wide text-ink-700">
+                <span class="sm:hidden">Frage und Datenquellen</span>
+                <span class="hidden sm:inline">Frage</span>
+              </p>
+              <p class="hidden font-body text-[0.6875rem] uppercase tracking-wide text-ink-700 sm:block">Welche Daten die Antworten liefern</p>
+            </div>
+
+            <dl class="reveal-seq divide-y divide-ink-200">
+              <div class="grid gap-2 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8" style="--i:0">
+                <dt class="font-body font-medium text-ink-950">Wer entscheidet?</dt>
+                <dd class="flex flex-wrap gap-2">
+                  <span class="data-chip">CRM</span>
+                  <span class="data-chip">Abschlüsse</span>
+                  <span class="data-chip">Vertriebsgespräche</span>
+                </dd>
+              </div>
+              <div class="grid gap-2 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8" style="--i:1">
+                <dt class="font-body font-medium text-ink-950">Was löst die Nachfrage aus?</dt>
+                <dd class="flex flex-wrap gap-2">
+                  <span class="data-chip">Suchanfragen</span>
+                  <span class="data-chip">Analytics</span>
+                </dd>
+              </div>
+              <div class="grid gap-2 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8" style="--i:2">
+                <dt class="font-body font-medium text-ink-950">Was verhindert die Entscheidung?</dt>
+                <dd class="flex flex-wrap gap-2">
+                  <span class="data-chip">Verlorene Deals</span>
+                  <span class="data-chip">Rückfragen Vertrieb</span>
+                </dd>
+              </div>
+              <div class="grid gap-2 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8" style="--i:3">
+                <dt class="font-body font-medium text-ink-950">Was schafft Vertrauen?</dt>
+                <dd class="flex flex-wrap gap-2">
+                  <span class="data-chip">Conversion-Pfade</span>
+                  <span class="data-chip">Website-Verhalten</span>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Der Synthese-Moment. Dass die Ergebniszeile innerhalb derselben
+               Karte liegt und alle Chips über sich sammelt, ist die
+               Konvergenzgeste – ohne Nabe, ohne Speichen, ohne Diagramm. -->
+          <div class="border-t border-accent-100 bg-accent-50 px-7 py-5 sm:px-9">
+            <p class="text-ink-950">
+              <span class="font-medium">Ergebnis:</span> ein Kundenprofil, das auf realen Signalen beruht.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CUSTOMER JOURNEY =====
+         Das Band bleibt ohne Nummerierung: 01/02/03 gehören der
+         Prozess-Einordnung oben. Eine zweite nummerierte Viererreihe auf
+         derselben Seite ließe beide Modelle verwechselbar werden. -->
+    <section id="journey" aria-labelledby="journey-title" class="section-shell bg-white">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="journey-title" class="section-title">Customer Journey</h2>
+          <p class="section-lead">
+            Aus dem Profil ergibt sich, wann welche Frage auftaucht und welche Maßnahme an welchem Punkt trägt.
+          </p>
+        </div>
+
+        <ol class="journey-rail reveal-seq" role="list">
+          <li style="--i:0">
+            <p class="font-body font-medium text-ink-950">Problem</p>
+            <p class="mt-1 text-ink-800">Ein Bedarf entsteht.</p>
+            <p class="mt-4 font-body text-[0.6875rem] uppercase tracking-wide text-ink-700">Mögliche Touchpoints</p>
+            <p class="mt-1 text-sm text-ink-700">Content · AI Search</p>
+          </li>
+          <li style="--i:1">
+            <p class="font-body font-medium text-ink-950">Suche</p>
+            <p class="mt-1 text-ink-800">Lösungen werden recherchiert.</p>
+            <p class="mt-4 font-body text-[0.6875rem] uppercase tracking-wide text-ink-700">Mögliche Touchpoints</p>
+            <p class="mt-1 text-sm text-ink-700">Google Ads · SEO</p>
+          </li>
+          <li style="--i:2">
+            <p class="font-body font-medium text-ink-950">Prüfung</p>
+            <p class="mt-1 text-ink-800">Anbieter werden verglichen.</p>
+            <p class="mt-4 font-body text-[0.6875rem] uppercase tracking-wide text-ink-700">Mögliche Touchpoints</p>
+            <p class="mt-1 text-sm text-ink-700">Cases · Referenzen</p>
+          </li>
+          <li style="--i:3">
+            <p class="font-body font-medium text-ink-950">Entscheidung</p>
+            <p class="mt-1 text-ink-800">Vertrauen und Angebot entscheiden.</p>
+            <p class="mt-4 font-body text-[0.6875rem] uppercase tracking-wide text-ink-700">Mögliche Touchpoints</p>
+            <p class="mt-1 text-sm text-ink-700">Sales · Angebot</p>
+          </li>
+        </ol>
+
+        <div class="mt-12">
+          <span class="block h-px w-16 bg-accent-600" aria-hidden="true"></span>
+          <!-- text-balance, weil der Satz bei 375px sonst „Kanal." allein auf
+               die zweite Zeile setzt. Mit Ausgleich bricht er am Komma. -->
+          <p class="font-display mt-6 max-w-3xl text-balance text-2xl leading-snug text-ink-950 sm:text-[1.75rem]">
+            Erst die Journey, dann der Kanal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PARALLELE PRÜFUNG =====
+         Die technische Seite der Analyse. Auf der Startseite steht davon
+         nur ein Halbsatz in der Prozess-Phase 01. -->
+    <section id="pruefung" aria-labelledby="pruefung-title" class="section-shell">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="pruefung-title" class="section-title">Was wir parallel prüfen</h2>
+          <p class="section-lead">
+            Während das Kundenprofil entsteht, sehen wir uns an, ob die vorhandenen Systeme die
+            Entscheidungen überhaupt tragen können.
+          </p>
+        </div>
+        <div class="section-main">
+          <dl class="divide-y divide-ink-200 border-t border-ink-200">
+            <div class="grid gap-2 py-5 sm:grid-cols-[15rem_1fr] sm:gap-8">
+              <dt class="font-body font-medium text-ink-950">Kampagnenstruktur</dt>
+              <dd class="text-ink-800">
+                Wie die Konten aufgebaut sind, welche Suchintentionen getrennt laufen und wo
+                Budget ohne messbaren Beitrag abfließt.
+              </dd>
+            </div>
+            <div class="grid gap-2 py-5 sm:grid-cols-[15rem_1fr] sm:gap-8">
+              <dt class="font-body font-medium text-ink-950">Tracking &amp; Datenqualität</dt>
+              <dd class="text-ink-800">
+                Ob Käufe und Conversion-Werte vollständig im Werbekonto ankommen und ob die
+                Zahlen aus Shop, Tracking und Werbekonto zusammenpassen.
+              </dd>
+            </div>
+            <div class="grid gap-2 py-5 sm:grid-cols-[15rem_1fr] sm:gap-8">
+              <dt class="font-body font-medium text-ink-950">Wettbewerbsumfeld</dt>
+              <dd class="text-ink-800">
+                Wer auf dieselbe Nachfrage bietet und zu welchen Kosten.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABLAUF =====
+         Bewusst nur, was für den Kunden passiert. Wie aus den Signalen eine
+         Kampagnenentscheidung wird, steht nicht auf der Seite. -->
+    <section id="ablauf" aria-labelledby="ablauf-title" class="brand-gradient-dark section-shell text-white">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="ablauf-title" class="section-title text-white">So läuft es ab</h2>
+          <p class="section-lead text-ink-300">
+            Vier Schritte, von der Freigabe der Zugänge bis zur priorisierten Maßnahmenliste.
+          </p>
+        </div>
+
+        <ol class="grid gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4" role="list">
+          <li class="border-t border-ink-800 pt-6">
+            <span class="font-display text-2xl text-ink-600" aria-hidden="true">01</span>
+            <h3 class="mt-3 font-body text-lg font-medium">Zugänge und Datenfreigabe</h3>
+            <p class="mt-3 text-ink-300">
+              Sie geben uns lesenden Zugriff auf Werbekonten, Analytics und, wenn vorhanden, das CRM.
+            </p>
+          </li>
+          <li class="border-t border-ink-800 pt-6">
+            <span class="font-display text-2xl text-ink-600" aria-hidden="true">02</span>
+            <h3 class="mt-3 font-body text-lg font-medium">Sichtung</h3>
+            <p class="mt-3 text-ink-300">
+              Wir werten die vorhandenen Daten aus und gleichen sie mit dem ab, was Ihr Vertrieb
+              aus Gesprächen kennt.
+            </p>
+          </li>
+          <li class="border-t border-ink-800 pt-6">
+            <span class="font-display text-2xl text-ink-600" aria-hidden="true">03</span>
+            <h3 class="mt-3 font-body text-lg font-medium">Workshop, wenn nötig</h3>
+            <p class="mt-3 text-ink-300">
+              Wo die Daten allein kein Bild ergeben, ergänzen wir es gemeinsam mit Marketing und Vertrieb.
+            </p>
+          </li>
+          <li class="border-t border-ink-800 pt-6">
+            <span class="font-display text-2xl text-ink-600" aria-hidden="true">04</span>
+            <h3 class="mt-3 font-body text-lg font-medium">Ergebnisgespräch</h3>
+            <p class="mt-3 text-ink-300">
+              Wir gehen die Befunde durch und priorisieren gemeinsam, was zuerst angegangen wird.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== ERGEBNIS ===== -->
+    <section id="ergebnis" aria-labelledby="ergebnis-title" class="section-shell bg-white">
+      <div class="container-page">
+        <h2 id="ergebnis-title" class="section-title max-w-[24ch]">Was Sie danach haben</h2>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Sie wissen, wo Nachfrage entsteht, wie in Ihrem Markt entschieden wird und an welcher
+          Stelle Wachstum heute verloren geht. Daraus ergibt sich eine priorisierte Liste, was
+          zuerst gebaut wird.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section aria-labelledby="cta-title" class="section-shell">
+      <div class="container-page">
+        <h2 id="cta-title" class="section-title max-w-[24ch]">
+          Wissen Sie, was Ihre vorhandenen Daten bereits hergeben?
+        </h2>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Wir sehen uns Konten, Tracking und Datenbasis gemeinsam an und benennen die größten
+          Hebel für Ihr Marketing.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/#kontakt" class="js-cta btn-primary" data-source="analyse_cta">Analyse anfragen</a>
+          <a href="/#cases" class="btn-secondary">Cases ansehen</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo" class="bg-ink-950 text-white">
+    <div class="container-page grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
+      <div>
+        <img src="Logos/ddm Logo svg/ddm_Logo_weiß.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+        <p class="mt-4 max-w-[40ch] text-sm text-ink-400">
+          Datengetriebener Growth- und Performance-Partner für Mittelstand, B2B und E-Commerce.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Kontakt</h3>
+        <address class="mt-4 text-sm not-italic leading-relaxed text-ink-300">
+          DDM Data Driven Marketing GmbH<br />
+          Wiesenstr. 21A<br />
+          40549 Düsseldorf<br />
+          <a href="mailto:impressum@datadrivenmarketing.de" class="hover:text-white">impressum@datadrivenmarketing.de</a>
+        </address>
+      </div>
+
+      <div>
+        <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Rechtliches</h3>
+        <ul class="mt-4 space-y-2 text-sm text-ink-300" role="list">
+          <li><a href="/impressum" class="hover:text-white">Impressum</a></li>
+          <li>Datenschutzerklärung <span class="text-ink-400">(in Vorbereitung)</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-ink-800">
+      <div class="container-page py-6 text-xs text-ink-400">
+        <p>
+          © <span id="year"></span> DDM Data Driven Marketing GmbH
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast fixed bottom-5 left-1/2 z-50 min-w-60 -translate-x-1/2 translate-y-[calc(100%+1.25rem)] rounded-control border border-ink-800 bg-ink-950 px-5 py-3 text-center font-body text-sm text-white opacity-0 shadow-lg transition-all duration-300" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

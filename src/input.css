@@ -10,6 +10,7 @@
 @source "../cases/*.html";
 @source "../impressum.html";
 @source "../team.html";
+@source "../analyse-und-diagnose.html";
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────
    Alle fünf von den Guidelines geforderten Schnitte sind lizenziert und
@@ -587,6 +588,93 @@
   }
   .reveal.is-visible {
     @apply translate-y-0 opacity-100;
+  }
+
+  /* ─── Gestaffelter Reveal ─────────────────────────────────────────────
+     Der Container wird beobachtet, die Kinder erben ihre Verzögerung über
+     --i aus dem Markup. Ein Selektor statt einer Schleife in JS – die
+     Reihenfolge steht damit dort, wo auch der Inhalt steht.
+
+     Der Verborgen-Zustand gilt bewusst nur unter (scripting: enabled).
+     Ohne JavaScript – und in Browsern, die die Anfrage nicht kennen –
+     greift die Regel gar nicht erst und der Inhalt steht sofort
+     vollständig da. Die Ausfallrichtung ist damit immer die sichere;
+     anders als bei .reveal oben kann hier kein Text unsichtbar bleiben,
+     weil ein Skript nicht geladen hat. */
+  @media (scripting: enabled) {
+    .reveal-seq > * {
+      @apply translate-y-2 opacity-0 transition duration-300 ease-out;
+      transition-delay: calc(var(--i, 0) * 70ms);
+    }
+    .reveal-seq.is-visible > * {
+      @apply translate-y-0 opacity-100;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-seq > * {
+      @apply translate-y-0 opacity-100;
+      transition: none;
+    }
+  }
+
+  /* ─── Daten-Chip ──────────────────────────────────────────────────────
+     Für Datenquellen, die als einzelne, zählbare Belege gelesen werden
+     sollen statt als Aufzählung im Fließtext. Farbwerte und Schriftgrad
+     entsprechen .pill-accent (accent-600 auf accent-50, gemessen 6,47:1);
+     unterschieden wird über die Form: eckig statt Pille, damit sie als
+     Datenmarke und nicht als Kategorie-Tag liest.
+
+     Bewusst kein Mono-Schnitt, obwohl er für technische Labels naheläge:
+     Die Marke hat exakt fünf lizenzierte Schnitte, und font-synthesis ist
+     oben bewusst abgeschaltet. Das hauseigene Idiom für technische Labels
+     ist Franklin Demi in Versalien mit weiter Laufweite – dasselbe, was
+     .pill, .section-eyebrow und jedes Kennzahlen-Label der Case Study
+     bereits verwenden. */
+  .data-chip {
+    @apply inline-flex items-center rounded-control border border-accent-100 bg-accent-50 px-2.5 py-1 font-body text-xs font-medium uppercase tracking-wide text-accent-600;
+  }
+
+  /* ─── Journey-Rail ────────────────────────────────────────────────────
+     Vier Stationen auf einer durchgehenden Linie.
+
+     Bewusst ohne Nummerierung: 01/02/03 gehören der Prozess-Sektion. Eine
+     zweite nummerierte Viererreihe auf derselben Seite ließe beide
+     Modelle verwechselbar werden – und Customer Profiling soll gerade
+     nicht als vierte Prozessphase gelesen werden. Eine Linie mit Punkten
+     liest sich als Weg, nummerierte Karten als Prozessschritte. Zwei
+     verschiedene visuelle Gattungen, keine Verwechslung.
+
+     Die Linie liegt auf dem Container, nicht auf den Kindern: Mit einem
+     Rahmen je Kind risse der gap sie an drei Stellen auf, und aus dem Weg
+     würden wieder vier getrennte Spalten – genau der Zustand, den diese
+     Komponente ablöst.
+
+     Mobil dreht die Achse, statt zu verschwinden: aus border-t mit
+     Punkten oben wird border-l mit Punkten links. Dasselbe Bauteil,
+     dieselbe Aussage, kein zweites Konzept für die schmale Breite. */
+  .journey-rail {
+    @apply grid gap-y-8 border-l border-ink-300 pl-6 sm:grid-cols-4 sm:gap-x-6 sm:gap-y-0 sm:border-l-0 sm:border-t sm:pl-0 sm:pt-7;
+  }
+  .journey-rail > li {
+    @apply relative;
+  }
+  /* Rein dekorativ und deshalb als Pseudo-Element: Die Reihenfolge trägt
+     das <ol>, nicht der Punkt. Screenreader sollen ihn nicht vorlesen. */
+  .journey-rail > li::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.5rem - 4.5px);
+    top: 0.4rem;
+    height: 9px;
+    width: 9px;
+    border-radius: 9999px;
+    background-color: var(--color-accent-600);
+  }
+  @media (min-width: 40rem) {
+    .journey-rail > li::before {
+      left: 0;
+      top: calc(-1.75rem - 4.5px);
+    }
   }
 
   .toast.is-visible {

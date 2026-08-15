@@ -284,80 +284,12 @@
       </div>
     </section>
 
-    <!-- ===== KUNDENVERSTÄNDNIS =====
-         Ersetzt die frühere Gegenüberstellung Online-/Performance-Marketing.
-         Die Sektion beantwortet die Frage, die das Zitat darunter aufwirft:
-         woher das Wissen kommt, auf dem Kanalentscheidungen beruhen.
-         Bewusst nur Datenquellen, keine Auswertungslogik – die Inputs sind
-         glaubwürdig und trotzdem nicht nachbaubar, weil sie beim Kunden
-         liegen. Das Journey-Band bleibt ohne Nummerierung, damit es nicht
-         mit den Phasen 01/02/03 der Prozess-Sektion verwechselt wird. -->
-    <section id="kundenverstaendnis" aria-labelledby="kundenverstaendnis-title" class="section-shell bg-white">
-      <div class="container-page section-grid">
-        <div class="section-aside">
-          <h2 id="kundenverstaendnis-title" class="section-title">
-            Wir starten beim Kunden
-          </h2>
-          <p class="section-lead">
-            Welcher Kanal sinnvoll ist, lässt sich erst beantworten, wenn klar ist, wer entscheidet und wie diese Entscheidung zustande kommt.
-          </p>
-        </div>
-        <div class="section-main">
-
-          <h3 class="font-body text-lg font-medium text-ink-950">Customer Profiling</h3>
-          <p class="measure mt-3 leading-relaxed text-ink-800">
-            Wir setzen aus vorhandenen Daten ein Bild Ihrer tatsächlichen Kunden zusammen, wo nötig ergänzt durch Workshops mit Ihrem Team.
-          </p>
-
-          <dl class="mt-8 divide-y divide-ink-200 border-t border-ink-300">
-            <div class="grid gap-1 py-5 sm:grid-cols-[15rem_1fr] sm:gap-8">
-              <dt class="font-body font-medium text-ink-950">Wer entscheidet?</dt>
-              <dd class="text-ink-800">CRM, gewonnene und verlorene Abschlüsse, Vertriebsgespräche</dd>
-            </div>
-            <div class="grid gap-1 py-5 sm:grid-cols-[15rem_1fr] sm:gap-8">
-              <dt class="font-body font-medium text-ink-950">Was löst die Suche aus?</dt>
-              <dd class="text-ink-800">Suchanfragen, Analytics</dd>
-            </div>
-            <div class="grid gap-1 py-5 sm:grid-cols-[15rem_1fr] sm:gap-8">
-              <dt class="font-body font-medium text-ink-950">Welche Einwände kommen?</dt>
-              <dd class="text-ink-800">Rückmeldungen aus dem Vertrieb, wiederkehrende Rückfragen</dd>
-            </div>
-            <div class="grid gap-1 py-5 sm:grid-cols-[15rem_1fr] sm:gap-8">
-              <dt class="font-body font-medium text-ink-950">Was schafft Vertrauen?</dt>
-              <dd class="text-ink-800">Website-Verhalten, Conversion-Pfade</dd>
-            </div>
-          </dl>
-
-          <h3 class="mt-14 font-body text-lg font-medium text-ink-950">Customer Journey</h3>
-          <p class="measure mt-3 leading-relaxed text-ink-800">
-            Aus dem Profil ergibt sich, wann welche Frage auftaucht und welche Maßnahme an welchem Punkt trägt.
-          </p>
-
-          <ol class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" role="list">
-            <li class="border-t border-ink-300 pt-4">
-              <p class="font-body font-medium text-ink-950">Problem wird spürbar</p>
-              <p class="mt-2 text-sm leading-relaxed text-ink-700">Etwas läuft nicht rund, die Ursache ist unklar.</p>
-            </li>
-            <li class="border-t border-ink-300 pt-4">
-              <p class="font-body font-medium text-ink-950">Lösungen werden gesucht</p>
-              <p class="mt-2 text-sm leading-relaxed text-ink-700">Welche Wege gibt es, und was kosten sie?</p>
-            </li>
-            <li class="border-t border-ink-300 pt-4">
-              <p class="font-body font-medium text-ink-950">Anbieter werden geprüft</p>
-              <p class="mt-2 text-sm leading-relaxed text-ink-700">Wer kann das nachweislich?</p>
-            </li>
-            <li class="border-t border-accent-600 pt-4">
-              <p class="font-body font-medium text-ink-950">Entscheidung</p>
-              <p class="mt-2 text-sm leading-relaxed text-ink-700">Wer trägt die Entscheidung intern mit?</p>
-            </li>
-          </ol>
-
-          <p class="measure mt-10 text-lg leading-relaxed text-ink-950">
-            Die Customer Journey entscheidet über den Kanal, nicht der Leistungskatalog.
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- Customer Profiling und Customer Journey standen bis hier als eigene
+         Sektion. Sie sind vollständig nach /analyse-und-diagnose umgezogen:
+         Auf der Startseite waren sie mit 202 Wörtern und 1417px der größte
+         Block der Seite. Verlinkt wird jetzt kontextuell aus der
+         Leistungskarte "Analyse & Customer Understanding" und aus
+         Prozess-Phase 01. -->
 
     <!-- ===== STATEMENT-MOMENT =====
          Zitat-Karte nach dem Muster der Design Guidelines. Der Sektionsgrund
@@ -368,9 +300,17 @@
       <div class="container-page">
         <figure class="surface mx-auto max-w-2xl px-8 py-12 sm:px-14 sm:py-16">
           <span class="quote-mark" aria-hidden="true">&rdquo;</span>
+          <!-- Der Umbruch ab sm ist gesetzt, nicht überlassen: Bei freiem
+               Umbruch endet die erste Zeile auf „und", und eine hängende
+               Konjunktion fällt bei 41px Loretta deutlich auf. text-wrap
+               balance und pretty ändern daran nichts, sie optimieren auf
+               gleiche Zeilenlängen, nicht auf sinnvolle Bruchstellen.
+               Unterhalb sm bleibt der Bruch aus – dort ist die Karte zu
+               schmal, der erzwungene Bruch ergäbe vier statt drei Zeilen.
+               Das Leerzeichen vor dem <br> muss stehen bleiben, sonst
+               klebt „Nachfrage,und" zusammen, sobald der Bruch entfällt. -->
           <blockquote class="quote-text">
-            Die größten Wachstumshebel liegen selten im Kanal. Sie liegen an den
-            <span class="font-bold italic text-accent-600">Übergängen</span> zwischen Nachfrage, Messung und Vertrieb.&ldquo;
+            Wo entsteht <span class="font-bold italic text-accent-600">Nachfrage</span>, <br class="hidden sm:inline" />und wie holen wir sie zu uns?&ldquo;
           </blockquote>
         </figure>
       </div>
@@ -394,6 +334,9 @@
               Wir klären, wer kauft, was den Kauf auslöst und wo Wachstum wirtschaftlich skalierbar ist. Daraus entstehen Kundenprofil, Customer Journey und die Kennzahlen für alles Weitere.
             </p>
             <p class="mt-4 font-body text-sm text-ink-700">Customer&nbsp;Profiling · Customer&nbsp;Journey · KPI-System</p>
+            <p class="mt-4">
+              <a href="/analyse-und-diagnose" class="font-body text-sm text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie die Analyse abläuft →</a>
+            </p>
           </article>
 
           <article class="surface p-7 sm:p-8">
@@ -458,6 +401,14 @@
               Wir klären zuerst, wer kauft und warum: Customer Profiling aus CRM-, Vertriebs- und Suchdaten, daraus die Customer Journey. Parallel prüfen wir Kampagnenstruktur, Tracking und Datenqualität.
             </p>
             <p class="mt-4 text-sm text-ink-400"><strong class="font-medium text-ink-200">Ergebnis:</strong> wo Nachfrage entsteht, wie entschieden wird, wo Wachstum verloren geht</p>
+            <!-- accent-300 statt accent-600. Der Verlauf endet auf accent-800
+                 und ist an dieser Stelle deutlich heller als sein Anfang:
+                 accent-400 kommt dort nur auf 3,64:1 und fällt unter AA,
+                 accent-300 liegt bei 5,21:1. Gemessen wird gegen das helle
+                 Ende des Verlaufs, also den ungünstigsten Fall. -->
+            <p class="mt-4">
+              <a href="/analyse-und-diagnose" class="font-body text-sm text-accent-300 underline-offset-4 hover:text-white hover:underline">Wie die Analyse abläuft →</a>
+            </p>
           </li>
           <li class="border-t border-ink-800 pt-6">
             <span class="font-display text-2xl text-ink-600" aria-hidden="true">02</span>
@@ -551,7 +502,7 @@
         </dl>
 
         <p class="display-md mt-16 max-w-4xl text-ink-100 sm:mt-20">
-          „Wachstum entsteht nicht durch mehr Spend, sondern durch bessere Entscheidungen.“
+          „Hinter jeder dieser Zahlen steht eine Entscheidung, die vorher begründet war.“
         </p>
       </div>
     </section>

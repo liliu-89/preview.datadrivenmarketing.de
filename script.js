@@ -249,12 +249,27 @@
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  $$('.reveal').forEach(el => revealObserver.observe(el));
+  /* .reveal-seq nutzt denselben Observer: Beobachtet wird der Container,
+     die Staffelung der Kinder regelt das CSS über --i. Kein zweiter
+     Observer, keine Schleife über die Kinder. */
+  $$('.reveal, .reveal-seq').forEach(el => revealObserver.observe(el));
 
   /* ─── Reduced motion: disable animations ────────────────── */
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    $$('.reveal').forEach(el => el.classList.add('is-visible'));
+    $$('.reveal, .reveal-seq').forEach(el => el.classList.add('is-visible'));
   }
+
+  /* Sicherheitsnetz für .reveal-seq – gleiche Begründung wie beim
+     Tippeffekt weiter unten: Ein IntersectionObserver meldet nichts,
+     solange das Dokument verborgen ist (Hintergrundtab, per Mittelklick
+     geöffneter Link). Beim Hero ist das folgenlos, dort steht nur eine
+     Animation aus. Hier hängen ganze Inhaltsblöcke daran – Datenquellen
+     und Journey blieben unsichtbar. Nach drei Sekunden stehen sie
+     deshalb in jedem Fall. Idempotent, kostet nichts, und der
+     Normalfall bleibt der Observer. */
+  setTimeout(() => {
+    $$('.reveal-seq').forEach(el => el.classList.add('is-visible'));
+  }, 3000);
 
   /* ─── Hero-H1: Tippeffekt ─────────────────────────────────────────────
      Zeichenweise Einblendung statt animierter Breite: Jedes Zeichen steht
