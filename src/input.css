@@ -10,7 +10,7 @@
 @source "../cases/*.html";
 @source "../impressum.html";
 @source "../team.html";
-@source "../analyse-und-diagnose.html";
+@source "../marketing-audit.html";
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────
    Alle fünf von den Guidelines geforderten Schnitte sind lizenziert und
@@ -675,6 +675,31 @@
       left: 0;
       top: calc(-1.75rem - 4.5px);
     }
+  }
+
+  /* Dauerhaft senkrechte Variante. Gebraucht, wo zwei Ketten
+     nebeneinander verglichen werden – dort fehlt der Platz für die
+     waagerechte Rail, und die Achse darf nicht mit der Breite kippen.
+
+     Bewusst eine eigene Klasse statt Utility-Overrides auf .journey-rail:
+     Der Container ließe sich per sm:border-l zwar drehen, der Punkt sitzt
+     aber in einer Media-Query, die eine waagerechte Rail voraussetzt. Er
+     stand dadurch 33px über der Linie statt auf ihr. */
+  .journey-rail-y {
+    @apply grid gap-y-6 border-l border-ink-300 pl-6;
+  }
+  .journey-rail-y > li {
+    @apply relative;
+  }
+  .journey-rail-y > li::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.5rem - 4.5px);
+    top: 0.4rem;
+    height: 9px;
+    width: 9px;
+    border-radius: 9999px;
+    background-color: var(--color-accent-600);
   }
 
   .toast.is-visible {

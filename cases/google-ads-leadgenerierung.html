@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Google Ads Case Study: Leadgenerierung mit messbarer Lead-Qualität | DDM</title>
+  <meta name="description" content="Google-Ads-Case aus dem Gesundheitsbereich: 23 technisch verknüpfte Terminbuchungen, 24 attribuierte Conversions und eine Tracking-Architektur, die Lead-Qualität bis zum tatsächlichen Termin messbar macht." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1b1e27" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="DDM Data Driven Marketing" />
+  <meta property="og:title" content="Wie ein Google-Ads-Konto vom Klick bis zum wahrgenommenen Termin messbar wurde" />
+  <meta property="og:description" content="Wie ein bestehender Google-Ads-Account nach Suchintention und Buyer Personas neu strukturiert und die Tracking-Kette bis zur konkreten Terminbuchung aufgebaut wurde." />
+  <meta property="og:url" content="https://datadrivenmarketing.de/cases/google-ads-leadgenerierung" />
+  <meta property="og:locale" content="de_DE" />
+
+  <link rel="icon" href="../Logos/ddm Logo svg/Signet_darkgrey.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../Logos/ddm Logo svg/png/Signet_darkgrey.png" />
+
+  <link rel="stylesheet" href="../dist/output.css" />
+</head>
+
+<body class="bg-canvas font-body text-ink-950 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-ink-950 focus:px-4 focus:py-2 focus:text-white">
+    Zum Inhalt springen
+  </a>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header" class="sticky top-0 z-40 border-b border-ink-200 transition-shadow duration-200">
+    <div class="container-page flex items-center gap-6 py-4">
+      <a href="/" class="flex flex-shrink-0 items-center" aria-label="DDM Data Driven Marketing – Startseite">
+        <img src="../Logos/ddm Logo svg/ddm_Logo_darkgrey.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+      </a>
+
+      <nav class="ml-auto hidden items-center gap-8 md:flex" aria-label="Hauptnavigation">
+        <a href="/#leistungen" class="nav-link">Leistungen</a>
+        <a href="/#prozess" class="nav-link">Prozess</a>
+        <a href="/#cases" class="nav-link">Cases</a>
+        <a href="/#werte" class="nav-link">Werte</a>
+        <a href="/team" class="nav-link">Team</a>
+        <a href="/#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-3 md:ml-0">
+        <a href="/#kontakt" class="btn-primary hidden sm:inline-flex">Analyse anfragen</a>
+        <button
+          class="js-menu-toggle inline-flex h-10 w-10 items-center justify-center rounded-control border border-ink-200 md:hidden"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Menü öffnen"
+        >
+          <span class="relative block h-3.5 w-4" aria-hidden="true">
+            <span class="absolute inset-x-0 top-0 h-[1.5px] bg-ink-950"></span>
+            <span class="absolute inset-x-0 top-1/2 h-[1.5px] -translate-y-1/2 bg-ink-950"></span>
+            <span class="absolute inset-x-0 bottom-0 h-[1.5px] bg-ink-950"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="border-t border-ink-200 bg-white md:hidden">
+      <nav class="container-page flex flex-col py-2" aria-label="Mobile Navigation">
+        <a href="/#leistungen" class="border-b border-ink-100 py-3 font-body text-ink-950">Leistungen</a>
+        <a href="/#prozess" class="border-b border-ink-100 py-3 font-body text-ink-950">Prozess</a>
+        <a href="/#cases" class="border-b border-ink-100 py-3 font-body text-ink-950">Cases</a>
+        <a href="/#werte" class="border-b border-ink-100 py-3 font-body text-ink-950">Werte</a>
+        <a href="/team" class="border-b border-ink-100 py-3 font-body text-ink-950">Team</a>
+        <a href="/#faq" class="border-b border-ink-100 py-3 font-body text-ink-950">FAQ</a>
+        <a href="/#kontakt" class="py-3 font-body font-medium text-accent-600">Analyse anfragen</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <div class="border-b border-ink-200 bg-white">
+    <div class="container-page flex items-center justify-between gap-4 py-3 text-sm">
+      <p class="text-ink-700">
+        <a href="/#cases" class="hover:text-ink-950">Cases</a>
+        <span class="mx-1.5" aria-hidden="true">›</span>
+        <span class="text-ink-950">Google Ads · Healthcare</span>
+      </p>
+      <a href="/#cases" class="nav-link">← Alle Cases</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO =====
+         Kunden- und Klinikname bleiben ungenannt: Für die öffentliche
+         Nennung liegt keine Freigabe vor. Beschrieben wird deshalb das
+         Umfeld, nicht der Auftraggeber. -->
+    <section class="brand-gradient-dark relative overflow-hidden py-16 text-white sm:py-20" aria-labelledby="case-title">
+      <img src="../Logos/ddm Logo svg/Signet_weiß.svg" alt="" aria-hidden="true" width="182" height="181"
+           class="signet-watermark -right-16 -top-16 w-64 sm:w-80" />
+      <div class="container-page relative">
+        <div class="flex flex-wrap gap-2">
+          <span class="pill border-accent-600 bg-accent-600 text-white">Google Ads</span>
+          <span class="pill">Leadgenerierung</span>
+          <span class="pill">Tracking</span>
+          <span class="pill">Healthcare</span>
+        </div>
+
+        <!-- 26ch statt der 24ch der Microsoft-Case: Bei 24ch bricht
+             „Google-Ads-Konto" am Bindestrich um, und „Google-Ads-" hängt am
+             Zeilenende. 26ch hält die Wortmarke zusammen und ergibt drei
+             ausgewogene Zeilen. Auf Mobil begrenzt der Container, nicht das
+             Maß – dort ist der Umbruch unverändert. -->
+        <h1 id="case-title" class="display-lg mt-6 max-w-[26ch]">
+          Wie ein Google-Ads-Konto vom Klick bis zum wahrgenommenen Termin messbar wurde
+        </h1>
+
+        <p class="mt-6 max-w-[64ch] text-lg leading-relaxed text-ink-300">
+          Wie wir für eine Augenklinik in Nordrhein-Westfalen einen bestehenden Google-Ads-Account
+          analysierten, nach Suchintention und Buyer Personas neu strukturierten und die
+          Tracking-Kette bis zur Terminbuchung und ihrem Status aufbauten.
+        </p>
+
+        <p class="mt-5 max-w-[70ch] text-sm leading-relaxed text-ink-400">
+          Datenbasis: Google Ads · Terminbuchungssystem · Betrachtung der ersten rund fünf Wochen nach dem Neuaufbau
+        </p>
+
+        <div class="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <a href="/#kontakt" class="js-cta btn-on-dark" data-source="case_medizin_leads_hero">
+            Account-Potenzial prüfen
+          </a>
+          <a href="#tracking" class="font-body text-ink-300 underline decoration-ink-600 underline-offset-4 transition-colors duration-200 hover:text-white hover:decoration-white">
+            Tracking-Architektur ansehen
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HERO-KPI-LEISTE =====
+         Bewusst nur drei numerische Kacheln. Die Lead-Qualität steht
+         daneben als gekennzeichnetes Kundenfeedback, nicht als vierte
+         Zahl – dafür liegt keine belastbare Quote vor. -->
+    <section aria-label="Kennzahlen im Betrachtungszeitraum" class="border-b border-ink-200 bg-white">
+      <div class="container-page">
+        <dl class="grid grid-cols-1 divide-y divide-ink-200 border-t border-ink-200 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <div class="px-5 py-6 sm:px-6">
+            <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Verknüpfte Terminbuchungen</dt>
+            <dd class="mt-1 font-display text-2xl tabular-nums text-accent-600 lg:text-3xl">23</dd>
+            <p class="mt-1 text-xs text-ink-700">technisch bis zur ursprünglichen Anzeigeninteraktion zurückverfolgbar</p>
+          </div>
+          <div class="px-5 py-6 sm:px-6">
+            <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Google-Ads-Conversions</dt>
+            <dd class="mt-1 font-display text-2xl tabular-nums text-ink-950 lg:text-3xl">24</dd>
+            <p class="mt-1 text-xs text-ink-700">plattformseitig attribuiert im Betrachtungszeitraum</p>
+          </div>
+          <div class="px-5 py-6 sm:px-6">
+            <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Kosten pro Conversion</dt>
+            <dd class="mt-1 font-display text-2xl tabular-nums text-ink-950 lg:text-3xl">134&nbsp;€</dd>
+            <p class="mt-1 text-xs text-ink-700">auf Kontoebene</p>
+          </div>
+        </dl>
+
+        <div class="border-t border-ink-200 py-5">
+          <p class="max-w-[70ch] text-ink-800">
+            <span class="font-medium text-ink-950">Wichtiger als das Volumen:</span> Laut aktuellem
+            Kundenfeedback weisen die generierten Anmeldungen eine sehr hohe Qualität auf, die
+            No-Show-Rate wird als niedrig beschrieben.
+          </p>
+          <p class="mt-2 font-body text-xs uppercase tracking-wide text-ink-700">Qualitatives Kundenfeedback, keine gemessene Quote</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AUSGANGSSITUATION ===== -->
+    <section aria-labelledby="ausgangslage-title" class="bg-ink-50 section-shell">
+      <div class="container-page">
+        <h2 id="ausgangslage-title" class="section-title max-w-[26ch]">
+          Nachfrage war vorhanden. Steuerbarkeit nicht.
+        </h2>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Die Klinik hält wöchentlich rund 35 Termin-Slots vor. Davon waren etwa 23 belegt, was
+          einer Auslastung von rund 65 % entspricht. Zusätzlich fielen gebuchte Termine aus, ohne
+          abgesagt zu werden.
+        </p>
+        <p class="measure mt-4 leading-relaxed text-ink-800">
+          Das Ziel war deshalb nicht, um jeden Preis mehr Anfragen zu erzeugen, sondern vorhandene
+          Kapazität wirtschaftlich besser auszulasten. Zu Projektbeginn wurde je zusätzlichem Termin
+          eine Größenordnung von <span class="font-medium text-ink-950">300 bis 400 €</span> angesetzt.
+        </p>
+        <p class="measure mt-4 text-sm leading-relaxed text-ink-700">
+          Diese Spanne stammt aus der Potenzialrechnung zu Projektbeginn. Sie beschreibt den
+          kalkulatorischen Wert einer zusätzlichen Auslastung, keinen gemessenen Erlös je Buchung.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== AUDIT ===== -->
+    <section aria-labelledby="audit-title" class="bg-white section-shell">
+      <div class="container-page">
+        <h2 id="audit-title" class="section-title">Was der Audit gezeigt hat</h2>
+        <p class="section-lead">
+          Aus der Analyse des bestehenden Kontos sind das die vier Befunde, die eine
+          Geschäftsführung kennen sollte.
+        </p>
+
+        <dl class="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="border-t border-ink-300 pt-5">
+            <dd class="font-display text-3xl tabular-nums text-ink-950">&lt;10&nbsp;%</dd>
+            <dt class="mt-2 font-body font-medium text-ink-950">der verfügbaren Reichweite erreicht</dt>
+            <p class="mt-2 text-sm leading-relaxed text-ink-700">Der Account war im Markt kaum präsent.</p>
+          </div>
+          <div class="border-t border-ink-300 pt-5">
+            <dd class="font-display text-3xl tabular-nums text-ink-950">&gt;75&nbsp;%</dd>
+            <dt class="mt-2 font-body font-medium text-ink-950">Impressionen durch Anzeigenrang verloren</dt>
+            <p class="mt-2 text-sm leading-relaxed text-ink-700">Nicht das Budget war die Grenze, sondern die Qualität der Aussteuerung.</p>
+          </div>
+          <div class="border-t border-ink-300 pt-5">
+            <dd class="font-display text-3xl tabular-nums text-ink-950">99,61&nbsp;%</dd>
+            <dt class="mt-2 font-body font-medium text-ink-950">der kostenverursachenden Keywords auf „weitgehend passend"</dt>
+            <p class="mt-2 text-sm leading-relaxed text-ink-700">Ohne gepflegte Negativlisten und ohne klare Intent-Trennung.</p>
+          </div>
+          <div class="border-t border-accent-600 pt-5">
+            <dd class="font-display text-3xl tabular-nums text-ink-950">1 Signal</dd>
+            <dt class="mt-2 font-body font-medium text-ink-950">Jede Terminbuchung zählte gleich viel</dt>
+            <p class="mt-2 text-sm leading-relaxed text-ink-700">Unabhängig davon, was danach im Geschäftsprozess passierte.</p>
+          </div>
+        </dl>
+
+        <p class="measure mt-12 text-lg leading-relaxed text-ink-950">
+          Das Problem war nicht zu wenig Traffic. Es fehlte eine Struktur, mit der sich Nachfrage
+          und Lead-Qualität überhaupt bewerten ließen.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== DER NEUE ANSATZ ===== -->
+    <section aria-labelledby="ansatz-title" class="bg-ink-50 section-shell">
+      <div class="container-page">
+        <h2 id="ansatz-title" class="section-title">Erst Struktur. Dann Skalierung.</h2>
+        <p class="section-lead">
+          Vier Schritte, die aufeinander aufbauen. Keiner davon lässt sich sinnvoll vorziehen.
+        </p>
+
+        <ol class="mt-12 grid gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4" role="list">
+          <li class="border-t border-ink-300 pt-6">
+            <span class="font-display text-2xl text-ink-600" aria-hidden="true">01</span>
+            <h3 class="mt-3 font-body text-lg font-medium text-ink-950">Nachfrage nach Intention trennen</h3>
+            <p class="mt-3 text-ink-800">
+              Brand, Wettbewerb, lokale High-Intent-Suche, Behandlungssuchen und Kosten- oder
+              Vergleichsanfragen werden getrennt steuerbar.
+            </p>
+          </li>
+          <li class="border-t border-ink-300 pt-6">
+            <span class="font-display text-2xl text-ink-600" aria-hidden="true">02</span>
+            <h3 class="mt-3 font-body text-lg font-medium text-ink-950">Eigene Ansprache je Persona</h3>
+            <p class="mt-3 text-ink-800">
+              Dieselbe medizinische Leistung ist für verschiedene Menschen aus verschiedenen
+              Gründen relevant. Anzeigen und Landingpages folgen dem.
+            </p>
+          </li>
+          <li class="border-t border-ink-300 pt-6">
+            <span class="font-display text-2xl text-ink-600" aria-hidden="true">03</span>
+            <h3 class="mt-3 font-body text-lg font-medium text-ink-950">Tracking bis zur Terminbuchung</h3>
+            <p class="mt-3 text-ink-800">
+              Die Klick-ID wird über die Landingpage bis in den konkreten Buchungsdatensatz
+              durchgereicht.
+            </p>
+          </li>
+          <li class="border-t border-accent-600 pt-6">
+            <span class="font-display text-2xl text-accent-600" aria-hidden="true">04</span>
+            <h3 class="mt-3 font-body text-lg font-medium text-ink-950">Nachgelagerte Signale zurückspielen</h3>
+            <p class="mt-3 text-ink-800">
+              Offline-Conversions erfassen inzwischen auch Statusinformationen wie „Zum Termin
+              erschienen".
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== VORHER / HEUTE ===== -->
+    <section aria-labelledby="vorher-title" class="bg-white section-shell">
+      <div class="container-page">
+        <h2 id="vorher-title" class="section-title">Was sich strukturell verändert hat</h2>
+
+        <div class="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p class="border-b border-ink-300 pb-3 font-body text-xs font-medium uppercase tracking-wide text-ink-700 sm:text-sm">Vorher</p>
+            <ul class="mt-5 space-y-4 text-ink-700" role="list">
+              <li>Flache Kampagnenstruktur ohne Intent-Trennung</li>
+              <li>99,61 % der kostenverursachenden Keywords auf „weitgehend passend"</li>
+              <li>Keine systematisch gepflegten Negativlisten</li>
+              <li>Weniger als 10 % der verfügbaren Reichweite</li>
+              <li>Terminbuchung als einziges Erfolgssignal</li>
+              <li>Keine Zuordnung von Buchung zur ursprünglichen Anzeige</li>
+            </ul>
+          </div>
+          <div>
+            <p class="border-b border-accent-600 pb-3 font-body text-xs font-medium uppercase tracking-wide text-accent-600 sm:text-sm">Heute</p>
+            <ul class="mt-5 space-y-4 font-medium text-ink-950" role="list">
+              <li>Brand, Wettbewerb, High Intent, Behandlungen und Kostenanfragen getrennt</li>
+              <li>Suchbegriffe nach Intention geprüft und gesteuert</li>
+              <li>Lokale High-Intent-Nachfrage priorisiert</li>
+              <li>Search Impression Share auf Kontoebene rund 19,7 %</li>
+              <li>23 Terminbuchungen technisch mit der Anzeigeninteraktion verknüpft</li>
+              <li>Offline-Conversion-Logik bis „Zum Termin erschienen"</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="measure mt-12 text-sm leading-relaxed text-ink-700">
+          Nicht jedes Segment trägt bereits. Kosten- und Vergleichsanfragen sowie Teile der
+          Behandlungssuchen liegen aktuell deutlich über dem durchschnittlichen CPA, die
+          Wettbewerbskampagne hat bisher keine Conversion erzeugt. Sichtbar wird das erst durch
+          die neue Struktur.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== WO DIE CONVERSIONS ENTSTEHEN =====
+         Balkendarstellung im Hausidiom: semantische dl-Liste plus Div-Balken,
+         wie die ROAS-Grafik der Microsoft-Case-Study. Kein SVG, keine
+         Bibliothek. -->
+    <section aria-labelledby="verteilung-title" class="bg-ink-50 section-shell">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="verteilung-title" class="section-title">Die Struktur zeigt, welche Nachfrage trägt</h2>
+          <p class="section-lead">
+            Erst die Trennung nach Suchintention macht sichtbar, wo die wirtschaftlich relevanten
+            Buchungen tatsächlich entstehen.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-700">Attribuierte Conversions nach Kampagnentyp</h3>
+          <dl class="mt-6 space-y-5">
+            <div class="grid grid-cols-[7.5rem_1fr] items-center gap-4 sm:grid-cols-[11rem_1fr]">
+              <dt class="text-sm text-ink-700">Non-Brand High Intent</dt>
+              <dd class="flex items-center gap-4">
+                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
+                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 100%"></span>
+                </span>
+                <span class="w-[3.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">12,92</span>
+              </dd>
+            </div>
+            <div class="grid grid-cols-[7.5rem_1fr] items-center gap-4 sm:grid-cols-[11rem_1fr]">
+              <dt class="text-sm text-ink-700">Brand</dt>
+              <dd class="flex items-center gap-4">
+                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
+                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 57.7%"></span>
+                </span>
+                <span class="w-[3.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">7,46</span>
+              </dd>
+            </div>
+            <div class="grid grid-cols-[7.5rem_1fr] items-center gap-4 sm:grid-cols-[11rem_1fr]">
+              <dt class="text-sm text-ink-700">Übrige Segmente</dt>
+              <dd class="flex items-center gap-4">
+                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
+                  <span class="block h-2.5 rounded-full bg-ink-400" style="width: 28%"></span>
+                </span>
+                <span class="w-[3.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">3,62</span>
+              </dd>
+            </div>
+          </dl>
+
+          <div class="surface mt-8 p-6">
+            <p class="text-ink-950">
+              Rund <span class="font-medium">85 %</span> der attribuierten Conversions stammen aus
+              Brand und lokaler High-Intent-Suche, also aus den beiden gezielt priorisierten Bereichen.
+            </p>
+          </div>
+
+          <p class="mt-6 max-w-[64ch] text-sm leading-relaxed text-ink-700">
+            Die Nachkommastellen sind kein Rundungsfehler: Google Ads verteilt Conversions über ein
+            Attributionsmodell auf mehrere beteiligte Interaktionen und weist deshalb anteilige
+            Werte aus. Sie beschreiben Zuordnungsanteile, keine Personen.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IMPRESSION SHARE ===== -->
+    <section aria-labelledby="reichweite-title" class="bg-white section-shell">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="reichweite-title" class="section-title">Nicht jede Impression ist gleich wertvoll</h2>
+          <p class="section-lead">
+            Ziel ist keine flächendeckende Präsenz, sondern hohe Abdeckung dort, wo wirtschaftlich
+            relevante Nachfrage entsteht.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-700">Search Impression Share</h3>
+          <dl class="mt-6 space-y-5">
+            <div class="grid grid-cols-[7.5rem_1fr] items-center gap-4 sm:grid-cols-[11rem_1fr]">
+              <dt class="text-sm text-ink-700">Ursprünglicher Audit</dt>
+              <dd class="flex items-center gap-4">
+                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
+                  <span class="block h-2.5 rounded-full bg-ink-400" style="width: 11.5%"></span>
+                </span>
+                <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">&lt;10&nbsp;%</span>
+              </dd>
+            </div>
+            <div class="grid grid-cols-[7.5rem_1fr] items-center gap-4 sm:grid-cols-[11rem_1fr]">
+              <dt class="text-sm text-ink-700">Konto heute</dt>
+              <dd class="flex items-center gap-4">
+                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
+                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 22.6%"></span>
+                </span>
+                <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">19,7&nbsp;%</span>
+              </dd>
+            </div>
+            <div class="grid grid-cols-[7.5rem_1fr] items-center gap-4 sm:grid-cols-[11rem_1fr]">
+              <dt class="text-sm text-ink-700">High Intent lokal</dt>
+              <dd class="flex items-center gap-4">
+                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
+                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 50.1%"></span>
+                </span>
+                <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">43,7&nbsp;%</span>
+              </dd>
+            </div>
+            <div class="grid grid-cols-[7.5rem_1fr] items-center gap-4 sm:grid-cols-[11rem_1fr]">
+              <dt class="text-sm text-ink-700">Brand</dt>
+              <dd class="flex items-center gap-4">
+                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
+                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 100%"></span>
+                </span>
+                <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">87,2&nbsp;%</span>
+              </dd>
+            </div>
+          </dl>
+
+          <p class="mt-6 max-w-[64ch] text-sm leading-relaxed text-ink-700">
+            Audit und aktuelles Konto betrachten unterschiedliche Zeiträume. Die Werte zeigen die
+            strukturelle Veränderung, sie sind kein exakter Vorher-Nachher-Vergleich derselben Periode.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BUYER PERSONAS ===== -->
+    <section aria-labelledby="personas-title" class="bg-ink-50 section-shell">
+      <div class="container-page">
+        <h2 id="personas-title" class="section-title">Eine Leistung. Drei Entscheidungslogiken.</h2>
+        <p class="section-lead">
+          Dieselbe Behandlung kann aus sehr unterschiedlichen Gründen relevant werden. Deshalb
+          laufen Anzeigen und Landingpages getrennt.
+        </p>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="surface p-6 sm:p-7">
+            <h3 class="font-body text-lg font-medium text-ink-950">Persona 1</h3>
+            <dl class="mt-5 flex gap-8">
+              <div>
+                <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Klicks</dt>
+                <dd class="mt-1 font-display text-xl tabular-nums text-ink-950">945</dd>
+              </div>
+              <div>
+                <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Conversions</dt>
+                <dd class="mt-1 font-display text-xl tabular-nums text-accent-600">10,92</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="surface p-6 sm:p-7">
+            <h3 class="font-body text-lg font-medium text-ink-950">Persona 2</h3>
+            <dl class="mt-5 flex gap-8">
+              <div>
+                <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Klicks</dt>
+                <dd class="mt-1 font-display text-xl tabular-nums text-ink-950">713</dd>
+              </div>
+              <div>
+                <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Conversions</dt>
+                <dd class="mt-1 font-display text-xl tabular-nums text-accent-600">4,12</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="surface p-6 sm:p-7">
+            <h3 class="font-body text-lg font-medium text-ink-950">Persona 3</h3>
+            <dl class="mt-5 flex gap-8">
+              <div>
+                <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Klicks</dt>
+                <dd class="mt-1 font-display text-xl tabular-nums text-ink-950">1.285</dd>
+              </div>
+              <div>
+                <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Conversions</dt>
+                <dd class="mt-1 font-display text-xl tabular-nums text-accent-600">7,59</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+
+        <p class="measure mt-8 leading-relaxed text-ink-800">
+          Alle drei Ansätze erzeugen bereits Buchungen und lassen sich dadurch getrennt auswerten
+          und weiterentwickeln. Für die Aussage, welcher Ansatz dauerhaft der stärkste ist, reicht
+          der bisherige Zeitraum nicht aus.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== TRACKING-ARCHITEKTUR ===== -->
+    <section id="tracking" aria-labelledby="tracking-title" class="bg-white section-shell">
+      <div class="container-page">
+        <h2 id="tracking-title" class="section-title">Vom Klick bis zum Terminstatus</h2>
+        <p class="section-lead">
+          Die Kette verbindet die Anzeigeninteraktion mit dem konkreten Buchungsdatensatz und
+          inzwischen auch mit dem, was danach passiert.
+        </p>
+
+        <ol class="journey-rail mt-12" role="list">
+          <li>
+            <p class="font-body font-medium text-ink-950">Google Ads</p>
+            <p class="mt-1 text-sm text-ink-700">Anzeige wird geklickt</p>
+          </li>
+          <li>
+            <p class="font-body font-medium text-ink-950">Klick-ID</p>
+            <p class="mt-1 text-sm text-ink-700">wird an die Landingpage übergeben</p>
+          </li>
+          <li>
+            <p class="font-body font-medium text-ink-950">Persona-Landingpage</p>
+            <p class="mt-1 text-sm text-ink-700">reicht die Kennung an das Buchungssystem weiter</p>
+          </li>
+          <li>
+            <p class="font-body font-medium text-ink-950">Terminbuchung</p>
+            <p class="mt-1 text-sm text-ink-700">wird mit der ursprünglichen Interaktion verknüpft</p>
+          </li>
+          <li>
+            <p class="font-body font-medium text-ink-950">Terminstatus</p>
+            <p class="mt-1 text-sm text-ink-700">erfasst nachgelagert auch „Zum Termin erschienen"</p>
+          </li>
+        </ol>
+
+        <div class="surface mt-12 p-7 sm:p-8">
+          <p class="measure text-ink-950">
+            Entscheidend ist nicht, die Buchung überhaupt zu messen. Entscheidend ist, die
+            Kampagnensteuerung schrittweise näher an das tatsächliche wirtschaftliche Ergebnis
+            zu bringen.
+          </p>
+          <p class="measure mt-4 text-sm leading-relaxed text-ink-700">
+            Der Status wird erfasst, aber noch nicht als Optimierungsziel verwendet. Ein großer
+            Teil der gebuchten Termine liegt im Betrachtungszeitraum zeitlich noch vor der
+            Wahrnehmung. Eine Show-up-Quote lässt sich daraus derzeit nicht seriös ableiten.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STRATEGISCHES ZITAT ===== -->
+    <section aria-label="Strategische Erkenntnis" class="brand-gradient-soft section-shell">
+      <div class="container-page">
+        <figure class="surface mx-auto max-w-2xl px-8 py-12 sm:px-14 sm:py-16">
+          <span class="quote-mark" aria-hidden="true">&rdquo;</span>
+          <blockquote class="quote-text">
+            Ein niedriger Preis pro Lead ist noch kein
+            <span class="font-bold italic text-accent-600">Geschäftsergebnis</span>.&ldquo;
+          </blockquote>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== ÜBERTRAGBARKEIT ===== -->
+    <section aria-labelledby="transfer-title" class="bg-white section-shell">
+      <div class="container-page">
+        <h2 id="transfer-title" class="section-title">Das Prinzip gilt weit über Leadgenerierung hinaus</h2>
+        <p class="section-lead">
+          Das relevante Optimierungssignal liegt fast immer tiefer im Geschäftsprozess als die
+          Conversion, die die Werbeplattform zuerst sieht.
+        </p>
+
+        <div class="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p class="border-b border-ink-300 pb-3 font-body text-xs font-medium uppercase tracking-wide text-ink-700 sm:text-sm">Leadgenerierung</p>
+            <ol class="journey-rail-y mt-6" role="list">
+              <li><p class="font-body font-medium text-ink-950">Anzeige</p></li>
+              <li><p class="font-body font-medium text-ink-950">Terminbuchung</p></li>
+              <li><p class="font-body font-medium text-ink-950">Qualifikation</p></li>
+              <li><p class="font-body font-medium text-ink-950">Termin wahrgenommen</p></li>
+            </ol>
+          </div>
+          <div>
+            <p class="border-b border-ink-300 pb-3 font-body text-xs font-medium uppercase tracking-wide text-ink-700 sm:text-sm">E-Commerce</p>
+            <ol class="journey-rail-y mt-6" role="list">
+              <li><p class="font-body font-medium text-ink-950">Anzeige</p></li>
+              <li><p class="font-body font-medium text-ink-950">Bestellung</p></li>
+              <li><p class="font-body font-medium text-ink-950">Retoure und Storno</p></li>
+              <li><p class="font-body font-medium text-ink-950">Deckungsbeitrag</p></li>
+            </ol>
+          </div>
+        </div>
+
+        <p class="measure mt-12 text-lg leading-relaxed text-ink-950">
+          Je näher das Optimierungssignal am tatsächlichen Geschäftsergebnis liegt, desto
+          fundierter lässt sich Budget steuern.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== LEARNINGS ===== -->
+    <section aria-labelledby="learnings-title" class="bg-ink-50 section-shell">
+      <div class="container-page">
+        <h2 id="learnings-title" class="section-title">Was wir daraus ableiten</h2>
+
+        <div class="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2">
+          <div>
+            <h3 class="font-body font-medium text-ink-950">Messung kommt vor Skalierung</h3>
+            <p class="mt-2 max-w-[52ch] text-ink-700">
+              Mehr Budget auf ein unscharfes Signal skaliert vor allem die Unschärfe.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-body font-medium text-ink-950">Nicht jeder Lead ist gleich viel wert</h3>
+            <p class="mt-2 max-w-[52ch] text-ink-700">
+              Lead-Qualität gehört in die Kampagnenbewertung, nicht nur in das Vertriebsgespräch danach.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-body font-medium text-ink-950">Intent braucht eigene Steuerung</h3>
+            <p class="mt-2 max-w-[52ch] text-ink-700">
+              Marken-, Bedarfs- und Informationssuche verhalten sich wirtschaftlich völlig
+              unterschiedlich und sollten deshalb getrennt bewertet werden.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-body font-medium text-ink-950">Plattformdaten sind nur der Anfang</h3>
+            <p class="mt-2 max-w-[52ch] text-ink-700">
+              Die wertvollsten Signale entstehen meist erst danach: im CRM, im Shop oder im
+              operativen Prozess.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RELEVANZ-BLOCK ===== -->
+    <section aria-labelledby="relevanz-title" class="bg-white section-shell">
+      <div class="container-page">
+        <h2 id="relevanz-title" class="font-display text-2xl text-ink-950">Dieser Case ist für Sie relevant, wenn …</h2>
+        <ul class="mt-6 grid max-w-5xl gap-x-10 gap-y-3 sm:grid-cols-2" role="list">
+          <li class="flex gap-3">
+            <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-600" aria-hidden="true"></span>
+            <span class="text-ink-800">Google Ads auf eine Conversion optimiert, deren wirtschaftlicher Wert unklar ist</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-600" aria-hidden="true"></span>
+            <span class="text-ink-800">Leads entstehen, aber Vertrieb und Marketing ihre Qualität unterschiedlich bewerten</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-600" aria-hidden="true"></span>
+            <span class="text-ink-800">Informationen zwischen Website, Buchungssystem, Shop oder CRM verloren gehen</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-600" aria-hidden="true"></span>
+            <span class="text-ink-800">Kampagnen überwiegend über weitgehend passende Keywords laufen</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-600" aria-hidden="true"></span>
+            <span class="text-ink-800">Brand und Non-Brand nicht sauber voneinander getrennt bewertet werden</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-600" aria-hidden="true"></span>
+            <span class="text-ink-800">vorhandene Kapazität wirtschaftlicher ausgelastet werden soll</span>
+          </li>
+        </ul>
+
+        <p class="mt-10 text-ink-800">
+          Ein zweiter Fall aus dem E-Commerce:
+          <a href="/cases/microsoft-ads-profitabel-machen" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie ein Microsoft-Ads-Account von 4,44× auf 9,17× ROAS entwickelt wurde →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== ABSCHLUSS-CTA ===== -->
+    <section aria-labelledby="cta-title" class="brand-gradient-dark py-20 text-white sm:py-24">
+      <div class="container-page">
+        <h2 id="cta-title" class="section-title max-w-[28ch]">
+          Optimiert Google bei Ihnen auf eine Conversion oder auf das Geschäftsergebnis?
+        </h2>
+        <p class="mt-6 max-w-[64ch] text-lg leading-relaxed text-ink-300">
+          Wir analysieren, welche Signale Ihre Kampagnensteuerung aktuell verwendet, wo
+          Informationen zwischen Website, Shop oder CRM verloren gehen und welche Daten sich
+          zurück in die Werbeplattform bringen lassen.
+        </p>
+
+        <div class="mt-10 max-w-4xl border-t border-ink-800 pt-8">
+          <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Was Sie aus der Analyse mitnehmen</h3>
+          <ul class="mt-5 grid gap-x-10 gap-y-3 sm:grid-cols-3" role="list">
+            <li class="flex gap-3">
+              <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-600" aria-hidden="true"></span>
+              <span class="text-sm text-ink-200">Welches Signal Ihre Kampagnen heute tatsächlich steuert</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-600" aria-hidden="true"></span>
+              <span class="text-sm text-ink-200">Wo zwischen Klick und Abschluss Informationen abreißen</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-600" aria-hidden="true"></span>
+              <span class="text-sm text-ink-200">Priorisierte Handlungsempfehlungen für die nächsten Schritte</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-10">
+          <a href="/#kontakt" class="js-cta btn-on-dark" data-source="case_medizin_leads_footer">
+            Account-Potenzial prüfen
+          </a>
+          <p class="mt-4 max-w-[62ch] text-sm text-ink-400">
+            Google Ads · Microsoft Ads ·
+            <a href="/#leistungen" class="underline decoration-ink-600 underline-offset-4 transition-colors duration-200 hover:text-white hover:decoration-white">Tracking</a>
+            · Offline Conversions
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo" class="bg-ink-950 text-white">
+    <div class="container-page grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
+      <div>
+        <img src="../Logos/ddm Logo svg/ddm_Logo_weiß.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+        <p class="mt-4 max-w-[40ch] text-sm text-ink-400">
+          Datengetriebener Growth- und Performance-Partner für Mittelstand, B2B und E-Commerce.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Kontakt</h3>
+        <address class="mt-4 text-sm not-italic leading-relaxed text-ink-300">
+          DDM Data Driven Marketing GmbH<br />
+          Wiesenstr. 21A<br />
+          40549 Düsseldorf<br />
+          <a href="mailto:impressum@datadrivenmarketing.de" class="hover:text-white">impressum@datadrivenmarketing.de</a>
+        </address>
+      </div>
+
+      <div>
+        <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Rechtliches</h3>
+        <ul class="mt-4 space-y-2 text-sm text-ink-300" role="list">
+          <li><a href="/impressum" class="hover:text-white">Impressum</a></li>
+          <li>Datenschutzerklärung <span class="text-ink-400">(in Vorbereitung)</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-ink-800">
+      <div class="container-page py-6 text-xs text-ink-400">
+        <p>
+          © <span id="year"></span> DDM Data Driven Marketing GmbH
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast fixed bottom-5 left-1/2 z-50 min-w-60 -translate-x-1/2 translate-y-[calc(100%+1.25rem)] rounded-control border border-ink-800 bg-ink-950 px-5 py-3 text-center font-body text-sm text-white opacity-0 shadow-lg transition-all duration-300" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
