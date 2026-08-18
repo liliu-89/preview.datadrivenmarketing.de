@@ -1,2 +1,15 @@
 node_modules/
 .DS_Store
+
+# Interne Arbeitsdokumente – gehören nicht in die öffentliche Auslieferung
+_quellen/
+
+# Agent-Werkzeug, maschinenspezifisch
+.claude/
+.agents/
+.codex/
+.impeccable/
+skills-lock.json
+
+# Cloudflare Wrangler
+.wrangler/
