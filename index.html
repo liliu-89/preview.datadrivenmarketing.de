@@ -151,7 +151,14 @@
               <p class="mt-1 text-sm text-ink-300">Wir prüfen Ihre Angaben und melden uns mit einer Einschätzung.</p>
             </div>
 
-            <form id="leadForm" class="flex flex-col gap-5 p-6" novalidate aria-label="Anfrageformular">
+            <!-- data-endpoint ist die einzige Stelle, an der die Adresse des
+                 Backends steht. Sobald die Domain über Cloudflare läuft, wird
+                 daraus "/api/contact" und der Cross-Origin-Aufruf entfällt –
+                 ohne Eingriff in script.js.
+                 TODO: Platzhalter nach dem ersten `npm run worker:deploy`
+                 durch die ausgegebene workers.dev-URL ersetzen. -->
+            <form id="leadForm" class="flex flex-col gap-5 p-6" novalidate aria-label="Anfrageformular"
+                  data-endpoint="https://PLATZHALTER.workers.dev/api/contact">
               <div class="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label class="field-label" for="firstName">Vorname <span aria-hidden="true" class="text-error">*</span></label>
@@ -185,7 +192,9 @@
               <div class="flex items-start gap-3 rounded-control bg-ink-50 p-4">
                 <input class="mt-1 h-4 w-4 flex-shrink-0 accent-accent-600" id="consent" name="consent" type="checkbox" required aria-required="true" />
                 <label class="text-sm text-ink-800" for="consent">
-                  Ich stimme zu, dass meine Angaben zur Kontaktaufnahme verarbeitet werden.
+                  Ich stimme zu, dass meine Angaben gespeichert und zur Bearbeitung meiner
+                  Anfrage verwendet werden. Die Einwilligung kann ich jederzeit per E-Mail
+                  widerrufen.
                 </label>
               </div>
               <span class="text-sm text-error empty:hidden" id="error-consent" role="alert" aria-live="polite"></span>

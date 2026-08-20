@@ -140,6 +140,8 @@
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      // Greift unabhängig vom Button-Zustand, etwa bei Enter im Textfeld.
+      if (isSubmitting) return;
       clearErrors();
 
       let firstError = null;
@@ -177,44 +179,103 @@
         return;
       }
 
-      // ── Success (Demo) ──
-      // TODO: An Brevo-Formular-Endpunkt anbinden, sobald eingerichtet.
-      // Bis dahin wird kein echter Versand ausgelöst.
-      const source = (() => { try { return sessionStorage.getItem('cta_source') || 'direct'; } catch { return 'direct'; } })();
-      const budget = document.getElementById('budget')?.value || '';
+      sendLead();
+    });
 
-      console.log('[DDM Demo] Lead submitted:', {
-        firstName: fnEl.value.trim(),
-        company:   coEl.value.trim(),
-        email:     emEl.value.trim(),
-        budget,
-        source,
-      });
+    /* ─── Versand ──────────────────────────────────────────────────────
+       Die Client-Validierung oben bleibt Komfort; verbindlich prüft der
+       Worker. Adresse des Endpunkts steht ausschließlich im
+       data-endpoint-Attribut des Formulars – wird sie später relativ,
+       ändert sich hier nichts. */
+    const submitBtn = form.querySelector('[type="submit"]');
+    const submitLabel = submitBtn ? submitBtn.textContent : '';
+    const globalEl = document.getElementById('formGlobal');
+    let isSubmitting = false;
 
-      // Show success state
-      const globalEl = document.getElementById('formGlobal');
+    function setNotice(text, kind) {
+      if (!globalEl) return;
+      globalEl.textContent = text;
+      globalEl.className = kind ? 'form-notice form-notice--' + kind : 'form-notice';
+    }
+
+    function releaseButton() {
+      isSubmitting = false;
+      if (!submitBtn) return;
+      submitBtn.disabled = false;
+      submitBtn.removeAttribute('aria-busy');
+      submitBtn.textContent = submitLabel;
+    }
+
+    function showFailure(message) {
+      setNotice(message, 'error');
+      releaseButton();
+      // Fokus auf die Meldung, damit Screenreader-Nutzer sie sicher
+      // erreichen – das aria-live allein setzt den Fokus nicht.
       if (globalEl) {
-        globalEl.textContent = 'Vielen Dank! Wir prüfen Ihre Angaben und melden uns bei Ihnen.';
-        globalEl.className = 'form-notice form-notice--success';
+        globalEl.setAttribute('tabindex', '-1');
+        globalEl.focus({ preventScroll: true });
+        globalEl.addEventListener('blur', () => globalEl.removeAttribute('tabindex'), { once: true });
       }
-      showToast('Anfrage erhalten – wir melden uns.');
+    }
 
-      // Reset form
-      form.reset();
-      clearErrors();
-      try { sessionStorage.removeItem('cta_source'); } catch (_) {}
-
-      // Disable submit button briefly to prevent double-submit
-      const submitBtn = form.querySelector('[type="submit"]');
+    async function sendLead() {
+      isSubmitting = true;
+      setNotice('', null);
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Gesendet ✓';
-        setTimeout(() => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Analyse anfragen';
-        }, 5000);
+        submitBtn.setAttribute('aria-busy', 'true');
+        submitBtn.textContent = 'Wird gesendet …';
       }
-    });
+
+      const payload = {
+        firstName: fields.firstName.el.value.trim(),
+        company:   fields.company.el.value.trim(),
+        email:     fields.email.el.value.trim(),
+        budget:    document.getElementById('budget')?.value || '',
+        consent:   fields.consent.el.checked,
+        source:    (() => { try { return sessionStorage.getItem('cta_source') || 'direct'; } catch { return 'direct'; } })(),
+      };
+
+      try {
+        const res = await fetch(form.dataset.endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        let data = null;
+        try { data = await res.json(); } catch (_) { /* Antwort ohne JSON-Body */ }
+
+        if (res.ok && data && data.success) {
+          form.reset();
+          clearErrors();
+          // Erst nach clearErrors – das leert #formGlobal mit.
+          setNotice('Vielen Dank! Wir prüfen Ihre Angaben und melden uns bei Ihnen.', 'success');
+          showToast('Anfrage erhalten – wir melden uns.');
+          try { sessionStorage.removeItem('cta_source'); } catch (_) {}
+          // Button bleibt bewusst deaktiviert: Das Formular ist geleert,
+          // ein zweiter Versand wäre ein Versehen.
+          if (submitBtn) {
+            submitBtn.textContent = 'Gesendet ✓';
+            submitBtn.removeAttribute('aria-busy');
+          }
+          return;
+        }
+
+        // Nur die Validierungsmeldung des Workers ist für Nutzer
+        // formuliert. 404 und 405 sind technische Zustände, die im
+        // Normalbetrieb nicht auftreten – dafür der allgemeine Text,
+        // statt "Not found." anzuzeigen.
+        showFailure(
+          res.status === 400 && data && data.error
+            ? data.error
+            : 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.'
+        );
+      } catch (_) {
+        // Netzwerkfehler, abgebrochener Request oder blockierte Anfrage.
+        showFailure('Die Verbindung ist fehlgeschlagen. Bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.');
+      }
+    }
   }
 
   /* ─── FAQ accordion (accessible) ───────────────────────── */

@@ -5,10 +5,17 @@
   "description": "DDM Data Driven Marketing GmbH – Website",
   "scripts": {
     "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "worker:dev": "wrangler dev --config worker/wrangler.toml --env preview",
+    "worker:deploy": "wrangler deploy --config worker/wrangler.toml --env preview",
+    "worker:deploy:prod": "wrangler deploy --config worker/wrangler.toml --env production",
+    "db:migrate:preview": "wrangler d1 execute ddm-leads-preview --remote --config worker/wrangler.toml --env preview --file=./migrations/0001_create_leads.sql",
+    "db:migrate:prod": "wrangler d1 execute ddm-leads-prod --remote --config worker/wrangler.toml --env production --file=./migrations/0001_create_leads.sql",
+    "db:list:preview": "wrangler d1 execute ddm-leads-preview --remote --config worker/wrangler.toml --env preview --command \"SELECT id, first_name, company, email, ads_budget, source, created_at FROM leads ORDER BY created_at DESC LIMIT 10;\""
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.2",
-    "tailwindcss": "^4.3.2"
+    "tailwindcss": "^4.3.2",
+    "wrangler": "^4.124.0"
   }
 }

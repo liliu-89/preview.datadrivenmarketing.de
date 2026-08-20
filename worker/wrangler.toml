@@ -1,0 +1,35 @@
+# Zwei Environments, ein Code- und ein Schemastand.
+#
+# Der Worker wird immer mit --env aufgerufen, es gibt bewusst keine
+# Standard-Umgebung: So kann ein Deploy nicht versehentlich ohne
+# Datenbankbindung oder gegen die falsche Datenbank laufen.
+#
+# Die database_id-Werte stammen aus `wrangler d1 create` und sind keine
+# Secrets – sie identifizieren die Datenbank nur innerhalb des Kontos.
+
+name = "ddm-leads"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# Beobachtbarkeit für `wrangler tail`. Geloggt wird im Worker
+# ausschließlich die Fehlermeldung plus Lead-ID, nie ein Payload.
+[observability]
+enabled = true
+
+# ─── Preview ──────────────────────────────────────────────────────────
+[env.preview]
+name = "ddm-leads-preview"
+
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "ddm-leads-preview"
+database_id = "PLATZHALTER_PREVIEW"
+
+# ─── Production ───────────────────────────────────────────────────────
+[env.production]
+name = "ddm-leads-prod"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "ddm-leads-prod"
+database_id = "PLATZHALTER_PROD"
