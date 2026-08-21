@@ -23,7 +23,7 @@ name = "ddm-leads-preview"
 [[env.preview.d1_databases]]
 binding = "DB"
 database_name = "ddm-leads-preview"
-database_id = "PLATZHALTER_PREVIEW"
+database_id = "b43c2fb9-7d56-48aa-8c15-d94baa1cc3d0"
 
 # ─── Production ───────────────────────────────────────────────────────
 [env.production]
@@ -32,4 +32,4 @@ name = "ddm-leads-prod"
 [[env.production.d1_databases]]
 binding = "DB"
 database_name = "ddm-leads-prod"
-database_id = "PLATZHALTER_PROD"
+database_id = "126b8454-ae45-4f9f-9edc-93ed1dd8e9a7"
