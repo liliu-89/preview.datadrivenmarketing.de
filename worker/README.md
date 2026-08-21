@@ -10,8 +10,8 @@ Alle Kommandos laufen **aus dem Repository-Wurzelverzeichnis**.
 ```bash
 npx wrangler login
 
-npx wrangler d1 create ddm-leads-preview --location eu
-npx wrangler d1 create ddm-leads-prod --location eu
+npx wrangler d1 create ddm-leads-preview --jurisdiction eu
+npx wrangler d1 create ddm-leads-prod --jurisdiction eu
 ```
 
 Die beiden ausgegebenen `database_id`-Werte ersetzen `PLATZHALTER_PREVIEW`
