@@ -232,6 +232,8 @@
         company:   fields.company.el.value.trim(),
         email:     fields.email.el.value.trim(),
         budget:    document.getElementById('budget')?.value || '',
+        // Honeypot: bei echten Nutzern immer leer, siehe index.html.
+        website:   document.getElementById('website')?.value || '',
         consent:   fields.consent.el.checked,
         source:    (() => { try { return sessionStorage.getItem('cta_source') || 'direct'; } catch { return 'direct'; } })(),
       };

@@ -128,6 +128,17 @@ export default {
       return fail(origin, 400, MESSAGES.validation);
     }
 
+    // Honeypot: An dieses Feld kommt kein Mensch (siehe index.html). Bewusst
+    // vor der Validierung – sonst bekäme ein Bot, der zusätzlich Pflichtfelder
+    // falsch ausfüllt, eine 400 statt der stillen 201 und könnte daraus
+    // ableiten, dass das versteckte Feld ausgewertet wird.
+    if (str(payload && payload.website)) {
+      // Nur die Herkunft, keine Eingaben – wie beim D1-Fehler weiter unten.
+      // Macht sichtbar, ob der Honeypot je bei echtem Verkehr auslöst.
+      console.log('honeypot rejected', { source: str(payload.source).slice(0, MAX_LENGTH.source) });
+      return json({ success: true }, 201, origin);
+    }
+
     const lead = validate(payload);
     if (!lead) return fail(origin, 400, MESSAGES.validation);
 

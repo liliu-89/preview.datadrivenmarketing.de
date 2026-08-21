@@ -192,10 +192,20 @@
                 <label class="text-sm text-ink-800" for="consent">
                   Ich stimme zu, dass meine Angaben gespeichert und zur Bearbeitung meiner
                   Anfrage verwendet werden. Die Einwilligung kann ich jederzeit per E-Mail
-                  widerrufen.
+                  widerrufen. Einzelheiten in der
+                  <a href="/datenschutz" class="text-accent-700 underline underline-offset-2 hover:text-ink-950">Datenschutzerklärung</a>.
                 </label>
               </div>
               <span class="text-sm text-error empty:hidden" id="error-consent" role="alert" aria-live="polite"></span>
+
+              <!-- Honeypot: liegt außerhalb des Viewports und ist für Menschen weder
+                   sichtbar noch per Tastatur erreichbar. Wird das Feld befüllt, meldet der
+                   Worker Erfolg und speichert nicht. autocomplete="off" verhindert, dass ein
+                   Passwortmanager es ausfüllt und damit echte Anfragen aussperrt. -->
+              <div class="honeypot" aria-hidden="true">
+                <label for="website">Website (bitte frei lassen)</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
 
               <button class="btn-primary w-full" type="submit">Analyse anfragen</button>
 
@@ -828,7 +838,7 @@
         <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Rechtliches</h3>
         <ul class="mt-4 space-y-2 text-sm text-ink-300" role="list">
           <li><a href="/impressum" class="hover:text-white">Impressum</a></li>
-          <li>Datenschutzerklärung <span class="text-ink-400">(in Vorbereitung)</span></li>
+          <li><a href="/datenschutz" class="hover:text-white">Datenschutzerklärung</a></li>
         </ul>
       </div>
     </div>

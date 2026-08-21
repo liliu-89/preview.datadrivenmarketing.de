@@ -11,6 +11,7 @@
 @source "../impressum.html";
 @source "../team.html";
 @source "../marketing-audit.html";
+@source "../datenschutz.html";
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────
    Alle fünf von den Guidelines geforderten Schnitte sind lizenziert und
@@ -529,6 +530,18 @@
 
   .field-label {
     @apply block font-body text-sm font-medium text-ink-950;
+  }
+
+  /* Honeypot gegen automatisierte Einsendungen. Bewusst kein display:none
+     und kein type="hidden" – beides überspringen viele Bots. Das Feld liegt
+     stattdessen außerhalb des Viewports; aria-hidden und tabindex="-1" im
+     Markup halten Screenreader und Tastaturbedienung davon fern. */
+  .honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
   }
 
   .field-input {

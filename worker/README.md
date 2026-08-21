@@ -62,6 +62,22 @@ curl -i -X POST https://ddm-leads-preview.<subdomain>.workers.dev/api/contact \
 npm run db:list:preview
 ```
 
+### Honeypot
+
+Das Formular enthält ein für Menschen unerreichbares Feld `website` (siehe
+`.honeypot` in `src/input.css`). Ist es befüllt, antwortet der Worker mit
+`201 {"success":true}` und schreibt nichts in die Datenbank. Die Antwort ist
+zeichengleich mit einer echten Annahme, damit ein Bot nicht erkennt, dass er
+abgewiesen wurde.
+
+Gegenprobe – muss `201` liefern, ohne dass ein Datensatz entsteht:
+
+```bash
+curl -i -X POST https://ddm-leads-preview.<subdomain>.workers.dev/api/contact \
+  -H "Content-Type: application/json" \
+  -d '{"firstName":"Bot","company":"Spam","email":"bot@example.com","consent":true,"website":"http://spam.example"}'
+```
+
 ## Logs
 
 ```bash
@@ -69,4 +85,6 @@ npx wrangler tail --config worker/wrangler.toml --env preview
 ```
 
 Geloggt wird ausschließlich die Fehlermeldung plus Lead-ID. Weder Name noch
-Firma, E-Mail oder Payload erscheinen in den Logs.
+Firma, E-Mail oder Payload erscheinen in den Logs. Der Honeypot protokolliert
+zusätzlich `honeypot rejected` mit der Herkunft, ebenfalls ohne Eingaben –
+daran lässt sich ablesen, ob er je bei echtem Verkehr auslöst.
