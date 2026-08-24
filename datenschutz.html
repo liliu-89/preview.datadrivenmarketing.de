@@ -8,6 +8,20 @@
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#1b1e27" />
 
+  <!-- Consent-Banner. Muss vor allem anderen stehen: Das Skript setzt den
+       Consent-Mode-Default auf "denied" und laedt erst danach den Tag Manager.
+       Wird diese Reihenfolge umgestellt, feuern Tags vor der Einwilligung. -->
+  <script src="https://ddm-consent-preview.datadrivenmarketing.workers.dev/v1.0.0/consent.js"
+    integrity="sha384-9ObtIMCQDDAJYmM657i1jvUDQhAFMzeCgQ413JsasW/Hflib8b9EV6+ngzSqKQBR"
+    crossorigin="anonymous"
+    data-gtm="GTM-KN44W5SD"
+    data-site="ddm-website"
+    data-endpoint="https://ddm-consent-preview.datadrivenmarketing.workers.dev/api/consent"
+    data-privacy="/datenschutz"
+    data-imprint="/impressum"
+    data-accent="#3354a1"></script>
+
+
   <link rel="icon" href="Logos/ddm Logo svg/Signet_darkgrey.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="Logos/ddm Logo svg/png/Signet_darkgrey.png" />
 
@@ -77,10 +91,12 @@
       <div class="container-page max-w-3xl">
         <h1 class="font-display text-3xl text-ink-950 sm:text-4xl">Datenschutzerklärung</h1>
         <p class="measure mt-5 text-ink-800">
-          Diese Website kommt ohne Analysewerkzeuge, ohne Tracking und ohne Cookies aus.
-          Personenbezogene Daten verarbeiten wir an zwei Stellen: beim Aufruf der Seite
-          durch unseren Hoster und beim Absenden des Kontaktformulars. Beides ist unten
-          im Einzelnen beschrieben.
+          Analyse und Werbemessung finden auf dieser Website nur statt, wenn Sie
+          zugestimmt haben. Ohne Ihre Einwilligung läuft nichts, was über den Betrieb
+          der Seite hinausgeht. Was wir wann verarbeiten, steht unten im Einzelnen:
+          beim Aufruf der Seite durch unseren Hoster, beim Absenden des
+          Kontaktformulars, und nach Ihrer Einwilligung durch die eingesetzten
+          Google-Dienste.
         </p>
 
         <div class="surface mt-10 space-y-10 p-7 sm:p-10">
@@ -103,7 +119,84 @@
           </div>
 
           <div>
-            <h2 class="font-display text-2xl text-ink-950">2. Hosting über GitHub Pages</h2>
+            <h2 class="font-display text-2xl text-ink-950">2. Einwilligung und Cookie-Banner</h2>
+            <p class="mt-4 text-ink-800">
+              Beim ersten Aufruf dieser Website fragen wir Sie, ob Sie in Analyse und
+              Werbemessung einwilligen. Wir unterscheiden drei Kategorien:
+            </p>
+            <ul class="mt-4 list-disc space-y-2 pl-5 text-ink-800" role="list">
+              <li>
+                <strong>Essenziell.</strong> Was für den Betrieb der Seite erforderlich ist.
+                Darüber entscheiden Sie nicht, weil die Website sonst nicht funktioniert.
+              </li>
+              <li>
+                <strong>Statistik.</strong> Google Analytics 4, siehe Abschnitt 6. Nur mit
+                Ihrer Einwilligung.
+              </li>
+              <li>
+                <strong>Marketing.</strong> Google Ads, siehe Abschnitt 7. Nur mit Ihrer
+                Einwilligung.
+              </li>
+            </ul>
+            <p class="mt-4 text-ink-800">
+              Statistik und Marketing sind nicht vorausgewählt. Solange Sie nicht
+              zugestimmt haben, bleiben beide abgeschaltet, und die Google-Dienste
+              erhalten das Signal, keine Daten zu speichern.
+            </p>
+            <p class="mt-4 text-ink-800">
+              Für Ihre Entscheidung speichern wir folgende Einträge auf Ihrem Endgerät.
+              Sie sind erforderlich, damit wir Sie nicht bei jedem Seitenaufruf erneut
+              fragen:
+            </p>
+            <ul class="mt-4 list-disc space-y-1 pl-5 text-ink-800" role="list">
+              <li><span class="font-mono text-[0.9em]">ddm_consent_id</span> — eine zufällige Kennung Ihrer Entscheidung, 180 Tage</li>
+              <li><span class="font-mono text-[0.9em]">consent_statistics</span> — Ihre Wahl zur Kategorie Statistik, 180 Tage</li>
+              <li><span class="font-mono text-[0.9em]">consent_marketing</span> — Ihre Wahl zur Kategorie Marketing, 180 Tage</li>
+              <li><span class="font-mono text-[0.9em]">ddm_consent</span> — Ihre Wahl im lokalen Speicher des Browsers</li>
+            </ul>
+            <p class="mt-4 text-ink-800">
+              Rechtsgrundlage für das Speichern dieser Einträge ist § 25 Abs. 1 TDDDG in
+              Verbindung mit Ihrer Einwilligung, für die anschließende Verarbeitung
+              Art. 6 Abs. 1 S. 1 lit. a DSGVO.
+            </p>
+            <p class="mt-4 text-ink-800">
+              <strong>Sie können Ihre Entscheidung jederzeit ändern.</strong> Über
+              „Cookie-Einstellungen“ im Fußbereich jeder Seite öffnet sich der Dialog
+              erneut. Der Widerruf wirkt für die Zukunft und ist so einfach wie die
+              Einwilligung selbst.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="font-display text-2xl text-ink-950">3. Nachweis Ihrer Einwilligung</h2>
+            <p class="mt-4 text-ink-800">
+              Wir müssen nachweisen können, dass und wofür Sie eingewilligt haben
+              (Art. 7 Abs. 1 DSGVO). Dafür speichern wir zu jeder Entscheidung einen
+              Datensatz:
+            </p>
+            <ul class="mt-4 list-disc space-y-1 pl-5 text-ink-800" role="list">
+              <li>die zufällige Kennung aus <span class="font-mono text-[0.9em]">ddm_consent_id</span></li>
+              <li>eine Kennung dieser Website</li>
+              <li>ob Sie alles angenommen, alles abgelehnt oder einzeln gewählt haben</li>
+              <li>Ihre Wahl zu Statistik und Marketing</li>
+              <li>die Fassung des Einwilligungstextes, auf den sich Ihre Entscheidung bezog</li>
+              <li>Datum und Uhrzeit, gesetzt von unserem Server</li>
+            </ul>
+            <p class="mt-4 text-ink-800">
+              Ausdrücklich <strong>nicht</strong> gespeichert werden Ihre IP-Adresse, Ihre
+              Browserkennung, die aufgerufene Seite und die zuvor besuchte Seite. Der
+              Datensatz belegt eine Entscheidung, er ist kein Besuchsprotokoll. Die
+              zufällige Kennung lässt sich nur über den Eintrag in Ihrem eigenen Browser
+              zuordnen.
+            </p>
+            <p class="mt-4 text-ink-800">
+              Die Speicherung erfolgt bei Cloudflare mit der Gebietszuweisung
+              „Europäische Union“, siehe Abschnitt 9.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="font-display text-2xl text-ink-950">4. Hosting über GitHub Pages</h2>
             <p class="mt-4 text-ink-800">
               Diese Website wird über GitHub Pages bereitgestellt, einen Hosting-Dienst der
               GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA. Der
@@ -155,7 +248,87 @@
           </div>
 
           <div>
-            <h2 class="font-display text-2xl text-ink-950">3. Kontaktformular</h2>
+            <h2 class="font-display text-2xl text-ink-950">5. Google Tag Manager</h2>
+            <p class="mt-4 text-ink-800">
+              Wir setzen den Google Tag Manager der Google Ireland Limited, Gordon House,
+              Barrow Street, Dublin 4, Irland ein. Er ist ein Verwaltungswerkzeug: Er
+              steuert, welche der unten genannten Dienste wann ausgelöst werden. Der Tag
+              Manager selbst setzt keine Cookies und speichert keine Angaben zu Ihrer
+              Person.
+            </p>
+            <p class="mt-4 text-ink-800">
+              Der Tag Manager wird beim Aufruf der Seite geladen. Dabei wird Ihre
+              IP-Adresse an Google übertragen, weil ohne sie keine Verbindung zustande
+              kommt. Noch bevor er lädt, erhält Google von uns das Signal, dass keine
+              Einwilligung vorliegt (Google Consent Mode). Alle nachgelagerten Dienste
+              bleiben dadurch abgeschaltet, bis Sie zustimmen.
+            </p>
+            <p class="mt-4 text-ink-800">
+              Rechtsgrundlage ist unser berechtigtes Interesse nach Art. 6 Abs. 1 S. 1
+              lit. f DSGVO, die eingesetzten Werkzeuge zentral und nachvollziehbar zu
+              verwalten und die Einwilligungssignale zuverlässig zu übermitteln. Sie
+              haben das Recht, dieser Verarbeitung zu widersprechen.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="font-display text-2xl text-ink-950">6. Google Analytics 4</h2>
+            <p class="mt-4 text-ink-800">
+              <strong>Nur bei Einwilligung in die Kategorie Statistik.</strong> Wir nutzen
+              Google Analytics 4, einen Webanalysedienst der Google Ireland Limited, um zu
+              verstehen, wie unsere Website genutzt wird und welche Inhalte gefragt sind.
+            </p>
+            <p class="mt-4 text-ink-800">
+              Verarbeitet werden dabei insbesondere aufgerufene Seiten, Verweildauer,
+              Herkunft des Zugriffs, ungefährer Standort auf Ebene der Region, verwendetes
+              Gerät sowie Browser und Betriebssystem. Google Analytics 4 kürzt IP-Adressen,
+              bevor sie gespeichert werden; eine Speicherung der vollständigen IP-Adresse
+              findet nicht statt.
+            </p>
+            <p class="mt-4 text-ink-800">
+              Zu diesem Zweck setzt Google Cookies auf Ihrem Endgerät, mit denen Ihr
+              Browser über mehrere Aufrufe hinweg wiedererkannt wird. Die Ereignisdaten
+              werden nach Ablauf der in unserem Konto eingestellten Aufbewahrungsdauer
+              automatisch gelöscht; sie beträgt höchstens 14 Monate.
+            </p>
+            <p class="mt-4 text-ink-800">
+              Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 S. 1 lit. a DSGVO
+              und § 25 Abs. 1 TDDDG. Sie können sie jederzeit über „Cookie-Einstellungen“
+              im Fußbereich widerrufen. Weitere Angaben finden Sie in der
+              <a href="https://policies.google.com/privacy" class="text-accent-700 underline underline-offset-2 hover:text-ink-950" rel="noopener noreferrer" target="_blank">Datenschutzerklärung von Google</a>.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="font-display text-2xl text-ink-950">7. Google Ads</h2>
+            <p class="mt-4 text-ink-800">
+              <strong>Nur bei Einwilligung in die Kategorie Marketing.</strong> Wir schalten
+              Anzeigen über Google Ads, einen Dienst der Google Ireland Limited, und messen
+              deren Erfolg.
+            </p>
+            <p class="mt-4 text-ink-800">
+              Wenn Sie über eine unserer Anzeigen auf diese Website gelangen, setzt Google
+              ein Cookie, mit dem sich nachvollziehen lässt, ob aus dem Klick eine Anfrage
+              geworden ist. Wir erfahren dadurch die Gesamtzahl der Nutzer, die auf eine
+              Anzeige geklickt und anschließend eine Anfrage gestellt haben. Angaben, mit
+              denen sich einzelne Personen identifizieren lassen, erhalten wir nicht.
+            </p>
+            <p class="mt-4 text-ink-800">
+              Auf derselben Grundlage können wir Ihnen Anzeigen auf anderen Websites
+              ausspielen, nachdem Sie unsere Seite besucht haben (Remarketing).
+            </p>
+            <p class="mt-4 text-ink-800">
+              Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 S. 1 lit. a DSGVO
+              und § 25 Abs. 1 TDDDG, jederzeit widerrufbar über „Cookie-Einstellungen“ im
+              Fußbereich. Die Anzeigeneinstellungen Ihres Google-Kontos können Sie
+              zusätzlich unter
+              <a href="https://myadcenter.google.com/" class="text-accent-700 underline underline-offset-2 hover:text-ink-950" rel="noopener noreferrer" target="_blank">myadcenter.google.com</a>
+              anpassen.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="font-display text-2xl text-ink-950">8. Kontaktformular</h2>
             <p class="mt-4 text-ink-800">
               Wenn Sie das Formular auf dieser Website absenden, speichern wir die folgenden
               Angaben:
@@ -188,7 +361,7 @@
           </div>
 
           <div>
-            <h2 class="font-display text-2xl text-ink-950">4. Verarbeitung der Formulardaten bei Cloudflare</h2>
+            <h2 class="font-display text-2xl text-ink-950">9. Verarbeitung der Formulardaten bei Cloudflare</h2>
             <p class="mt-4 text-ink-800">
               Die Angaben aus dem Kontaktformular werden von einem Dienst der Cloudflare, Inc.,
               101 Townsend St, San Francisco, CA 94107, USA entgegengenommen (Cloudflare
@@ -208,7 +381,7 @@
           </div>
 
           <div>
-            <h2 class="font-display text-2xl text-ink-950">5. Übermittlung in Drittländer</h2>
+            <h2 class="font-display text-2xl text-ink-950">10. Übermittlung in Drittländer</h2>
             <p class="mt-4 text-ink-800">
               GitHub Inc. und Cloudflare, Inc. sind Gesellschaften mit Sitz in den USA. Für
               die Übermittlung personenbezogener Daten in die USA stützen sich beide Anbieter
@@ -221,10 +394,25 @@
               von Personen in der EU und sind im GitHub Data Protection Addendum niedergelegt.
               Cloudflare regelt die Übermittlung im oben genannten Data Processing Addendum.
             </p>
+            <p class="mt-4 text-ink-800">
+              Vertragspartner für die Google-Dienste ist die Google Ireland Limited mit Sitz
+              in Irland. Eine Verarbeitung durch die Google LLC in den USA lässt sich dabei
+              nicht ausschließen. Google stützt solche Übermittlungen nach eigenen Angaben
+              auf Angemessenheitsbeschlüsse, auf die Standardvertragsklauseln der
+              Europäischen Kommission sowie darauf, dass die Google LLC unter dem
+              EU-US Data Privacy Framework zertifiziert ist. Die Einzelheiten stehen in
+              Googles
+              <a href="https://policies.google.com/privacy/frameworks" class="text-accent-700 underline underline-offset-2 hover:text-ink-950" rel="noopener noreferrer" target="_blank">Übersicht zu internationalen Datenübermittlungen</a>.
+            </p>
+            <p class="mt-4 text-ink-800">
+              Trotz dieser Grundlagen lässt sich ein Zugriff US-amerikanischer Behörden auf
+              die übermittelten Daten nicht vollständig ausschließen. Diese Verarbeitung
+              findet ausschließlich nach Ihrer Einwilligung statt.
+            </p>
           </div>
 
           <div>
-            <h2 class="font-display text-2xl text-ink-950">6. Speicherdauer</h2>
+            <h2 class="font-display text-2xl text-ink-950">11. Speicherdauer</h2>
             <p class="mt-4 text-ink-800">
               Die Angaben aus dem Kontaktformular speichern wir, bis Sie Ihre Einwilligung
               widerrufen oder der Zweck der Verarbeitung entfällt. Ein Widerruf ist formlos
@@ -233,13 +421,27 @@
               möglich und wirkt für die Zukunft. Anschließend löschen wir Ihre Angaben, soweit
               keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
             </p>
+            <p class="mt-4 text-ink-800">
+              Den Nachweis Ihrer Einwilligung aus Abschnitt 3 bewahren wir auf, solange die
+              Einwilligung gilt, und darüber hinaus so lange, wie wir sie belegen können
+              müssen. Widerrufen Sie, bleibt der bisherige Datensatz bestehen, weil er für
+              den zurückliegenden Zeitraum der Nachweis ist; Ihr Widerruf wird als weiterer
+              Datensatz festgehalten.
+            </p>
+            <p class="mt-4 text-ink-800">
+              Die Aufbewahrungsdauer der Analysedaten richtet sich nach der Einstellung in
+              unserem Google-Analytics-Konto und beträgt höchstens 14 Monate. Die von
+              Google gesetzten Cookies laufen nach den von Google festgelegten Fristen ab.
+            </p>
           </div>
 
           <div>
-            <h2 class="font-display text-2xl text-ink-950">7. Speicherung auf Ihrem Endgerät</h2>
+            <h2 class="font-display text-2xl text-ink-950">12. Speicherung auf Ihrem Endgerät</h2>
             <p class="mt-4 text-ink-800">
-              Diese Website setzt keine Cookies. Sie legt zwei Einträge im Sitzungsspeicher
-              Ihres Browsers ab (<span class="font-mono text-[0.9em]">sessionStorage</span>):
+              Neben den Einträgen zu Ihrer Einwilligung aus Abschnitt 2 und den Cookies der
+              Google-Dienste aus den Abschnitten 6 und 7 legt diese Website zwei Einträge im
+              Sitzungsspeicher Ihres Browsers ab
+              (<span class="font-mono text-[0.9em]">sessionStorage</span>):
             </p>
             <ul class="mt-4 list-disc space-y-1 pl-5 text-ink-800" role="list">
               <li>
@@ -252,36 +454,36 @@
               </li>
             </ul>
             <p class="mt-4 text-ink-800">
-              Beide Einträge verbleiben in Ihrem Browser und werden gelöscht, sobald Sie den
-              Tab schließen. Sie enthalten keine personenbezogenen Daten, werden nicht an
-              Dritte übermittelt und nicht zur Analyse Ihres Verhaltens verwendet. Die
-              Speicherung ist erforderlich, um den von Ihnen aufgerufenen Dienst
-              bereitzustellen (§ 25 Abs. 2 Nr. 2 TDDDG). Eine Einwilligung ist dafür nicht
-              erforderlich, weshalb diese Website ohne Cookie-Banner auskommt.
+              Diese beiden Einträge verbleiben in Ihrem Browser und werden gelöscht, sobald
+              Sie den Tab schließen. Sie enthalten keine personenbezogenen Daten, werden
+              nicht an Dritte übermittelt und nicht zur Analyse Ihres Verhaltens verwendet.
+              Sie sind erforderlich, um den von Ihnen aufgerufenen Dienst bereitzustellen
+              (§ 25 Abs. 2 Nr. 2 TDDDG), und bedürfen deshalb keiner Einwilligung.
+            </p>
+            <p class="mt-4 text-ink-800">
+              Cookies können Sie in den Einstellungen Ihres Browsers löschen und ihr Setzen
+              einschränken. Werden Cookies abgelehnt, kann die Website in ihrer
+              Funktionsfähigkeit eingeschränkt sein.
             </p>
           </div>
 
           <div>
-            <h2 class="font-display text-2xl text-ink-950">8. Was auf dieser Website nicht stattfindet</h2>
+            <h2 class="font-display text-2xl text-ink-950">13. Was auf dieser Website nicht stattfindet</h2>
             <p class="mt-4 text-ink-800">
               Der Vollständigkeit halber, weil es sich von vielen Websites unterscheidet:
             </p>
             <ul class="mt-4 list-disc space-y-1 pl-5 text-ink-800" role="list">
-              <li>keine Webanalyse, weder Google Analytics noch ein vergleichbares Werkzeug</li>
-              <li>keine Werbe- oder Conversion-Pixel</li>
-              <li>keine Einbindung von Schriften, Skripten oder Bildern über fremde Server</li>
+              <li>ohne Ihre Einwilligung keine Analyse und keine Werbemessung</li>
+              <li>keine Aufzeichnung von Mausbewegungen, Klicks oder Eingaben, keine Sitzungsaufzeichnung</li>
               <li>keine Social-Media-Plug-ins</li>
-              <li>keine Profilbildung und keine automatisierte Entscheidungsfindung</li>
-              <li>kein Weiterverkauf und keine Weitergabe Ihrer Daten zu Werbezwecken</li>
+              <li>keine Einbindung von Schriften und Bildern über fremde Server, sämtliche Schriften liegen auf unserem eigenen Server</li>
+              <li>keine automatisierte Entscheidungsfindung, kein Scoring</li>
+              <li>kein Verkauf und keine Weitergabe Ihrer Daten an Dritte zu deren eigenen Werbezwecken</li>
             </ul>
-            <p class="mt-4 text-ink-800">
-              Sämtliche Schriften und Grafiken werden von demselben Server ausgeliefert wie
-              die Seite selbst.
-            </p>
           </div>
 
           <div>
-            <h2 class="font-display text-2xl text-ink-950">9. Ihre Rechte</h2>
+            <h2 class="font-display text-2xl text-ink-950">14. Ihre Rechte</h2>
             <p class="mt-4 text-ink-800">Ihnen stehen gegenüber uns die folgenden Rechte zu:</p>
             <ul class="mt-4 list-disc space-y-1 pl-5 text-ink-800" role="list">
               <li>Auskunft über die zu Ihrer Person gespeicherten Daten (Art. 15 DSGVO)</li>
@@ -293,13 +495,15 @@
               <li>Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
             </ul>
             <p class="mt-4 text-ink-800">
-              Für die Ausübung genügt eine formlose E-Mail an
+              Eine erteilte Einwilligung in Statistik oder Marketing widerrufen Sie am
+              schnellsten über „Cookie-Einstellungen“ im Fußbereich jeder Seite. Für alle
+              übrigen Rechte genügt eine formlose E-Mail an
               <a href="mailto:impressum@datadrivenmarketing.de" class="text-accent-700 underline underline-offset-2 hover:text-ink-950">impressum@datadrivenmarketing.de</a>.
             </p>
           </div>
 
           <div>
-            <h2 class="font-display text-2xl text-ink-950">10. Beschwerderecht bei der Aufsichtsbehörde</h2>
+            <h2 class="font-display text-2xl text-ink-950">15. Beschwerderecht bei der Aufsichtsbehörde</h2>
             <p class="mt-4 text-ink-800">
               Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die
               Verarbeitung Ihrer personenbezogenen Daten zu beschweren. Für uns zuständig ist
@@ -310,7 +514,7 @@
           </div>
 
           <div>
-            <h2 class="font-display text-2xl text-ink-950">11. Verschlüsselung</h2>
+            <h2 class="font-display text-2xl text-ink-950">16. Verschlüsselung</h2>
             <p class="mt-4 text-ink-800">
               Diese Website wird durchgehend über eine verschlüsselte Verbindung ausgeliefert
               (HTTPS). Auch die Übertragung Ihrer Formularangaben erfolgt verschlüsselt.
@@ -318,7 +522,7 @@
           </div>
 
           <div>
-            <h2 class="font-display text-2xl text-ink-950">12. Änderungen dieser Erklärung</h2>
+            <h2 class="font-display text-2xl text-ink-950">17. Änderungen dieser Erklärung</h2>
             <p class="mt-4 text-ink-800">
               Wir passen diese Datenschutzerklärung an, sobald sich die Verarbeitung auf
               dieser Website ändert. Es gilt jeweils die hier abrufbare Fassung.
@@ -355,6 +559,7 @@
         <ul class="mt-4 space-y-2 text-sm text-ink-300" role="list">
           <li><a href="/impressum" class="hover:text-white">Impressum</a></li>
           <li><a href="/datenschutz" class="hover:text-white">Datenschutzerklärung</a></li>
+          <li><button type="button" class="text-left hover:text-white" onclick="openConsentBanner(); return false;">Cookie-Einstellungen</button></li>
         </ul>
       </div>
     </div>

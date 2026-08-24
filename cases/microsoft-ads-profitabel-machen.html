@@ -8,6 +8,20 @@
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#1b1e27" />
 
+  <!-- Consent-Banner. Muss vor allem anderen stehen: Das Skript setzt den
+       Consent-Mode-Default auf "denied" und laedt erst danach den Tag Manager.
+       Wird diese Reihenfolge umgestellt, feuern Tags vor der Einwilligung. -->
+  <script src="https://ddm-consent-preview.datadrivenmarketing.workers.dev/v1.0.0/consent.js"
+    integrity="sha384-9ObtIMCQDDAJYmM657i1jvUDQhAFMzeCgQ413JsasW/Hflib8b9EV6+ngzSqKQBR"
+    crossorigin="anonymous"
+    data-gtm="GTM-KN44W5SD"
+    data-site="ddm-website"
+    data-endpoint="https://ddm-consent-preview.datadrivenmarketing.workers.dev/api/consent"
+    data-privacy="/datenschutz"
+    data-imprint="/impressum"
+    data-accent="#3354a1"></script>
+
+
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="DDM Data Driven Marketing" />
@@ -890,6 +904,7 @@
         <ul class="mt-4 space-y-2 text-sm text-ink-300" role="list">
           <li><a href="/impressum" class="hover:text-white">Impressum</a></li>
           <li><a href="/datenschutz" class="hover:text-white">Datenschutzerklärung</a></li>
+          <li><button type="button" class="text-left hover:text-white" onclick="openConsentBanner(); return false;">Cookie-Einstellungen</button></li>
         </ul>
       </div>
     </div>
