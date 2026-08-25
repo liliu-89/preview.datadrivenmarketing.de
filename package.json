@@ -11,7 +11,9 @@
     "worker:deploy:prod": "wrangler deploy --config worker/wrangler.toml --env production",
     "db:migrate:preview": "wrangler d1 execute ddm-leads-preview --remote --config worker/wrangler.toml --env preview --file=./migrations/0001_create_leads.sql",
     "db:migrate:prod": "wrangler d1 execute ddm-leads-prod --remote --config worker/wrangler.toml --env production --file=./migrations/0001_create_leads.sql",
-    "db:list:preview": "wrangler d1 execute ddm-leads-preview --remote --config worker/wrangler.toml --env preview --command \"SELECT id, first_name, company, email, ads_budget, source, created_at FROM leads ORDER BY created_at DESC LIMIT 10;\""
+    "db:list:preview": "wrangler d1 execute ddm-leads-preview --remote --config worker/wrangler.toml --env preview --command \"SELECT id, first_name, company, email, ads_budget, source, created_at FROM leads ORDER BY created_at DESC LIMIT 10;\"",
+    "deploy:prod": "node scripts/deploy-prod.mjs",
+    "deploy:prod:dry": "node scripts/deploy-prod.mjs --dry-run"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.2",

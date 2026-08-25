@@ -821,7 +821,9 @@
     display: flex;
     width: max-content;
     align-items: center;
-    animation: logo-marquee 60s linear infinite;
+    /* Dauer folgt der Anzahl der Kacheln, damit das Tempo gleich bleibt:
+       ursprünglich 60s bei 18 Logos, jetzt 40s bei 12. */
+    animation: logo-marquee 40s linear infinite;
   }
   .logo-marquee-track:hover {
     animation-play-state: paused;
