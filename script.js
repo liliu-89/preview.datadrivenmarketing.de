@@ -76,18 +76,6 @@
     btn.addEventListener('click', () => scrollToForm(btn.dataset.source || 'unknown'));
   });
 
-  /* ─── Toast ──────────────────────────────────────────── */
-  const toastEl = document.getElementById('toast');
-  let toastTimer = null;
-
-  function showToast(msg) {
-    if (!toastEl) return;
-    toastEl.textContent = msg;
-    toastEl.classList.add('is-visible');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toastEl.classList.remove('is-visible'), 3000);
-  }
-
   /* ─── Form validation ────────────────────────────────── */
   const form = document.getElementById('leadForm');
   if (form) {
@@ -218,6 +206,37 @@
       }
     }
 
+    /* Der Erfolgsfall ersetzt das Formular, statt eine Meldung darunter zu
+       hängen. Ein geleertes Formular, das stehen bleibt, liest sich
+       mehrdeutig und lädt zum zweiten Absenden ein. */
+    function showSuccess() {
+      const successEl = document.getElementById('formSuccess');
+      const titleEl = document.getElementById('kontaktTitel');
+
+      form.hidden = true;
+
+      if (titleEl) titleEl.textContent = 'Anfrage eingegangen';
+
+      // Auslöser für die Ads-Conversion im Tag Manager. Ein Array-Push ist
+      // unabhängig von der Einwilligung unbedenklich; ob daraus ein Tag
+      // feuert, entscheidet GTM anhand der Consent-Signale.
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'lead_submitted' });
+
+      if (!successEl) return;
+      successEl.classList.add('is-visible');
+
+      // role="status" meldet den Text an, bewegt aber den Fokus nicht. Ohne
+      // das Folgende bliebe der Fokus im ausgeblendeten Formular hängen.
+      successEl.focus({ preventScroll: true });
+
+      const card = successEl.closest('.surface') || successEl;
+      card.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'center',
+      });
+    }
+
     async function sendLead() {
       isSubmitting = true;
       setNotice('', null);
@@ -249,18 +268,9 @@
         try { data = await res.json(); } catch (_) { /* Antwort ohne JSON-Body */ }
 
         if (res.ok && data && data.success) {
-          form.reset();
           clearErrors();
-          // Erst nach clearErrors – das leert #formGlobal mit.
-          setNotice('Vielen Dank! Wir prüfen Ihre Angaben und melden uns bei Ihnen.', 'success');
-          showToast('Anfrage erhalten – wir melden uns.');
           try { sessionStorage.removeItem('cta_source'); } catch (_) {}
-          // Button bleibt bewusst deaktiviert: Das Formular ist geleert,
-          // ein zweiter Versand wäre ein Versehen.
-          if (submitBtn) {
-            submitBtn.textContent = 'Gesendet ✓';
-            submitBtn.removeAttribute('aria-busy');
-          }
+          showSuccess();
           return;
         }
 

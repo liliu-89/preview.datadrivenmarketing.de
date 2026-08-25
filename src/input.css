@@ -554,6 +554,17 @@
     @apply ring-error/20;
   }
 
+  /* Erfolgszustand des Kontaktformulars. Sichtbarkeit bewusst über eine
+     Komponentenklasse statt über die Utilities hidden/block: Beide haben
+     dieselbe Spezifität, und welche gewinnt, entschiede dann die Reihenfolge
+     im Build. Gleiches Muster wie .reveal / .reveal.is-visible. */
+  .form-success {
+    display: none;
+  }
+  .form-success.is-visible {
+    display: block;
+  }
+
   .form-notice {
     @apply hidden rounded-control px-4 py-3 text-sm font-medium;
   }
@@ -713,10 +724,6 @@
     width: 9px;
     border-radius: 9999px;
     background-color: var(--color-accent-600);
-  }
-
-  .toast.is-visible {
-    @apply translate-y-0 opacity-100;
   }
 
   /* FAQ-Panel: sanftes Auf-/Zuklappen über grid-template-rows (0fr → 1fr)
