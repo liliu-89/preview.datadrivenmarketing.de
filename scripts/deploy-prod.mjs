@@ -73,6 +73,17 @@ const arbeit = mkdtempSync(join(tmpdir(), 'ddm-deploy-'));
 sh('git', ['clone', '--quiet', ZIEL_REPO, arbeit], tmpdir());
 ok(`geklont nach ${arbeit}`);
 
+/* Identitaet aus dem Quellrepo uebernehmen. Ein frischer Klon erbt sie nicht,
+   und global ist auf diesem Rechner keine gesetzt: git commit brach sonst mit
+   "Author identity unknown" ab. Nur lokal im Klon, nichts wird global veraendert. */
+for (const feld of ['user.name', 'user.email']) {
+  let wert;
+  try { wert = sh('git', ['config', '--get', feld]); } catch { wert = ''; }
+  if (!wert) abbruch(`${feld} ist im Quellrepo nicht gesetzt. Ohne Identitaet kann nicht committet werden.`);
+  sh('git', ['config', feld, wert], arbeit);
+}
+ok(`Identitaet uebernommen: ${sh('git', ['config', '--get', 'user.name'])} <${sh('git', ['config', '--get', 'user.email'])}>`);
+
 /* Notfallstand festhalten, um am Ende zu belegen, dass er unberührt blieb. */
 const maintenance = sh('git', ['branch', '-r'], arbeit)
   .split('\n').map((b) => b.trim())
