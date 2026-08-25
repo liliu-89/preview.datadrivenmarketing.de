@@ -108,8 +108,15 @@ for (const d of DATEIEN) {
   mkdirSync(dirname(join(arbeit, d)), { recursive: true });
   cpSync(join(ROOT, d), join(arbeit, d));
 }
-for (const o of ORDNER) cpSync(join(ROOT, o), join(arbeit, o), { recursive: true });
-ok(`${DATEIEN.length} Dateien und ${ORDNER.length} Verzeichnisse kopiert`);
+/* Punktdateien ausschliessen. cpSync kopiert das Dateisystem, nicht den
+   Git-Index: .DS_Store ist zwar gitignoriert, laege ohne diesen Filter aber
+   im Artefakt und damit auf der Produktivdomain. .nojekyll wird oben
+   ausdruecklich einzeln kopiert. */
+const ohnePunktdateien = (quelle) => !/(^|\/)\.[^/]+$/.test(quelle);
+for (const o of ORDNER) {
+  cpSync(join(ROOT, o), join(arbeit, o), { recursive: true, filter: ohnePunktdateien });
+}
+ok(`${DATEIEN.length} Dateien und ${ORDNER.length} Verzeichnisse kopiert, ohne Punktdateien`);
 
 /* ── 5. Umschreiben ────────────────────────────────────────────────── */
 schritt('5. Umschreiben');
