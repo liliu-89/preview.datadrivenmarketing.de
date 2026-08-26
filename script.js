@@ -221,7 +221,7 @@
       // unabhängig von der Einwilligung unbedenklich; ob daraus ein Tag
       // feuert, entscheidet GTM anhand der Consent-Signale.
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'lead_submitted' });
+      window.dataLayer.push({ event: 'form_submit' });
 
       if (!successEl) return;
       successEl.classList.add('is-visible');
