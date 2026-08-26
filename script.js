@@ -217,11 +217,22 @@
 
       if (titleEl) titleEl.textContent = 'Anfrage eingegangen';
 
-      // Auslöser für die Ads-Conversion im Tag Manager. Ein Array-Push ist
-      // unabhängig von der Einwilligung unbedenklich; ob daraus ein Tag
-      // feuert, entscheidet GTM anhand der Consent-Signale.
+      // Auslöser für GA4 generate_lead und die Ads-Conversion im Tag Manager.
+      // Ein Array-Push ist unabhängig von der Einwilligung unbedenklich; ob
+      // daraus ein Tag feuert, entscheidet GTM anhand der Consent-Signale.
+      //
+      // Der Name lautet bewusst nicht form_submit. Das Google-Tag erkennt
+      // Formularinteraktionen selbst und erhebt form_submit innerhalb der
+      // Ereignisverarbeitung von GTM, ohne den Umweg über den dataLayer.
+      // Ein Trigger auf form_submit feuerte deshalb auch bei jedem
+      // gescheiterten Absendeversuch, und damit die Ads-Conversion.
+      // Gemessen an einem leeren Formular: Validierung bricht ab, keine
+      // Anfrage geht an den Server, das Ereignis kommt trotzdem.
+      //
+      // lead_submitted erhebt Google nirgends. Der Name steht hier und im
+      // Trigger CE - lead_submitted und darf nur zusammen geändert werden.
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'form_submit' });
+      window.dataLayer.push({ event: 'lead_submitted' });
 
       if (!successEl) return;
       successEl.classList.add('is-visible');
