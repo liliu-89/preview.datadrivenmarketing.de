@@ -569,18 +569,23 @@
               <p class="mt-2 text-sm text-ink-400">Übernommen mit strukturellen Altlasten und unvollständiger Umsatzmessung, dann Schritt für Schritt wirtschaftlicher gemacht.</p>
             </div>
             <div class="p-6">
-              <div class="-mx-6 flex divide-x divide-ink-200 border-y border-ink-200 px-6 py-4">
-                <div class="flex-1 pr-4">
+              <!-- min-w-0 an den Spalten ist noetig, nicht kosmetisch: Flex-Elemente
+                     haben min-width: auto und schrumpfen nicht unter ihre
+                     Inhaltsbreite. Bei langen Sublabels uebersteigt die Summe der
+                     Mindestbreiten den Platz, die Reihe laeuft ueber, und die Karte
+                     schneidet mit overflow-hidden ab. Auf 360 px waren das 7 px. -->
+                <div class="-mx-6 flex divide-x divide-ink-200 border-y border-ink-200 px-6 py-4">
+                <div class="min-w-0 flex-1 pr-4">
                   <p class="font-body text-xs uppercase tracking-wide text-ink-700">Conversion-Wert</p>
                   <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">47k€</p>
                   <p class="text-xs text-ink-700">im 4. Monat</p>
                 </div>
-                <div class="flex-1 px-4">
+                <div class="min-w-0 flex-1 px-4">
                   <p class="font-body text-xs uppercase tracking-wide text-ink-700">ROAS</p>
                   <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">9,17×</p>
                   <p class="text-xs text-ink-700">im 4. Monat</p>
                 </div>
-                <div class="flex-1 pl-4">
+                <div class="min-w-0 flex-1 pl-4">
                   <p class="font-body text-xs uppercase tracking-wide text-ink-700">KUR</p>
                   <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">10,9&nbsp;%</p>
                   <p class="text-xs text-ink-700">im 4. Monat</p>
@@ -612,18 +617,23 @@
                    Label. Die 43,7 % gelten für die High-Intent-Kampagne, der
                    Vorher-Wert fürs Gesamtkonto; das Sublabel sagt „kontoweit",
                    damit der Unterschied sichtbar bleibt. -->
-              <div class="-mx-6 flex divide-x divide-ink-200 border-y border-ink-200 px-6 py-4">
-                <div class="flex-1 pr-4">
+              <!-- min-w-0 an den Spalten ist noetig, nicht kosmetisch: Flex-Elemente
+                     haben min-width: auto und schrumpfen nicht unter ihre
+                     Inhaltsbreite. Bei langen Sublabels uebersteigt die Summe der
+                     Mindestbreiten den Platz, die Reihe laeuft ueber, und die Karte
+                     schneidet mit overflow-hidden ab. Auf 360 px waren das 7 px. -->
+                <div class="-mx-6 flex divide-x divide-ink-200 border-y border-ink-200 px-6 py-4">
+                <div class="min-w-0 flex-1 pr-4">
                   <p class="font-body text-xs uppercase tracking-wide text-ink-700">Sichtbarkeit Kernnachfrage</p>
                   <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">43,7&nbsp;%</p>
                   <p class="text-xs text-ink-700">zuvor &lt;10&nbsp;% kontoweit</p>
                 </div>
-                <div class="flex-1 px-4">
+                <div class="min-w-0 flex-1 px-4">
                   <p class="font-body text-xs uppercase tracking-wide text-ink-700">Buchungen</p>
                   <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">85&nbsp;%</p>
                   <p class="text-xs text-ink-700">aus Brand + lokaler Suche</p>
                 </div>
-                <div class="flex-1 pl-4">
+                <div class="min-w-0 flex-1 pl-4">
                   <p class="font-body text-xs uppercase tracking-wide text-ink-700">Termine verknüpft</p>
                   <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">23</p>
                   <p class="text-xs text-ink-700">bis zur Anzeige rückverfolgbar</p>
