@@ -157,9 +157,10 @@ async function notify(env, lead, createdAt, id) {
         Messages: [{
           From: { Email: from, Name: 'DDM Website' },
           To: to.map((Email) => ({ Email })),
-          // Die Firma im Betreff macht die Meldung in der Übersicht des
-          // Postfachs sofort einordenbar.
-          Subject: `Neue Anfrage: ${lead.company}`,
+          // Der feste Teil steht vorn, damit eine Filterregel im Postfach
+          // zuverlaessig darauf greifen kann. Die Firma dahinter macht die
+          // Meldung in der Uebersicht sofort einordenbar.
+          Subject: `Neue Anfrage über Ihr Formular auf datadrivenmarketing.de: ${lead.company}`,
           TextPart: text,
         }],
       }),
