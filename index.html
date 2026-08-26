@@ -483,39 +483,22 @@
     <!-- ===== DIFFERENZIERUNG ===== -->
     <section id="differenzierung" aria-labelledby="diff-title" class="section-shell bg-white">
       <div class="container-page">
-        <!-- Kopfzeile ueber die volle Containerbreite: Text links, Grafik
-             rechts. Bewusst nicht im section-grid, weil die Grafik sonst in
-             acht von zwoelf Spalten sitzt und dort nochmals geteilt wird,
-             was sie zu klein macht. Der Titel beginnt trotzdem an derselben
-             linken Achse wie in allen anderen Sektionen. -->
-        <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-          <div>
-            <h2 id="diff-title" class="section-title">
-              Strategische Beratung und operative Umsetzung
-            </h2>
-            <p class="section-lead">
-              Wir begleiten Unternehmen strategisch und steigen dort operativ ein, wo es für das Wachstum entscheidend ist.
-            </p>
-            <p class="measure mt-5 leading-relaxed text-ink-800">
-              Strategie, Umsetzung, Tracking und Datenverantwortung liegen bei derselben Instanz. Sie sprechen mit der Person, die Ihre Kampagnen tatsächlich betreut. Es gibt keine Zwischenebene, die den Kontext erst weitergeben müsste.
-            </p>
-          </div>
-
-            <!-- PLATZHALTER – zum Austauschen einfach images/positionierung.svg
-                 durch die eigene Datei ersetzen. Bei anderem Format zusätzlich
-                 die Endung im src anpassen und width/height auf die echten
-                 Pixelmaße setzen (verhindert Layoutsprung beim Laden).
-                 Seitenverhältnis 4:3 ist über aspect-[4/3] fixiert, object-cover
-                 beschneidet abweichende Formate mittig statt sie zu verzerren.
-                 alt bleibt leer, solange es dekorativ ist – zeigt das Bild später
-                 eine Person oder Sachinformation, gehört hier eine Beschreibung
-                 hinein. -->
-            <div>
-              <img src="images/positionierung.svg" alt=""
-                   width="800" height="600" loading="lazy"
-                   class="surface aspect-[4/3] w-full object-cover" />
-            </div>
-          </div>
+        <!-- Frueher zweispaltig, mit einer Grafik rechts neben dem Text. Die
+             Grafik war ein Platzhalter und ist ersatzlos entfallen; der
+             Zweispalter mit ihr, sonst saesse der Text in 1,15 von zwei
+             Spalten und rechts bliebe eine leere Flaeche. Kommt spaeter ein
+             echtes Bild dazu, gehoert das Raster wieder her. -->
+        <div>
+          <h2 id="diff-title" class="section-title">
+            Strategische Beratung und operative Umsetzung
+          </h2>
+          <p class="section-lead">
+            Wir begleiten Unternehmen strategisch und steigen dort operativ ein, wo es für das Wachstum entscheidend ist.
+          </p>
+          <p class="measure mt-5 leading-relaxed text-ink-800">
+            Strategie, Umsetzung, Tracking und Datenverantwortung liegen bei derselben Instanz. Sie sprechen mit der Person, die Ihre Kampagnen tatsächlich betreut. Es gibt keine Zwischenebene, die den Kontext erst weitergeben müsste.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -566,7 +549,7 @@
           </p>
         </div>
 
-        <div class="grid gap-6 sm:grid-cols-2">
+        <div class="grid gap-6 sm:grid-cols-2 sm:grid-rows-[auto_auto] sm:gap-y-0">
 
           <!-- Beide Karten teilen dieselbe Bauweise: weiße Fläche mit dunklem
                Kopfbereich. Die Microsoft-Karte war zuvor durchgehend dunkel,
@@ -574,7 +557,7 @@
                hat die Sonderstellung keine Grundlage mehr. -->
 
           <!-- Case 1: Microsoft Ads / E-Commerce -->
-          <article class="surface surface-lift overflow-hidden">
+          <article class="surface surface-lift overflow-hidden sm:grid sm:row-span-2 sm:grid-rows-subgrid">
             <div class="relative overflow-hidden bg-ink-950 p-6">
               <img src="Logos/ddm Logo svg/Signet_weiß.svg" alt="" aria-hidden="true" width="182" height="181"
                    class="signet-watermark -right-8 -top-8 w-40" />
@@ -582,7 +565,7 @@
                 <span class="pill">Microsoft Ads</span>
                 <span class="pill">E-Commerce</span>
               </div>
-              <h3 class="mt-4 font-body text-lg font-medium text-white">Wie ein Microsoft-Ads-Account von 4,44&times; auf 9,17&times; ROAS entwickelt wurde</h3>
+              <h3 class="mt-4 font-body text-lg font-medium text-white">Microsoft-Ads-Account von 4,44&times; auf 9,17&times; ROAS entwickelt</h3>
               <p class="mt-2 text-sm text-ink-400">Übernommen mit strukturellen Altlasten und unvollständiger Umsatzmessung, dann Schritt für Schritt wirtschaftlicher gemacht.</p>
             </div>
             <div class="p-6">
@@ -611,7 +594,7 @@
           </article>
 
           <!-- Case 2: Google Ads / Medizin-Leadgen – verlinkt -->
-          <article class="surface surface-lift overflow-hidden">
+          <article class="surface surface-lift overflow-hidden sm:grid sm:row-span-2 sm:grid-rows-subgrid">
             <div class="relative overflow-hidden bg-ink-950 p-6">
               <img src="Logos/ddm Logo svg/Signet_weiß.svg" alt="" aria-hidden="true" width="182" height="181"
                    class="signet-watermark -right-8 -top-8 w-40" />
@@ -619,7 +602,7 @@
                 <span class="pill">Google Ads</span>
                 <span class="pill">Medizin / Leads</span>
               </div>
-              <h3 class="mt-4 font-body text-lg font-medium text-white">Wie ein Google-Ads-Konto vom Traffic-Kanal zum Lead-System wird</h3>
+              <h3 class="mt-4 font-body text-lg font-medium text-white">Google-Ads-Konto vom Traffic-Kanal zum Lead-System entwickelt</h3>
               <p class="mt-2 text-sm text-ink-400">Übernommen mit breit streuender Struktur und einem einzigen Conversion-Signal, dann nach Suchintention neu aufgebaut.</p>
             </div>
             <div class="p-6">

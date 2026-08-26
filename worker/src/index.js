@@ -131,7 +131,7 @@ async function notify(env, lead, createdAt, id) {
   }
 
   const zeit = new Date(createdAt).toLocaleString('de-DE', {
-    timeZone: 'Europe/Berlin', dateStyle: 'short', timeStyle: 'short',
+    timeZone: 'Europe/Berlin', dateStyle: 'medium', timeStyle: 'short',
   });
 
   const text = [
