@@ -21,11 +21,12 @@ enabled = true
 name = "ddm-leads-preview"
 
 [env.preview.vars]
-# Empfaenger der Benachrichtigung, kommagetrennt. Bewusst nur eine Adresse:
-# Die Verteilung uebernimmt eine Weiterleitungsregel bei one.com, die auf den
-# festen Teil des Betreffs greift. Weitere Adressen waeren hier eine
+# Empfaenger der Benachrichtigung, kommagetrennt. Eine eigene Adresse statt
+# des Catch-alls info@: Dort kommt ausser diesen Meldungen nichts an, also
+# braucht es weder eine Filterregel noch einen Schutz vor dem Spamfilter.
+# Die Weiterverteilung regelt one.com. Weitere Adressen waeren hier eine
 # Konfigurationsaenderung plus Deploy, keine Codeaenderung.
-NOTIFY_TO = "info@datadrivenmarketing.de"
+NOTIFY_TO = "formular-eingang@datadrivenmarketing.de"
 # Absender. Die Domain ist bei Mailjet verifiziert; ein echtes Postfach
 # muss dahinter nicht stehen.
 NOTIFY_FROM = "formular@datadrivenmarketing.de"
@@ -45,11 +46,12 @@ database_id = "b43c2fb9-7d56-48aa-8c15-d94baa1cc3d0"
 name = "ddm-leads-prod"
 
 [env.production.vars]
-# Empfaenger der Benachrichtigung, kommagetrennt. Bewusst nur eine Adresse:
-# Die Verteilung uebernimmt eine Weiterleitungsregel bei one.com, die auf den
-# festen Teil des Betreffs greift. Weitere Adressen waeren hier eine
+# Empfaenger der Benachrichtigung, kommagetrennt. Eine eigene Adresse statt
+# des Catch-alls info@: Dort kommt ausser diesen Meldungen nichts an, also
+# braucht es weder eine Filterregel noch einen Schutz vor dem Spamfilter.
+# Die Weiterverteilung regelt one.com. Weitere Adressen waeren hier eine
 # Konfigurationsaenderung plus Deploy, keine Codeaenderung.
-NOTIFY_TO = "info@datadrivenmarketing.de"
+NOTIFY_TO = "formular-eingang@datadrivenmarketing.de"
 # Absender. Die Domain ist bei Mailjet verifiziert; ein echtes Postfach
 # muss dahinter nicht stehen.
 NOTIFY_FROM = "formular@datadrivenmarketing.de"
