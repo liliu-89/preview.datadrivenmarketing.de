@@ -343,16 +343,22 @@
     $$('.reveal, .reveal-seq').forEach(el => el.classList.add('is-visible'));
   }
 
-  /* Sicherheitsnetz für .reveal-seq – gleiche Begründung wie beim
-     Tippeffekt weiter unten: Ein IntersectionObserver meldet nichts,
+  /* Sicherheitsnetz für beide Reveal-Varianten – gleiche Begründung wie
+     beim Tippeffekt weiter unten: Ein IntersectionObserver meldet nichts,
      solange das Dokument verborgen ist (Hintergrundtab, per Mittelklick
-     geöffneter Link). Beim Hero ist das folgenlos, dort steht nur eine
-     Animation aus. Hier hängen ganze Inhaltsblöcke daran – Datenquellen
-     und Journey blieben unsichtbar. Nach drei Sekunden stehen sie
-     deshalb in jedem Fall. Idempotent, kostet nichts, und der
-     Normalfall bleibt der Observer. */
+     geöffneter Link). Genutzt wird die Mechanik derzeit nur auf
+     marketing-audit.html, dort hängen Datenquellen und Journey daran und
+     blieben unsichtbar. Nach drei Sekunden stehen sie in jedem Fall.
+     Idempotent, kostet nichts, und der Normalfall bleibt der Observer.
+
+     .reveal steht mit im Selektor, obwohl es aktuell keinen Verwender hat:
+     Hero und Formular haben die Klasse verloren und zeichnen direkt mit dem
+     CSS. Sollte sie wieder eingesetzt werden, ist sie damit von vornherein
+     abgesichert. Für den ersten Bildschirm taugt das Netz allerdings nicht –
+     drei Sekunden sind dort zu spät. Was oberhalb der Falz steht, darf keine
+     Reveal-Klasse tragen. */
   setTimeout(() => {
-    $$('.reveal-seq').forEach(el => el.classList.add('is-visible'));
+    $$('.reveal, .reveal-seq').forEach(el => el.classList.add('is-visible'));
   }, 3000);
 
   /* ─── Hero-H1: Tippeffekt ─────────────────────────────────────────────

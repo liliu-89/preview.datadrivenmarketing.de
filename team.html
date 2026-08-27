@@ -151,7 +151,13 @@
 
          team/placeholder-team.png wird derzeit von keiner Karte genutzt und
          liegt absichtlich im Ordner: Neuzugänge ohne Portrait verweisen
-         darauf, bis ein Foto vorliegt. Nicht aufräumen. -->
+         darauf, bis ein Foto vorliegt. Nicht aufräumen. Das gilt auch für
+         die .webp-Zwillinge – die erzeugt npm run bilder:webp für jedes PNG
+         im Ordner, damit eine neue Karte beide Fassungen vorfindet.
+
+         Die Portraits stehen in <picture>: WebP zuerst, PNG als Fallback.
+         Die WebP-Fassungen wiegen zusammen 45 statt 703 KB. Dieselbe
+         Konvention verfolgt src/input.css bei Franklin mit woff2 und woff. -->
     <section aria-labelledby="personen-title" class="section-shell">
       <div class="container-page">
         <div class="section-head">
@@ -164,8 +170,11 @@
         <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" role="list">
 
           <li class="surface flex flex-col p-6 sm:p-7">
-            <img src="team/Li-Liu.png" alt="Li Liu, Geschäftsführer von DDM"
-                 class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" />
+            <picture>
+              <source srcset="team/Li-Liu.webp" type="image/webp" />
+              <img src="team/Li-Liu.png" alt="Li Liu, Geschäftsführer von DDM"
+                   class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" />
+            </picture>
             <h3 class="mt-5 font-body text-lg font-medium text-ink-950">Li Liu</h3>
             <p class="mt-1 font-body text-sm text-accent-600">Geschäftsführer</p>
             <p class="mt-4 text-ink-800">
@@ -180,8 +189,11 @@
           </li>
 
           <li class="surface flex flex-col p-6 sm:p-7">
-            <img src="team/Theresa-Leistner.png" alt="Theresa Leistner, Senior SEA &amp; Performance Marketing Consultant bei DDM"
-                 class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" />
+            <picture>
+              <source srcset="team/Theresa-Leistner.webp" type="image/webp" />
+              <img src="team/Theresa-Leistner.png" alt="Theresa Leistner, Senior SEA &amp; Performance Marketing Consultant bei DDM"
+                   class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" />
+            </picture>
             <h3 class="mt-5 font-body text-lg font-medium text-ink-950">Theresa Leistner</h3>
             <p class="mt-1 font-body text-sm text-accent-600">Senior SEA &amp; Performance Marketing Consultant</p>
             <p class="mt-4 text-ink-800">
@@ -196,8 +208,11 @@
           </li>
 
           <li class="surface flex flex-col p-6 sm:p-7">
-            <img src="team/Adriana-Schwandt.png" alt="Adriana Schwandt, Senior SEA &amp; Performance Marketing Consultant bei DDM"
-                 class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" loading="lazy" />
+            <picture>
+              <source srcset="team/Adriana-Schwandt.webp" type="image/webp" />
+              <img src="team/Adriana-Schwandt.png" alt="Adriana Schwandt, Senior SEA &amp; Performance Marketing Consultant bei DDM"
+                   class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" loading="lazy" />
+            </picture>
             <h3 class="mt-5 font-body text-lg font-medium text-ink-950">Adriana Schwandt</h3>
             <p class="mt-1 font-body text-sm text-accent-600">Senior SEA &amp; Performance Marketing Consultant</p>
             <p class="mt-4 text-ink-800">
@@ -212,8 +227,11 @@
           </li>
 
           <li class="surface flex flex-col p-6 sm:p-7">
-            <img src="team/Poondi-Mendy.png" alt="Poondi Mendy, Senior SEO &amp; GEO Consultant bei DDM"
-                 class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" loading="lazy" />
+            <picture>
+              <source srcset="team/Poondi-Mendy.webp" type="image/webp" />
+              <img src="team/Poondi-Mendy.png" alt="Poondi Mendy, Senior SEO &amp; GEO Consultant bei DDM"
+                   class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" loading="lazy" />
+            </picture>
             <h3 class="mt-5 font-body text-lg font-medium text-ink-950">Poondi Mendy</h3>
             <p class="mt-1 font-body text-sm text-accent-600">Senior SEO &amp; GEO Consultant</p>
             <p class="mt-4 text-ink-800">
@@ -228,8 +246,11 @@
           </li>
 
           <li class="surface flex flex-col p-6 sm:p-7">
-            <img src="team/Dominik-Calzone.png" alt="Dominik Calzone, Business Development bei DDM"
-                 class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" loading="lazy" />
+            <picture>
+              <source srcset="team/Dominik-Calzone.webp" type="image/webp" />
+              <img src="team/Dominik-Calzone.png" alt="Dominik Calzone, Business Development bei DDM"
+                   class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" loading="lazy" />
+            </picture>
             <h3 class="mt-5 font-body text-lg font-medium text-ink-950">Dominik Calzone</h3>
             <p class="mt-1 font-body text-sm text-accent-600">Business Development</p>
             <p class="mt-4 text-ink-800">
@@ -243,8 +264,11 @@
           </li>
 
           <li class="surface flex flex-col p-6 sm:p-7">
-            <img src="team/Gabriela-Nikolova.png" alt="Gabriela Nikolova, Chief Operating Officer von DDM"
-                 class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" loading="lazy" />
+            <picture>
+              <source srcset="team/Gabriela-Nikolova.webp" type="image/webp" />
+              <img src="team/Gabriela-Nikolova.png" alt="Gabriela Nikolova, Chief Operating Officer von DDM"
+                   class="h-[132px] w-[132px] rounded-full object-cover" width="271" height="271" loading="lazy" />
+            </picture>
             <h3 class="mt-5 font-body text-lg font-medium text-ink-950">Gabriela Nikolova</h3>
             <p class="mt-1 font-body text-sm text-accent-600">Chief Operating Officer</p>
             <p class="mt-4 text-ink-800">

@@ -485,12 +485,32 @@
 
   /* ─── Display-Skala ────────────────────────────────────────────────────
      Loretta auf voller Stärke. An einer Stelle gepflegt statt in jeder
-     Sektion einzeln. Obergrenze 5.5rem bleibt unter dem 6rem-Deckel für
-     Display-Type; Tracking bleibt über dem -0.04em-Boden. */
+     Sektion einzeln. Obergrenze bleibt unter dem 6rem-Deckel für
+     Display-Type; Tracking bleibt über dem -0.04em-Boden.
+
+     Beide Enden des clamp() sind gemessen, nicht geschätzt. Maßgeblich ist
+     „Datengetriebenes“, das längste Wort der H1 – in Loretta Bold rund das
+     7.9-fache des Schriftgrads breit. Passt es nicht in die Spalte, trennt
+     hyphens: auto zu „Datenge-triebenes“, ausgerechnet im Begriff, auf den
+     die Startseite positioniert ist.
+
+     Oben: bei 5.5rem (88px) war das Wort 21px breiter als die 672px-Spalte.
+     Ab 85px passt es, 5rem lässt Luft.
+     Unten: bei 2.75rem (44px) war es 347px breit bei 343px Spalte auf einem
+     375px-Viewport – dieselbe Trennung, nur auf dem Telefon. 2.5rem lässt
+     28px Reserve und deckt damit alle gängigen Geräte ab 375px ab.
+
+     Bei 320px Viewport bleibt die Trennung bestehen: Die Spalte misst dort
+     288px, das Wort 315px. Um auch das aufzulösen, müsste der Boden auf
+     2.25rem, und dafür ist die Geräteklasse zu klein geworden. Der Umbruch
+     bleibt sauber, es fehlt nur die Reserve; ein horizontaler Überlauf
+     entsteht nicht (nachgemessen).
+
+     Wer eines der beiden Enden anhebt, holt sich die Trennung zurück. */
   .display-xl {
     font-weight: 700; /* Loretta Bold – Guidelines: Headline / Zahlen / Hervorhebungen */
     font-family: var(--font-display);
-    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    font-size: clamp(2.5rem, 7vw, 5rem);
     line-height: 0.95;
     letter-spacing: -0.03em;
     text-wrap: balance;
@@ -606,7 +626,16 @@
     @apply shadow-sm;
   }
 
-  /* Sparsamer Scroll-Reveal – nur für den Hero-Bereich eingesetzt */
+  /* Sparsamer Scroll-Reveal. Derzeit von keiner Seite genutzt: Hero und
+     Kontaktformular waren die einzigen Verwender und zeichnen jetzt direkt
+     mit dem CSS. Die Klasse bleibt als Vokabular verfügbar – aber sie gehört
+     nur unter die Falz.
+
+     Der Grund steht in index.html ausführlich: opacity: 0 hebt erst script.js
+     auf, und das Skript steht am Dokumentende. Was oberhalb der Falz damit
+     ausgezeichnet wird, ist bis dahin unsichtbar und bei einem JS-Fehler
+     dauerhaft. Das Sicherheitsnetz in script.js fängt beide Varianten ab,
+     greift aber erst nach drei Sekunden. */
   .reveal {
     @apply translate-y-4 opacity-0 transition duration-300 ease-out;
   }

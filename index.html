@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DDM Data Driven Marketing | Performance-Marketing-Beratung für den Mittelstand</title>
-  <meta name="description" content="DDM klärt zuerst, wer kauft und warum, und leitet daraus Kanäle, Tracking und Budget ab. Performance-Marketing-Beratung für Mittelstand, B2B und E-Commerce." />
+  <title>Datengetriebenes Marketing für den Mittelstand | DDM</title>
+  <meta name="description" content="Beratung für datengetriebenes Marketing im Mittelstand: erst klären, wer kauft und warum, dann Kanäle, Tracking und Budget daraus ableiten." />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#1b1e27" />
   <link rel="canonical" href="https://datadrivenmarketing.de/" />
@@ -122,11 +122,18 @@
       <div class="hero-grid absolute inset-0" aria-hidden="true"></div>
       <div class="container-page relative grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
 
-        <div class="reveal">
+        <!-- Bewusst ohne .reveal: Die Klasse setzt opacity: 0 und wird erst von
+             script.js aufgehoben, das am Dokumentende steht. Hero und Formular
+             lagen damit bis zum Ausfuehren des Scripts unsichtbar da - gemessen
+             1432 ms First Paint, obwohl das CSS nach 675 ms stand. Schlimmer
+             noch: Bei einem JS-Fehler waeren beide dauerhaft unsichtbar
+             geblieben. Was oberhalb der Falz steht, zeichnet mit dem CSS.
+             Unterhalb bleibt die Animation, dort ist sie folgenlos. -->
+        <div>
           <p class="section-eyebrow">Data Driven Marketing</p>
 
           <h1 id="hero-title" class="js-type display-xl text-ink-950">
-            Datengetriebene Performance-Marketing-Beratung für den Mittelstand
+            Datengetriebenes Marketing für den Mittelstand
           </h1>
 
           <!-- Reihenfolge Problem vor Lösung. Die Größenstufung hängt an der
@@ -161,7 +168,9 @@
           </dl>
         </div>
 
-        <div id="kontakt" class="reveal">
+        <!-- Ebenfalls ohne .reveal, Begruendung siehe Hero-Container oben. Hier
+             wiegt sie schwerer: Das ist die einzige Conversion der Seite. -->
+        <div id="kontakt">
           <div class="surface overflow-hidden shadow-accent">
             <div class="bg-ink-950 px-6 py-5">
               <h2 class="font-body text-lg font-medium text-white" id="kontaktTitel">Analyse anfragen</h2>
