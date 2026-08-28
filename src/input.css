@@ -325,6 +325,30 @@
     }
   }
 
+  /* Für nicht-interaktive Infokarten (Team, Leistungen, Differenzierung,
+     Zielgruppe): Die Rahmenfarbe wechselt weich zu Accent, nur auf Geräten
+     mit echter Hover-Fähigkeit. .surface liefert border-ink-100 als
+     Grundzustand, hier kommt ausschließlich die Transition und der
+     Hover-Zielwert hinzu – kein Zoom, kein Filter, kein Layout-Shift, weil
+     sich nur die Randfarbe ändert, nicht die Randbreite.
+
+     Bewusst NICHT auf Case-Karten (haben mit .surface-lift schon Schatten
+     und Anheben) oder auf .surface-accent (kein Rahmen vorhanden, eine
+     Randfarbe hätte hier nichts zu zeigen). */
+  .card-hover {
+    transition: border-color 200ms var(--ease-out);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card-hover:hover {
+      border-color: var(--color-accent-600);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card-hover {
+      transition: none;
+    }
+  }
+
   .surface-dark {
     @apply rounded-card bg-ink-950 text-white;
     box-shadow: var(--shadow-accent);
@@ -931,11 +955,36 @@
       display: none;
     }
   }
+
+  /* Statuspunkt in der Formular-Kopfzeile: rein dekoratives
+     Lebendigkeitssignal, kein Statuswert – deshalb aria-hidden am Element
+     im Markup, nicht hier. Nur ein 50%-Keyframe nötig: 0%/100% ergeben sich
+     aus dem Grundzustand (opacity ist hier nicht gesetzt, Default 1). */
+  .status-dot {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background-color: var(--color-accent-300);
+    animation: status-pulse 1.6s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .status-dot {
+      animation: none;
+    }
+  }
 }
 
 @keyframes logo-marquee {
   to {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes status-pulse {
+  50% {
+    opacity: 0.4;
   }
 }
 
