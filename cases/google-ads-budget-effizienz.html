@@ -353,15 +353,21 @@
              nachrechnet, bekommt ihn - deshalb steht er hier.
 
              Also: +69 % nicht "korrigieren". -->
-        <div class="surface mt-12 p-6 sm:p-8">
+        <!-- Karte auf 80ch begrenzt, nicht der Text darin: Der Inhalt ist
+             reiner Fliesstext, und eine Karte ueber die volle Containerbreite
+             haette 40 % Leerraum gezeigt. Den Text stattdessen zu verbreitern
+             ginge nicht - 1150 px sind rund 150 Zeichen je Zeile. Die uebrigen
+             Karten der Seite fuellen ihre Breite ueber Tabellen und Balken,
+             deshalb betrifft das nur diese. -->
+        <div class="surface mt-12 max-w-[80ch] p-6 sm:p-8">
           <h3 class="font-display text-xl text-ink-950 sm:text-2xl">Datenbasis und Methodik</h3>
-          <p class="mt-4 max-w-[72ch] leading-relaxed text-ink-800">
+          <p class="mt-4 leading-relaxed text-ink-800">
             Datenbasis ist Google Ads. Brand-Kampagnen sind herausgefiltert, dargestellt ist also reine Akquisition. Angegebene Conversion-Werte sind plattformseitig attribuierte Werte und keine geprüften Backend-Umsätze; sie sagen nichts über Marge, Retouren oder Stornos aus.
           </p>
-          <p class="mt-4 max-w-[72ch] leading-relaxed text-ink-800">
+          <p class="mt-4 leading-relaxed text-ink-800">
             Conversion-Wert/Kosten entspricht dem Conversion-Wert geteilt durch die Werbekosten. Der ROAS&nbsp;by&nbsp;time ist über den gesamten Zeitraum <strong>aggregiert</strong> gerechnet – Summe der Kaufwerte geteilt durch die Summe der Kosten –, nicht als Mittelwert der einzelnen Monate.
           </p>
-          <p class="mt-4 max-w-[72ch] leading-relaxed text-ink-800">
+          <p class="mt-4 leading-relaxed text-ink-800">
             Der Unterschied ist erheblich: Im Mittel der Einzelmonate wiegt ein schwacher Monat mit hohen Kosten genauso viel wie ein starker, was die Verbesserung rechnerisch überzeichnet. Der aggregierte Wert entspricht dem, was die Plattform für den Zeitraum selbst ausweist – und damit dem, was eine Gegenprüfung ergibt.
           </p>
         </div>

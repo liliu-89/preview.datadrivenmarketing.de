@@ -40,7 +40,7 @@ const abbruch = (t) => { console.error(`\n\x1b[31mAbbruch:\x1b[0m ${t}\n`); proc
 const SEITEN = [
   'index.html', 'team.html', 'marketing-audit.html', 'impressum.html', 'datenschutz.html',
   'cases/google-ads-leadgenerierung.html', 'cases/microsoft-ads-profitabel-machen.html',
-  'cases/google-ads-budget-effizienz.html',
+  'cases/google-ads-budget-effizienz.html', 'cases/google-ads-account-aufbau.html',
 ];
 const DATEIEN = [...SEITEN, 'script.js', '.nojekyll', 'dist/output.css'];
 const ORDNER = ['font', 'images', 'Logos', 'team'];
