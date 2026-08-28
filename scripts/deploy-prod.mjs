@@ -40,6 +40,7 @@ const abbruch = (t) => { console.error(`\n\x1b[31mAbbruch:\x1b[0m ${t}\n`); proc
 const SEITEN = [
   'index.html', 'team.html', 'marketing-audit.html', 'impressum.html', 'datenschutz.html',
   'cases/google-ads-leadgenerierung.html', 'cases/microsoft-ads-profitabel-machen.html',
+  'cases/google-ads-budget-effizienz.html',
 ];
 const DATEIEN = [...SEITEN, 'script.js', '.nojekyll', 'dist/output.css'];
 const ORDNER = ['font', 'images', 'Logos', 'team'];
@@ -154,7 +155,12 @@ for (const f of SEITEN) {
   writeFileSync(pfad, s);
 }
 
-const erwartet = { consent: 14, leads: 1, noindex: INDEXIERBAR.length };
+/* consent zaehlt zwei Treffer je Seite: die Skript-URL und den data-endpoint.
+   Aus SEITEN abgeleitet statt fest verdrahtet - eine neue Seite soll den
+   Deploy nicht abbrechen lassen, nur weil eine Zahl nicht nachgezogen wurde.
+   Die eigentliche Schutzwirkung bleibt: Verliert eine Seite ihr
+   Consent-Skript oder aendert sich das Markup, stimmt die Zahl nicht mehr. */
+const erwartet = { consent: SEITEN.length * 2, leads: 1, noindex: INDEXIERBAR.length };
 for (const [k, v] of Object.entries(erwartet)) {
   if (gesamt[k] !== v) {
     abbruch(`Umschreibung "${k}": ${gesamt[k]} Treffer statt ${v}. Das Markup hat sich geändert; `

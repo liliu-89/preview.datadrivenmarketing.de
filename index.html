@@ -552,15 +552,25 @@
         <div class="section-head">
           <h2 id="cases-title" class="section-title">Ausgewählte Projekte</h2>
           <p class="section-lead">
-            Zwei Projekte aus laufender oder abgeschlossener Zusammenarbeit, jeweils mit den Kennzahlen, die der Bewertung zugrunde lagen.
+            Drei Projekte aus laufender oder abgeschlossener Zusammenarbeit, jeweils mit den Kennzahlen, die der Bewertung zugrunde lagen.
           </p>
         </div>
 
-        <div class="grid gap-6 sm:grid-cols-2 sm:grid-rows-[auto_auto] sm:gap-y-0">
+        <!-- Zwei Spalten ab sm, drei erst ab xl. Die Zeilenzahl muss zur
+             Spaltenzahl passen, weil jede Karte per subgrid ueber zwei Zeilen
+             spannt: bei zwei Spalten braucht es vier Zeilen fuer drei Karten,
+             bei drei Spalten zwei. Stimmt das nicht, verlieren die Karten ihre
+             gemeinsame Kopfhoehe.
 
-          <!-- Beide Karten teilen dieselbe Bauweise: weiße Fläche mit dunklem
+             Der Umbruch auf drei Spalten sitzt bewusst bei xl und nicht bei
+             lg: Bei 1024 px waeren die Karten rund 310 px breit, und die
+             dreispaltige Kennzahlenreihe darin schnitt dann ab (gemessen 3 px
+             an der KUR-Spalte). Ab 1280 px ist genug Platz. -->
+        <div class="grid gap-6 sm:grid-cols-2 sm:grid-rows-[auto_auto_auto_auto] sm:gap-y-0 xl:grid-cols-3 xl:grid-rows-[auto_auto]">
+
+          <!-- Alle Karten teilen dieselbe Bauweise: weiße Fläche mit dunklem
                Kopfbereich. Die Microsoft-Karte war zuvor durchgehend dunkel,
-               weil sie als einzige einen Link trug. Seit beide verlinkt sind,
+               weil sie als einzige einen Link trug. Seit alle verlinkt sind,
                hat die Sonderstellung keine Grundlage mehr. -->
 
           <!-- Case 1: Microsoft Ads / E-Commerce -->
@@ -583,17 +593,17 @@
                      schneidet mit overflow-hidden ab. Auf 360 px waren das 7 px. -->
                 <div class="-mx-6 flex divide-x divide-ink-200 border-y border-ink-200 px-6 py-4">
                 <div class="min-w-0 flex-1 pr-4">
-                  <p class="font-body text-xs uppercase tracking-wide text-ink-700">Conversion-Wert</p>
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700">Conversion-Wert</p>
                   <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">47k€</p>
                   <p class="text-xs text-ink-700">im 4. Monat</p>
                 </div>
                 <div class="min-w-0 flex-1 px-4">
-                  <p class="font-body text-xs uppercase tracking-wide text-ink-700">ROAS</p>
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700">ROAS</p>
                   <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">9,17×</p>
                   <p class="text-xs text-ink-700">im 4. Monat</p>
                 </div>
                 <div class="min-w-0 flex-1 pl-4">
-                  <p class="font-body text-xs uppercase tracking-wide text-ink-700">KUR</p>
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700">KUR</p>
                   <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">10,9&nbsp;%</p>
                   <p class="text-xs text-ink-700">im 4. Monat</p>
                 </div>
@@ -631,17 +641,17 @@
                      schneidet mit overflow-hidden ab. Auf 360 px waren das 7 px. -->
                 <div class="-mx-6 flex divide-x divide-ink-200 border-y border-ink-200 px-6 py-4">
                 <div class="min-w-0 flex-1 pr-4">
-                  <p class="font-body text-xs uppercase tracking-wide text-ink-700">Sichtbarkeit Kernnachfrage</p>
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700">Sichtbarkeit Kernnachfrage</p>
                   <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">43,7&nbsp;%</p>
                   <p class="text-xs text-ink-700">zuvor &lt;10&nbsp;% kontoweit</p>
                 </div>
                 <div class="min-w-0 flex-1 px-4">
-                  <p class="font-body text-xs uppercase tracking-wide text-ink-700">Buchungen</p>
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700">Buchungen</p>
                   <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">85&nbsp;%</p>
                   <p class="text-xs text-ink-700">aus Brand + lokaler Suche</p>
                 </div>
                 <div class="min-w-0 flex-1 pl-4">
-                  <p class="font-body text-xs uppercase tracking-wide text-ink-700">Termine verknüpft</p>
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700">Termine verknüpft</p>
                   <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">23</p>
                   <p class="text-xs text-ink-700">bis zur Anzeige rückverfolgbar</p>
                 </div>
@@ -649,6 +659,51 @@
               <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
                 <span class="pill-accent">Tracking bis zum wahrgenommenen Termin</span>
                 <a href="/cases/google-ads-leadgenerierung" class="btn-secondary px-4 py-2 text-sm">Google-Ads-Case lesen →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case 3: Google Ads / E-Commerce-Effizienz – verlinkt -->
+          <article class="surface surface-lift overflow-hidden sm:grid sm:row-span-2 sm:grid-rows-subgrid">
+            <div class="relative overflow-hidden bg-ink-950 p-6">
+              <img src="Logos/ddm Logo svg/Signet_weiß.svg" alt="" aria-hidden="true" width="182" height="181"
+                   class="signet-watermark -right-8 -top-8 w-40" />
+              <div class="flex flex-wrap gap-2">
+                <span class="pill">Google Ads</span>
+                <span class="pill">E-Commerce</span>
+              </div>
+              <h3 class="mt-4 font-body text-lg font-medium text-white">38&nbsp;% mehr Conversion-Wert aus unverändertem Budget</h3>
+              <p class="mt-2 text-sm text-ink-400">Nicht mehr Budget, sondern besser verteiltes: Brand und Non-Brand getrennt, Steuerung auf die Aktionen mit Geschäftswert.</p>
+            </div>
+            <div class="p-6">
+              <!-- Drei Verhaeltniszahlen statt Volumen: Der Case handelt von
+                   Effizienz, nicht von Groesse. Eurobetraege stehen bewusst
+                   nur im Case selbst, nicht auf der Karte. -->
+              <!-- min-w-0 an den Spalten ist noetig, nicht kosmetisch: Flex-Elemente
+                     haben min-width: auto und schrumpfen nicht unter ihre
+                     Inhaltsbreite. Bei langen Sublabels uebersteigt die Summe der
+                     Mindestbreiten den Platz, die Reihe laeuft ueber, und die Karte
+                     schneidet mit overflow-hidden ab. Auf 360 px waren das 7 px. -->
+                <div class="-mx-6 flex divide-x divide-ink-200 border-y border-ink-200 px-6 py-4">
+                <div class="min-w-0 flex-1 pr-4">
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700">Conversion-Wert</p>
+                  <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">+38&nbsp;%</p>
+                  <p class="text-xs text-ink-700">bei −1&nbsp;% Kosten</p>
+                </div>
+                <div class="min-w-0 flex-1 px-4">
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700">Wert/Kosten</p>
+                  <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">8,52</p>
+                  <p class="text-xs text-ink-700">zuvor 6,11</p>
+                </div>
+                <div class="min-w-0 flex-1 pl-4">
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700">ROAS by time</p>
+                  <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">13,65</p>
+                  <p class="text-xs text-ink-700">zuvor 8,08</p>
+                </div>
+              </div>
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
+                <span class="pill-accent">Mehr Ertrag ohne mehr Budget</span>
+                <a href="/cases/google-ads-budget-effizienz" class="btn-secondary px-4 py-2 text-sm">Effizienz-Case lesen →</a>
               </div>
             </div>
           </article>
