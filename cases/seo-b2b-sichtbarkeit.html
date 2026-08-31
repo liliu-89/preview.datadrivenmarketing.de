@@ -26,7 +26,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="DDM Data Driven Marketing" />
-  <meta property="og:title" content="Von 54 auf 202 verweisende Domains: wie ein B2B-Industrieanbieter organisch sichtbarer wurde" />
+  <meta property="og:title" content="Wie ein B2B-Industrieanbieter in seiner Fachnische deutlich sichtbarer wurde" />
   <meta property="og:description" content="Vor Beginn der neuen Phase gab es bereits Rankings, Inhalte und Backlinks. Seit der strategischen Neuausrichtung entwickelte sich die organische Sichtbarkeit über fünf Monate deutlich dynamischer." />
   <meta property="og:url" content="https://datadrivenmarketing.de/cases/seo-b2b-sichtbarkeit" />
   <meta property="og:locale" content="de_DE" />
@@ -122,12 +122,12 @@
           <span class="pill">AI Visibility</span>
         </div>
 
-        <h1 id="case-title" class="display-lg mt-6 max-w-[30ch]">
-          Von 54 auf 202 verweisende Domains: wie ein B2B-Industrieanbieter organisch sichtbarer wurde
+        <h1 id="case-title" class="display-lg mt-6 max-w-[26ch]">
+          Wie ein B2B-Industrieanbieter in seiner Fachnische deutlich sichtbarer wurde
         </h1>
 
         <p class="mt-6 max-w-[64ch] text-lg leading-relaxed text-ink-300">
-          Seit der strategischen Neuausrichtung entwickelte sich die organische Sichtbarkeit deutlich: mehr rankende Suchbegriffe, eine stark wachsende Zahl verweisender Domains und fortbestehende Präsenz in klassischer wie generativer Suche.
+          Seit der strategischen Neuausrichtung entwickelte sich die organische Sichtbarkeit deutlich: mehr rankende Suchbegriffe, eine stark wachsende Zahl verweisender Domains und fortbestehende Präsenz in klassischer wie generativer Suche. Als Beleg: die Zahl verweisender Domains stieg von 54 auf 202.
         </p>
 
         <p class="mt-5 max-w-[70ch] text-sm leading-relaxed text-ink-400">
@@ -355,56 +355,49 @@
           Die Entwicklung verlief nicht gleichmäßig. Auf einen deutlichen Sprung im 2. Monat folgten drei Monate mit flacherem Anstieg, bevor sich die Werte im 5. Monat erneut merklich bewegten. Genau deshalb sollte SEO über Zeiträume und mehrere Signale bewertet werden, nicht von Monat zu Monat.
         </p>
 
-        <!-- Traffic-Verlauf -->
+        <!-- Traffic-Verlauf: Liniendiagramm statt Balken.
+             Fuenf Monatswerte als Trend lesen sich als Linie intuitiver als
+             als Balkenreihe, anders als bei den anderen Kennzahlen dieser
+             Seite ist hier die Richtung selbst die Aussage. Das SVG bleibt
+             aria-hidden: die Werte stehen vollstaendig in der Punktreihe
+             darunter und zusaetzlich in der Tabelle im Anschluss. Keine
+             Achsenbeschriftung im SVG, um es nicht mit einer echten Skala
+             zu verwechseln, die es nicht hat. -->
         <article aria-labelledby="traffic-verlauf" class="surface mt-12 p-6 sm:p-8">
           <h3 id="traffic-verlauf" class="font-display text-xl text-ink-950 sm:text-2xl">Geschätzter organischer Traffic im Verlauf</h3>
-          <p class="mt-2 text-sm text-ink-700">Modellwert von Ahrefs, keine gemessenen Sitzungen. Längere Balken bedeuten eine höhere geschätzte organische Reichweite.</p>
+          <p class="mt-2 text-sm text-ink-700">Modellwert von Ahrefs, keine gemessenen Sitzungen. Der Anstieg zeigt die Richtung der Entwicklung, keine gleichmäßige Steigerung.</p>
 
-          <dl class="mt-8 space-y-5">
-            <div class="grid grid-cols-[3.25rem_1fr] items-center gap-4 sm:grid-cols-[4.5rem_1fr]">
-              <dt class="font-body text-sm text-ink-700">1. Monat</dt>
-              <dd class="flex items-center gap-4">
-                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
-                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 8.4%"></span>
-                </span>
-                <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">11</span>
-              </dd>
+          <svg viewBox="0 0 600 200" class="mt-8 w-full text-accent-600" aria-hidden="true" preserveAspectRatio="none">
+            <line x1="0" y1="180" x2="600" y2="180" stroke="currentColor" class="text-ink-200" stroke-width="1" />
+            <path d="M30,167 L165,108 L300,102 L435,99 L570,30 L570,180 L30,180 Z" fill="currentColor" opacity="0.08" />
+            <polyline points="30,167 165,108 300,102 435,99 570,30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="30" cy="167" r="6" fill="white" stroke="currentColor" stroke-width="3" />
+            <circle cx="165" cy="108" r="6" fill="white" stroke="currentColor" stroke-width="3" />
+            <circle cx="300" cy="102" r="6" fill="white" stroke="currentColor" stroke-width="3" />
+            <circle cx="435" cy="99" r="6" fill="white" stroke="currentColor" stroke-width="3" />
+            <circle cx="570" cy="30" r="6" fill="white" stroke="currentColor" stroke-width="3" />
+          </svg>
+
+          <dl class="mt-4 grid grid-cols-5 gap-x-1 px-[5%] text-center sm:gap-x-2">
+            <div>
+              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">1. Monat</dt>
+              <dd class="mt-1 font-display text-lg tabular-nums text-ink-950 sm:text-xl">11</dd>
             </div>
-            <div class="grid grid-cols-[3.25rem_1fr] items-center gap-4 sm:grid-cols-[4.5rem_1fr]">
-              <dt class="font-body text-sm text-ink-700">2. Monat</dt>
-              <dd class="flex items-center gap-4">
-                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
-                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 48.1%"></span>
-                </span>
-                <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">63</span>
-              </dd>
+            <div>
+              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">2. Monat</dt>
+              <dd class="mt-1 font-display text-lg tabular-nums text-ink-950 sm:text-xl">63</dd>
             </div>
-            <div class="grid grid-cols-[3.25rem_1fr] items-center gap-4 sm:grid-cols-[4.5rem_1fr]">
-              <dt class="font-body text-sm text-ink-700">3. Monat</dt>
-              <dd class="flex items-center gap-4">
-                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
-                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 51.9%"></span>
-                </span>
-                <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">68</span>
-              </dd>
+            <div>
+              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">3. Monat</dt>
+              <dd class="mt-1 font-display text-lg tabular-nums text-ink-950 sm:text-xl">68</dd>
             </div>
-            <div class="grid grid-cols-[3.25rem_1fr] items-center gap-4 sm:grid-cols-[4.5rem_1fr]">
-              <dt class="font-body text-sm text-ink-700">4. Monat</dt>
-              <dd class="flex items-center gap-4">
-                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
-                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 54.2%"></span>
-                </span>
-                <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">71</span>
-              </dd>
+            <div>
+              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">4. Monat</dt>
+              <dd class="mt-1 font-display text-lg tabular-nums text-ink-950 sm:text-xl">71</dd>
             </div>
-            <div class="grid grid-cols-[3.25rem_1fr] items-center gap-4 sm:grid-cols-[4.5rem_1fr]">
-              <dt class="font-body text-sm text-ink-700">5. Monat</dt>
-              <dd class="flex items-center gap-4">
-                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
-                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 100%"></span>
-                </span>
-                <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">131</span>
-              </dd>
+            <div>
+              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">5. Monat</dt>
+              <dd class="mt-1 font-display text-lg tabular-nums text-accent-600 sm:text-xl">131</dd>
             </div>
           </dl>
         </article>
@@ -608,14 +601,29 @@
       <div class="container-page">
         <h2 id="rankings-title" class="section-title">Wenige Rankings, dafür die richtigen</h2>
 
-        <div class="mt-6 max-w-[68ch] space-y-5 text-lg leading-relaxed text-ink-800">
+        <div class="mt-6 max-w-[68ch] text-lg leading-relaxed text-ink-800">
           <p>
-            Die Zahl rankender Suchbegriffe stieg von 9 auf 18 und blieb damit auch am Ende des Zeitraums klein. In diesem Markt ist das kein Mangel, sondern eine Folge des Suchverhaltens: Es gibt schlicht nicht mehr Begriffe, die zu einer Beschaffungsentscheidung führen.
-          </p>
-          <p>
-            Aussagekräftiger als die Anzahl ist deshalb die Position. Für einen der zentralen Produktbegriffe der Nische steht die Website auf Position 1 der organischen Suchergebnisse — also genau dort, wo die fachliche Recherche eines potenziellen Kunden typischerweise beginnt.
+            Die Zahl rankender Suchbegriffe stieg von 9 auf 18 und blieb damit auch am Ende des Zeitraums klein. In diesem Markt ist das kein Mangel, sondern eine Folge des Suchverhaltens: Es gibt schlicht nicht mehr Begriffe, die zu einer Beschaffungsentscheidung führen. Aussagekräftiger als die Anzahl ist deshalb die Position.
           </p>
         </div>
+
+        <!-- Visuelles Proof-Element: die Zahl "1" traegt hier dieselbe Rolle
+             wie die Ziffern in den KPI-Kacheln anderswo auf der Seite, nur in
+             Alleinstellung. Kein neues Muster, nur eine grosse Ziffer im
+             vorhandenen Stat-Idiom, um den Abschnitt nicht rein textlastig zu
+             lassen. -->
+        <article aria-labelledby="ranking-proof-title" class="surface mt-10 flex flex-col items-start gap-6 p-6 sm:flex-row sm:items-center sm:gap-10 sm:p-8">
+          <div class="flex-shrink-0">
+            <p class="font-display text-7xl leading-none text-accent-600" aria-hidden="true">1</p>
+            <p class="mt-2 font-body text-xs uppercase tracking-wide text-ink-700">Position in der organischen Suche</p>
+          </div>
+          <div class="border-t border-ink-200 pt-6 sm:border-l sm:border-t-0 sm:pl-10 sm:pt-0">
+            <h3 id="ranking-proof-title" class="font-display text-xl text-ink-950">Ein zentraler Produktbegriff der Nische rankt auf Platz 1</h3>
+            <p class="mt-2 max-w-[48ch] text-ink-700">
+              Genau dort, wo die fachliche Recherche eines potenziellen Kunden typischerweise beginnt.
+            </p>
+          </div>
+        </article>
 
         <div class="mt-10 max-w-[80ch] border-t border-ink-300 pt-6">
           <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-700">Einordnung</h3>
