@@ -555,21 +555,21 @@
         <div class="section-head">
           <h2 id="cases-title" class="section-title">Ausgewählte Projekte</h2>
           <p class="section-lead">
-            Drei Projekte aus laufender oder abgeschlossener Zusammenarbeit, jeweils mit den Kennzahlen, die der Bewertung zugrunde lagen.
+            Vier Projekte aus laufender oder abgeschlossener Zusammenarbeit, jeweils mit den Kennzahlen, die der Bewertung zugrunde lagen.
           </p>
         </div>
 
         <!-- Zwei Spalten ab sm, drei erst ab xl. Die Zeilenzahl muss zur
              Spaltenzahl passen, weil jede Karte per subgrid ueber zwei Zeilen
-             spannt: bei zwei Spalten braucht es vier Zeilen fuer drei Karten,
-             bei drei Spalten zwei. Stimmt das nicht, verlieren die Karten ihre
-             gemeinsame Kopfhoehe.
+             spannt: Bei vier Karten entstehen sowohl bei zwei als auch bei
+             drei Spalten zwei Kartenzeilen, also jeweils vier Grid-Zeilen.
+             Stimmt das nicht, verlieren die Karten ihre gemeinsame Kopfhoehe.
 
              Der Umbruch auf drei Spalten sitzt bewusst bei xl und nicht bei
              lg: Bei 1024 px waeren die Karten rund 310 px breit, und die
              dreispaltige Kennzahlenreihe darin schnitt dann ab (gemessen 3 px
              an der KUR-Spalte). Ab 1280 px ist genug Platz. -->
-        <div class="grid gap-6 sm:grid-cols-2 sm:grid-rows-[auto_auto_auto_auto] sm:gap-y-0 xl:grid-cols-3 xl:grid-rows-[auto_auto]">
+        <div class="grid gap-6 sm:grid-cols-2 sm:grid-rows-[auto_auto_auto_auto] sm:gap-y-0 xl:grid-cols-3 xl:grid-rows-[auto_auto_auto_auto]">
 
           <!-- Alle Karten teilen dieselbe Bauweise: weiße Fläche mit dunklem
                Kopfbereich. Die Microsoft-Karte war zuvor durchgehend dunkel,
@@ -707,6 +707,52 @@
               <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
                 <span class="pill-accent">Mehr Ertrag ohne mehr Budget</span>
                 <a href="/cases/google-ads-budget-effizienz" class="btn-secondary px-4 py-2 text-sm">Effizienz-Case lesen →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case 4: SEO / B2B-Industrie – verlinkt -->
+          <article class="surface surface-lift overflow-hidden sm:grid sm:row-span-2 sm:grid-rows-subgrid">
+            <div class="relative overflow-hidden bg-ink-950 p-6">
+              <img src="Logos/ddm Logo svg/Signet_weiß.svg" alt="" aria-hidden="true" width="182" height="181"
+                   class="signet-watermark -right-8 -top-8 w-40" />
+              <div class="flex flex-wrap gap-2">
+                <span class="pill">SEO</span>
+                <span class="pill">B2B-Industrie</span>
+              </div>
+              <h3 class="mt-4 font-body text-lg font-medium text-white">Verweisende Domains von 54 auf 202 ausgebaut</h3>
+              <p class="mt-2 text-sm text-ink-400">Ein spezialisierter Industrieanbieter mit vorhandener SEO-Basis: aus punktueller Arbeit wurde eine deutlich dynamischere Wachstumsphase.</p>
+            </div>
+            <div class="p-6">
+              <!-- Verweisende Domains stehen vorn, nicht der Traffic: Sie sind
+                   gezaehlt, der Ahrefs-Traffic ist ein Schaetzmodell. Das
+                   Sublabel weist das ausdruecklich aus, damit die Karte keine
+                   gemessenen Besucher suggeriert. -->
+              <!-- min-w-0 an den Spalten ist noetig, nicht kosmetisch: Flex-Elemente
+                     haben min-width: auto und schrumpfen nicht unter ihre
+                     Inhaltsbreite. Bei langen Sublabels uebersteigt die Summe der
+                     Mindestbreiten den Platz, die Reihe laeuft ueber, und die Karte
+                     schneidet mit overflow-hidden ab. Auf 360 px waren das 7 px. -->
+                <div class="-mx-6 flex divide-x divide-ink-200 border-y border-ink-200 px-6 py-4">
+                <div class="min-w-0 flex-1 pr-4">
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700">Verw. Domains</p>
+                  <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">202</p>
+                  <p class="text-xs text-ink-700">zuvor 54</p>
+                </div>
+                <div class="min-w-0 flex-1 px-4">
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700">Backlinks</p>
+                  <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">690</p>
+                  <p class="text-xs text-ink-700">zuvor 200</p>
+                </div>
+                <div class="min-w-0 flex-1 pl-4">
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700">Keywords</p>
+                  <p class="mt-1 font-display text-2xl tabular-nums text-ink-950">18</p>
+                  <p class="text-xs text-ink-700">zuvor 9</p>
+                </div>
+              </div>
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
+                <span class="pill-accent">Autorität systematisch aufgebaut</span>
+                <a href="/cases/seo-b2b-sichtbarkeit" class="btn-secondary px-4 py-2 text-sm">SEO-Case lesen →</a>
               </div>
             </div>
           </article>

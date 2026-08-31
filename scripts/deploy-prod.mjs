@@ -41,6 +41,7 @@ const SEITEN = [
   'index.html', 'team.html', 'marketing-audit.html', 'impressum.html', 'datenschutz.html',
   'cases/google-ads-leadgenerierung.html', 'cases/microsoft-ads-profitabel-machen.html',
   'cases/google-ads-budget-effizienz.html', 'cases/google-ads-account-aufbau.html',
+  'cases/seo-b2b-sichtbarkeit.html',
 ];
 const DATEIEN = [...SEITEN, 'script.js', '.nojekyll', 'dist/output.css'];
 const ORDNER = ['font', 'images', 'Logos', 'team'];
