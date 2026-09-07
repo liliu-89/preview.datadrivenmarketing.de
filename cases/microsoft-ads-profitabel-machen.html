@@ -471,7 +471,7 @@
          schwache 2. Monat soll durch seine Kürze auffallen, nicht durch eine
          Sonderfarbe, die eine andere Kennzahl suggerieren würde. Balken sind
          aria-hidden, alle Werte stehen vollständig in der dl. Balkenbreiten
-         sind relativ zum Maximum (4. Monat, 9,17×) skaliert.
+         sind relativ zum Maximum (5. Monat, 9,25×) skaliert.
          Bei den Monatskarten haben Conversion-Wert und Werbekosten getrennte
          Skalen – eine gemeinsame Skala würde die Kostenbalken auf ~11–19 %
          stauchen und untereinander ununterscheidbar machen. -->
@@ -479,20 +479,20 @@
       <div class="container-page">
         <h2 id="entwicklung-title" class="section-title">Vier Monate später: deutlich bessere Wirtschaftlichkeit</h2>
         <p class="mt-4 max-w-[68ch] text-lg leading-relaxed text-ink-800">
-          Die Entwicklung verlief nicht linear. Nach einem schwächeren 2. Monat wurden Budgets und Kampagnen weiter nach Wirtschaftlichkeit priorisiert. Im 3. und 4. Monat verbesserten sich Effizienz und Conversion-Wert deutlich.
+          Die Entwicklung verlief nicht linear. Nach einem schwächeren 2. Monat wurden Budgets und Kampagnen weiter nach Wirtschaftlichkeit priorisiert. Im 3. und 4. Monat verbesserten sich Effizienz und Conversion-Wert deutlich. Der 5. Monat gehört nicht mehr zum eigentlichen Betrachtungszeitraum, ist hier aber mit abgebildet: Er beantwortet die naheliegende Rückfrage, ob der 4. Monat ein einzelner Ausschlag war.
         </p>
 
         <!-- ROAS-Verlauf -->
         <article aria-labelledby="roas-verlauf" class="surface mt-12 p-6 sm:p-8">
           <h3 id="roas-verlauf" class="font-display text-xl text-ink-950 sm:text-2xl">ROAS im Verlauf</h3>
-          <p class="mt-2 text-sm text-ink-700">Längere Balken bedeuten einen wirtschaftlich günstigeren Ertrag je eingesetztem Werbe-Euro.</p>
+          <p class="mt-2 text-sm text-ink-700">Längere Balken bedeuten einen wirtschaftlich günstigeren Ertrag je eingesetztem Werbe-Euro. Der 5. Monat ist der Folgemonat nach dem eigentlichen Betrachtungszeitraum.</p>
 
           <dl class="mt-8 space-y-5">
             <div class="grid grid-cols-[3.25rem_1fr] items-center gap-4 sm:grid-cols-[4.5rem_1fr]">
               <dt class="font-body text-sm text-ink-700">1. Monat</dt>
               <dd class="flex items-center gap-4">
                 <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
-                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 48.4%"></span>
+                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 48.0%"></span>
                 </span>
                 <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">4,44×</span>
               </dd>
@@ -501,7 +501,7 @@
               <dt class="font-body text-sm text-ink-700">2. Monat</dt>
               <dd class="flex items-center gap-4">
                 <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
-                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 27.2%"></span>
+                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 26.9%"></span>
                 </span>
                 <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">2,49×</span>
               </dd>
@@ -510,7 +510,7 @@
               <dt class="font-body text-sm text-ink-700">3. Monat</dt>
               <dd class="flex items-center gap-4">
                 <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
-                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 68.4%"></span>
+                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 67.8%"></span>
                 </span>
                 <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">6,27×</span>
               </dd>
@@ -519,9 +519,18 @@
               <dt class="font-body text-sm text-ink-700">4. Monat</dt>
               <dd class="flex items-center gap-4">
                 <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
-                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 100%"></span>
+                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 99.1%"></span>
                 </span>
                 <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">9,17×</span>
+              </dd>
+            </div>
+            <div class="grid grid-cols-[3.25rem_1fr] items-center gap-4 sm:grid-cols-[4.5rem_1fr]">
+              <dt class="font-body text-sm text-ink-700">5. Monat</dt>
+              <dd class="flex items-center gap-4">
+                <span class="h-2.5 flex-1 rounded-full bg-ink-200" aria-hidden="true">
+                  <span class="block h-2.5 rounded-full bg-accent-600" style="width: 100%"></span>
+                </span>
+                <span class="w-[4.5rem] flex-shrink-0 text-right font-display text-lg tabular-nums text-ink-950">9,25×</span>
               </dd>
             </div>
           </dl>
@@ -684,6 +693,51 @@
 
         </div>
 
+        <!-- Fortschreibung um einen Monat, bewusst als eigener Block und nicht
+             in die Vier-Monats-Struktur eingearbeitet: Die Fallgeschichte sind
+             die vier Monate. Der fuenfte beantwortet nur die naheliegende
+             Rueckfrage, ob der 4. Monat ein Ausreisser war. Die Summen, die
+             Hero-Kennzahlen und der Search-Block oben bleiben deshalb
+             unveraendert auf 1.-4. Monat bezogen. -->
+        <article aria-labelledby="monat-fuenf" class="surface mt-10 p-6 sm:p-8">
+          <p class="font-body text-sm font-medium uppercase tracking-wide text-ink-700">Gesamtaccount · 5. Monat</p>
+          <h3 id="monat-fuenf" class="mt-3 font-display text-xl text-ink-950 sm:text-2xl">Hat das Niveau gehalten?</h3>
+
+          <dl class="mt-6 grid grid-cols-2 gap-x-5 gap-y-5 sm:gap-x-6">
+            <div>
+              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Attribuierter Conversion-Wert</dt>
+              <dd class="mt-1 font-display text-xl tabular-nums text-ink-950 sm:text-2xl">45.002&nbsp;€</dd>
+            </div>
+            <div>
+              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Werbekosten</dt>
+              <dd class="mt-1 font-display text-xl tabular-nums text-ink-950 sm:text-2xl">4.866&nbsp;€</dd>
+            </div>
+            <div>
+              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">ROAS</dt>
+              <dd class="mt-1 font-display text-xl tabular-nums text-accent-600 sm:text-2xl">9,25×</dd>
+            </div>
+            <div>
+              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">KUR</dt>
+              <dd class="mt-1 font-display text-xl tabular-nums text-ink-950 sm:text-2xl">10,81&nbsp;%</dd>
+            </div>
+            <div>
+              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Conversions</dt>
+              <dd class="mt-1 font-display text-xl tabular-nums text-ink-950 sm:text-2xl">15</dd>
+            </div>
+            <div>
+              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Kosten pro Conversion</dt>
+              <dd class="mt-1 font-display text-xl tabular-nums text-ink-950 sm:text-2xl">324,40&nbsp;€</dd>
+            </div>
+          </dl>
+
+          <p class="mt-6 border-t border-ink-200 pt-5 text-ink-800">
+            Im Folgemonat lagen Conversion-Wert und Werbekosten beide etwas niedriger, die Wirtschaftlichkeit blieb dabei praktisch unverändert. Das im 4. Monat erreichte Niveau war damit kein einzelner guter Monat.
+          </p>
+          <p class="mt-3 text-sm text-ink-700">
+            Weniger Reichweite hat hier nicht zu schlechterer Wirtschaftlichkeit geführt. Ein einzelner Folgemonat belegt allerdings keine dauerhafte Stabilität, sondern nur, dass das Ergebnis nicht auf einen Monat beschränkt blieb.
+          </p>
+        </article>
+
         <p class="mt-6 text-sm text-ink-700">
           Die Balken vergleichen jeweils dieselbe Kennzahl über die vier Monate. Conversion-Wert und Werbekosten haben eigene Skalen und sind nicht gegeneinander lesbar.
         </p>
@@ -758,46 +812,6 @@
           </p>
         </div>
 
-        <!-- Fortschreibung um einen Monat, bewusst als eigener Block und nicht
-             in die Vier-Monats-Struktur eingearbeitet: Die Fallgeschichte sind
-             die vier Monate. Der fuenfte beantwortet nur die naheliegende
-             Rueckfrage, ob der 4. Monat ein Ausreisser war. Die Summen, die
-             Hero-Kennzahlen und der Search-Block oben bleiben deshalb
-             unveraendert auf 1.-4. Monat bezogen. -->
-        <article aria-labelledby="monat-fuenf" class="surface mt-10 p-6 sm:p-8">
-          <p class="font-body text-sm font-medium uppercase tracking-wide text-ink-700">Gesamtaccount · 5. Monat</p>
-          <h3 id="monat-fuenf" class="mt-3 font-display text-xl text-ink-950 sm:text-2xl">Hat das Niveau gehalten?</h3>
-
-          <dl class="mt-6 grid grid-cols-2 gap-x-5 gap-y-5 sm:gap-x-6">
-            <div>
-              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Attribuierter Conversion-Wert</dt>
-              <dd class="mt-1 font-display text-xl tabular-nums text-ink-950 sm:text-2xl">45.002&nbsp;€</dd>
-            </div>
-            <div>
-              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Werbekosten</dt>
-              <dd class="mt-1 font-display text-xl tabular-nums text-ink-950 sm:text-2xl">4.866&nbsp;€</dd>
-            </div>
-            <div>
-              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">ROAS</dt>
-              <dd class="mt-1 font-display text-xl tabular-nums text-accent-600 sm:text-2xl">9,25×</dd>
-            </div>
-            <div>
-              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">KUR</dt>
-              <dd class="mt-1 font-display text-xl tabular-nums text-ink-950 sm:text-2xl">10,81&nbsp;%</dd>
-            </div>
-            <div class="col-span-2">
-              <dt class="font-body text-xs uppercase tracking-wide text-ink-700">Kosten pro Conversion</dt>
-              <dd class="mt-1 font-display text-xl tabular-nums text-ink-950 sm:text-2xl">324,40&nbsp;€</dd>
-            </div>
-          </dl>
-
-          <p class="mt-6 border-t border-ink-200 pt-5 text-ink-800">
-            Im Folgemonat lagen Conversion-Wert und Werbekosten beide etwas niedriger, die Wirtschaftlichkeit blieb dabei praktisch unverändert. Das im 4. Monat erreichte Niveau war damit kein einzelner guter Monat.
-          </p>
-          <p class="mt-3 text-sm text-ink-700">
-            Weniger Reichweite hat hier nicht zu schlechterer Wirtschaftlichkeit geführt. Ein einzelner Folgemonat belegt allerdings keine dauerhafte Stabilität, sondern nur, dass das Ergebnis nicht auf einen Monat beschränkt blieb.
-          </p>
-        </article>
 
         <!-- Strukturbeobachtung, kein Erfolgsbeleg: 38 Klicks tragen keinen
              belastbaren ROAS, der rechnerische Wert laege im dreistelligen
@@ -807,12 +821,12 @@
              auseinanderfallen koennen. Die Einordnung dazu ist Pflicht und
              darf nicht gekuerzt werden. -->
         <div class="mt-10 max-w-[80ch] border-t border-ink-300 pt-6">
-          <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-700">Reichweite und Wirtschaftlichkeit fallen auseinander</h3>
+          <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-700">Reichweite und Kosten je Abschluss fallen auseinander</h3>
           <p class="mt-3 text-ink-800">
-            In einer Produktkategorie liefen zwei Kampagnen parallel: eine regulär gesteuerte mit 2.993 Klicks bei einer KUR von 26,99&nbsp;% und daneben eine auf Ziel-ROAS gesteuerte mit 38 Klicks und 27,75&nbsp;€ Werbekosten, die 4.428&nbsp;€ Conversion-Wert bei 0,63&nbsp;% KUR erzielte.
+            In einer Produktkategorie liefen zwei Kampagnen parallel. Die regulär gesteuerte erzeugte 2.993 Klicks bei 807&nbsp;€ Werbekosten, die auf Ziel-ROAS gesteuerte 38 Klicks bei 28&nbsp;€. Beide führten im selben Monat zu genau einer Conversion.
           </p>
           <p class="mt-3 text-sm leading-relaxed text-ink-700">
-            Dieser Vergleich ist ausdrücklich kein Erfolgsnachweis. Bei 38 Klicks ist der rechnerische ROAS nicht belastbar, und eine Kampagne mit derart wenig Volumen lässt sich nicht hochrechnen. Aussagekräftig ist allein die Richtung: Die Kampagne mit fast achtzigmal so vielen Klicks erzeugte die deutlich schlechtere Wirtschaftlichkeit. Wer solche Kampagnen nach Klicks bewertet, bewertet das Falsche.
+            Je ein Abschluss ist keine belastbare Datengrundlage, und die unterschiedlichen Auftragswerte sagen nichts über die Qualität der Kampagnen aus — es sind zwei einzelne Bestellungen. Belastbar ist allein die Kostenseite: Für dasselbe eine Ergebnis fielen einmal 807&nbsp;€ und einmal 28&nbsp;€ an. Wer die beiden nach Klicks bewertet hätte, hätte die teurere für die stärkere gehalten.
           </p>
         </div>
       </div>
