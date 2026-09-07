@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gebotsziele in Google Ads: was Ihr Ziel-CPA kosten darf | DDM</title>
+  <meta name="description" content="Warum ein Ziel-CPA ohne Marge eine geratene Zahl ist und wie sich Ziel-CPA und Ziel-ROAS aus dem Deckungsbeitrag herleiten lassen." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1b1e27" />
+  <link rel="canonical" href="https://datadrivenmarketing.de/gebotsziele" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DDM Data Driven Marketing" />
+  <meta property="og:title" content="Was Ihr Gebotsziel kosten darf" />
+  <meta property="og:description" content="Seit dem 17. August 2026 steuert Google budgetbeschränkte Kampagnen auf das eingetragene Ziel zu. Damit wird ein geratener Zielwert zum Kostenniveau." />
+  <meta property="og:url" content="https://datadrivenmarketing.de/gebotsziele" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="https://datadrivenmarketing.de/images/data_driven_marketing_Logo_darkgrey_1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Logo der DDM Data Driven Marketing GmbH" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Consent-Banner. Muss vor allem anderen stehen: Das Skript setzt den
+       Consent-Mode-Default auf "denied" und laedt erst danach den Tag Manager.
+       Wird diese Reihenfolge umgestellt, feuern Tags vor der Einwilligung. -->
+  <script src="https://ddm-consent-preview.datadrivenmarketing.workers.dev/v1.1.2/consent.js"
+    integrity="sha384-jBr8HaQIqR9gSQsaV+DHL2rydJ4GyaGCED+fvA4SBF7zEqYxDO3Y6B9Ml+SRMO+2"
+    crossorigin="anonymous"
+    data-gtm="GTM-KN44W5SD"
+    data-site="ddm-website"
+    data-endpoint="https://ddm-consent-preview.datadrivenmarketing.workers.dev/api/consent"
+    data-privacy="/datenschutz"
+    data-imprint="/impressum"
+    data-accent="#3354a1"></script>
+
+
+  <link rel="icon" href="Logos/ddm Logo svg/Signet_darkgrey.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="Logos/ddm Logo svg/png/Signet_darkgrey.png" />
+
+  <link rel="stylesheet" href="dist/output.css" />
+</head>
+
+<body class="bg-canvas font-body text-ink-950 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-ink-950 focus:px-4 focus:py-2 focus:text-white">
+    Zum Inhalt springen
+  </a>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header" class="sticky top-0 z-40 border-b border-ink-200 transition-shadow duration-200">
+    <div class="container-page flex items-center gap-6 py-4">
+      <a href="/" class="flex flex-shrink-0 items-center" aria-label="DDM Data Driven Marketing – Startseite">
+        <img src="Logos/ddm Logo svg/ddm_Logo_darkgrey.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+      </a>
+
+      <nav class="ml-auto hidden items-center gap-8 md:flex" aria-label="Hauptnavigation">
+        <a href="/#leistungen" class="nav-link">Leistungen</a>
+        <a href="/#prozess" class="nav-link">Prozess</a>
+        <a href="/#cases" class="nav-link">Cases</a>
+        <a href="/team" class="nav-link">Team</a>
+        <a href="/#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-3 md:ml-0">
+        <a href="/#kontakt" class="btn-primary hidden sm:inline-flex">Analyse anfragen</a>
+        <button
+          class="js-menu-toggle inline-flex h-10 w-10 items-center justify-center rounded-control border border-ink-200 md:hidden"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Menü öffnen"
+        >
+          <span class="relative block h-3.5 w-4" aria-hidden="true">
+            <span class="absolute inset-x-0 top-0 h-[1.5px] bg-ink-950"></span>
+            <span class="absolute inset-x-0 top-1/2 h-[1.5px] -translate-y-1/2 bg-ink-950"></span>
+            <span class="absolute inset-x-0 bottom-0 h-[1.5px] bg-ink-950"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="border-t border-ink-200 bg-white md:hidden">
+      <nav class="container-page flex flex-col py-2" aria-label="Mobile Navigation">
+        <a href="/#leistungen" class="border-b border-ink-100 py-3 font-body text-ink-950">Leistungen</a>
+        <a href="/#prozess" class="border-b border-ink-100 py-3 font-body text-ink-950">Prozess</a>
+        <a href="/#cases" class="border-b border-ink-100 py-3 font-body text-ink-950">Cases</a>
+        <a href="/team" class="border-b border-ink-100 py-3 font-body text-ink-950">Team</a>
+        <a href="/#faq" class="border-b border-ink-100 py-3 font-body text-ink-950">FAQ</a>
+        <a href="/#kontakt" class="py-3 font-body font-medium text-accent-600">Analyse anfragen</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="border-b border-ink-200 bg-white">
+    <div class="container-page py-3">
+      <a href="/" class="nav-link">← Zur Startseite</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO =====
+         Gleiches flaches Muster wie marketing-audit.html: Titel auf derselben
+         linken Achse, Abstand nach unten auf das Noetige reduziert. -->
+    <section class="pb-12 pt-14 sm:pb-16 sm:pt-16">
+      <div class="container-page">
+        <p class="section-eyebrow">Leistungen · Performance Marketing</p>
+        <h1 class="section-title max-w-[24ch]">
+          Was Ihr Gebotsziel kosten darf
+        </h1>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          In den meisten Konten ist der hinterlegte Ziel-CPA eine geratene Zahl: einmal gesetzt,
+          nie hergeleitet. Solange die Kampagne das Ziel unterbot, war das folgenlos. Seit dem
+          17. August 2026 ist es das nicht mehr.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== AENDERUNG =====
+         Der Anlass steht vorn, aber bewusst knapp: Die Seite ist keine
+         Newsmeldung. Googles eigenes Rechenbeispiel wird zitiert, damit die
+         Aussage nicht von uns stammt, sondern von der Plattform. -->
+    <section id="aenderung" aria-labelledby="aenderung-title" class="border-y border-ink-200 bg-white py-12 sm:py-16">
+      <div class="container-page">
+        <h2 id="aenderung-title" class="section-title max-w-[28ch]">Was sich am 17. August 2026 geändert hat</h2>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Google hat die Gebotssysteme umgestellt. Kampagnen mit einer zielbasierten
+          Gebotsstrategie, die durch das Budget eingeschränkt sind, laufen seitdem
+          gleichmäßiger auf den hinterlegten Zielwert zu, statt ihn zu unterbieten.
+        </p>
+
+        <div class="surface mt-8 p-7 sm:p-9">
+          <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Googles eigenes Beispiel</p>
+          <p class="measure mt-4 text-ink-800">
+            Liegt der Ziel-CPA einer Kampagne bei 10&nbsp;€, der tatsächliche CPA zuletzt aber bei
+            5&nbsp;€, erzielt die Kampagne künftig Ergebnisse, die näher an einem tatsächlichen
+            CPA von 10&nbsp;€ liegen.
+          </p>
+          <p class="measure mt-4 text-ink-800">
+            Ebenso ausdrücklich hält Google fest: Tagesbudgets und Gebotsziele werden
+            <strong class="font-medium text-ink-950">nicht automatisch angepasst</strong>. Wer den
+            bisherigen Wert behalten will, muss den Zielwert selbst ändern.
+          </p>
+          <p class="mt-6 text-sm text-ink-700">
+            Betroffen sind Ziel-CPA und Ziel-ROAS in Such-, Shopping-, Performance-Max-,
+            Demand-Gen-, Display-, Hotel- und Reisekampagnen. Quelle:
+            <a href="https://support.google.com/google-ads/answer/17061251?hl=de" class="text-accent-700 underline underline-offset-2 hover:text-ink-950" rel="noopener noreferrer" target="_blank">Google&nbsp;Ads-Hilfe, Änderungen an zielbasierten Gebotsstrategien</a>.
+            Stand: September 2026.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WER BETROFFEN IST ===== -->
+    <section id="betroffen" aria-labelledby="betroffen-title" class="section-shell">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="betroffen-title" class="section-title max-w-[30ch]">Warum das vor allem Konten trifft, die geraten haben</h2>
+          <p class="section-lead">
+            Die Umstellung nimmt niemandem Leistung weg. Sie nimmt einen Puffer weg, der in
+            vielen Konten nie eine Leistung war, sondern eine Fehlkalibrierung.
+          </p>
+        </div>
+
+        <div class="measure space-y-5 text-ink-800">
+          <p>
+            Ein Zielwert, der deutlich über den tatsächlichen Kosten liegt, war bisher ohne
+            Wirkung: Das System lieferte günstiger, als es musste. Genau diese Differenz war
+            aber nie eine Entscheidung, sondern der Abstand zwischen einer geschätzten Zahl und
+            der Realität des Kontos.
+          </p>
+          <p>
+            Wer seinen Zielwert aus der eigenen Marge hergeleitet hat, hat am 17. August nichts
+            verloren: Ziel und tatsächliche Kosten lagen ohnehin nahe beieinander. Wer ihn
+            geschätzt hat, zahlt jetzt den geschätzten Preis.
+          </p>
+          <p>
+            Deshalb ist die Umstellung weniger eine Kampagnenfrage als eine kaufmännische:
+            Es geht nicht darum, welchen Wert Google akzeptiert, sondern welchen Wert das
+            Geschäftsmodell trägt.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HERLEITUNG =====
+         Kern der Seite. Die Rechnung ist bewusst vollstaendig gezeigt, damit
+         nachvollziehbar bleibt, woher jede Zahl kommt. Die Beispielwerte sind
+         als Beispiel gekennzeichnet und ausdruecklich keine Benchmark. -->
+    <section id="herleitung" aria-labelledby="herleitung-title" class="brand-gradient-dark section-shell text-white">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="herleitung-title" class="section-title text-white">Der Zielwert wird hergeleitet, nicht gesetzt</h2>
+          <p class="section-lead text-ink-300">
+            Drei Schritte, die vor jedem Eintrag im Werbekonto stehen. Sie beginnen nicht in der
+            Kampagne, sondern in der Kalkulation.
+          </p>
+        </div>
+
+        <ol class="reveal-seq grid gap-10 sm:grid-cols-3 sm:gap-8" role="list">
+          <li class="border-t border-ink-800 pt-6" style="--i:0">
+            <span class="font-display text-2xl text-ink-600" aria-hidden="true">01</span>
+            <h3 class="mt-3 font-body text-lg font-medium">Deckungsbeitrag je Abschluss</h3>
+            <p class="mt-3 text-ink-300">
+              Erlös abzüglich aller variablen Kosten: Wareneinsatz, Versand, Zahlungsgebühren,
+              Retouren. Nicht die Rohmarge aus dem Shopsystem, sondern das, was am Ende
+              tatsächlich übrig bleibt.
+            </p>
+          </li>
+          <li class="border-t border-ink-800 pt-6" style="--i:1">
+            <span class="font-display text-2xl text-ink-600" aria-hidden="true">02</span>
+            <h3 class="mt-3 font-body text-lg font-medium">Break-even</h3>
+            <p class="mt-3 text-ink-300">
+              Der Punkt, an dem die Kampagne exakt kostendeckend arbeitet. Er ergibt sich aus
+              dem Deckungsbeitrag, nicht aus einem Branchenwert und nicht aus dem, was das
+              Konto bisher geliefert hat.
+            </p>
+          </li>
+          <li class="border-t border-ink-800 pt-6" style="--i:2">
+            <span class="font-display text-2xl text-ink-600" aria-hidden="true">03</span>
+            <h3 class="mt-3 font-body text-lg font-medium">Zielwert mit begründetem Abstand</h3>
+            <p class="mt-3 text-ink-300">
+              Erst hier fällt eine unternehmerische Entscheidung: Wie viel des Deckungsbeitrags
+              soll im Wachstum bleiben, wie viel im Ergebnis? Der Abstand zum Break-even ist
+              diese Entscheidung, in einer Zahl.
+            </p>
+          </li>
+        </ol>
+
+        <div class="surface-dark mt-12 p-7 sm:p-9">
+          <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-400">Beispielrechnung, keine Benchmark</p>
+          <dl class="mt-6">
+            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-300">Bestellwert</dt>
+              <dd class="font-body font-medium text-white">120&nbsp;€</dd>
+            </div>
+            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-300">Deckungsbeitrag nach variablen Kosten</dt>
+              <dd class="font-body font-medium text-white">36&nbsp;€ <span class="text-ink-400">(30&nbsp;%)</span></dd>
+            </div>
+            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-300">Break-even-ROAS</dt>
+              <dd class="font-body font-medium text-white">3,33 <span class="text-ink-400">(1 ÷ 0,30)</span></dd>
+            </div>
+            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-300">Break-even-CPA</dt>
+              <dd class="font-body font-medium text-white">36&nbsp;€</dd>
+            </div>
+            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-300">Entscheidung: ein Drittel bleibt im Ergebnis</dt>
+              <dd class="font-body font-medium text-accent-300">Ziel-CPA 24&nbsp;€ · Ziel-ROAS 5,0</dd>
+            </div>
+          </dl>
+          <p class="mt-6 text-sm text-ink-400">
+            Derselbe Bestellwert trägt bei 15&nbsp;% Deckungsbeitrag einen völlig anderen
+            Zielwert. Ein ROAS von 4 ist in der einen Produktgruppe profitabel und in der
+            nächsten ein Verlustgeschäft.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LEADGESCHAEFT =====
+         Der E-Commerce-Fall allein wuerde die Haelfte der Zielgruppe nicht
+         abholen. Im B2B endet die Rechnung nicht im Werbekonto. -->
+    <section id="leads" aria-labelledby="leads-title" class="section-shell bg-white">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="leads-title" class="section-title max-w-[30ch]">Im Leadgeschäft endet die Rechnung nicht im Werbekonto</h2>
+          <p class="section-lead">
+            Wo kein Umsatz im Konto ankommt, lässt sich der Zielwert nicht aus Conversion-Werten
+            ableiten. Er muss aus dem kommen, was nach der Anfrage passiert.
+          </p>
+        </div>
+
+        <div class="surface p-7 sm:p-9">
+          <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Beispielrechnung, keine Benchmark</p>
+          <dl class="mt-6 divide-y divide-ink-200">
+            <div class="grid gap-1 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-800">Deckungsbeitrag je gewonnenem Auftrag</dt>
+              <dd class="font-body font-medium text-ink-950">4.000&nbsp;€</dd>
+            </div>
+            <div class="grid gap-1 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-800">Aufträge aus 100 qualifizierten Anfragen</dt>
+              <dd class="font-body font-medium text-ink-950">8</dd>
+            </div>
+            <div class="grid gap-1 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-800">Break-even je qualifizierter Anfrage</dt>
+              <dd class="font-body font-medium text-ink-950">320&nbsp;€</dd>
+            </div>
+            <div class="grid gap-1 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-800">Entscheidung: die Hälfte bleibt im Ergebnis</dt>
+              <dd class="font-body font-medium text-accent-700">Ziel-CPA 160&nbsp;€</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="measure mt-8 space-y-5 text-ink-800">
+          <p>
+            Der entscheidende Begriff darin ist <em>qualifiziert</em>. Wird auf
+            Formulareinsendungen gesteuert, optimiert die Kampagne auf die günstigste Anfrage,
+            nicht auf die, die zum Auftrag führt. Der Zielwert ist dann rechnerisch korrekt und
+            trotzdem falsch, weil die Bezugsgröße nicht stimmt.
+          </p>
+          <p>
+            Deshalb gehört zur Zielwert-Herleitung im Leadgeschäft immer die Rückmeldung aus dem
+            Vertrieb: Erst wenn bewertete Anfragen ins Werbekonto zurücklaufen, bezieht sich der
+            Zielwert auf die richtige Größe.
+            <a href="/cases/google-ads-leadgenerierung" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie das in einem Konto bis zum wahrgenommenen Termin gemessen wurde →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EIN ZIELWERT FUER ALLES ===== -->
+    <section id="segmente" aria-labelledby="segmente-title" class="section-shell">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="segmente-title" class="section-title max-w-[30ch]">Ein Zielwert für alles ist bei gemischten Margen falsch</h2>
+        </div>
+
+        <div class="measure space-y-5 text-ink-800">
+          <p>
+            Sobald ein Konto Produktgruppen oder Leistungen mit unterschiedlichen
+            Deckungsbeiträgen bewirbt, kann ein einziger kontoweiter Zielwert nicht für alle
+            richtig sein. Er ist dann für den margenstarken Teil zu streng und bremst dort
+            Wachstum, das sich rechnen würde. Für den margenschwachen Teil ist er zu locker und
+            kauft Umsatz ein, der keinen Beitrag leistet.
+          </p>
+          <p>
+            Seit der Umstellung wirkt dieser Fehler stärker, weil das System den hinterlegten
+            Wert konsequenter ansteuert. Die Antwort darauf ist keine neue Kampagnenstruktur um
+            ihrer selbst willen, sondern eine Trennung entlang der Deckungsbeiträge: Was
+            unterschiedlich viel trägt, braucht unterschiedliche Zielwerte.
+            <a href="/cases/google-ads-budget-effizienz" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie Budget nach Geschäftswert verteilt wurde →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ZIEL ODER BUDGET ===== -->
+    <section id="entscheidung" aria-labelledby="entscheidung-title" class="section-shell bg-white">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="entscheidung-title" class="section-title max-w-[26ch]">Ziel senken oder Budget erhöhen?</h2>
+          <p class="section-lead">
+            Beides ist möglich, und die Umstellung beantwortet die Frage nicht. Sie zwingt nur
+            dazu, sie überhaupt zu stellen.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <article class="surface card-hover p-7 sm:p-8">
+            <h3 class="font-body text-lg font-medium text-ink-950">Zielwert senken</h3>
+            <p class="mt-3 text-ink-800">
+              Sinnvoll, wenn die bisherigen tatsächlichen Kosten dem entsprechen, was das
+              Geschäftsmodell trägt. Dann hält das Konto sein Niveau, und über das Budget wird
+              anschließend getrennt entschieden.
+            </p>
+          </article>
+          <article class="surface card-hover p-7 sm:p-8">
+            <h3 class="font-body text-lg font-medium text-ink-950">Zielwert halten</h3>
+            <p class="mt-3 text-ink-800">
+              Sinnvoll, wenn der hinterlegte Wert tatsächlich hergeleitet ist und das Konto
+              bisher unter seinen Möglichkeiten geblieben ist. Dann sind höhere Kosten je
+              Abschluss der Preis für zusätzliches Volumen, das sich immer noch rechnet.
+            </p>
+          </article>
+        </div>
+
+        <p class="measure mt-8 text-ink-800">
+          Was in beiden Fällen vorher feststehen muss, ist dieselbe Zahl: der Deckungsbeitrag.
+          Ohne ihn ist die Entscheidung zwischen Senken und Halten nicht begründbar, sondern nur
+          eine Präferenz.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== EINORDNUNG =====
+         Die Gebotsumstellung steht nicht allein. Die DSA-Praezisierung ist
+         wichtig: Ein pauschales "DSA wird im September migriert" waere falsch. -->
+    <section id="einordnung" aria-labelledby="einordnung-title" class="section-shell">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="einordnung-title" class="section-title max-w-[28ch]">Drei Änderungen in zehn Wochen</h2>
+          <p class="section-lead">
+            Die Gebotsumstellung ist Teil einer Reihe, die Steuerung zur Plattform verschiebt und
+            die Verantwortung beim Unternehmen lässt.
+          </p>
+        </div>
+
+        <ol class="grid gap-8 sm:grid-cols-3" role="list">
+          <li class="border-t border-ink-300 pt-5">
+            <p class="font-body text-sm font-medium text-accent-700">1. Juli 2026</p>
+            <p class="mt-2 font-body font-medium text-ink-950">Neue Nutzungsbedingungen</p>
+            <p class="mt-2 text-sm text-ink-700">
+              Werbetreibende sind vertraglich dafür verantwortlich, automatisch erzeugte
+              Kampagnen und Assets zu prüfen, freizugeben oder zu entfernen.
+            </p>
+          </li>
+          <li class="border-t-2 border-accent-600 pt-5">
+            <p class="font-body text-sm font-medium text-accent-700">17. August 2026</p>
+            <p class="mt-2 font-body font-medium text-ink-950">Zielbasierte Gebotsstrategien</p>
+            <p class="mt-2 text-sm text-ink-700">
+              Budgetbeschränkte Kampagnen laufen auf den hinterlegten Zielwert zu. Thema dieser
+              Seite.
+            </p>
+          </li>
+          <li class="border-t border-ink-300 pt-5">
+            <p class="font-body text-sm font-medium text-accent-700">1. September 2026</p>
+            <p class="mt-2 font-body font-medium text-ink-950">AI Max</p>
+            <p class="mt-2 text-sm text-ink-700">
+              Kampagnen mit kampagnenweitem Broad Match oder automatisch erstellten Assets werden
+              automatisch umgestellt. Die Umstellung reiner DSA-Kampagnen wurde auf Februar 2027
+              verschoben.
+            </p>
+          </li>
+        </ol>
+
+        <p class="measure mt-10 text-lg leading-relaxed text-ink-800">
+          Was in allen drei Fällen beim Unternehmen bleibt, ist die Zahl, auf die gesteuert wird.
+          Sie ist die letzte Stellschraube, die nicht automatisiert wurde.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section aria-labelledby="cta-title" class="section-shell bg-white">
+      <div class="container-page">
+        <h2 id="cta-title" class="section-title max-w-[28ch]">
+          Wissen Sie, woher der Zielwert in Ihren Kampagnen stammt?
+        </h2>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Wir sehen uns an, welche Zielwerte hinterlegt sind, welche Kampagnen budgetbeschränkt
+          laufen und ob die Werte zu Ihren Deckungsbeiträgen passen. Das Ergebnis ist eine
+          begründete Zahl je Segment statt einer geschätzten.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/#kontakt" class="js-cta btn-primary" data-source="gebotsziele_cta">Analyse anfragen</a>
+          <a href="/marketing-audit" class="btn-secondary">Wie die Analyse abläuft</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo" class="bg-ink-950 text-white">
+    <div class="container-page grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
+      <div>
+        <img src="Logos/ddm Logo svg/ddm_Logo_weiß.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+        <p class="mt-4 max-w-[40ch] text-sm text-ink-400">
+          Datengetriebener Growth- und Performance-Partner für Mittelstand, B2B und E-Commerce.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Kontakt</h3>
+        <address class="mt-4 text-sm not-italic leading-relaxed text-ink-300">
+          DDM Data Driven Marketing GmbH<br />
+          Wiesenstr. 21A<br />
+          40549 Düsseldorf<br />
+          <a href="mailto:info@datadrivenmarketing.de" class="hover:text-white">info@datadrivenmarketing.de</a>
+        </address>
+      </div>
+
+      <div>
+        <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Rechtliches</h3>
+        <ul class="mt-4 space-y-2 text-sm text-ink-300" role="list">
+          <li><a href="/impressum" class="hover:text-white">Impressum</a></li>
+          <li><a href="/datenschutz" class="hover:text-white">Datenschutzerklärung</a></li>
+          <li><button type="button" class="text-left hover:text-white" onclick="openConsentBanner(); return false;">Cookie-Einstellungen</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-ink-800">
+      <div class="container-page py-6 text-xs text-ink-400">
+        <p>
+          © <span id="year"></span> DDM Data Driven Marketing GmbH
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
