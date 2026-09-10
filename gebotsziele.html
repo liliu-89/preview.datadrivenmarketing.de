@@ -119,24 +119,29 @@
     <!-- ===== AENDERUNG =====
          Der Anlass steht vorn, aber bewusst knapp: Die Seite ist keine
          Newsmeldung. Googles eigenes Rechenbeispiel wird zitiert, damit die
-         Aussage nicht von uns stammt, sondern von der Plattform. -->
+         Aussage nicht von uns stammt, sondern von der Plattform.
+         Ab lg zweispaltig. Vorher stand die Karte ueber die volle Breite,
+         ihr Text aber in einer 64ch-Spalte: Die rechte Kartenhaelfte war
+         leer. -->
     <section id="aenderung" aria-labelledby="aenderung-title" class="border-y border-ink-200 bg-white py-12 sm:py-16">
-      <div class="container-page">
-        <h2 id="aenderung-title" class="section-title max-w-[28ch]">Was sich am 17. August 2026 geändert hat</h2>
-        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
-          Google hat die Gebotssysteme umgestellt. Kampagnen mit einer zielbasierten
-          Gebotsstrategie, die durch das Budget eingeschränkt sind, laufen seitdem
-          gleichmäßiger auf den hinterlegten Zielwert zu, statt ihn zu unterbieten.
-        </p>
+      <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
+        <div>
+          <h2 id="aenderung-title" class="section-title max-w-[28ch]">Was sich am 17. August 2026 geändert hat</h2>
+          <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+            Google hat die Gebotssysteme umgestellt. Kampagnen mit einer zielbasierten
+            Gebotsstrategie, die durch das Budget eingeschränkt sind, laufen seitdem
+            gleichmäßiger auf den hinterlegten Zielwert zu, statt ihn zu unterbieten.
+          </p>
+        </div>
 
-        <div class="surface mt-8 p-7 sm:p-9">
+        <div class="surface p-7 sm:p-9">
           <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Googles eigenes Beispiel</p>
-          <p class="measure mt-4 text-ink-800">
+          <p class="mt-4 text-ink-800">
             Liegt der Ziel-CPA einer Kampagne bei 10&nbsp;€, der tatsächliche CPA zuletzt aber bei
             5&nbsp;€, erzielt die Kampagne künftig Ergebnisse, die näher an einem tatsächlichen
             CPA von 10&nbsp;€ liegen.
           </p>
-          <p class="measure mt-4 text-ink-800">
+          <p class="mt-4 text-ink-800">
             Ebenso ausdrücklich hält Google fest: Tagesbudgets und Gebotsziele werden
             <strong class="font-medium text-ink-950">nicht automatisch angepasst</strong>. Wer den
             bisherigen Wert behalten will, muss den Zielwert selbst ändern.
@@ -151,104 +156,203 @@
       </div>
     </section>
 
-    <!-- ===== WER BETROFFEN IST ===== -->
+    <!-- ===== WER BETROFFEN IST =====
+         Reiner Textabschnitt, deshalb im Muster der Startseite (section-grid):
+         Ueberschrift links, Text rechts. -->
     <section id="betroffen" aria-labelledby="betroffen-title" class="section-shell">
-      <div class="container-page">
-        <div class="section-head">
-          <h2 id="betroffen-title" class="section-title max-w-[30ch]">Warum das vor allem Konten trifft, die geraten haben</h2>
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="betroffen-title" class="section-title">Warum das vor allem Konten trifft, die geraten haben</h2>
           <p class="section-lead">
             Die Umstellung nimmt niemandem Leistung weg. Sie nimmt einen Puffer weg, der in
             vielen Konten nie eine Leistung war, sondern eine Fehlkalibrierung.
           </p>
         </div>
 
-        <div class="measure space-y-5 text-ink-800">
-          <p>
-            Ein Zielwert, der deutlich über den tatsächlichen Kosten liegt, war bisher ohne
-            Wirkung: Das System lieferte günstiger, als es musste. Genau diese Differenz war
-            aber nie eine Entscheidung, sondern der Abstand zwischen einer geschätzten Zahl und
-            der Realität des Kontos.
-          </p>
-          <p>
-            Wer seinen Zielwert aus der eigenen Marge hergeleitet hat, hat am 17. August nichts
-            verloren: Ziel und tatsächliche Kosten lagen ohnehin nahe beieinander. Wer ihn
-            geschätzt hat, zahlt jetzt den geschätzten Preis.
-          </p>
-          <p>
-            Deshalb ist die Umstellung weniger eine Kampagnenfrage als eine kaufmännische:
-            Es geht nicht darum, welchen Wert Google akzeptiert, sondern welchen Wert das
-            Geschäftsmodell trägt.
-          </p>
+        <div class="section-main">
+          <div class="measure space-y-5 text-ink-800">
+            <p>
+              Ein Zielwert, der deutlich über den tatsächlichen Kosten liegt, war bisher ohne
+              Wirkung: Das System lieferte günstiger, als es musste. Genau diese Differenz war
+              aber nie eine Entscheidung, sondern der Abstand zwischen einer geschätzten Zahl und
+              der Realität des Kontos.
+            </p>
+            <p>
+              Wer seinen Zielwert aus der eigenen Marge hergeleitet hat, hat am 17. August nichts
+              verloren: Ziel und tatsächliche Kosten lagen ohnehin nahe beieinander. Wer ihn
+              geschätzt hat, zahlt jetzt den geschätzten Preis.
+            </p>
+            <p>
+              Deshalb ist die Umstellung weniger eine Kampagnenfrage als eine kaufmännische:
+              Es geht nicht darum, welchen Wert Google akzeptiert, sondern welchen Wert das
+              Geschäftsmodell trägt.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== HERLEITUNG =====
-         Kern der Seite. Die Rechnung ist bewusst vollstaendig gezeigt, damit
-         nachvollziehbar bleibt, woher jede Zahl kommt. Die Beispielwerte sind
-         als Beispiel gekennzeichnet und ausdruecklich keine Benchmark. -->
+         Kern der Seite. Aufbau nach der Wirtschaftlichkeits-Folie aus einer
+         Kundenpraesentation: links die Rechenkette, rechts, was ein Zielwert in
+         Euro bedeutet. Kundenspezifisches (Name, Warenkorbwert) ist bewusst
+         nicht uebernommen.
+         Die Rechenkette ersetzt die fruehere Dreierreihe (Deckungsbeitrag,
+         Break-even, Zielwert mit Abstand). Deren Kernsaetze stecken in den
+         Schritten 03 und 04 und im Satz unter der Kette.
+         Die Szenarien rechnen nur Umsatz / ROAS. Erst der Satz darunter
+         verbindet sie mit den 30 % Deckungsbeitrag der Beispielrechnung.
+         Beispielwerte sind als Beispiel gekennzeichnet, keine Benchmark. -->
     <section id="herleitung" aria-labelledby="herleitung-title" class="brand-gradient-dark section-shell text-white">
       <div class="container-page">
         <div class="section-head">
           <h2 id="herleitung-title" class="section-title text-white">Der Zielwert wird hergeleitet, nicht gesetzt</h2>
           <p class="section-lead text-ink-300">
-            Drei Schritte, die vor jedem Eintrag im Werbekonto stehen. Sie beginnen nicht in der
-            Kampagne, sondern in der Kalkulation.
+            Die Rechnung beginnt nicht in der Kampagne, sondern in der Kalkulation. Der Wert im
+            Werbekonto ist erst ihr letzter Schritt.
           </p>
         </div>
 
-        <ol class="reveal-seq grid gap-10 sm:grid-cols-3 sm:gap-8" role="list">
-          <li class="border-t border-ink-800 pt-6" style="--i:0">
-            <span class="font-display text-2xl text-ink-600" aria-hidden="true">01</span>
-            <h3 class="mt-3 font-body text-lg font-medium">Deckungsbeitrag je Abschluss</h3>
-            <p class="mt-3 text-ink-300">
-              Erlös abzüglich aller variablen Kosten: Wareneinsatz, Versand, Zahlungsgebühren,
-              Retouren. Nicht die Rohmarge aus dem Shopsystem, sondern das, was am Ende
-              tatsächlich übrig bleibt.
-            </p>
-          </li>
-          <li class="border-t border-ink-800 pt-6" style="--i:1">
-            <span class="font-display text-2xl text-ink-600" aria-hidden="true">02</span>
-            <h3 class="mt-3 font-body text-lg font-medium">Break-even</h3>
-            <p class="mt-3 text-ink-300">
-              Der Punkt, an dem die Kampagne exakt kostendeckend arbeitet. Er ergibt sich aus
-              dem Deckungsbeitrag, nicht aus einem Branchenwert und nicht aus dem, was das
+        <div class="section-grid">
+          <div class="section-aside">
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-400">So rechnen wir</p>
+            <ol class="reveal-seq mt-5 space-y-5" role="list">
+              <li class="relative rounded-control border border-ink-800 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:0">
+                <p class="flex items-baseline gap-3">
+                  <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">01</span>
+                  <span class="font-body font-medium">Umsatz je Bestellung</span>
+                </p>
+                <p class="mt-1 pl-8 text-sm text-ink-400">Der durchschnittliche Bestellwert.</p>
+              </li>
+              <li class="relative rounded-control border border-ink-800 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:1">
+                <p class="flex items-baseline gap-3">
+                  <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">02</span>
+                  <span class="font-body font-medium">Variable Kosten abziehen</span>
+                </p>
+                <p class="mt-1 pl-8 text-sm text-ink-400">Wareneinsatz · Versand und Verpackung · Zahlungsgebühren · erwartete Retouren</p>
+              </li>
+              <li class="relative rounded-control border border-ink-800 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:2">
+                <p class="flex items-baseline gap-3">
+                  <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">03</span>
+                  <span class="font-body font-medium">Deckungsbeitrag vor Werbung</span>
+                </p>
+                <p class="mt-1 pl-8 text-sm text-ink-400">Was übrig bleibt, bevor Werbung bezahlt ist, nicht die Rohmarge aus dem Shopsystem. Hier liegt der Break-even.</p>
+              </li>
+              <li class="relative rounded-control border border-ink-800 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:3">
+                <p class="flex items-baseline gap-3">
+                  <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">04</span>
+                  <span class="font-body font-medium">Gewünschten Ertrag abziehen</span>
+                </p>
+                <p class="mt-1 pl-8 text-sm text-ink-400">Wie viel nach der Werbung bleiben soll. Hier fällt die unternehmerische Entscheidung.</p>
+              </li>
+              <li class="relative rounded-control border border-accent-400 bg-accent-900 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:4">
+                <p class="flex items-baseline gap-3">
+                  <span class="font-display text-sm tabular-nums text-accent-300" aria-hidden="true">05</span>
+                  <span class="font-body font-medium">Maximaler Ziel-CPA</span>
+                </p>
+                <p class="mt-1 pl-8 text-sm text-ink-200">So viel darf eine Bestellung höchstens kosten.</p>
+              </li>
+              <li class="relative rounded-control border border-ink-800 px-4 py-3" style="--i:5">
+                <p class="flex items-baseline gap-3">
+                  <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">06</span>
+                  <span class="font-body font-medium">Daraus folgen</span>
+                </p>
+                <p class="mt-1 pl-8 text-sm text-ink-400">Ziel-ROAS · Kosten-Umsatz-Relation · Werbebudget</p>
+              </li>
+            </ol>
+            <p class="mt-6 text-sm text-ink-400">
+              Keiner dieser Schritte stützt sich auf einen Branchenwert oder auf das, was das
               Konto bisher geliefert hat.
             </p>
-          </li>
-          <li class="border-t border-ink-800 pt-6" style="--i:2">
-            <span class="font-display text-2xl text-ink-600" aria-hidden="true">03</span>
-            <h3 class="mt-3 font-body text-lg font-medium">Zielwert mit begründetem Abstand</h3>
-            <p class="mt-3 text-ink-300">
-              Erst hier fällt eine unternehmerische Entscheidung: Wie viel des Deckungsbeitrags
-              soll im Wachstum bleiben, wie viel im Ergebnis? Der Abstand zum Break-even ist
-              diese Entscheidung, in einer Zahl.
-            </p>
-          </li>
-        </ol>
+          </div>
 
+          <div class="section-main">
+            <div class="flex flex-wrap items-baseline justify-between gap-3">
+              <p class="font-display text-xl">Beispiel: 10.000&nbsp;€ attribuierter Umsatz</p>
+              <p class="pill">Werbekosten = Umsatz ÷ ROAS</p>
+            </div>
+
+            <dl class="mt-5 grid gap-4 sm:grid-cols-3">
+              <div class="rounded-card border border-ink-800 bg-ink-950 p-5">
+                <dt class="font-body text-xs font-medium uppercase tracking-wide text-ink-400">Ziel-ROAS 3,0</dt>
+                <dd class="mt-3">
+                  <span class="block font-display case-kpi tabular-nums">3.333&nbsp;€</span>
+                  <span class="block text-sm text-ink-400">Werbekosten</span>
+                </dd>
+                <dd class="mt-4 border-t border-ink-800 pt-4">
+                  <span class="block font-body font-medium tabular-nums">KUR 33,3&nbsp;%</span>
+                  <span class="block text-xs text-ink-400">Kosten-Umsatz-Relation</span>
+                </dd>
+              </div>
+              <div class="rounded-card border border-ink-800 bg-ink-950 p-5">
+                <dt class="font-body text-xs font-medium uppercase tracking-wide text-ink-400">Ziel-ROAS 4,0</dt>
+                <dd class="mt-3">
+                  <span class="block font-display case-kpi tabular-nums">2.500&nbsp;€</span>
+                  <span class="block text-sm text-ink-400">Werbekosten</span>
+                </dd>
+                <dd class="mt-4 border-t border-ink-800 pt-4">
+                  <span class="block font-body font-medium tabular-nums">KUR 25,0&nbsp;%</span>
+                  <span class="block text-xs text-ink-400">Kosten-Umsatz-Relation</span>
+                </dd>
+              </div>
+              <div class="rounded-card border border-ink-800 bg-ink-950 p-5">
+                <dt class="font-body text-xs font-medium uppercase tracking-wide text-ink-400">Ziel-ROAS 5,0</dt>
+                <dd class="mt-3">
+                  <span class="block font-display case-kpi tabular-nums">2.000&nbsp;€</span>
+                  <span class="block text-sm text-ink-400">Werbekosten</span>
+                </dd>
+                <dd class="mt-4 border-t border-ink-800 pt-4">
+                  <span class="block font-body font-medium tabular-nums">KUR 20,0&nbsp;%</span>
+                  <span class="block text-xs text-ink-400">Kosten-Umsatz-Relation</span>
+                </dd>
+              </div>
+            </dl>
+
+            <div class="mt-8 border-l-2 border-accent-300 pl-5">
+              <p class="font-display text-xl leading-snug">
+                Welcher dieser Werte trägt, entscheidet der Deckungsbeitrag, nicht das Werbekonto.
+              </p>
+              <p class="mt-3 text-sm text-ink-300">
+                Bei 30&nbsp;% Deckungsbeitrag wäre ein Ziel-ROAS von 3,0 bereits ein
+                Verlustgeschäft: Die Werbekosten lägen mit 33,3&nbsp;% des Umsatzes über dem, was nach
+                den variablen Kosten übrig bleibt.
+              </p>
+            </div>
+
+            <p class="mt-8 text-sm text-ink-300">
+              <span class="mr-2 font-body text-xs font-medium uppercase tracking-wide text-ink-400">Dafür nötig</span>
+              Rohmarge · Versand · Zahlungsgebühren · Fulfillment · Retouren · Wiederkäufe ·
+              gewünschter Ertrag
+            </p>
+          </div>
+        </div>
+
+        <!-- Beispielrechnung ab lg als waagerechte Leiste. Die Labels sind
+             unterschiedlich lang, deshalb wie bei den Case-Karten der
+             Startseite ueber ein Subgrid ausgerichtet: Die Werte stehen auf
+             einer Linie, auch wenn ein Label zweizeilig ist. -->
         <div class="surface-dark mt-12 p-7 sm:p-9">
           <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-400">Beispielrechnung, keine Benchmark</p>
-          <dl class="mt-6">
-            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
-              <dt class="text-ink-300">Bestellwert</dt>
-              <dd class="font-body font-medium text-white">120&nbsp;€</dd>
+          <dl class="mt-6 lg:grid lg:grid-cols-5 lg:grid-rows-[auto_auto]">
+            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8 lg:row-span-2 lg:grid-cols-1 lg:grid-rows-subgrid lg:gap-2 lg:border-t-0 lg:pl-0 lg:pr-5 lg:py-0">
+              <dt class="text-ink-300 lg:self-end lg:text-sm">Bestellwert</dt>
+              <dd class="font-body font-medium text-white lg:text-lg">120&nbsp;€</dd>
             </div>
-            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
-              <dt class="text-ink-300">Deckungsbeitrag nach variablen Kosten</dt>
-              <dd class="font-body font-medium text-white">36&nbsp;€ <span class="text-ink-400">(30&nbsp;%)</span></dd>
+            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8 lg:row-span-2 lg:grid-cols-1 lg:grid-rows-subgrid lg:gap-2 lg:border-t-0 lg:border-l lg:px-5 lg:py-0">
+              <dt class="text-ink-300 lg:self-end lg:text-sm">Deckungsbeitrag nach variablen Kosten</dt>
+              <dd class="font-body font-medium text-white lg:text-lg">36&nbsp;€ <span class="text-ink-400">(30&nbsp;%)</span></dd>
             </div>
-            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
-              <dt class="text-ink-300">Break-even-ROAS</dt>
-              <dd class="font-body font-medium text-white">3,33 <span class="text-ink-400">(1 ÷ 0,30)</span></dd>
+            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8 lg:row-span-2 lg:grid-cols-1 lg:grid-rows-subgrid lg:gap-2 lg:border-t-0 lg:border-l lg:px-5 lg:py-0">
+              <dt class="text-ink-300 lg:self-end lg:text-sm">Break-even-ROAS</dt>
+              <dd class="font-body font-medium text-white lg:text-lg">3,33 <span class="text-ink-400">(1 ÷ 0,30)</span></dd>
             </div>
-            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
-              <dt class="text-ink-300">Break-even-CPA</dt>
-              <dd class="font-body font-medium text-white">36&nbsp;€</dd>
+            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8 lg:row-span-2 lg:grid-cols-1 lg:grid-rows-subgrid lg:gap-2 lg:border-t-0 lg:border-l lg:px-5 lg:py-0">
+              <dt class="text-ink-300 lg:self-end lg:text-sm">Break-even-CPA</dt>
+              <dd class="font-body font-medium text-white lg:text-lg">36&nbsp;€</dd>
             </div>
-            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
-              <dt class="text-ink-300">Entscheidung: ein Drittel bleibt im Ergebnis</dt>
-              <dd class="font-body font-medium text-accent-300">Ziel-CPA 24&nbsp;€ · Ziel-ROAS 5,0</dd>
+            <div class="grid gap-1 border-t border-ink-800 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8 lg:row-span-2 lg:grid-cols-1 lg:grid-rows-subgrid lg:gap-2 lg:border-t-0 lg:border-l lg:px-5 lg:py-0">
+              <dt class="text-ink-300 lg:self-end lg:text-sm">Entscheidung: ein Drittel bleibt im Ergebnis</dt>
+              <dd class="font-body font-medium text-accent-300 lg:text-lg"><span class="lg:block">Ziel-CPA 24&nbsp;€</span><span class="lg:hidden"> · </span><span class="lg:block">Ziel-ROAS 5,0</span></dd>
             </div>
           </dl>
           <p class="mt-6 text-sm text-ink-400">
@@ -262,78 +366,81 @@
 
     <!-- ===== LEADGESCHAEFT =====
          Der E-Commerce-Fall allein wuerde die Haelfte der Zielgruppe nicht
-         abholen. Im B2B endet die Rechnung nicht im Werbekonto. -->
+         abholen. Im B2B endet die Rechnung nicht im Werbekonto.
+         Ab lg zweispaltig: Argument links, Rechnung rechts. -->
     <section id="leads" aria-labelledby="leads-title" class="section-shell bg-white">
-      <div class="container-page">
-        <div class="section-head">
+      <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
+        <div>
           <h2 id="leads-title" class="section-title max-w-[30ch]">Im Leadgeschäft endet die Rechnung nicht im Werbekonto</h2>
           <p class="section-lead">
             Wo kein Umsatz im Konto ankommt, lässt sich der Zielwert nicht aus Conversion-Werten
             ableiten. Er muss aus dem kommen, was nach der Anfrage passiert.
           </p>
+          <div class="measure mt-8 space-y-5 text-ink-800">
+            <p>
+              Der entscheidende Begriff darin ist <em>qualifiziert</em>. Wird auf
+              Formulareinsendungen gesteuert, optimiert die Kampagne auf die günstigste Anfrage,
+              nicht auf die, die zum Auftrag führt. Der Zielwert ist dann rechnerisch korrekt und
+              trotzdem falsch, weil die Bezugsgröße nicht stimmt.
+            </p>
+            <p>
+              Deshalb gehört zur Zielwert-Herleitung im Leadgeschäft immer die Rückmeldung aus dem
+              Vertrieb: Erst wenn bewertete Anfragen ins Werbekonto zurücklaufen, bezieht sich der
+              Zielwert auf die richtige Größe.
+              <a href="/cases/google-ads-leadgenerierung" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie das in einem Konto bis zum wahrgenommenen Termin gemessen wurde →</a>
+            </p>
+          </div>
         </div>
 
         <div class="surface p-7 sm:p-9">
           <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Beispielrechnung, keine Benchmark</p>
           <dl class="mt-6 divide-y divide-ink-200">
-            <div class="grid gap-1 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+            <div class="grid gap-1 py-4 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
               <dt class="text-ink-800">Deckungsbeitrag je gewonnenem Auftrag</dt>
-              <dd class="font-body font-medium text-ink-950">4.000&nbsp;€</dd>
+              <dd class="font-body font-medium tabular-nums text-ink-950 sm:text-right">4.000&nbsp;€</dd>
             </div>
-            <div class="grid gap-1 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+            <div class="grid gap-1 py-4 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
               <dt class="text-ink-800">Aufträge aus 100 qualifizierten Anfragen</dt>
-              <dd class="font-body font-medium text-ink-950">8</dd>
+              <dd class="font-body font-medium tabular-nums text-ink-950 sm:text-right">8</dd>
             </div>
-            <div class="grid gap-1 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+            <div class="grid gap-1 py-4 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
               <dt class="text-ink-800">Break-even je qualifizierter Anfrage</dt>
-              <dd class="font-body font-medium text-ink-950">320&nbsp;€</dd>
+              <dd class="font-body font-medium tabular-nums text-ink-950 sm:text-right">320&nbsp;€</dd>
             </div>
-            <div class="grid gap-1 py-4 sm:grid-cols-[17rem_1fr] sm:items-baseline sm:gap-8">
+            <div class="grid gap-1 py-4 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
               <dt class="text-ink-800">Entscheidung: die Hälfte bleibt im Ergebnis</dt>
-              <dd class="font-body font-medium text-accent-700">Ziel-CPA 160&nbsp;€</dd>
+              <dd class="font-body font-medium tabular-nums text-accent-700 sm:text-right">Ziel-CPA 160&nbsp;€</dd>
             </div>
           </dl>
-        </div>
-
-        <div class="measure mt-8 space-y-5 text-ink-800">
-          <p>
-            Der entscheidende Begriff darin ist <em>qualifiziert</em>. Wird auf
-            Formulareinsendungen gesteuert, optimiert die Kampagne auf die günstigste Anfrage,
-            nicht auf die, die zum Auftrag führt. Der Zielwert ist dann rechnerisch korrekt und
-            trotzdem falsch, weil die Bezugsgröße nicht stimmt.
-          </p>
-          <p>
-            Deshalb gehört zur Zielwert-Herleitung im Leadgeschäft immer die Rückmeldung aus dem
-            Vertrieb: Erst wenn bewertete Anfragen ins Werbekonto zurücklaufen, bezieht sich der
-            Zielwert auf die richtige Größe.
-            <a href="/cases/google-ads-leadgenerierung" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie das in einem Konto bis zum wahrgenommenen Termin gemessen wurde →</a>
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- ===== EIN ZIELWERT FUER ALLES ===== -->
+    <!-- ===== EIN ZIELWERT FUER ALLES =====
+         Reiner Textabschnitt, Muster wie "Wer betroffen ist". -->
     <section id="segmente" aria-labelledby="segmente-title" class="section-shell">
-      <div class="container-page">
-        <div class="section-head">
-          <h2 id="segmente-title" class="section-title max-w-[30ch]">Ein Zielwert für alles ist bei gemischten Margen falsch</h2>
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="segmente-title" class="section-title">Ein Zielwert für alles ist bei gemischten Margen falsch</h2>
         </div>
 
-        <div class="measure space-y-5 text-ink-800">
-          <p>
-            Sobald ein Konto Produktgruppen oder Leistungen mit unterschiedlichen
-            Deckungsbeiträgen bewirbt, kann ein einziger kontoweiter Zielwert nicht für alle
-            richtig sein. Er ist dann für den margenstarken Teil zu streng und bremst dort
-            Wachstum, das sich rechnen würde. Für den margenschwachen Teil ist er zu locker und
-            kauft Umsatz ein, der keinen Beitrag leistet.
-          </p>
-          <p>
-            Seit der Umstellung wirkt dieser Fehler stärker, weil das System den hinterlegten
-            Wert konsequenter ansteuert. Die Antwort darauf ist keine neue Kampagnenstruktur um
-            ihrer selbst willen, sondern eine Trennung entlang der Deckungsbeiträge: Was
-            unterschiedlich viel trägt, braucht unterschiedliche Zielwerte.
-            <a href="/cases/google-ads-budget-effizienz" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie Budget nach Geschäftswert verteilt wurde →</a>
-          </p>
+        <div class="section-main">
+          <div class="measure space-y-5 text-ink-800">
+            <p>
+              Sobald ein Konto Produktgruppen oder Leistungen mit unterschiedlichen
+              Deckungsbeiträgen bewirbt, kann ein einziger kontoweiter Zielwert nicht für alle
+              richtig sein. Er ist dann für den margenstarken Teil zu streng und bremst dort
+              Wachstum, das sich rechnen würde. Für den margenschwachen Teil ist er zu locker und
+              kauft Umsatz ein, der keinen Beitrag leistet.
+            </p>
+            <p>
+              Seit der Umstellung wirkt dieser Fehler stärker, weil das System den hinterlegten
+              Wert konsequenter ansteuert. Die Antwort darauf ist keine neue Kampagnenstruktur um
+              ihrer selbst willen, sondern eine Trennung entlang der Deckungsbeiträge: Was
+              unterschiedlich viel trägt, braucht unterschiedliche Zielwerte.
+              <a href="/cases/google-ads-budget-effizienz" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie Budget nach Geschäftswert verteilt wurde →</a>
+            </p>
+          </div>
         </div>
       </div>
     </section>

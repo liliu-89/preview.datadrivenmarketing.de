@@ -11,6 +11,7 @@
 @source "../impressum.html";
 @source "../team.html";
 @source "../marketing-audit.html";
+@source "../gebotsziele.html";
 @source "../datenschutz.html";
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────
@@ -580,7 +581,9 @@
      aber nur 115px. 5.5vw - 20px ergibt bei 1024px rund 36px mit etwa
      5px Luft und erreicht 40px ab rund 1090px. Die Luft ist Absicht:
      Safari setzt Text oft 1-2 % breiter als Chrome. Gemessen, nicht
-     geschaetzt – kommt ein breiterer Wert hinzu, neu pruefen. */
+     geschaetzt – kommt ein breiterer Wert hinzu, neu pruefen.
+     Mitgenutzt von den Szenario-Karten auf /gebotsziele. Die haben mehr
+     Platz (bei 1024px rund 30px Luft), die Grenze setzt die Case-Karte. */
   .case-kpi {
     font-size: var(--text-2xl);
     line-height: var(--text-2xl--line-height);
