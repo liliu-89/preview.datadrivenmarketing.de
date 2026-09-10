@@ -572,6 +572,25 @@
     font-variant-numeric: tabular-nums;
   }
 
+  /* Kennzahlen in den Case-Karten der Startseite.
+     Unterhalb von lg exakt wie text-2xl (24px): Tablet und Handy bleiben
+     bewusst unveraendert.
+     Ab lg bis 40px, aber nicht sofort: Die breitesten Werte ("43,7 %",
+     "10,9 %") brauchen bei 40px rund 121px, eine Spalte hat bei 1024px
+     aber nur 117px. 5.5vw - 19px ergibt bei 1024px rund 37px mit etwa
+     4px Luft und erreicht 40px ab rund 1070px. Gemessen, nicht geschaetzt
+     – kommt ein breiterer Wert hinzu, neu pruefen. */
+  .case-kpi {
+    font-size: var(--text-2xl);
+    line-height: var(--text-2xl--line-height);
+  }
+  @media (width >= 64rem) {
+    .case-kpi {
+      font-size: clamp(2.25rem, 5.5vw - 19px, 2.5rem);
+      line-height: 1.1;
+    }
+  }
+
   .field-label {
     @apply block font-body text-sm font-medium text-ink-950;
   }
