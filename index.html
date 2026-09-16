@@ -663,36 +663,33 @@
               <p class="mt-2 text-sm text-ink-400">Übernommen mit breit streuender Struktur und einem einzigen Conversion-Signal, dann nach Suchintention neu aufgebaut.</p>
             </div>
             <div class="p-6">
-              <!-- Drei Dimensionen statt drei Volumenzahlen: Reichweite,
-                   Bündelung, Nachweisbarkeit. Die Nachweisbarkeit steht ohne
-                   Zahl: Die Menge verknüpfter Buchungen aus rund fünf Wochen
-                   belegt nichts, die Messtiefe schon. Gleiche drei Kacheln wie
-                   im Case-Kopf. „Termin" ist in der Kennzahlen-Schrift breiter
-                   als eine Drittelspalte (bei 1024 px 126 px Text in 118 px).
-                   Deshalb sind die Spalten dieser Karte ungleich verteilt, im
-                   Grid (ab lg) wie im Flex-Layout darunter: „85 %" gibt Platz ab. Die 43,7 % gelten für die High-Intent-Kampagne, der
-                   Vorher-Wert fürs Gesamtkonto; das Sublabel sagt „kontoweit",
-                   damit der Unterschied sichtbar bleibt. -->
+              <!-- Gleiche drei Kacheln wie im Case-Kopf, Datenbasis Monat 1–3.
+                   Sichtbarkeit und Conversion-Rate gelten für die Kampagne der
+                   lokalen High-Intent-Suche, der Vorher-Wert fürs Gesamtkonto;
+                   das Sublabel sagt „kontoweit", damit der Unterschied sichtbar
+                   bleibt. Die Conversion-Rate vergleicht Monat 2–3 zusammen mit
+                   Monat 1 (0,84 % gegenüber 1,78 %). Mengenangaben stehen hier
+                   bewusst nicht. -->
               <!-- min-w-0 an den Spalten ist noetig, nicht kosmetisch: Flex-Elemente
                      haben min-width: auto und schrumpfen nicht unter ihre
                      Inhaltsbreite. Bei langen Sublabels uebersteigt die Summe der
                      Mindestbreiten den Platz, die Reihe laeuft ueber, und die Karte
                      schneidet mit overflow-hidden ab. Auf 360 px waren das 7 px. -->
-                <div class="-mx-6 flex divide-x divide-ink-200 border-y border-ink-200 px-6 py-4 lg:grid lg:grid-cols-[1fr_0.85fr_1.15fr] lg:px-2 xl:grid-cols-[1.2fr_0.85fr_1.15fr]">
+                <div class="-mx-6 flex divide-x divide-ink-200 border-y border-ink-200 px-6 py-4 lg:grid lg:grid-cols-3 lg:px-2 xl:grid-cols-[1.3fr_1fr_1fr]">
                 <div class="min-w-0 flex-1 pr-4 lg:row-span-3 lg:grid lg:grid-rows-subgrid lg:px-4">
                   <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700 lg:self-end">Sichtbarkeit Kernnachfrage</p>
-                  <p class="mt-1 font-display case-kpi tabular-nums text-ink-950">43,7&nbsp;%</p>
+                  <p class="mt-1 font-display case-kpi tabular-nums text-ink-950">56,5&nbsp;%</p>
                   <p class="text-xs text-ink-700 lg:mt-2">zuvor &lt;10&nbsp;% kontoweit</p>
                 </div>
-                <div class="min-w-0 flex-[0.85] px-4 lg:row-span-3 lg:grid lg:grid-rows-subgrid">
-                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700 lg:self-end">Buchungen</p>
-                  <p class="mt-1 font-display case-kpi tabular-nums text-ink-950">85&nbsp;%</p>
-                  <p class="text-xs text-ink-700 lg:mt-2">aus Brand + lokaler Suche</p>
+                <div class="min-w-0 flex-1 px-4 lg:row-span-3 lg:grid lg:grid-rows-subgrid">
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700 lg:self-end">Conversion-Rate</p>
+                  <p class="mt-1 font-display case-kpi tabular-nums text-ink-950">2,1&times;</p>
+                  <p class="text-xs text-ink-700 lg:mt-2">Kernnachfrage, Monat 2–3 ggü. 1</p>
                 </div>
-                <div class="min-w-0 flex-[1.15] pl-4 lg:row-span-3 lg:grid lg:grid-rows-subgrid lg:px-4">
-                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700 lg:self-end">Gemessen bis zum</p>
-                  <p class="mt-1 font-display case-kpi text-ink-950">Termin</p>
-                  <p class="text-xs text-ink-700 lg:mt-2">inkl. Status „erschienen"</p>
+                <div class="min-w-0 flex-1 pl-4 lg:row-span-3 lg:grid lg:grid-rows-subgrid lg:px-4">
+                  <p class="hyphens-auto break-words font-body text-xs uppercase tracking-wide text-ink-700 lg:self-end">Conversions</p>
+                  <p class="mt-1 font-display case-kpi tabular-nums text-ink-950">87&nbsp;%</p>
+                  <p class="text-xs text-ink-700 lg:mt-2">aus Brand + lokaler Suche</p>
                 </div>
               </div>
               <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
