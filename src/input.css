@@ -777,6 +777,34 @@
     }
   }
 
+  /* Variante für fünf Stationen. .journey-rail hat vier Spalten: Eine
+     fünfte Station brach in eine zweite Zeile ohne Linie um, ihr Punkt lag
+     im Text der ersten. Fünf Spalten passen erst ab lg, bis dahin bleibt
+     die Rail senkrecht. Punkt wie bei .journey-rail, nur mit lg statt sm
+     als Kipppunkt. */
+  .journey-rail-5 {
+    @apply grid gap-y-8 border-l border-ink-300 pl-6 lg:grid-cols-5 lg:gap-x-6 lg:gap-y-0 lg:border-l-0 lg:border-t lg:pl-0 lg:pt-7;
+  }
+  .journey-rail-5 > li {
+    @apply relative;
+  }
+  .journey-rail-5 > li::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.5rem - 4.5px);
+    top: 0.4rem;
+    height: 9px;
+    width: 9px;
+    border-radius: 9999px;
+    background-color: var(--color-accent-600);
+  }
+  @media (min-width: 64rem) {
+    .journey-rail-5 > li::before {
+      left: 0;
+      top: calc(-1.75rem - 4.5px);
+    }
+  }
+
   /* Dauerhaft senkrechte Variante. Gebraucht, wo zwei Ketten
      nebeneinander verglichen werden – dort fehlt der Platz für die
      waagerechte Rail, und die Achse darf nicht mit der Breite kippen.
