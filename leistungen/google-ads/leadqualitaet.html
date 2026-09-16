@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leadqualität in Google Ads: Offline-Conversions aus dem CRM | DDM</title>
+  <meta name="description" content="Wenn jede Formulareinsendung gleich zählt, sucht Google günstige Anfragen. Wie bewertete Leads aus dem CRM als Offline-Conversion zurück ins Werbekonto kommen." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1b1e27" />
+  <link rel="canonical" href="https://datadrivenmarketing.de/leistungen/google-ads/leadqualitaet" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DDM Data Driven Marketing" />
+  <meta property="og:title" content="Welche Anfrage Ihre Kampagne zählen sollte" />
+  <meta property="og:description" content="Wenn jede Formulareinsendung gleich zählt, optimiert Google auf günstige Anfragen. Wie bewertete Leads aus dem CRM zurück ins Werbekonto kommen." />
+  <meta property="og:url" content="https://datadrivenmarketing.de/leistungen/google-ads/leadqualitaet" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="https://datadrivenmarketing.de/images/data_driven_marketing_Logo_darkgrey_1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Logo der DDM Data Driven Marketing GmbH" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Consent-Banner. Muss vor allem anderen stehen: Das Skript setzt den
+       Consent-Mode-Default auf "denied" und laedt erst danach den Tag Manager.
+       Wird diese Reihenfolge umgestellt, feuern Tags vor der Einwilligung. -->
+  <script src="https://ddm-consent-preview.datadrivenmarketing.workers.dev/v1.1.2/consent.js"
+    integrity="sha384-jBr8HaQIqR9gSQsaV+DHL2rydJ4GyaGCED+fvA4SBF7zEqYxDO3Y6B9Ml+SRMO+2"
+    crossorigin="anonymous"
+    data-gtm="GTM-KN44W5SD"
+    data-site="ddm-website"
+    data-endpoint="https://ddm-consent-preview.datadrivenmarketing.workers.dev/api/consent"
+    data-privacy="/datenschutz"
+    data-imprint="/impressum"
+    data-accent="#3354a1"></script>
+
+
+  <link rel="icon" href="../../Logos/ddm Logo svg/Signet_darkgrey.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../../Logos/ddm Logo svg/png/Signet_darkgrey.png" />
+
+  <link rel="stylesheet" href="../../dist/output.css" />
+</head>
+
+<body class="bg-canvas font-body text-ink-950 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-ink-950 focus:px-4 focus:py-2 focus:text-white">
+    Zum Inhalt springen
+  </a>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header" class="sticky top-0 z-40 border-b border-ink-200 transition-shadow duration-200">
+    <div class="container-page flex items-center gap-6 py-4">
+      <a href="/" class="flex flex-shrink-0 items-center" aria-label="DDM Data Driven Marketing – Startseite">
+        <img src="../../Logos/ddm Logo svg/ddm_Logo_darkgrey.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+      </a>
+
+      <nav class="ml-auto hidden items-center gap-8 md:flex" aria-label="Hauptnavigation">
+        <a href="/#leistungen" class="nav-link">Leistungen</a>
+        <a href="/#prozess" class="nav-link">Prozess</a>
+        <a href="/#cases" class="nav-link">Cases</a>
+        <a href="/team" class="nav-link">Team</a>
+        <a href="/#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-3 md:ml-0">
+        <a href="/#kontakt" class="btn-primary hidden sm:inline-flex">Analyse anfragen</a>
+        <button
+          class="js-menu-toggle inline-flex h-10 w-10 items-center justify-center
+          rounded-control border border-ink-200 md:hidden"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Menü öffnen"
+        >
+          <span class="relative block h-3.5 w-4" aria-hidden="true">
+            <span class="absolute inset-x-0 top-0 h-[1.5px] bg-ink-950"></span>
+            <span class="absolute inset-x-0 top-1/2 h-[1.5px] -translate-y-1/2 bg-ink-950"></span>
+            <span class="absolute inset-x-0 bottom-0 h-[1.5px] bg-ink-950"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="border-t border-ink-200 bg-white md:hidden">
+      <nav class="container-page flex flex-col py-2" aria-label="Mobile Navigation">
+        <a href="/#leistungen" class="border-b border-ink-100 py-3 font-body text-ink-950">Leistungen</a>
+        <a href="/#prozess" class="border-b border-ink-100 py-3 font-body text-ink-950">Prozess</a>
+        <a href="/#cases" class="border-b border-ink-100 py-3 font-body text-ink-950">Cases</a>
+        <a href="/team" class="border-b border-ink-100 py-3 font-body text-ink-950">Team</a>
+        <a href="/#faq" class="border-b border-ink-100 py-3 font-body text-ink-950">FAQ</a>
+        <a href="/#kontakt" class="py-3 font-body font-medium text-accent-600">Analyse anfragen</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="border-b border-ink-200 bg-white">
+    <nav class="container-page py-3" aria-label="Brotkrumen">
+      <ol class="flex flex-wrap items-center gap-x-2 gap-y-1" role="list">
+        <li><a href="/" class="nav-link">Startseite</a></li>
+        <li class="text-ink-400" aria-hidden="true">/</li>
+        <li><a href="/#leistungen" class="nav-link">Leistungen</a></li>
+        <li class="text-ink-400" aria-hidden="true">/</li>
+        <li><a href="/leistungen/google-ads/" class="nav-link">Google Ads</a></li>
+        <li class="text-ink-400" aria-hidden="true">/</li>
+        <li><span class="font-body text-[0.9375rem] text-ink-950" aria-current="page">Leadqualität</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO =====
+         Flaches Muster wie die uebrigen Unterseiten. Die Seite zeigt das
+         Prinzip des Rueckwegs vom CRM ins Werbekonto. Technische Parameter,
+         Schnittstellen und Importfristen stehen bewusst nicht hier. -->
+    <section class="pb-12 pt-14 sm:pb-16 sm:pt-16">
+      <div class="container-page">
+        <p class="section-eyebrow">Leistungen · Google Ads</p>
+        <h1 class="section-title max-w-[24ch]">
+          Leadqualität in Google Ads über Offline-Conversions steuern
+        </h1>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Das Werbekonto meldet Conversions, der Vertrieb meldet unpassende Anfragen. Die Ursache
+          liegt meist darin, was als Conversion zählt. Die Seite zeigt, wie bewertete Anfragen aus
+          dem CRM zurück in Google Ads kommen und worauf es dabei ankommt.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== SIGNAL ===== -->
+    <section id="signal" aria-labelledby="signal-title" class="section-shell bg-white">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="signal-title" class="section-title">Warum unpassende Anfragen selten am Targeting liegen</h2>
+          <p class="section-lead">
+            Die Gebotsstrategie lernt aus dem, was als Conversion gemeldet wird.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <div class="measure space-y-5 text-ink-800">
+            <p>
+              Smart Bidding sucht nach Nutzern, die mit hoher Wahrscheinlichkeit eine Conversion
+              auslösen. Zählt jede Formulareinsendung gleich viel, ist aus Sicht des Systems jede
+              Anfrage gleich gut. Die Kampagne findet dann vor allem Anfragen, die sich günstig
+              erzeugen lassen.
+            </p>
+            <p>
+              Ob daraus ein Gespräch oder ein Auftrag wird, erfährt das Werbekonto nicht. Diese
+              Information liegt im CRM oder beim Vertrieb.
+            </p>
+            <p>
+              Seit der
+              <a href="/leistungen/google-ads/gebotsziele" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Umstellung der Gebotsstrategien im August 2026</a>
+              nähern sich budgetbeschränkte Kampagnen gleichmäßiger dem hinterlegten Zielwert an.
+              Umso wichtiger ist, auf welche Conversion sich dieser Zielwert bezieht.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STUFEN =====
+         Stufenliste im Muster der Rechenkette auf der Deckungsbeitrag-Seite.
+         Die Stufen sind ein Beispiel und als solches gekennzeichnet. -->
+    <section id="stufen" aria-labelledby="stufen-title" class="brand-gradient-dark section-shell text-white">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="stufen-title" class="section-title text-white">Erst festlegen, was eine gute Anfrage ist</h2>
+          <p class="section-lead text-ink-300">
+            Bevor etwas zurückgespielt werden kann, braucht jede Stufe eine klare Definition und
+            jemanden, der den Status setzt.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-400">Beispiel, die Stufen unterscheiden sich je nach Geschäftsmodell</p>
+          <ol class="reveal-seq mt-5 space-y-5" role="list">
+            <li class="relative rounded-control border border-ink-800 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:0">
+              <h3 class="flex items-baseline gap-3">
+                <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">01</span>
+                <span class="font-body font-medium">Anfrage</span>
+              </h3>
+              <p class="mt-1 pl-8 text-sm text-ink-400">Formular, Anruf oder Buchung. Wird automatisch erfasst, sobald sie eingeht.</p>
+            </li>
+            <li class="relative rounded-control border border-accent-400 bg-accent-900 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:1">
+              <h3 class="flex items-baseline gap-3">
+                <span class="font-display text-sm tabular-nums text-accent-300" aria-hidden="true">02</span>
+                <span class="font-body font-medium">Qualifizierte Anfrage</span>
+              </h3>
+              <p class="mt-1 pl-8 text-sm text-ink-200">Passt zu Angebot, Region und Bedarf. Der Vertrieb setzt den Status nach dem ersten Kontakt.</p>
+            </li>
+            <li class="relative rounded-control border border-ink-800 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:2">
+              <h3 class="flex items-baseline gap-3">
+                <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">03</span>
+                <span class="font-body font-medium">Termin oder Angebot</span>
+              </h3>
+              <p class="mt-1 pl-8 text-sm text-ink-400">Ein Gespräch hat stattgefunden oder ein Angebot wurde verschickt. Der Status kommt aus Kalender oder CRM.</p>
+            </li>
+            <li class="relative rounded-control border border-ink-800 px-4 py-3" style="--i:3">
+              <h3 class="flex items-baseline gap-3">
+                <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">04</span>
+                <span class="font-body font-medium">Auftrag</span>
+              </h3>
+              <p class="mt-1 pl-8 text-sm text-ink-400">Der Abschluss, oft Wochen nach der Anfrage. Der Status kommt aus CRM oder Buchhaltung.</p>
+            </li>
+          </ol>
+          <p class="mt-8 font-display text-xl leading-snug">
+            Ohne einheitliche Status im CRM gibt es nichts, was zurückgespielt werden kann.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRIMAER ODER SEKUNDAER =====
+         Kriterien statt Schwellenwerte: Es gibt keine feste Mindestmenge,
+         die hier als Tatsache stehen koennte. -->
+    <section id="primaer" aria-labelledby="primaer-title" class="section-shell">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="primaer-title" class="section-title max-w-[30ch]">Formulareinsendung oder qualifizierte Anfrage als Ziel?</h2>
+          <p class="section-lead">
+            Google Ads unterscheidet primäre Conversions, auf die geboten wird, und sekundäre, die
+            nur beobachtet werden. Welche Stufe primär zählt, hängt davon ab, wie verlässlich die
+            Status zurückkommen.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <article class="surface p-7 sm:p-8">
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Variante A</p>
+            <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Die Einsendung bleibt primär</h3>
+            <p class="mt-3 text-ink-800">
+              Die Formulareinsendung bleibt die Conversion, auf die geboten wird. Qualifizierte
+              Anfragen laufen als sekundäre Conversion mit und zeigen, welche Kampagnen gute
+              Anfragen bringen.
+            </p>
+            <p class="mt-3 text-ink-800">
+              Das passt, solange Status noch unregelmäßig oder mit großem zeitlichem Abstand
+              gepflegt werden.
+            </p>
+          </article>
+          <article class="surface p-7 sm:p-8">
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Variante B</p>
+            <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Die qualifizierte Anfrage wird primär</h3>
+            <p class="mt-3 text-ink-800">
+              Die Gebote richten sich nach den bewerteten Anfragen aus dem CRM.
+            </p>
+            <p class="mt-3 text-ink-800">
+              Das setzt voraus, dass der Vertrieb Status regelmäßig und zeitnah setzt und dass genug
+              qualifizierte Anfragen zusammenkommen, damit die Gebotsstrategie daraus lernen kann.
+            </p>
+          </article>
+        </div>
+
+        <p class="measure mt-8 text-ink-800">
+          Auch der Zielwert rechnet dann mit qualifizierten Anfragen. Wie er sich aus dem
+          Deckungsbeitrag je Auftrag herleiten lässt, zeigt der
+          <a href="/leistungen/google-ads/deckungsbeitrag#leads" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Abschnitt zum Leadgeschäft</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== RUECKWEG =====
+         Nur das Prinzip in vier Schritten. Parameter, Formularfelder,
+         Schnittstellen und Importfristen bewusst nicht. -->
+    <section id="rueckweg" aria-labelledby="rueckweg-title" class="section-shell bg-white">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="rueckweg-title" class="section-title">Wie die Bewertung ins Werbekonto kommt</h2>
+          <p class="section-lead">
+            Der Rückweg folgt in jedem Konto demselben Prinzip, auch wenn Formulare, CRM und
+            Abläufe verschieden sind.
+          </p>
+        </div>
+
+        <ol class="grid gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4" role="list">
+          <li class="border-t border-ink-300 pt-6">
+            <span class="font-display text-2xl text-ink-400" aria-hidden="true">01</span>
+            <h3 class="mt-3 font-body text-lg font-medium text-ink-950">Der Klick wird gekennzeichnet</h3>
+            <p class="mt-3 text-ink-800">
+              Mit aktivierter automatischer Tag-Kennzeichnung hängt Google Ads an jeden
+              Anzeigenklick eine Kennung an.
+            </p>
+          </li>
+          <li class="border-t border-ink-300 pt-6">
+            <span class="font-display text-2xl text-ink-400" aria-hidden="true">02</span>
+            <h3 class="mt-3 font-body text-lg font-medium text-ink-950">Die Anfrage kommt mit Kennung ins CRM</h3>
+            <p class="mt-3 text-ink-800">
+              Die Kennung oder die Kontaktdaten werden zusammen mit der Anfrage gespeichert.
+            </p>
+          </li>
+          <li class="border-t border-ink-300 pt-6">
+            <span class="font-display text-2xl text-ink-400" aria-hidden="true">03</span>
+            <h3 class="mt-3 font-body text-lg font-medium text-ink-950">Der Vertrieb setzt den Status</h3>
+            <p class="mt-3 text-ink-800">
+              Qualifiziert, Termin oder Auftrag: Der Status wird im CRM gepflegt.
+            </p>
+          </li>
+          <li class="border-t border-accent-600 pt-6">
+            <span class="font-display text-2xl text-accent-600" aria-hidden="true">04</span>
+            <h3 class="mt-3 font-body text-lg font-medium text-ink-950">Der Status geht zurück an Google Ads</h3>
+            <p class="mt-3 text-ink-800">
+              Die bewertete Anfrage wird als Offline-Conversion übermittelt und dem ursprünglichen
+              Klick zugeordnet.
+            </p>
+          </li>
+        </ol>
+
+        <div class="measure mt-12 space-y-4 text-ink-800">
+          <p>
+            Die Zuordnung läuft über die Kennung des Klicks oder über gehashte Kontaktdaten wie die
+            E-Mail-Adresse. Google nennt den zweiten Weg erweiterte Conversions für Leads.
+          </p>
+          <p class="text-sm text-ink-700">
+            Beide Wege setzen voraus, dass Einwilligung und Rechtsgrundlage vorher geklärt sind.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BRUCHSTELLEN =====
+         Raster wie "Die Zahlen liegen selten fertig vor" auf der
+         Deckungsbeitrag-Seite: benennt, wo es hakt, ohne Loesungsweg. -->
+    <section id="bruchstellen" aria-labelledby="bruchstellen-title" class="section-shell">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="bruchstellen-title" class="section-title">Wo die Kette in der Praxis reißt</h2>
+          <p class="section-lead">
+            Meist fällt ein Bruch erst auf, wenn die Zahlen in CRM und Werbekonto nicht
+            zusammenpassen.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <ul class="grid gap-8 sm:grid-cols-2" role="list">
+            <li class="border-t border-ink-300 pt-5">
+              <h3 class="font-body font-medium text-ink-950">Eingebettete Formulare</h3>
+              <p class="mt-2 text-sm text-ink-700">
+                Formulare und Buchungstools von Drittanbietern laufen oft in einem eigenen Rahmen.
+                Die Kennung des Klicks erreicht sie dann nicht.
+              </p>
+            </li>
+            <li class="border-t border-ink-300 pt-5">
+              <h3 class="font-body font-medium text-ink-950">Anfragen ohne Formular</h3>
+              <p class="mt-2 text-sm text-ink-700">
+                Anrufe, E-Mails und Messenger-Nachrichten kommen ohne Kennung an. Sie fehlen im
+                Rückweg, wenn sie nicht gesondert zugeordnet werden.
+              </p>
+            </li>
+            <li class="border-t border-ink-300 pt-5">
+              <h3 class="font-body font-medium text-ink-950">Status, die niemand pflegt</h3>
+              <p class="mt-2 text-sm text-ink-700">
+                Wird der Status im CRM nicht oder nur gelegentlich gesetzt, erhält das Werbekonto
+                zu wenige oder verspätete Signale.
+              </p>
+            </li>
+            <li class="border-t border-ink-300 pt-5">
+              <h3 class="font-body font-medium text-ink-950">Übertragungen ohne Rückmeldung</h3>
+              <p class="mt-2 text-sm text-ink-700">
+                Eine Übertragung kann scheitern, ohne dass es auffällt. Ein regelmäßiger Abgleich
+                zwischen CRM und Konto zeigt, ob die Daten ankommen.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRAXIS =====
+         Nur Aussagen, die im Gesundheits-Case stehen, ohne Mengenangaben. -->
+    <section id="praxis" aria-labelledby="praxis-title" class="section-shell bg-white">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="praxis-title" class="section-title">Ein Beispiel aus dem Gesundheitsbereich</h2>
+          <p class="section-lead">
+            So sieht der Rückweg in einem laufenden Google-Ads-Konto aus.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <div class="surface p-7 sm:p-9">
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Case · Google Ads · Medizin / Leads</p>
+            <div class="measure mt-4 space-y-4 text-ink-800">
+              <p>
+                Die Klick-ID wird über die Landingpage bis in den konkreten Buchungsdatensatz
+                durchgereicht. Terminbuchungen sind technisch mit der Anzeigeninteraktion
+                verknüpft.
+              </p>
+              <p>
+                Der Status „Zum Termin erschienen" wird inzwischen erfasst, aber noch nicht als
+                Optimierungsziel verwendet.
+              </p>
+            </div>
+            <p class="mt-6">
+              <a href="/cases/google-ads-leadgenerierung" class="font-body text-sm text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie das Konto bis zum wahrgenommenen Termin messbar wurde →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRUEFFRAGEN ===== -->
+    <section id="pruefen" aria-labelledby="pruefen-title" class="section-shell">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="pruefen-title" class="section-title">Prüffragen für Ihr Konto</h2>
+          <p class="section-lead">
+            Fünf Fragen, die zeigen, ob bewertete Anfragen heute schon zurückkommen.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <ol class="divide-y divide-ink-200 border-y border-ink-200" role="list">
+            <li class="grid grid-cols-[2rem_1fr] gap-x-3 py-5">
+              <span class="font-display text-lg tabular-nums text-ink-400" aria-hidden="true">1</span>
+              <div>
+                <h3 class="font-body font-medium text-ink-950">Welche Conversion ist primär?</h3>
+                <p class="mt-1 text-sm text-ink-700">Zählt die Formulareinsendung oder eine bewertete Stufe dahinter?</p>
+              </div>
+            </li>
+            <li class="grid grid-cols-[2rem_1fr] gap-x-3 py-5">
+              <span class="font-display text-lg tabular-nums text-ink-400" aria-hidden="true">2</span>
+              <div>
+                <h3 class="font-body font-medium text-ink-950">Kommt die Kennung im CRM an?</h3>
+                <p class="mt-1 text-sm text-ink-700">Hat eine Anfrage aus einer Anzeige die Kennung des Klicks gespeichert?</p>
+              </div>
+            </li>
+            <li class="grid grid-cols-[2rem_1fr] gap-x-3 py-5">
+              <span class="font-display text-lg tabular-nums text-ink-400" aria-hidden="true">3</span>
+              <div>
+                <h3 class="font-body font-medium text-ink-950">Wer pflegt die Status?</h3>
+                <p class="mt-1 text-sm text-ink-700">Gibt es feste Zuständigkeiten und eine Frist, bis wann ein Status gesetzt wird?</p>
+              </div>
+            </li>
+            <li class="grid grid-cols-[2rem_1fr] gap-x-3 py-5">
+              <span class="font-display text-lg tabular-nums text-ink-400" aria-hidden="true">4</span>
+              <div>
+                <h3 class="font-body font-medium text-ink-950">Kommen die Übertragungen an?</h3>
+                <p class="mt-1 text-sm text-ink-700">Zeigt das Werbekonto die zurückgespielten Conversions in der erwarteten Zahl?</p>
+              </div>
+            </li>
+            <li class="grid grid-cols-[2rem_1fr] gap-x-3 py-5">
+              <span class="font-display text-lg tabular-nums text-ink-400" aria-hidden="true">5</span>
+              <div>
+                <h3 class="font-body font-medium text-ink-950">Passen CRM und Werbekonto zusammen?</h3>
+                <p class="mt-1 text-sm text-ink-700">Weichen Anfragen und Status zwischen beiden Systemen deutlich voneinander ab?</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section aria-labelledby="cta-title" class="section-shell bg-white">
+      <div class="container-page">
+        <h2 id="cta-title" class="section-title max-w-[28ch]">
+          Wissen Sie, auf welches Signal Ihre Kampagnen heute optimieren?
+        </h2>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Wir sehen uns an, welche Conversions primär zählen, ob bewertete Anfragen aus dem CRM
+          zurückkommen und wo die Kette reißt. Sie erhalten eine Einschätzung mit den nächsten
+          Schritten.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/#kontakt" class="js-cta btn-primary" data-source="leadqualitaet_cta">Analyse anfragen</a>
+          <a href="/marketing-audit" class="btn-secondary">Wie die Analyse abläuft</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo" class="bg-ink-950 text-white">
+    <div class="container-page grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
+      <div>
+        <img src="../../Logos/ddm Logo svg/ddm_Logo_weiß.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+        <p class="mt-4 max-w-[40ch] text-sm text-ink-400">
+          Datengetriebener Growth- und Performance-Partner für Mittelstand, B2B und E-Commerce.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Kontakt</h3>
+        <address class="mt-4 text-sm not-italic leading-relaxed text-ink-300">
+          DDM Data Driven Marketing GmbH<br />
+          Wiesenstr. 21A<br />
+          40549 Düsseldorf<br />
+          <a href="mailto:info@datadrivenmarketing.de" class="hover:text-white">info@datadrivenmarketing.de</a>
+        </address>
+      </div>
+
+      <div>
+        <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Rechtliches</h3>
+        <ul class="mt-4 space-y-2 text-sm text-ink-300" role="list">
+          <li><a href="/impressum" class="hover:text-white">Impressum</a></li>
+          <li><a href="/datenschutz" class="hover:text-white">Datenschutzerklärung</a></li>
+          <li><button type="button" class="text-left hover:text-white" onclick="openConsentBanner(); return false;">Cookie-Einstellungen</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-ink-800">
+      <div class="container-page py-6 text-xs text-ink-400">
+        <p>
+          © <span id="year"></span> DDM Data Driven Marketing GmbH
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="../../script.js"></script>
+</body>
+</html>

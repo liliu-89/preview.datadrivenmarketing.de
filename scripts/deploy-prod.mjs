@@ -36,7 +36,10 @@ const abbruch = (t) => { console.error(`\n\x1b[31mAbbruch:\x1b[0m ${t}\n`); proc
 
 /* ── Was ausgeliefert wird ──────────────────────────────────────────────
    Bewusst eine Positivliste. Eine Negativliste würde jede neue Bau- oder
-   Backend-Datei stillschweigend nach Produktion tragen. */
+   Backend-Datei stillschweigend nach Produktion tragen.
+   leistungen/google-ads/leadqualitaet.html fehlt bewusst: Die Seite geht
+   erst live, wenn das eigene Kontaktformular Klick-IDs erfasst. Dann hier
+   aufnehmen und zugleich die internen Links auf die Seite setzen. */
 const SEITEN = [
   'index.html', 'team.html', 'marketing-audit.html', 'impressum.html', 'datenschutz.html',
   'leistungen/google-ads/index.html', 'leistungen/google-ads/deckungsbeitrag.html',
