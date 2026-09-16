@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Google Ads nach Deckungsbeitrag optimieren | DDM</title>
+  <meta name="description" content="Google Ads nach Deckungsbeitrag optimieren: Ziel-ROAS und Ziel-CPA aus Wareneinsatz, variablen Kosten und Retouren herleiten, mit Rechenbeispiel." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1b1e27" />
+  <link rel="canonical" href="https://datadrivenmarketing.de/leistungen/google-ads/deckungsbeitrag" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DDM Data Driven Marketing" />
+  <meta property="og:title" content="Google Ads nach Deckungsbeitrag optimieren" />
+  <meta property="og:description" content="Wie sich Ziel-ROAS und Ziel-CPA aus dem Deckungsbeitrag herleiten lassen: Rechenkette, Beispielrechnung und die Zahlen, die dafür nötig sind." />
+  <meta property="og:url" content="https://datadrivenmarketing.de/leistungen/google-ads/deckungsbeitrag" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="https://datadrivenmarketing.de/images/data_driven_marketing_Logo_darkgrey_1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Logo der DDM Data Driven Marketing GmbH" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Consent-Banner. Muss vor allem anderen stehen: Das Skript setzt den
+       Consent-Mode-Default auf "denied" und laedt erst danach den Tag Manager.
+       Wird diese Reihenfolge umgestellt, feuern Tags vor der Einwilligung. -->
+  <script src="https://ddm-consent-preview.datadrivenmarketing.workers.dev/v1.1.2/consent.js"
+    integrity="sha384-jBr8HaQIqR9gSQsaV+DHL2rydJ4GyaGCED+fvA4SBF7zEqYxDO3Y6B9Ml+SRMO+2"
+    crossorigin="anonymous"
+    data-gtm="GTM-KN44W5SD"
+    data-site="ddm-website"
+    data-endpoint="https://ddm-consent-preview.datadrivenmarketing.workers.dev/api/consent"
+    data-privacy="/datenschutz"
+    data-imprint="/impressum"
+    data-accent="#3354a1"></script>
+
+
+  <link rel="icon" href="../../Logos/ddm Logo svg/Signet_darkgrey.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../../Logos/ddm Logo svg/png/Signet_darkgrey.png" />
+
+  <link rel="stylesheet" href="../../dist/output.css" />
+</head>
+
+<body class="bg-canvas font-body text-ink-950 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-ink-950 focus:px-4 focus:py-2 focus:text-white">
+    Zum Inhalt springen
+  </a>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header" class="sticky top-0 z-40 border-b border-ink-200 transition-shadow duration-200">
+    <div class="container-page flex items-center gap-6 py-4">
+      <a href="/" class="flex flex-shrink-0 items-center" aria-label="DDM Data Driven Marketing – Startseite">
+        <img src="../../Logos/ddm Logo svg/ddm_Logo_darkgrey.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+      </a>
+
+      <nav class="ml-auto hidden items-center gap-8 md:flex" aria-label="Hauptnavigation">
+        <a href="/#leistungen" class="nav-link">Leistungen</a>
+        <a href="/#prozess" class="nav-link">Prozess</a>
+        <a href="/#cases" class="nav-link">Cases</a>
+        <a href="/team" class="nav-link">Team</a>
+        <a href="/#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-3 md:ml-0">
+        <a href="/#kontakt" class="btn-primary hidden sm:inline-flex">Analyse anfragen</a>
+        <button
+          class="js-menu-toggle inline-flex h-10 w-10 items-center justify-center
+          rounded-control border border-ink-200 md:hidden"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Menü öffnen"
+        >
+          <span class="relative block h-3.5 w-4" aria-hidden="true">
+            <span class="absolute inset-x-0 top-0 h-[1.5px] bg-ink-950"></span>
+            <span class="absolute inset-x-0 top-1/2 h-[1.5px] -translate-y-1/2 bg-ink-950"></span>
+            <span class="absolute inset-x-0 bottom-0 h-[1.5px] bg-ink-950"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="border-t border-ink-200 bg-white md:hidden">
+      <nav class="container-page flex flex-col py-2" aria-label="Mobile Navigation">
+        <a href="/#leistungen" class="border-b border-ink-100 py-3 font-body text-ink-950">Leistungen</a>
+        <a href="/#prozess" class="border-b border-ink-100 py-3 font-body text-ink-950">Prozess</a>
+        <a href="/#cases" class="border-b border-ink-100 py-3 font-body text-ink-950">Cases</a>
+        <a href="/team" class="border-b border-ink-100 py-3 font-body text-ink-950">Team</a>
+        <a href="/#faq" class="border-b border-ink-100 py-3 font-body text-ink-950">FAQ</a>
+        <a href="/#kontakt" class="py-3 font-body font-medium text-accent-600">Analyse anfragen</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="border-b border-ink-200 bg-white">
+    <nav class="container-page py-3" aria-label="Brotkrumen">
+      <ol class="flex flex-wrap items-center gap-x-2 gap-y-1" role="list">
+        <li><a href="/" class="nav-link">Startseite</a></li>
+        <li class="text-ink-400" aria-hidden="true">/</li>
+        <li><a href="/#leistungen" class="nav-link">Leistungen</a></li>
+        <li class="text-ink-400" aria-hidden="true">/</li>
+        <li><a href="/leistungen/google-ads/" class="nav-link">Google Ads</a></li>
+        <li class="text-ink-400" aria-hidden="true">/</li>
+        <li><span class="font-body text-[0.9375rem] text-ink-950" aria-current="page">Deckungsbeitrag</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO =====
+         Flaches Muster wie die uebrigen Unterseiten. Die Seite zeigt das
+         Prinzip der Rechnung. Wie die Zahlen im Einzelfall zusammengefuehrt
+         und technisch ins Tracking gebracht werden, steht bewusst nicht hier. -->
+    <section class="pb-12 pt-14 sm:pb-16 sm:pt-16">
+      <div class="container-page">
+        <p class="section-eyebrow">Leistungen · Google Ads</p>
+        <h1 class="section-title max-w-[24ch]">
+          Google Ads nach Deckungsbeitrag optimieren
+        </h1>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Google Ads steuert auf den Wert, der als Conversion-Wert im Konto ankommt, meist auf
+          den Umsatz. Ob sich eine Bestellung lohnt, entscheidet der Deckungsbeitrag: der Betrag, der
+          nach Wareneinsatz und allen variablen Kosten übrig bleibt. Die Seite zeigt, wie sich
+          Ziel-ROAS und Ziel-CPA daraus herleiten lassen und welche Zahlen dafür nötig sind.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== BERECHNEN =====
+         Kern der Seite: links die Rechenkette, rechts, was ein Zielwert in
+         Euro bedeutet. Die Szenarien rechnen nur Umsatz / ROAS; der Satz
+         darunter verbindet sie mit den 35 % Deckungsbeitrag der
+         Beispielrechnung. Beispielwerte sind frei gewaehlt und gerundet,
+         keine Benchmark. -->
+    <section id="berechnen" aria-labelledby="berechnen-title" class="brand-gradient-dark section-shell text-white">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="berechnen-title" class="section-title text-white">Vom Deckungsbeitrag zum Ziel-ROAS</h2>
+          <p class="section-lead text-ink-300">
+            Die Rechnung beginnt in der Kalkulation des Unternehmens. Der Wert im Werbekonto
+            ergibt sich erst am Ende daraus.
+          </p>
+        </div>
+
+        <div class="section-grid">
+          <div class="section-aside">
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-400">So rechnen wir</p>
+            <ol class="reveal-seq mt-5 space-y-5" role="list">
+              <li class="relative rounded-control border border-ink-800 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:0">
+                <p class="flex items-baseline gap-3">
+                  <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">01</span>
+                  <span class="font-body font-medium">Umsatz je Bestellung</span>
+                </p>
+                <p class="mt-1 pl-8 text-sm text-ink-400">Der durchschnittliche Bestellwert.</p>
+              </li>
+              <li class="relative rounded-control border border-ink-800 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:1">
+                <p class="flex items-baseline gap-3">
+                  <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">02</span>
+                  <span class="font-body font-medium">Variable Kosten abziehen</span>
+                </p>
+                <p class="mt-1 pl-8 text-sm text-ink-400">Wareneinsatz · Versand und Verpackung · Zahlungsgebühren · erwartete Retouren</p>
+              </li>
+              <li class="relative rounded-control border border-ink-800 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:2">
+                <p class="flex items-baseline gap-3">
+                  <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">03</span>
+                  <span class="font-body font-medium">Deckungsbeitrag vor Werbung</span>
+                </p>
+                <p class="mt-1 pl-8 text-sm text-ink-400">Was nach allen variablen Kosten übrig bleibt, bevor Werbung bezahlt ist. Hier liegt der Break-even.</p>
+              </li>
+              <li class="relative rounded-control border border-ink-800 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:3">
+                <p class="flex items-baseline gap-3">
+                  <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">04</span>
+                  <span class="font-body font-medium">Gewünschten Ertrag abziehen</span>
+                </p>
+                <p class="mt-1 pl-8 text-sm text-ink-400">Wie viel nach der Werbung bleiben soll. Hier fällt die unternehmerische Entscheidung.</p>
+              </li>
+              <li class="relative rounded-control border border-accent-400 bg-accent-900 px-4 py-3 after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:text-xs after:leading-5 after:text-ink-600 after:content-['↓']" style="--i:4">
+                <p class="flex items-baseline gap-3">
+                  <span class="font-display text-sm tabular-nums text-accent-300" aria-hidden="true">05</span>
+                  <span class="font-body font-medium">Maximaler Ziel-CPA</span>
+                </p>
+                <p class="mt-1 pl-8 text-sm text-ink-200">So viel darf eine Bestellung höchstens kosten.</p>
+              </li>
+              <li class="relative rounded-control border border-ink-800 px-4 py-3" style="--i:5">
+                <p class="flex items-baseline gap-3">
+                  <span class="font-display text-sm tabular-nums text-ink-500" aria-hidden="true">06</span>
+                  <span class="font-body font-medium">Daraus folgen</span>
+                </p>
+                <p class="mt-1 pl-8 text-sm text-ink-400">Ziel-ROAS · Kosten-Umsatz-Relation · Werbebudget</p>
+              </li>
+            </ol>
+            <p class="mt-6 text-sm text-ink-400">
+              Alle Werte in dieser Kette stammen aus der eigenen Kalkulation.
+              Branchendurchschnitte bilden die eigene Kostenstruktur nicht ab.
+            </p>
+          </div>
+
+          <div class="section-main">
+            <div class="flex flex-wrap items-baseline justify-between gap-3">
+              <p class="font-display text-xl">Beispiel: 10.000&nbsp;€ Nettoumsatz</p>
+              <p class="pill">Werbekosten = Umsatz ÷ ROAS</p>
+            </div>
+
+            <dl class="mt-5 grid gap-4 sm:grid-cols-3">
+              <div class="rounded-card border border-ink-800 bg-ink-950 p-5">
+                <dt class="font-body text-xs font-medium uppercase tracking-wide text-ink-400">Ziel-ROAS 3,0</dt>
+                <dd class="mt-3">
+                  <span class="block font-display case-kpi tabular-nums">3.333&nbsp;€</span>
+                  <span class="block text-sm text-ink-400">Werbekosten</span>
+                </dd>
+                <dd class="mt-4 border-t border-ink-800 pt-4">
+                  <span class="block font-body font-medium tabular-nums">KUR 33,3&nbsp;%</span>
+                  <span class="block text-xs text-ink-400">Kosten-Umsatz-Relation</span>
+                </dd>
+              </div>
+              <div class="rounded-card border border-ink-800 bg-ink-950 p-5">
+                <dt class="font-body text-xs font-medium uppercase tracking-wide text-ink-400">Ziel-ROAS 4,0</dt>
+                <dd class="mt-3">
+                  <span class="block font-display case-kpi tabular-nums">2.500&nbsp;€</span>
+                  <span class="block text-sm text-ink-400">Werbekosten</span>
+                </dd>
+                <dd class="mt-4 border-t border-ink-800 pt-4">
+                  <span class="block font-body font-medium tabular-nums">KUR 25,0&nbsp;%</span>
+                  <span class="block text-xs text-ink-400">Kosten-Umsatz-Relation</span>
+                </dd>
+              </div>
+              <div class="rounded-card border border-ink-800 bg-ink-950 p-5">
+                <dt class="font-body text-xs font-medium uppercase tracking-wide text-ink-400">Ziel-ROAS 5,0</dt>
+                <dd class="mt-3">
+                  <span class="block font-display case-kpi tabular-nums">2.000&nbsp;€</span>
+                  <span class="block text-sm text-ink-400">Werbekosten</span>
+                </dd>
+                <dd class="mt-4 border-t border-ink-800 pt-4">
+                  <span class="block font-body font-medium tabular-nums">KUR 20,0&nbsp;%</span>
+                  <span class="block text-xs text-ink-400">Kosten-Umsatz-Relation</span>
+                </dd>
+              </div>
+            </dl>
+
+            <div class="mt-8 border-l-2 border-accent-300 pl-5">
+              <p class="font-display text-xl leading-snug">
+                Ob sich einer dieser Werte rechnet, hängt vom Deckungsbeitrag ab.
+              </p>
+              <p class="mt-3 text-sm text-ink-300">
+                Im Beispiel unten liegt der Deckungsbeitrag bei 35&nbsp;% des Nettoumsatzes. Bei
+                einem Ziel-ROAS von 3,0 blieben nach der Werbung 1,7&nbsp;% übrig, bei 4,0 wären
+                es 10&nbsp;%.
+              </p>
+            </div>
+
+            <p class="mt-8 text-sm text-ink-300">
+              <span class="mr-2 font-body text-xs font-medium uppercase tracking-wide text-ink-400">Dafür nötig</span>
+              Rohmarge · Versand · Zahlungsgebühren · Fulfillment · Retouren · Wiederkäufe ·
+              gewünschter Ertrag
+            </p>
+          </div>
+        </div>
+
+        <!-- Beispielrechnung: links vom Bestellwert zum Deckungsbeitrag, rechts,
+             was daraus fuer Google Ads folgt. 119 € brutto entsprechen 100 €
+             netto, damit die Prozente direkt lesbar sind. Brutto und netto
+             stehen nebeneinander, weil #grundlagen darauf aufbaut. -->
+        <div class="surface-dark mt-12 p-7 sm:p-9">
+          <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-400">Beispielrechnung, keine Benchmark</p>
+          <div class="mt-6 grid gap-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <p class="font-body font-medium text-white">Deckungsbeitrag je Bestellung</p>
+              <dl class="mt-3 divide-y divide-ink-800">
+                <div class="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                  <dt class="text-ink-300">Bestellwert brutto</dt>
+                  <dd class="font-body font-medium tabular-nums text-white sm:text-right">119,00&nbsp;€</dd>
+                </div>
+                <div class="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                  <dt class="text-ink-300">Netto-Warenumsatz ohne 19&nbsp;% USt</dt>
+                  <dd class="font-body font-medium tabular-nums text-white sm:text-right">100,00&nbsp;€</dd>
+                </div>
+                <div class="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                  <dt class="text-ink-300">Wareneinsatz bei Kalkulationsfaktor 2,0</dt>
+                  <dd class="font-body font-medium tabular-nums text-white sm:text-right">−&nbsp;50,00&nbsp;€</dd>
+                </div>
+                <div class="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                  <dt class="text-ink-300">Versand und Verpackung</dt>
+                  <dd class="font-body font-medium tabular-nums text-white sm:text-right">−&nbsp;7,00&nbsp;€</dd>
+                </div>
+                <div class="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                  <dt class="text-ink-300">Zahlungsgebühren</dt>
+                  <dd class="font-body font-medium tabular-nums text-white sm:text-right">−&nbsp;2,00&nbsp;€</dd>
+                </div>
+                <div class="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                  <dt class="text-ink-300">Erwartete Retourenkosten</dt>
+                  <dd class="font-body font-medium tabular-nums text-white sm:text-right">−&nbsp;6,00&nbsp;€</dd>
+                </div>
+                <div class="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                  <dt class="font-medium text-white">Deckungsbeitrag vor Werbung</dt>
+                  <dd class="font-body font-medium tabular-nums text-white sm:text-right">35,00&nbsp;€ <span class="text-ink-400">(35&nbsp;%)</span></dd>
+                </div>
+              </dl>
+            </div>
+            <div>
+              <p class="font-body font-medium text-white">Was daraus für Google Ads folgt</p>
+              <dl class="mt-3 divide-y divide-ink-800">
+                <div class="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                  <dt class="text-ink-300">Break-even-CPA</dt>
+                  <dd class="font-body font-medium tabular-nums text-white sm:text-right">35,00&nbsp;€</dd>
+                </div>
+                <div class="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                  <dt class="text-ink-300">Break-even-ROAS</dt>
+                  <dd class="font-body font-medium tabular-nums text-white sm:text-right">2,86 netto · 3,40 brutto</dd>
+                </div>
+                <div class="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                  <dt class="text-ink-300">Entscheidung: Ertrag, der je Bestellung bleiben soll</dt>
+                  <dd class="font-body font-medium tabular-nums text-white sm:text-right">10,00&nbsp;€</dd>
+                </div>
+                <div class="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                  <dt class="font-medium text-white">Ziel-CPA</dt>
+                  <dd class="font-body font-medium tabular-nums text-accent-300 sm:text-right">25,00&nbsp;€</dd>
+                </div>
+                <div class="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                  <dt class="font-medium text-white">Ziel-ROAS</dt>
+                  <dd class="font-body font-medium tabular-nums text-accent-300 sm:text-right">4,00 netto · 4,76 brutto</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <p class="mt-6 text-sm text-ink-400">
+            Der Kalkulationsfaktor gibt an, mit welchem Faktor der Einkaufspreis zum
+            Netto-Verkaufspreis aufgeschlagen wird. Ziel-ROAS = Umsatz ÷ Ziel-CPA, also
+            100 ÷ 25 auf Nettobasis und 119 ÷ 25 auf Bruttobasis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GRUNDLAGEN =====
+         Zwei Stellen, an denen ein Zielwert in der Praxis verrutscht. Die
+         Werte greifen die Beispielrechnung aus #berechnen auf. -->
+    <section id="grundlagen" aria-labelledby="grundlagen-title" class="section-shell">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="grundlagen-title" class="section-title">Brutto, netto und Fixkosten: was in die Rechnung gehört</h2>
+          <p class="section-lead">
+            An diesen zwei Stellen verrutscht ein Zielwert besonders häufig, auch wenn die Formel
+            stimmt.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <div class="measure space-y-10">
+            <div>
+              <h3 class="font-body text-lg font-medium text-ink-950">Umsatz und Kosten auf derselben Basis</h3>
+              <div class="mt-3 space-y-4 text-ink-800">
+                <p>
+                  Ob der Conversion-Wert im Konto Umsatzsteuer und Versandkosten enthält, hängt
+                  davon ab, wie das Tracking eingerichtet ist. Wareneinsatz und Deckungsbeitrag
+                  werden in der Kalkulation netto gerechnet.
+                </p>
+                <p>
+                  Kommt im Konto Bruttoumsatz an und wurde der Zielwert netto hergeleitet, fällt
+                  jeder ROAS bei 19&nbsp;% Umsatzsteuer um den Faktor 1,19 höher aus. Im Beispiel
+                  oben entspricht ein Break-even-ROAS von 2,86 netto einem Wert von 3,40 brutto.
+                  Der Zielwert muss deshalb auf der Basis stehen, die im Konto ankommt.
+                </p>
+                <p>
+                  Rabatte, Stornos und Retouren mindern den Umsatz auf derselben Basis.
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-body text-lg font-medium text-ink-950">Fixkosten gehören nicht in den Deckungsbeitrag je Bestellung</h3>
+              <div class="mt-3 space-y-4 text-ink-800">
+                <p>
+                  Miete, Personal und Software fallen weitgehend unabhängig davon an, wie viele
+                  Bestellungen eingehen. Auf die einzelne Bestellung umgelegt, sinkt dieser Betrag
+                  mit jeder zusätzlichen Bestellung.
+                </p>
+                <p>
+                  Steht er als fester Betrag je Bestellung in der Rechnung, fällt der Zielwert bei
+                  wachsendem Volumen strenger aus als nötig. Fixkosten werden über die Summe der
+                  Deckungsbeiträge getragen. Das gilt, solange zusätzliche Bestellungen keine neuen
+                  Fixkosten auslösen, etwa weiteres Lagerpersonal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ZWEI WEGE =====
+         Nur das Prinzip beider Wege, ohne technische Umsetzung. Die Werte
+         greifen die Beispielrechnung auf: 35 € Deckungsbeitrag, 25 € Ziel-CPA,
+         also Ziel-ROAS 4,0 auf Nettoumsatz oder 1,40 auf Deckungsbeitrag. -->
+    <section id="wege" aria-labelledby="wege-title" class="section-shell bg-white">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="wege-title" class="section-title max-w-[30ch]">Zwei Wege, den Deckungsbeitrag in Google Ads zu nutzen</h2>
+          <p class="section-lead">
+            Beide Wege führen zu Geboten, die sich an dem orientieren, was eine Bestellung
+            einbringt. Sie unterscheiden sich darin, an welcher Stelle der Deckungsbeitrag in die
+            Steuerung eingeht.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <article class="surface p-7 sm:p-8">
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Weg 1</p>
+            <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Zielwert aus dem Deckungsbeitrag herleiten</h3>
+            <p class="mt-3 text-ink-800">
+              Das Konto erhält weiterhin den Umsatz als Conversion-Wert. Der Deckungsbeitrag geht
+              über den Zielwert in die Steuerung ein. Im Beispiel ergibt das einen Ziel-ROAS von
+              4,0 auf Nettobasis.
+            </p>
+            <p class="mt-3 text-ink-800">
+              Das reicht aus, solange Produkte mit ähnlichem Deckungsbeitrag gemeinsam in einer
+              Kampagne laufen.
+            </p>
+          </article>
+          <article class="surface p-7 sm:p-8">
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Weg 2</p>
+            <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Deckungsbeitrag als Conversion-Wert übermitteln</h3>
+            <p class="mt-3 text-ink-800">
+              Je Kauf kommt der Deckungsbeitrag als Conversion-Wert im Konto an. Der Ziel-ROAS
+              bezieht sich dann direkt auf ihn, der Break-even liegt bei 1,0. Im Beispiel
+              entspricht ein Ziel-ROAS von 1,40 demselben Ziel-CPA von 25&nbsp;€.
+            </p>
+            <p class="mt-3 text-ink-800">
+              Das lohnt sich vor allem bei einem breiten Sortiment mit sehr unterschiedlichen
+              Margen. Voraussetzung ist, dass die Kosten je Produkt beim Kauf verfügbar sind. Den
+              Umsatz zeigen die Conversion-Werte des Kontos dann nicht mehr an.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EIN ZIELWERT FUER ALLES =====
+         Reiner Textabschnitt im section-grid-Muster. -->
+    <section id="segmente" aria-labelledby="segmente-title" class="section-shell">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="segmente-title" class="section-title">Ein Zielwert für alles ist bei gemischten Margen falsch</h2>
+        </div>
+
+        <div class="section-main">
+          <div class="measure space-y-5 text-ink-800">
+            <p>
+              Sobald ein Konto Produktgruppen oder Leistungen mit unterschiedlichen
+              Deckungsbeiträgen bewirbt, kann ein einziger kontoweiter Zielwert nicht für alle
+              richtig sein. Ein kontoweiter Ziel-ROAS von 4 bremst zum Beispiel Produkte mit
+              40&nbsp;%
+              Deckungsbeitrag, die schon ab einem ROAS von 2,5 rentabel wären. Bei Produkten mit
+              15&nbsp;% Deckungsbeitrag lässt derselbe Wert Verluste zu, weil sie erst ab 6,67
+              kostendeckend sind.
+            </p>
+            <p>
+              Seit der
+              <a href="/leistungen/google-ads/gebotsziele" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Umstellung der Gebotsstrategien im August 2026</a>
+              wirkt sich das stärker aus, weil budgetbeschränkte Kampagnen den hinterlegten Wert
+              konsequenter ansteuern. Produktgruppen mit deutlich
+              unterschiedlichen Deckungsbeiträgen brauchen deshalb jeweils einen eigenen
+              Zielwert.
+              <a href="/cases/google-ads-budget-effizienz" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie Budget nach Geschäftswert verteilt wurde →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LEADGESCHAEFT =====
+         Der E-Commerce-Fall allein wuerde die Haelfte der Zielgruppe nicht
+         abholen. Im B2B endet die Rechnung nicht im Werbekonto.
+         Ab lg zweispaltig: Argument links, Rechnung rechts. -->
+    <section id="leads" aria-labelledby="leads-title" class="section-shell bg-white">
+      <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
+        <div>
+          <h2 id="leads-title" class="section-title max-w-[30ch]">Im Leadgeschäft braucht die Rechnung Daten aus dem Vertrieb</h2>
+          <p class="section-lead">
+            Wo kein Umsatz im Konto ankommt, lässt sich der Zielwert nicht aus Conversion-Werten
+            ableiten. Er muss aus dem kommen, was nach der Anfrage passiert.
+          </p>
+          <div class="measure mt-8 space-y-5 text-ink-800">
+            <p>
+              Entscheidend ist dabei das Wort <em>qualifiziert</em>. Wird auf
+              Formulareinsendungen gesteuert, optimiert die Kampagne auf möglichst günstige
+              Anfragen, unabhängig davon, ob daraus Aufträge werden. Der Zielwert rechnet
+              dann mit Anfragen, von denen ein großer Teil nie zu einem Auftrag führt.
+            </p>
+            <p>
+              Deshalb gehört zur Zielwert-Herleitung im Leadgeschäft immer die Rückmeldung aus dem
+              Vertrieb: Erst wenn bewertete Anfragen ins Werbekonto zurücklaufen, bezieht sich der
+              Zielwert auf die richtige Größe.
+              <a href="/cases/google-ads-leadgenerierung" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie das in einem Konto bis zum wahrgenommenen Termin gemessen wurde →</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="surface p-7 sm:p-9">
+          <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Beispielrechnung, keine Benchmark</p>
+          <dl class="mt-6 divide-y divide-ink-200">
+            <div class="grid gap-1 py-4 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-800">Deckungsbeitrag je gewonnenem Auftrag</dt>
+              <dd class="font-body font-medium tabular-nums text-ink-950 sm:text-right">4.000&nbsp;€</dd>
+            </div>
+            <div class="grid gap-1 py-4 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-800">Aufträge aus 100 qualifizierten Anfragen</dt>
+              <dd class="font-body font-medium tabular-nums text-ink-950 sm:text-right">8</dd>
+            </div>
+            <div class="grid gap-1 py-4 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-800">Break-even je qualifizierter Anfrage</dt>
+              <dd class="font-body font-medium tabular-nums text-ink-950 sm:text-right">320&nbsp;€</dd>
+            </div>
+            <div class="grid gap-1 py-4 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+              <dt class="text-ink-800">Entscheidung: die Hälfte bleibt im Ergebnis</dt>
+              <dd class="font-body font-medium tabular-nums text-accent-700 sm:text-right">Ziel-CPA 160&nbsp;€</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DIE ZAHLEN =====
+         Setzt an der "Dafür nötig"-Liste der Herleitung an. Benennt, wo es in
+         der Praxis hakt, bewusst ohne Loesungsweg: Die Seite zeigt das Was und
+         das Warum, das Wie ist die Beratung selbst.
+         Vierter Punkt ist "Die Rechnung veraltet" und nicht "Margen je
+         Produkt", weil unterschiedliche Margen weiter oben einen eigenen
+         Abschnitt haben (#segmente). -->
+    <section id="zahlen" aria-labelledby="zahlen-title" class="section-shell">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="zahlen-title" class="section-title">Die Zahlen für die Rechnung liegen selten fertig vor</h2>
+          <p class="section-lead">
+            Für die Herleitung braucht es Zahlen aus mehreren Bereichen des Unternehmens.
+            Vier Punkte machen sie in der Praxis aufwendig.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <ul class="grid gap-8 sm:grid-cols-2" role="list">
+            <li class="border-t border-ink-300 pt-5">
+              <h3 class="font-body font-medium text-ink-950">Die Kosten liegen verteilt</h3>
+              <p class="mt-2 text-sm text-ink-700">
+                Wareneinsatz im Warenwirtschaftssystem, Versand beim Dienstleister, Gebühren
+                beim Zahlungsanbieter, Retouren im Shop. Der Deckungsbeitrag je Bestellung
+                lässt sich deshalb meist nicht an einer Stelle ablesen. Zahlungsgebühren hängen
+                zudem vom Mix der Zahlungsarten ab und liegen oft nur als Schätzung vor.
+              </p>
+            </li>
+            <li class="border-t border-ink-300 pt-5">
+              <h3 class="font-body font-medium text-ink-950">Retouren kommen mit Verzug</h3>
+              <p class="mt-2 text-sm text-ink-700">
+                Die Bestellung erscheint sofort im Werbekonto, die Retoure oft erst Wochen
+                später. Wer auf den Wert zum Kaufzeitpunkt steuert, rechnet deshalb mit
+                Umsatz, von dem ein Teil zurückgeht.
+              </p>
+            </li>
+            <li class="border-t border-ink-300 pt-5">
+              <h3 class="font-body font-medium text-ink-950">Wiederkäufe verschieben die Grenze</h3>
+              <p class="mt-2 text-sm text-ink-700">
+                Bringt eine Erstbestellung wiederkehrende Kunden, darf sie mehr kosten als ihr
+                eigener Deckungsbeitrag. Wie viel mehr, hängt davon ab, wie verlässlich Kunden
+                tatsächlich wiederkommen.
+              </p>
+            </li>
+            <li class="border-t border-ink-300 pt-5">
+              <h3 class="font-body font-medium text-ink-950">Die Rechnung veraltet</h3>
+              <p class="mt-2 text-sm text-ink-700">
+                Einkaufspreise, Versandtarife und Retourenquoten ändern sich. Ein Zielwert
+                muss deshalb in regelmäßigen Abständen mit aktuellen Zahlen nachgerechnet
+                werden.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ =====
+         Muster und Skript wie das FAQ der Startseite (faq__btn / faq__panel). -->
+    <section id="faq" aria-labelledby="faq-title" class="section-shell bg-ink-100">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="faq-title" class="section-title">Häufige Fragen</h2>
+        </div>
+
+        <div class="section-main">
+          <div class="grid gap-3">
+            <div class="surface px-6">
+              <h3>
+                <button class="faq__btn group flex w-full items-center justify-between gap-4 py-5 text-left font-body text-ink-950 transition-colors aria-expanded:text-accent-600" type="button" aria-expanded="false" aria-controls="faq-1">
+                  <span>Wie berechne ich den Break-even-ROAS?</span>
+                  <span class="relative flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-ink-300 transition-colors group-aria-expanded:border-accent-600" aria-hidden="true">
+                    <span class="absolute h-[1.5px] w-2.5 bg-current"></span>
+                    <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 ease-in-out group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq__panel" id="faq-1">
+                <p class="measure text-ink-700">Break-even-ROAS = 1 ÷ Deckungsbeitragsquote. Bei 35&nbsp;% Deckungsbeitrag liegt er bei 1 ÷ 0,35 = 2,86. Umsatz und Deckungsbeitrag müssen dabei auf derselben Basis stehen, also beide netto oder beide brutto.</p>
+              </div>
+            </div>
+
+            <div class="surface px-6">
+              <h3>
+                <button class="faq__btn group flex w-full items-center justify-between gap-4 py-5 text-left font-body text-ink-950 transition-colors aria-expanded:text-accent-600" type="button" aria-expanded="false" aria-controls="faq-2">
+                  <span>Sollte der Conversion-Wert brutto oder netto übermittelt werden?</span>
+                  <span class="relative flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-ink-300 transition-colors group-aria-expanded:border-accent-600" aria-hidden="true">
+                    <span class="absolute h-[1.5px] w-2.5 bg-current"></span>
+                    <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 ease-in-out group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq__panel" id="faq-2">
+                <p class="measure text-ink-700">Beides funktioniert, solange der Zielwert auf derselben Basis hergeleitet ist. Mit Nettowerten passen die Zahlen im Konto direkt zur Kalkulation. Wichtig ist, dass sich die Basis nicht unbemerkt ändert, etwa bei einer Umstellung des Trackings.</p>
+              </div>
+            </div>
+
+            <div class="surface px-6">
+              <h3>
+                <button class="faq__btn group flex w-full items-center justify-between gap-4 py-5 text-left font-body text-ink-950 transition-colors aria-expanded:text-accent-600" type="button" aria-expanded="false" aria-controls="faq-3">
+                  <span>Funktioniert das auch mit Performance Max?</span>
+                  <span class="relative flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-ink-300 transition-colors group-aria-expanded:border-accent-600" aria-hidden="true">
+                    <span class="absolute h-[1.5px] w-2.5 bg-current"></span>
+                    <span class="absolute h-2.5 w-[1.5px] bg-current transition-transform duration-200 ease-in-out group-aria-expanded:rotate-90 group-aria-expanded:opacity-0"></span>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq__panel" id="faq-3">
+                <p class="measure text-ink-700">Ja. Performance-Max-Kampagnen lassen sich auf einen Ziel-ROAS steuern. Der Zielwert gilt für die ganze Kampagne. Produktgruppen mit deutlich unterschiedlichen Deckungsbeiträgen brauchen deshalb eigene Kampagnen, oder der Deckungsbeitrag wird als Conversion-Wert übermittelt.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section aria-labelledby="cta-title" class="section-shell bg-white">
+      <div class="container-page">
+        <h2 id="cta-title" class="section-title max-w-[28ch]">
+          Wissen Sie, welcher Deckungsbeitrag hinter Ihren Zielwerten steht?
+        </h2>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Wir sehen uns an, welche Werte im Konto ankommen, auf welcher Basis sie stehen und ob
+          die Zielwerte zu Ihren Deckungsbeiträgen passen. Das Ergebnis ist ein hergeleiteter
+          Zielwert je Produktgruppe.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/#kontakt" class="js-cta btn-primary" data-source="deckungsbeitrag_cta">Analyse anfragen</a>
+          <a href="/marketing-audit" class="btn-secondary">Wie die Analyse abläuft</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo" class="bg-ink-950 text-white">
+    <div class="container-page grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
+      <div>
+        <img src="../../Logos/ddm Logo svg/ddm_Logo_weiß.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+        <p class="mt-4 max-w-[40ch] text-sm text-ink-400">
+          Datengetriebener Growth- und Performance-Partner für Mittelstand, B2B und E-Commerce.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Kontakt</h3>
+        <address class="mt-4 text-sm not-italic leading-relaxed text-ink-300">
+          DDM Data Driven Marketing GmbH<br />
+          Wiesenstr. 21A<br />
+          40549 Düsseldorf<br />
+          <a href="mailto:info@datadrivenmarketing.de" class="hover:text-white">info@datadrivenmarketing.de</a>
+        </address>
+      </div>
+
+      <div>
+        <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Rechtliches</h3>
+        <ul class="mt-4 space-y-2 text-sm text-ink-300" role="list">
+          <li><a href="/impressum" class="hover:text-white">Impressum</a></li>
+          <li><a href="/datenschutz" class="hover:text-white">Datenschutzerklärung</a></li>
+          <li><button type="button" class="text-left hover:text-white" onclick="openConsentBanner(); return false;">Cookie-Einstellungen</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-ink-800">
+      <div class="container-page py-6 text-xs text-ink-400">
+        <p>
+          © <span id="year"></span> DDM Data Driven Marketing GmbH
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="../../script.js"></script>
+</body>
+</html>

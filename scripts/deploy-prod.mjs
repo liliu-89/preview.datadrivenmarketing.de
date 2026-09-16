@@ -38,7 +38,9 @@ const abbruch = (t) => { console.error(`\n\x1b[31mAbbruch:\x1b[0m ${t}\n`); proc
    Bewusst eine Positivliste. Eine Negativliste würde jede neue Bau- oder
    Backend-Datei stillschweigend nach Produktion tragen. */
 const SEITEN = [
-  'index.html', 'team.html', 'marketing-audit.html', 'gebotsziele.html', 'impressum.html', 'datenschutz.html',
+  'index.html', 'team.html', 'marketing-audit.html', 'impressum.html', 'datenschutz.html',
+  'leistungen/google-ads/index.html', 'leistungen/google-ads/deckungsbeitrag.html',
+  'leistungen/google-ads/gebotsziele.html', 'leistungen/microsoft-ads/index.html',
   'cases/google-ads-leadgenerierung.html', 'cases/microsoft-ads-profitabel-machen.html',
   'cases/google-ads-budget-effizienz.html', 'cases/google-ads-account-aufbau.html',
   'cases/seo-b2b-sichtbarkeit.html',
@@ -50,8 +52,10 @@ const ORDNER = ['font', 'images', 'Logos', 'team'];
 const BLEIBT_NOINDEX = ['impressum.html', 'datenschutz.html'];
 const INDEXIERBAR = SEITEN.filter((f) => !BLEIBT_NOINDEX.includes(f));
 
+/* index.html steht fuer das Verzeichnis selbst, auch in Unterordnern:
+   leistungen/google-ads/index.html → /leistungen/google-ads/ */
 const url = (datei) =>
-  datei === 'index.html' ? `${DOMAIN}/` : `${DOMAIN}/${datei.replace(/\.html$/, '')}`;
+  `${DOMAIN}/${datei.replace(/(^|\/)index\.html$/, '$1').replace(/\.html$/, '')}`;
 
 /* ── 1. Vorbedingungen ─────────────────────────────────────────────── */
 schritt('1. Vorbedingungen');

@@ -11,7 +11,7 @@
 @source "../impressum.html";
 @source "../team.html";
 @source "../marketing-audit.html";
-@source "../gebotsziele.html";
+@source "../leistungen/**/*.html";
 @source "../datenschutz.html";
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────
