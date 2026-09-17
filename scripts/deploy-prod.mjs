@@ -44,6 +44,8 @@ const SEITEN = [
   'index.html', 'team.html', 'marketing-audit.html', 'impressum.html', 'datenschutz.html',
   'leistungen/google-ads/index.html', 'leistungen/google-ads/deckungsbeitrag.html',
   'leistungen/google-ads/gebotsziele.html', 'leistungen/microsoft-ads/index.html',
+  'leistungen/seo/index.html', 'leistungen/seo/agentischer-seo-prozess.html',
+  'leistungen/ki-agenten/index.html',
   'cases/google-ads-leadgenerierung.html', 'cases/microsoft-ads-profitabel-machen.html',
   'cases/google-ads-budget-effizienz.html', 'cases/google-ads-account-aufbau.html',
   'cases/seo-b2b-sichtbarkeit.html',
