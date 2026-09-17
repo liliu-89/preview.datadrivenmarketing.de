@@ -21,17 +21,24 @@ const mime = {
 
 http.createServer((req, res) => {
   let filePath = decodeURIComponent(req.url.split('?')[0]);
-  // Wie GitHub Pages: Ein Verzeichnis ohne Schraegstrich leitet auf die
-  // Adresse mit Schraegstrich um und liefert dort index.html. Adressen
-  // ohne Endung liefern die gleichnamige .html-Datei.
+  // Wie GitHub Pages: Adressen ohne Endung liefern die gleichnamige
+  // .html-Datei, sonst leitet ein Verzeichnis auf die Adresse mit
+  // Schraegstrich um und liefert dort index.html.
+  // Die Reihenfolge ist wichtig: /team ist zugleich team.html und der
+  // Bilderordner team/. Zuerst das Verzeichnis zu pruefen, haette auf
+  // /team/ umgeleitet, wo es keine index.html gibt.
   if (!filePath.endsWith('/') && !path.extname(filePath)) {
-    const dir = path.join(root, filePath);
-    if (fs.existsSync(dir) && fs.statSync(dir).isDirectory()) {
-      res.writeHead(301, { Location: filePath + '/' });
-      res.end();
-      return;
+    if (fs.existsSync(path.join(root, filePath + '.html'))) {
+      filePath += '.html';
+    } else {
+      const dir = path.join(root, filePath);
+      if (fs.existsSync(dir) && fs.statSync(dir).isDirectory()) {
+        res.writeHead(301, { Location: filePath + '/' });
+        res.end();
+        return;
+      }
+      filePath += '.html';
     }
-    filePath += '.html';
   }
   if (filePath.endsWith('/')) filePath += 'index.html';
   const full = path.join(root, filePath);
