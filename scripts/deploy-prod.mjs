@@ -37,15 +37,15 @@ const abbruch = (t) => { console.error(`\n\x1b[31mAbbruch:\x1b[0m ${t}\n`); proc
 /* ── Was ausgeliefert wird ──────────────────────────────────────────────
    Bewusst eine Positivliste. Eine Negativliste würde jede neue Bau- oder
    Backend-Datei stillschweigend nach Produktion tragen.
-   leistungen/google-ads/leadqualitaet.html fehlt bewusst: Die Seite geht
-   erst live, wenn das eigene Kontaktformular Klick-IDs erfasst. Dann hier
-   aufnehmen und zugleich die internen Links auf die Seite setzen. */
+
+   ACHTUNG, Zwischenstand auf Branch nur-cases-2026-09-19: Der gesamte
+   leistungen/-Baum fehlt hier, weil nur die Case-Aenderungen nach
+   Produktion sollen. Auf main steht die vollstaendige Liste. Dieser Branch
+   ist nach dem Release Geschichte, er wird nicht zurueckgemergt.
+   leistungen/google-ads/leadqualitaet.html fehlt ohnehin dauerhaft: Die
+   Seite geht erst live, wenn das eigene Kontaktformular Klick-IDs erfasst. */
 const SEITEN = [
   'index.html', 'team.html', 'marketing-audit.html', 'impressum.html', 'datenschutz.html',
-  'leistungen/google-ads/index.html', 'leistungen/google-ads/deckungsbeitrag.html',
-  'leistungen/google-ads/gebotsziele.html', 'leistungen/microsoft-ads/index.html',
-  'leistungen/seo/index.html', 'leistungen/seo/agentischer-seo-prozess.html',
-  'leistungen/ki-agenten/index.html',
   'cases/google-ads-leadgenerierung.html', 'cases/microsoft-ads-profitabel-machen.html',
   'cases/google-ads-budget-effizienz.html', 'cases/google-ads-account-aufbau.html',
   'cases/seo-b2b-sichtbarkeit.html',
