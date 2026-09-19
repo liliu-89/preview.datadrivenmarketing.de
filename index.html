@@ -9,6 +9,19 @@
   <meta name="theme-color" content="#1b1e27" />
   <link rel="canonical" href="https://datadrivenmarketing.de/" />
 
+  <!-- Verbindungsaufbau zu den beiden fremden Origins vorziehen. Das
+       Consent-Skript erzeugt den Banner, und der ist auf dem Handy mit rund
+       47 % der Flaeche das groesste gemalte Element: Solange DNS, TCP und
+       TLS zu dieser Origin noch laufen, steht der Largest Contentful Paint.
+       Der Tag Manager wird vom Consent-Skript ohnehin bei jedem Aufruf
+       geladen, mit Consent-Mode-Default "denied" - der Hinweis zieht also
+       nur den Verbindungsaufbau vor und erzeugt keinen Datenfluss, den es
+       nicht ohnehin gaebe. crossorigin muss beim Consent-Skript stehen,
+       weil es selbst mit crossorigin geladen wird; ohne das Attribut
+       oeffnet der Browser eine zweite Verbindung. -->
+  <link rel="preconnect" href="https://ddm-consent-preview.datadrivenmarketing.workers.dev" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+
   <!-- Consent-Banner. Muss vor allem anderen stehen: Das Skript setzt den
        Consent-Mode-Default auf "denied" und laedt erst danach den Tag Manager.
        Wird diese Reihenfolge umgestellt, feuern Tags vor der Einwilligung. -->

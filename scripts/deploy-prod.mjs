@@ -165,12 +165,14 @@ for (const f of SEITEN) {
   writeFileSync(pfad, s);
 }
 
-/* consent zaehlt zwei Treffer je Seite: die Skript-URL und den data-endpoint.
-   Aus SEITEN abgeleitet statt fest verdrahtet - eine neue Seite soll den
-   Deploy nicht abbrechen lassen, nur weil eine Zahl nicht nachgezogen wurde.
-   Die eigentliche Schutzwirkung bleibt: Verliert eine Seite ihr
-   Consent-Skript oder aendert sich das Markup, stimmt die Zahl nicht mehr. */
-const erwartet = { consent: SEITEN.length * 2, leads: 1, noindex: INDEXIERBAR.length };
+/* consent zaehlt drei Treffer je Seite: den preconnect-Hinweis, die
+   Skript-URL und den data-endpoint. Aus SEITEN abgeleitet statt fest
+   verdrahtet - eine neue Seite soll den Deploy nicht abbrechen lassen, nur
+   weil eine Zahl nicht nachgezogen wurde. Die eigentliche Schutzwirkung
+   bleibt: Verliert eine Seite ihr Consent-Skript oder aendert sich das
+   Markup, stimmt die Zahl nicht mehr. Wer den preconnect-Hinweis wieder
+   entfernt, muss hier auf 2 zurueckgehen. */
+const erwartet = { consent: SEITEN.length * 3, leads: 1, noindex: INDEXIERBAR.length };
 for (const [k, v] of Object.entries(erwartet)) {
   if (gesamt[k] !== v) {
     abbruch(`Umschreibung "${k}": ${gesamt[k]} Treffer statt ${v}. Das Markup hat sich geändert; `
