@@ -50,7 +50,12 @@ const SEITEN = [
   'cases/google-ads-budget-effizienz.html', 'cases/google-ads-account-aufbau.html',
   'cases/seo-b2b-sichtbarkeit.html',
 ];
-const DATEIEN = [...SEITEN, 'script.js', '.nojekyll', 'dist/output.css'];
+/* Die vier Icons liegen bewusst im Wurzelverzeichnis: /favicon.ico wird
+   von Browsern auch ohne Tag dort gesucht, und die absoluten Pfade im
+   <head> gelten so in jeder Verzeichnistiefe. Erzeugt werden sie von
+   scripts/favicons.mjs. */
+const ICONS = ['favicon.ico', 'favicon-32x32.png', 'favicon-16x16.png', 'apple-touch-icon.png'];
+const DATEIEN = [...SEITEN, ...ICONS, 'script.js', '.nojekyll', 'dist/output.css'];
 const ORDNER = ['font', 'images', 'Logos', 'team'];
 
 /* Diese beiden behalten noindex. Alle anderen verlieren es. */
@@ -262,6 +267,19 @@ const fehlend = [...referenziert].filter((d) => !vorhanden.has(d));
 if (verwaist.length) abbruch(`Logodateien ohne Verweis: ${verwaist.join(', ')}`);
 if (fehlend.length) abbruch(`Verwiesene Logos fehlen: ${fehlend.join(', ')}`);
 ok(`${referenziert.size} Logos, Markup und Dateien decken sich`);
+
+/* Favicons: vorhanden, nicht leer, und im Markup jeder Seite verwiesen.
+   Fehlt eine Datei, liefert die Produktivdomain dafuer 404 - Chrome auf
+   iOS zeigt dann wieder einen Platzhalter statt des Signets. */
+for (const f of ICONS) {
+  let groesse;
+  try { groesse = statSync(join(arbeit, f)).size; } catch { abbruch(`Icon fehlt im Artefakt: ${f}`); }
+  if (groesse < 100) abbruch(`Icon ist verdaechtig klein: ${f} (${groesse} Byte)`);
+  for (const seite of INDEXIERBAR) {
+    if (!quelltexte[seite].includes(`href="/${f}"`)) abbruch(`${seite}: Verweis auf /${f} fehlt.`);
+  }
+}
+ok(`${ICONS.length} Icons vorhanden und auf jeder Inhaltsseite verlinkt`);
 
 const bild = 'images/data_driven_marketing_Logo_darkgrey_1200x630.png';
 try { statSync(join(arbeit, bild)); } catch { abbruch(`og:image fehlt: ${bild}`); }

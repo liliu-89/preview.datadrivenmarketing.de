@@ -36,8 +36,19 @@
     data-accent="#3354a1"></script>
 
 
-  <link rel="icon" href="Logos/ddm Logo svg/Signet_darkgrey.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="Logos/ddm Logo svg/png/Signet_darkgrey.png" />
+  <!-- Favicons. Absolute Pfade, damit dieselben vier Zeilen in jeder
+       Verzeichnistiefe gelten. Erzeugt von scripts/favicons.mjs aus dem
+       offiziellen Signet; wer die Dateien ersetzt, laesst sie dort neu
+       bauen statt sie von Hand zu schneiden.
+       Das frueher hier stehende SVG-Favicon ist entfallen: WebKit liest
+       keine SVG-Favicons, Chrome und Safari auf iOS hatten damit gar kein
+       Icon. Das apple-touch-icon zeigte ausserdem auf ein 758 px grosses
+       Signet mit transparentem Grund - iOS unterlegt so etwas mit
+       Schwarz. -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
   <link rel="stylesheet" href="dist/output.css" />
 </head>
