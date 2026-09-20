@@ -19,9 +19,14 @@
  * - Auf transparentem Grund verschwindet das dunkle Zeichen ausserdem in
  *   der dunklen Tableiste.
  *
- * Die Raender sind unterschiedlich: Das App-Icon bekommt mehr Luft, weil
- * iOS die Ecken rund beschneidet. Favicons sind bei 16 px auf jede Flaeche
- * angewiesen und bekommen deshalb nur wenig Rand.
+ * Die viewBox wird 1:1 auf die Kachel abgebildet, ohne zusaetzlichen Rand.
+ * Genau so rendert ein Browser ein SVG-Favicon, und genau so sah das alte
+ * Icon aus: Das Zeichen fuellt 96,7 % der Breite, den schmalen Rest traegt
+ * der Rand im Pfad selbst. Ein eigener Rand liess das Zeichen sichtbar
+ * kleiner wirken als vorher.
+ * Fuer das App-Icon gilt dasselbe. iOS legt darueber seine abgerundete
+ * Maske; weil das Signet eine gefuellte Flaeche mit Aussparung ist, rundet
+ * die Maske dessen Ecken mit, statt etwas Erkennbares abzuschneiden.
  */
 
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -43,7 +48,7 @@ const zeichenfarbe = /fill="(#[0-9a-fA-F]{3,8})"/.exec(quelle)?.[1];
 if (!pfad || !box || !zeichenfarbe) throw new Error(`Pfad, viewBox oder fill fehlt in ${QUELLE}`);
 const [, , bBreite, bHoehe] = box.split(/\s+/).map(Number);
 
-/** Signet mittig auf gefuellter Flaeche, `anteil` = Kantenlaenge des Zeichens. */
+/** Signet mittig auf gefuellter Flaeche, `anteil` = Anteil der viewBox an der Kachel. */
 const bild = (kante, anteil) => {
   const zeichen = kante * anteil;
   const skala = zeichen / Math.max(bBreite, bHoehe);
@@ -100,11 +105,10 @@ const ico = (bilder) => {
 
 const ziel = (name) => join(ROOT, name);
 
-/* 0.76 fuer Favicons: bei 16 px bleiben sonst zu wenige Pixel fuer das
-   Zeichen. 0.60 fuer das App-Icon: Die runde iOS-Maske schneidet die Ecken
-   ab, das Zeichen muss deutlich innerhalb liegen. */
+/* Ueberall 1: die viewBox deckt die Kachel, wie beim alten SVG-Favicon. */
+const ANTEIL = 1;
 const [f16, f32, f48, apple] = await Promise.all([
-  png(16, 0.76), png(32, 0.76), png(48, 0.76), png(180, 0.60),
+  png(16, ANTEIL), png(32, ANTEIL), png(48, ANTEIL), png(180, ANTEIL),
 ]);
 
 writeFileSync(ziel('favicon-16x16.png'), f16);
