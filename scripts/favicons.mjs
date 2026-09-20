@@ -7,15 +7,17 @@
  * unterstuetzt keine SVG-Favicons. Chrome und Safari auf iOS hatten damit
  * gar kein Icon und behalfen sich mit einem Platzhalter.
  *
+ * Verwendet wird das dunkelgraue Signet auf weissem Grund. Beide Werte
+ * stammen aus der Marke: Das Zeichen traegt seine Farbe aus der eigenen
+ * Datei, es wird nichts umgefaerbt. Blau bleibt laut Guidelines dem
+ * Akzent vorbehalten.
+ *
  * Warum die Flaeche gefuellt wird und nicht transparent bleibt:
- * - iOS unterlegt ein transparentes apple-touch-icon mit Schwarz. Apple
- *   erwartet ein deckendes Bild und legt die abgerundete Maske selbst an.
- * - Ein dunkelgraues Zeichen auf transparentem Grund verschwindet in der
- *   dunklen Tableiste.
- * Gefuellt wird mit ink-950 (#1b1e27) und dem weissen Signet. Beides sind
- * offizielle Markenfarben, das weisse Signet existiert als eigene Datei -
- * es wird also nichts umgefaerbt. Blau bleibt laut Guidelines dem Akzent
- * vorbehalten.
+ * - iOS unterlegt ein transparentes apple-touch-icon mit Schwarz. Das
+ *   dunkle Zeichen waere darauf unsichtbar. Apple erwartet ein deckendes
+ *   Bild und legt die abgerundete Maske selbst an.
+ * - Auf transparentem Grund verschwindet das dunkle Zeichen ausserdem in
+ *   der dunklen Tableiste.
  *
  * Die Raender sind unterschiedlich: Das App-Icon bekommt mehr Luft, weil
  * iOS die Ecken rund beschneidet. Favicons sind bei 16 px auf jede Flaeche
@@ -28,15 +30,17 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const QUELLE = join(ROOT, 'Logos', 'ddm Logo svg', 'Signet_weiß.svg');
-const GRUND = '#1b1e27'; // ink-950, Guidelines primary
+const QUELLE = join(ROOT, 'Logos', 'ddm Logo svg', 'Signet_darkgrey.svg');
+const GRUND = '#ffffff';
 
-/* Den Pfad aus dem offiziellen Signet uebernehmen statt ihn zu kopieren:
-   Wird das Signet je ersetzt, zieht dieser Generator automatisch nach. */
+/* Pfad UND Farbe aus dem offiziellen Signet uebernehmen statt sie zu
+   kopieren: Wird das Signet je ersetzt oder umgefaerbt, zieht dieser
+   Generator automatisch nach. */
 const quelle = readFileSync(QUELLE, 'utf8');
 const pfad = /\sd="([^"]+)"/.exec(quelle)?.[1];
 const box = /viewBox="([^"]+)"/.exec(quelle)?.[1];
-if (!pfad || !box) throw new Error(`Kein Pfad oder viewBox in ${QUELLE}`);
+const zeichenfarbe = /fill="(#[0-9a-fA-F]{3,8})"/.exec(quelle)?.[1];
+if (!pfad || !box || !zeichenfarbe) throw new Error(`Pfad, viewBox oder fill fehlt in ${QUELLE}`);
 const [, , bBreite, bHoehe] = box.split(/\s+/).map(Number);
 
 /** Signet mittig auf gefuellter Flaeche, `anteil` = Kantenlaenge des Zeichens. */
@@ -48,7 +52,7 @@ const bild = (kante, anteil) => {
   return Buffer.from(
     `<svg xmlns="http://www.w3.org/2000/svg" width="${kante}" height="${kante}" viewBox="0 0 ${kante} ${kante}">`
     + `<rect width="${kante}" height="${kante}" fill="${GRUND}"/>`
-    + `<g transform="translate(${x} ${y}) scale(${skala})"><path d="${pfad}" fill="#fff"/></g>`
+    + `<g transform="translate(${x} ${y}) scale(${skala})"><path d="${pfad}" fill="${zeichenfarbe}"/></g>`
     + `</svg>`);
 };
 
