@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Was ist Data Driven Marketing? Definition und Praxis | DDM</title>
+  <meta name="description" content="Data Driven Marketing heißt, Marketingentscheidungen aus gemessenen Daten abzuleiten. Definition, die vier Schritte und was im Mittelstand dafür nötig ist." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1b1e27" />
+  <link rel="canonical" href="https://datadrivenmarketing.de/data-driven-marketing" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DDM Data Driven Marketing" />
+  <meta property="og:title" content="Was ist Data Driven Marketing?" />
+  <meta property="og:description" content="Definition, die vier Schritte von der Messung bis zur Entscheidung und was mittelständische Unternehmen dafür brauchen." />
+  <meta property="og:url" content="https://datadrivenmarketing.de/data-driven-marketing" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="https://datadrivenmarketing.de/images/data_driven_marketing_Logo_darkgrey_1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Logo der DDM Data Driven Marketing GmbH" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Verbindungsaufbau zu den beiden fremden Origins vorziehen. Das
+       Consent-Skript erzeugt den Banner, und der ist auf dem Handy mit rund
+       47 % der Flaeche das groesste gemalte Element: Solange DNS, TCP und
+       TLS zu dieser Origin noch laufen, steht der Largest Contentful Paint.
+       Der Tag Manager wird vom Consent-Skript ohnehin bei jedem Aufruf
+       geladen, mit Consent-Mode-Default "denied" - der Hinweis zieht also
+       nur den Verbindungsaufbau vor und erzeugt keinen Datenfluss, den es
+       nicht ohnehin gaebe. crossorigin muss beim Consent-Skript stehen,
+       weil es selbst mit crossorigin geladen wird; ohne das Attribut
+       oeffnet der Browser eine zweite Verbindung. -->
+  <link rel="preconnect" href="https://ddm-consent-preview.datadrivenmarketing.workers.dev" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+  <!-- Consent-Banner. Muss vor allem anderen stehen: Das Skript setzt den
+       Consent-Mode-Default auf "denied" und laedt erst danach den Tag Manager.
+       Wird diese Reihenfolge umgestellt, feuern Tags vor der Einwilligung. -->
+  <script src="https://ddm-consent-preview.datadrivenmarketing.workers.dev/v1.1.2/consent.js"
+    integrity="sha384-jBr8HaQIqR9gSQsaV+DHL2rydJ4GyaGCED+fvA4SBF7zEqYxDO3Y6B9Ml+SRMO+2"
+    crossorigin="anonymous"
+    data-gtm="GTM-KN44W5SD"
+    data-site="ddm-website"
+    data-endpoint="https://ddm-consent-preview.datadrivenmarketing.workers.dev/api/consent"
+    data-privacy="/datenschutz"
+    data-imprint="/impressum"
+    data-accent="#3354a1"></script>
+
+
+  <!-- Favicons. Absolute Pfade, damit dieselben vier Zeilen in jeder
+       Verzeichnistiefe gelten. Erzeugt von scripts/favicons.mjs aus dem
+       offiziellen Signet; wer die Dateien ersetzt, laesst sie dort neu
+       bauen statt sie von Hand zu schneiden.
+       Das frueher hier stehende SVG-Favicon ist entfallen: WebKit liest
+       keine SVG-Favicons, Chrome und Safari auf iOS hatten damit gar kein
+       Icon. Das apple-touch-icon zeigte ausserdem auf ein 758 px grosses
+       Signet mit transparentem Grund - iOS unterlegt so etwas mit
+       Schwarz. -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="dist/output.css" />
+</head>
+
+<body class="bg-canvas font-body text-ink-950 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-ink-950 focus:px-4 focus:py-2 focus:text-white">
+    Zum Inhalt springen
+  </a>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header" class="sticky top-0 z-40 border-b border-ink-200 transition-shadow duration-200">
+    <div class="container-page flex items-center gap-6 py-4">
+      <a href="/" class="flex flex-shrink-0 items-center" aria-label="DDM Data Driven Marketing – Startseite">
+        <img src="Logos/ddm Logo svg/ddm_Logo_darkgrey.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+      </a>
+
+      <nav class="ml-auto hidden items-center gap-8 md:flex" aria-label="Hauptnavigation">
+        <a href="/#leistungen" class="nav-link">Leistungen</a>
+        <a href="/#prozess" class="nav-link">Prozess</a>
+        <a href="/#cases" class="nav-link">Cases</a>
+        <a href="/team" class="nav-link">Team</a>
+        <a href="/#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-3 md:ml-0">
+        <a href="/#kontakt" class="btn-primary hidden sm:inline-flex">Analyse anfragen</a>
+        <button
+          class="js-menu-toggle inline-flex h-10 w-10 items-center justify-center rounded-control border border-ink-200 md:hidden"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Menü öffnen"
+        >
+          <span class="relative block h-3.5 w-4" aria-hidden="true">
+            <span class="absolute inset-x-0 top-0 h-[1.5px] bg-ink-950"></span>
+            <span class="absolute inset-x-0 top-1/2 h-[1.5px] -translate-y-1/2 bg-ink-950"></span>
+            <span class="absolute inset-x-0 bottom-0 h-[1.5px] bg-ink-950"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="border-t border-ink-200 bg-white md:hidden">
+      <nav class="container-page flex flex-col py-2" aria-label="Mobile Navigation">
+        <a href="/#leistungen" class="border-b border-ink-100 py-3 font-body text-ink-950">Leistungen</a>
+        <a href="/#prozess" class="border-b border-ink-100 py-3 font-body text-ink-950">Prozess</a>
+        <a href="/#cases" class="border-b border-ink-100 py-3 font-body text-ink-950">Cases</a>
+        <a href="/team" class="border-b border-ink-100 py-3 font-body text-ink-950">Team</a>
+        <a href="/#faq" class="border-b border-ink-100 py-3 font-body text-ink-950">FAQ</a>
+        <a href="/#kontakt" class="py-3 font-body font-medium text-accent-600">Analyse anfragen</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="border-b border-ink-200 bg-white">
+    <div class="container-page py-3">
+      <a href="/" class="nav-link">← Zur Startseite</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO =====
+         Die Seite bedient eine informative Suchanfrage ("Was ist Data
+         Driven Marketing"), keine Kaufabsicht. Deshalb steht die Antwort
+         im ersten Absatz und nicht erst nach einer Hinfuehrung. -->
+    <section class="pb-12 pt-14 sm:pb-16 sm:pt-16">
+      <div class="container-page">
+        <p class="section-eyebrow">Grundlagen</p>
+        <h1 class="section-title max-w-[24ch]">
+          Was ist Data Driven Marketing?
+        </h1>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Data Driven Marketing bezeichnet eine Arbeitsweise, bei der Marketingentscheidungen aus
+          gemessenen Daten abgeleitet werden: aus dem Verhalten von Interessenten, aus Verkaufs-
+          und Umsatzzahlen und aus der Rückmeldung von Vertrieb oder Shop. Gemeint ist die
+          gesamte Kette von der Messung bis zur Entscheidung. Im Deutschen steht dafür der
+          Begriff datengetriebenes Marketing.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== BAUSTEINE ===== -->
+    <section id="bausteine" aria-labelledby="bausteine-title" class="section-shell bg-white">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="bausteine-title" class="section-title">Vier Schritte, die zusammengehören</h2>
+          <p class="section-lead">
+            Fällt einer davon aus, bleibt von den übrigen wenig übrig. Ein sauber ausgewerteter
+            Bericht hilft nicht, wenn die zugrunde liegende Messung Lücken hat.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <ol class="grid gap-8 sm:grid-cols-2" role="list">
+            <li class="border-t border-ink-300 pt-5">
+              <span class="font-display text-2xl text-ink-400" aria-hidden="true">01</span>
+              <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Daten entstehen lassen</h3>
+              <p class="mt-2 text-ink-800">
+                Welche Ereignisse hält ein Unternehmen überhaupt fest? Anfragen, Bestellungen,
+                Termine, Angebote, Stornos. Was nirgends erfasst wird, kann später keine
+                Entscheidung tragen.
+              </p>
+            </li>
+            <li class="border-t border-ink-300 pt-5">
+              <span class="font-display text-2xl text-ink-400" aria-hidden="true">02</span>
+              <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Messung absichern</h3>
+              <p class="mt-2 text-ink-800">
+                Die Ereignisse müssen vollständig und mit dem richtigen Wert dort ankommen, wo
+                entschieden wird. Das ist der Teil, an dem in der Praxis am häufigsten etwas
+                fehlt.
+              </p>
+            </li>
+            <li class="border-t border-ink-300 pt-5">
+              <span class="font-display text-2xl text-ink-400" aria-hidden="true">03</span>
+              <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Zahlen einordnen</h3>
+              <p class="mt-2 text-ink-800">
+                Jede Kennzahl beantwortet eine bestimmte Frage. Wer wissen will, ob sich eine
+                Kampagne lohnt, braucht eine andere Größe als jemand, der Reichweite beurteilt.
+              </p>
+            </li>
+            <li class="border-t border-ink-300 pt-5">
+              <span class="font-display text-2xl text-ink-400" aria-hidden="true">04</span>
+              <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Entscheidungen ableiten</h3>
+              <p class="mt-2 text-ink-800">
+                Budget, Kanäle und Zielwerte folgen aus den Zahlen. Und es wird festgehalten,
+                welche Zahl eine Entscheidung getragen hat, damit sie später überprüfbar bleibt.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MERKMALE =====
+         Dunkler Abschnitt als Zaesur, wie auf den uebrigen Fachseiten.
+         Bewusst als pruefbare Merkmale formuliert, damit die Seite auch
+         jemandem nuetzt, der sein eigenes Setup einordnen will. -->
+    <section id="merkmale" aria-labelledby="merkmale-title" class="brand-gradient-dark section-shell text-white">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="merkmale-title" class="section-title text-white">Woran es sich erkennen lässt</h2>
+          <p class="section-lead text-ink-300">
+            Vier Merkmale, an denen sich ablesen lässt, ob in einem Unternehmen datengetrieben
+            gearbeitet wird.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <ul class="grid gap-8 sm:grid-cols-2" role="list">
+            <li class="border-t border-ink-800 pt-5">
+              <h3 class="font-body font-medium text-white">Jede Maßnahme hat eine Kennzahl</h3>
+              <p class="mt-2 text-sm text-ink-300">
+                Vor dem Start steht fest, woran der Erfolg gemessen wird und welcher Wert dafür
+                erreicht sein muss.
+              </p>
+            </li>
+            <li class="border-t border-ink-800 pt-5">
+              <h3 class="font-body font-medium text-white">Die Zahl reicht bis zum Geschäft</h3>
+              <p class="mt-2 text-sm text-ink-300">
+                Eine Conversion im Werbekonto lässt sich bis zu Umsatz, Auftrag oder Termin
+                zurückverfolgen.
+              </p>
+            </li>
+            <li class="border-t border-ink-800 pt-5">
+              <h3 class="font-body font-medium text-white">Abweichungen werden geklärt</h3>
+              <p class="mt-2 text-sm text-ink-300">
+                Wenn Shop, Tracking und Werbekonto unterschiedliche Zahlen zeigen, wird die
+                Ursache gesucht, bevor eine Entscheidung darauf aufbaut.
+              </p>
+            </li>
+            <li class="border-t border-ink-800 pt-5">
+              <h3 class="font-body font-medium text-white">Entscheidungen bleiben nachvollziehbar</h3>
+              <p class="mt-2 text-sm text-ink-300">
+                Es ist später noch erkennbar, warum ein Budget verschoben oder eine Kampagne
+                beendet wurde.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DATEN ===== -->
+    <section id="daten" aria-labelledby="daten-title" class="section-shell">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="daten-title" class="section-title">Welche Daten dafür gebraucht werden</h2>
+          <p class="section-lead">
+            Die Quellen liegen in den meisten Unternehmen bereits vor. Sie sind nur selten
+            miteinander verbunden.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <dl class="divide-y divide-ink-200 border-y border-ink-200">
+            <div class="grid gap-1 py-5 sm:grid-cols-[14rem_1fr] sm:gap-8">
+              <dt class="font-body font-medium text-ink-950">Aus dem Werbekonto</dt>
+              <dd class="text-ink-800">
+                Welche Anzeigen und Suchanfragen zu einer Conversion geführt haben und welcher Wert
+                dieser Conversion zugeordnet ist.
+              </dd>
+            </div>
+            <div class="grid gap-1 py-5 sm:grid-cols-[14rem_1fr] sm:gap-8">
+              <dt class="font-body font-medium text-ink-950">Aus Shop oder ERP</dt>
+              <dd class="text-ink-800">
+                Tatsächlicher Umsatz, Wareneinsatz, Retouren und Stornierungen. Erst damit lässt
+                sich beurteilen, was eine Bestellung wirtschaftlich übrig lässt.
+              </dd>
+            </div>
+            <div class="grid gap-1 py-5 sm:grid-cols-[14rem_1fr] sm:gap-8">
+              <dt class="font-body font-medium text-ink-950">Aus dem CRM</dt>
+              <dd class="text-ink-800">
+                Wie der Vertrieb eine Anfrage bewertet hat und was daraus geworden ist. Im
+                Leadgeschäft ist das die einzige Grundlage, um Qualität von Menge zu trennen.
+              </dd>
+            </div>
+            <div class="grid gap-1 py-5 sm:grid-cols-[14rem_1fr] sm:gap-8">
+              <dt class="font-body font-medium text-ink-950">Aus der Website</dt>
+              <dd class="text-ink-800">
+                Welche Seiten vor einer Anfrage aufgerufen wurden und an welcher Stelle Besucher
+                den Vorgang abbrechen.
+              </dd>
+            </div>
+          </dl>
+
+          <p class="measure mt-8 text-sm text-ink-700">
+            Der Aufwand liegt selten in der Menge der Daten. Er liegt darin, sie so zu verbinden,
+            dass eine Zahl aus dem einen System zur Zahl aus dem anderen passt.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MITTELSTAND =====
+         Der Abschnitt, der die Seite von den Glossartexten der grossen
+         Anbieter unterscheidet: gleiche Frage, anderer Betriebsalltag. -->
+    <section id="mittelstand" aria-labelledby="mittelstand-title" class="section-shell bg-ink-100">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="mittelstand-title" class="section-title">Was das im Mittelstand bedeutet</h2>
+          <p class="section-lead">
+            Die Definition gilt für Konzerne und für Unternehmen mit dreißig Mitarbeitenden gleich.
+            Die Umsetzung unterscheidet sich erheblich.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="surface flex flex-col p-7 sm:p-8">
+            <h3 class="font-body text-lg font-medium text-ink-950">Kleinere Datenmengen</h3>
+            <p class="mt-3 text-ink-800">
+              Bei wenigen hundert Conversions im Monat tragen statistische Verfahren wenig. Umso
+              mehr hängt an einer Messung, die stimmt.
+            </p>
+          </article>
+          <article class="surface flex flex-col p-7 sm:p-8">
+            <h3 class="font-body text-lg font-medium text-ink-950">Kurze Wege</h3>
+            <p class="mt-3 text-ink-800">
+              Wer über das Budget entscheidet, kennt das Geschäft meist im Detail. Eine Zahl kann
+              direkt besprochen werden, ohne mehrere Ebenen zu durchlaufen.
+            </p>
+          </article>
+          <article class="surface flex flex-col p-7 sm:p-8">
+            <h3 class="font-body text-lg font-medium text-ink-950">Kein eigenes Datenteam</h3>
+            <p class="mt-3 text-ink-800">
+              Die Arbeit muss in bestehende Abläufe passen und ohne laufende Betreuung durch
+              Spezialisten bestehen bleiben.
+            </p>
+          </article>
+          <article class="surface flex flex-col p-7 sm:p-8">
+            <h3 class="font-body text-lg font-medium text-ink-950">Gewachsene Systeme</h3>
+            <p class="mt-3 text-ink-800">
+              Shop, Warenwirtschaft und CRM sind über Jahre entstanden. Der Weg von der Bestellung
+              zur auswertbaren Zahl führt durch diese Systeme.
+            </p>
+          </article>
+          <article class="surface flex flex-col p-7 sm:p-8">
+            <h3 class="font-body text-lg font-medium text-ink-950">Begrenzte Budgets</h3>
+            <p class="mt-3 text-ink-800">
+              Wenn jeder Euro zählt, ist die Frage wichtiger, ab welchem Punkt zusätzliches Budget
+              noch profitabel arbeitet.
+            </p>
+          </article>
+          <article class="surface flex flex-col p-7 sm:p-8">
+            <h3 class="font-body text-lg font-medium text-ink-950">Lange Entscheidungswege beim Kunden</h3>
+            <p class="mt-3 text-ink-800">
+              Im B2B liegen zwischen erster Suche und Auftrag oft Monate. Die Messung muss diesen
+              Zeitraum überbrücken.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HUERDEN ===== -->
+    <section id="huerden" aria-labelledby="huerden-title" class="section-shell bg-white">
+      <div class="container-page section-grid">
+        <div class="section-aside">
+          <h2 id="huerden-title" class="section-title">Wo es in der Praxis hakt</h2>
+          <p class="section-lead">
+            Vier Befunde, die uns in Analysen regelmäßig begegnen.
+          </p>
+        </div>
+
+        <div class="section-main">
+          <ul class="grid gap-8 sm:grid-cols-2" role="list">
+            <li class="border-t border-ink-300 pt-5">
+              <h3 class="font-body text-lg font-medium text-ink-950">Conversions ohne Wert</h3>
+              <p class="mt-2 text-ink-800">
+                Das Werbekonto zählt Formularabsendungen, aber jede zählt gleich viel. Die
+                Steuerung optimiert dann auf Menge.
+              </p>
+            </li>
+            <li class="border-t border-ink-300 pt-5">
+              <h3 class="font-body text-lg font-medium text-ink-950">Zahlen, die auseinanderlaufen</h3>
+              <p class="mt-2 text-ink-800">
+                Shop und Werbekonto zeigen unterschiedliche Umsätze. Solange die Ursache unklar
+                ist, trägt keine der beiden Zahlen eine Entscheidung.
+              </p>
+            </li>
+            <li class="border-t border-ink-300 pt-5">
+              <h3 class="font-body text-lg font-medium text-ink-950">Leadqualität bleibt im Vertrieb</h3>
+              <p class="mt-2 text-ink-800">
+                Der Vertrieb weiß, welche Anfragen etwas taugen. Diese Bewertung erreicht das
+                Marketing häufig nicht.
+              </p>
+            </li>
+            <li class="border-t border-ink-300 pt-5">
+              <h3 class="font-body text-lg font-medium text-ink-950">Messung, die still bricht</h3>
+              <p class="mt-2 text-ink-800">
+                Nach einem Update fehlen Daten, ohne dass eine Fehlermeldung erscheint. Auffallen
+                kann das erst Wochen später.
+              </p>
+            </li>
+          </ul>
+
+          <p class="mt-8">
+            <a href="/marketing-audit" class="font-body text-sm text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie wir den Ist-Stand prüfen &rarr;</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ =====
+         Beantwortet die Fragen, die Google zu diesem Thema unter
+         "Weitere Fragen" anzeigt. -->
+    <section id="faq" aria-labelledby="faq-title" class="section-shell">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="faq-title" class="section-title">Häufige Fragen</h2>
+        </div>
+
+        <dl class="mx-auto max-w-3xl divide-y divide-ink-200 border-y border-ink-200">
+          <div class="py-6">
+            <dt class="font-body text-lg font-medium text-ink-950">Was ist der Unterschied zu klassischem Marketing?</dt>
+            <dd class="measure mt-3 text-ink-800">
+              Klassisches Marketing stützt Entscheidungen auf Marktkenntnis, Erfahrung und
+              Kreation. Datengetriebenes Marketing ergänzt diese Grundlage um gemessene Größen und
+              macht damit überprüfbar, welche Annahme sich bestätigt hat. Die kreative Arbeit
+              bleibt dabei bestehen.
+            </dd>
+          </div>
+          <div class="py-6">
+            <dt class="font-body text-lg font-medium text-ink-950">Welche Daten braucht man mindestens?</dt>
+            <dd class="measure mt-3 text-ink-800">
+              Eine verlässliche Conversion-Messung und eine Größe, die den wirtschaftlichen Wert
+              einer Conversion beschreibt. Im Handel ist das der Umsatz einer Bestellung, im
+              Leadgeschäft eine Bewertung der Anfrage durch den Vertrieb.
+            </dd>
+          </div>
+          <div class="py-6">
+            <dt class="font-body text-lg font-medium text-ink-950">Ab welcher Unternehmensgröße lohnt sich das?</dt>
+            <dd class="measure mt-3 text-ink-800">
+              Die Frage hängt weniger an der Größe als am Budget, das gesteuert werden soll.
+              Sobald monatlich Beträge fließen, deren Wirkung niemand belegen kann, ist der
+              Aufwand für eine belastbare Messung gerechtfertigt.
+            </dd>
+          </div>
+          <div class="py-6">
+            <dt class="font-body text-lg font-medium text-ink-950">Womit fängt man an?</dt>
+            <dd class="measure mt-3 text-ink-800">
+              Mit einer Bestandsaufnahme: Welche Daten entstehen heute, wo brechen sie ab und
+              welche Entscheidungen beruhen derzeit auf Annahmen? Daraus ergibt sich die
+              Reihenfolge der weiteren Schritte.
+            </dd>
+          </div>
+          <div class="py-6">
+            <dt class="font-body text-lg font-medium text-ink-950">Braucht man dafür KI?</dt>
+            <dd class="measure mt-3 text-ink-800">
+              Für die Grundlagen nicht. Die Gebotsverfahren der Werbeplattformen arbeiten
+              maschinell und werden besser, je verlässlicher die Signale sind, die sie bekommen.
+              Darüber hinaus lassen sich wiederkehrende Auswertungen automatisieren.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== WEITERLESEN ===== -->
+    <section id="weiterlesen" aria-labelledby="weiterlesen-title" class="section-shell bg-ink-100">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="weiterlesen-title" class="section-title">Wie das konkret aussieht</h2>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-3">
+          <article class="surface card-hover flex flex-col p-7 sm:p-8">
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Rechnung</p>
+            <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Vom Deckungsbeitrag zum Zielwert</h3>
+            <p class="mt-3 text-ink-800">
+              Wie sich aus der Marge nach variablen Kosten ein Ziel-ROAS und ein Ziel-CPA herleiten
+              lassen.
+            </p>
+            <p class="mt-auto pt-4">
+              <a href="/leistungen/google-ads/deckungsbeitrag" class="font-body text-sm text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Google Ads nach Deckungsbeitrag optimieren &rarr;</a>
+            </p>
+          </article>
+          <article class="surface card-hover flex flex-col p-7 sm:p-8">
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Case · Gesundheitsbereich</p>
+            <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Wenn die Bewertung zurückfließt</h3>
+            <p class="mt-3 text-ink-800">
+              Ein Konto, in dem der Status einer Terminbuchung zur Grundlage der Kampagnensteuerung
+              wurde.
+            </p>
+            <p class="mt-auto pt-4">
+              <a href="/cases/google-ads-leadgenerierung" class="font-body text-sm text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie Leadqualität zurückfließt &rarr;</a>
+            </p>
+          </article>
+          <article class="surface card-hover flex flex-col p-7 sm:p-8">
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-700">Case · E-Commerce</p>
+            <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Budget nach Geschäftswert</h3>
+            <p class="mt-3 text-ink-800">
+              Ein Konto, in dem dieselbe Summe anders verteilt wurde, nachdem die Messung stimmte.
+            </p>
+            <p class="mt-auto pt-4">
+              <a href="/cases/google-ads-budget-effizienz" class="font-body text-sm text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Wie Budget verteilt wurde &rarr;</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section aria-labelledby="cta-title" class="section-shell bg-white">
+      <div class="container-page">
+        <h2 id="cta-title" class="section-title max-w-[28ch]">
+          Welche Ihrer Entscheidungen beruhen heute auf Annahmen?
+        </h2>
+        <p class="measure mt-5 text-lg leading-relaxed text-ink-800">
+          Wir sehen uns an, welche Daten in Ihrem Unternehmen entstehen, wo sie abbrechen und
+          welche Zahlen Ihre Kampagnen derzeit steuern. Sie erhalten eine Einschätzung mit den
+          nächsten Schritten.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/#kontakt" class="js-cta btn-primary" data-source="data_driven_marketing_cta">Analyse anfragen</a>
+          <a href="/marketing-audit" class="btn-secondary">Wie die Analyse abläuft</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo" class="bg-ink-950 text-white">
+    <div class="container-page grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
+      <div>
+        <img src="Logos/ddm Logo svg/ddm_Logo_weiß.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+        <p class="mt-4 max-w-[40ch] text-sm text-ink-400">
+          Datengetriebener Growth- und Performance-Partner für Mittelstand, B2B und E-Commerce.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Kontakt</h3>
+        <address class="mt-4 text-sm not-italic leading-relaxed text-ink-300">
+          DDM Data Driven Marketing GmbH<br />
+          Wiesenstr. 21A<br />
+          40549 Düsseldorf<br />
+          <a href="mailto:info@datadrivenmarketing.de" class="hover:text-white">info@datadrivenmarketing.de</a>
+        </address>
+      </div>
+
+      <div>
+        <h3 class="font-body text-sm font-medium uppercase tracking-wide text-ink-400">Rechtliches</h3>
+        <ul class="mt-4 space-y-2 text-sm text-ink-300" role="list">
+          <li><a href="/impressum" class="hover:text-white">Impressum</a></li>
+          <li><a href="/datenschutz" class="hover:text-white">Datenschutzerklärung</a></li>
+          <li><button type="button" class="text-left hover:text-white" onclick="openConsentBanner(); return false;">Cookie-Einstellungen</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-ink-800">
+      <div class="container-page py-6 text-xs text-ink-400">
+        <p>
+          © <span id="year"></span> DDM Data Driven Marketing GmbH
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
