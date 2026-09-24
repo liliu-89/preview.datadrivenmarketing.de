@@ -78,16 +78,6 @@
         <img src="../Logos/ddm Logo svg/ddm_Logo_darkgrey.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
       </a>
 
-      <!-- Google-Partner-Badge im Header, damit es auf jeder Seite sichtbar
-           bleibt. Es steht ausserdem im Hero der Startseite, in einem eigenen
-           Abschnitt auf /leistungen/google-ads/ und auf team.html. Faellt der
-           Status weg, muss es an allen vier Stellen verschwinden. -->
-      <a href="https://www.google.com/partners/agency?id=7275523841"
-         target="_blank" rel="noopener" class="hidden flex-shrink-0 items-center sm:flex"
-         aria-label="Google Partner, Eintrag bei Google Partners ansehen">
-        <img src="/Logos/google-partner-badge.svg" alt="Google Partner"
-             width="304" height="291" decoding="async" class="h-9 w-auto" />
-      </a>
 
       <nav class="ml-auto hidden items-center gap-8 md:flex" aria-label="Hauptnavigation">
         <a href="/#leistungen" class="nav-link">Leistungen</a>
@@ -792,7 +782,19 @@
   <footer role="contentinfo" class="bg-ink-950 text-white">
     <div class="container-page grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
       <div>
-        <img src="../Logos/ddm Logo svg/ddm_Logo_weiß.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+        <!-- Logo und Google-Partner-Badge nebeneinander. Das Badge steht
+             ausserdem im Hero der Startseite, in einem eigenen Abschnitt auf
+             /leistungen/google-ads/ und auf team.html. Faellt der Status weg,
+             muss es an allen vier Stellen verschwinden. -->
+        <div class="flex flex-wrap items-center gap-5">
+          <img src="../Logos/ddm Logo svg/ddm_Logo_weiß.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
+          <a href="https://www.google.com/partners/agency?id=7275523841"
+             target="_blank" rel="noopener" class="inline-flex shrink-0"
+             aria-label="Google Partner, Eintrag bei Google Partners ansehen">
+            <img src="/Logos/google-partner-badge.svg" alt="Google Partner"
+                 width="304" height="291" loading="lazy" decoding="async" class="h-10 w-auto" />
+          </a>
+        </div>
         <p class="mt-4 max-w-[40ch] text-sm text-ink-400">
           Datengetriebener Growth- und Performance-Partner für Mittelstand, B2B und E-Commerce.
         </p>
