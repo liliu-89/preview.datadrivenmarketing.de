@@ -125,6 +125,17 @@
         <img src="Logos/ddm Logo svg/ddm_Logo_darkgrey.svg" alt="DDM Data Driven Marketing" class="h-8 w-auto" width="592" height="216" />
       </a>
 
+      <!-- Google-Partner-Badge im Header, damit es auf jeder Seite sichtbar
+           bleibt. Es steht ausserdem im Hero der Startseite, in einem eigenen
+           Abschnitt auf /leistungen/google-ads/ und auf team.html. Faellt der
+           Status weg, muss es an allen vier Stellen verschwinden. -->
+      <a href="https://www.google.com/partners/agency?id=7275523841"
+         target="_blank" rel="noopener" class="hidden flex-shrink-0 items-center sm:flex"
+         aria-label="Google Partner, Eintrag bei Google Partners ansehen">
+        <img src="/Logos/google-partner-badge.svg" alt="Google Partner"
+             width="304" height="291" decoding="async" class="h-9 w-auto" />
+      </a>
+
       <nav class="ml-auto hidden items-center gap-8 md:flex" aria-label="Hauptnavigation">
         <a href="#leistungen" class="nav-link">Leistungen</a>
         <a href="#prozess" class="nav-link">Prozess</a>
@@ -198,6 +209,21 @@
           <div class="mt-8 flex flex-wrap gap-4">
             <a href="#kontakt" class="btn-primary">Analyse anfragen</a>
             <a href="#leistungen" class="btn-secondary">Leistungen ansehen</a>
+          </div>
+
+          <!-- Google-Partner-Badge im Hero, zweite von vier Stellen (siehe
+               Header). Bewusst ohne loading="lazy": Das Bild steht ueber der
+               Falz, ein verzoegertes Nachladen waere hier ein Rueckschritt. -->
+          <div class="mt-10 flex items-center gap-4">
+            <a href="https://www.google.com/partners/agency?id=7275523841"
+               target="_blank" rel="noopener" class="inline-flex shrink-0">
+              <img src="/Logos/google-partner-badge.svg" alt="Google Partner"
+                   width="304" height="291" decoding="async" class="h-16 w-auto" />
+            </a>
+            <p class="font-body text-sm leading-relaxed text-ink-800">
+              Von Google als <span class="font-medium text-ink-950">Google&nbsp;Partner</span> gef&uuml;hrt.<br class="hidden sm:inline" />
+              <a href="https://www.google.com/partners/agency?id=7275523841" target="_blank" rel="noopener" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Eintrag bei Google ansehen</a>
+            </p>
           </div>
 
           <dl class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
@@ -328,20 +354,6 @@
           Unternehmen, die bereits mit uns gearbeitet haben
         </h2>
 
-        <!-- Google-Partner-Badge, zweite von vier Stellen (siehe Footer).
-             Bewusst hier und nicht im Logoband darunter: Das laeuft als
-             Marquee mit aria-hidden und waere nicht anklickbar. -->
-        <div class="mb-10 flex flex-col items-center gap-3">
-          <a href="https://www.google.com/partners/agency?id=7275523841"
-             target="_blank" rel="noopener" class="inline-flex shrink-0">
-            <img src="/Logos/google-partner-badge.svg" alt="Google Partner"
-                 width="304" height="291" loading="lazy" decoding="async" class="h-16 w-auto" />
-          </a>
-          <p class="text-center text-sm text-ink-700">
-            Google führt DDM als Google&nbsp;Partner.
-            <a href="https://www.google.com/partners/agency?id=7275523841" target="_blank" rel="noopener" class="text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Eintrag ansehen</a>
-          </p>
-        </div>
       </div>
 
       <p class="sr-only">
@@ -1115,14 +1127,6 @@
           Datengetriebener Growth- und Performance-Partner für Mittelstand, B2B und E-Commerce.
         </p>
 
-        <!-- Google-Partner-Badge, eine von vier Stellen. Die Begruendung zu
-             Datei, Herkunft und Markenregeln steht bei der ausfuehrlichen
-             Fassung in leistungen/google-ads/index.html. -->
-        <a href="https://www.google.com/partners/agency?id=7275523841"
-           target="_blank" rel="noopener" class="mt-8 inline-flex shrink-0">
-          <img src="/Logos/google-partner-badge.svg" alt="Google Partner"
-               width="304" height="291" loading="lazy" decoding="async" class="h-14 w-auto" />
-        </a>
       </div>
 
       <div>
