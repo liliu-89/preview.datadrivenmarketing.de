@@ -240,6 +240,44 @@
       </div>
     </section>
 
+    <!-- ===== GOOGLE PARTNER =====
+         Ausfuehrliche Fassung; das Badge steht ausserdem im Footer jeder
+         Seite, auf der Startseite in der Vertrauensleiste und auf team.html.
+         Faellt der Status weg, muss es an allen vier Stellen verschwinden.
+
+         Die drei genannten Anforderungen stehen woertlich auf der verlinkten
+         Partnerseite von Google - die Seite behauptet hier also nichts Eigenes.
+
+         Die Badge-Datei liegt im eigenen Repo statt bei gstatic.com, wie es
+         Googles Code-Snippet vorsieht: Der Fremdaufruf wuerde die IP jedes
+         Besuchers an Google uebertragen und muesste in der
+         Datenschutzerklaerung stehen. Die Datei ist byteidentisch mit der
+         gelieferten Partner-RGB-Clickable.svg und bewusst nicht optimiert -
+         Abschwaechen, Einfaerben oder Freistellen waere ein Markenverstoss. -->
+    <section id="partner" aria-labelledby="partner-title" class="section-shell bg-white">
+      <div class="container-page">
+        <div class="flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-10">
+          <a href="https://www.google.com/partners/agency?id=7275523841"
+             target="_blank" rel="noopener" class="inline-flex shrink-0">
+            <img src="/Logos/google-partner-badge.svg" alt="Google Partner"
+                 width="304" height="291" loading="lazy" decoding="async" class="h-24 w-auto" />
+          </a>
+          <div>
+            <h2 id="partner-title" class="section-title">Google Partner</h2>
+            <p class="measure mt-4 text-ink-800">
+              Google führt DDM als Google Partner. Der Status wird laufend überprüft und setzt
+              einen Optimierungsfaktor von mindestens 70&nbsp;% über die betreuten Konten, ein
+              Mindestvolumen an verwaltetem Werbebudget und zertifizierte Account Strategists
+              voraus.
+            </p>
+            <p class="mt-4">
+              <a href="https://www.google.com/partners/agency?id=7275523841" target="_blank" rel="noopener" class="font-body text-sm text-accent-600 underline-offset-4 hover:text-ink-950 hover:underline">Eintrag bei Google Partners ansehen &rarr;</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== VERTIEFUNG ===== -->
     <section id="vertiefung" aria-labelledby="vertiefung-title" class="section-shell bg-white">
       <div class="container-page">
@@ -336,6 +374,15 @@
         <p class="mt-4 max-w-[40ch] text-sm text-ink-400">
           Datengetriebener Growth- und Performance-Partner für Mittelstand, B2B und E-Commerce.
         </p>
+
+        <!-- Google-Partner-Badge, eine von vier Stellen. Die Begruendung zu
+             Datei, Herkunft und Markenregeln steht bei der ausfuehrlichen
+             Fassung in leistungen/google-ads/index.html. -->
+        <a href="https://www.google.com/partners/agency?id=7275523841"
+           target="_blank" rel="noopener" class="mt-8 inline-flex shrink-0">
+          <img src="/Logos/google-partner-badge.svg" alt="Google Partner"
+               width="304" height="291" loading="lazy" decoding="async" class="h-14 w-auto" />
+        </a>
       </div>
 
       <div>
