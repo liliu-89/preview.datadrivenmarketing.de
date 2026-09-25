@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Was ist Data Driven Marketing? Definition und Praxis | DDM</title>
-  <meta name="description" content="Data Driven Marketing heißt, Marketingentscheidungen aus gemessenen Daten abzuleiten. Definition, die vier Schritte und was im Mittelstand dafür nötig ist." />
+  <meta name="description" content="Data Driven Marketing heißt, Marketingentscheidungen aus gemessenen Daten abzuleiten. Definition, die fünf Schritte von den Daten zum Ergebnis und was im Mittelstand nötig ist." />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#1b1e27" />
   <link rel="canonical" href="https://datadrivenmarketing.de/data-driven-marketing" />
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="DDM Data Driven Marketing" />
   <meta property="og:title" content="Was ist Data Driven Marketing?" />
-  <meta property="og:description" content="Definition, die vier Schritte von der Messung bis zur Entscheidung und was mittelständische Unternehmen dafür brauchen." />
+  <meta property="og:description" content="Definition, die fünf Schritte von den Daten zum Ergebnis und was mittelständische Unternehmen dafür brauchen." />
   <meta property="og:url" content="https://datadrivenmarketing.de/data-driven-marketing" />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:image" content="https://datadrivenmarketing.de/images/data_driven_marketing_Logo_darkgrey_1200x630.png" />
@@ -144,55 +144,78 @@
       </div>
     </section>
 
-    <!-- ===== BAUSTEINE ===== -->
-    <section id="bausteine" aria-labelledby="bausteine-title" class="section-shell bg-white">
-      <div class="container-page section-grid">
-        <div class="section-aside">
-          <h2 id="bausteine-title" class="section-title">Vier Schritte, die zusammengehören</h2>
+    <!-- ===== ABLAUF =====
+         Fuenf Stationen mit .journey-rail-5 aus src/input.css: dieselbe
+         Leiste wie im Gesundheits-Case, ab lg waagerecht, darunter
+         senkrecht. Bewusst als Text und CSS statt als Bild - die Schritte
+         bleiben so lesbar fuer Suchmaschinen und KI-Systeme, skalieren
+         verlustfrei und kosten kein Ladegewicht.
+         "Messung absichern" ist keine eigene Station mehr, steckt aber
+         unveraendert im Text von 01 und 02: Es ist der Punkt, an dem in
+         der Praxis am haeufigsten etwas fehlt. -->
+    <section id="ablauf" aria-labelledby="ablauf-title" class="section-shell bg-white">
+      <div class="container-page">
+        <div class="section-head">
+          <h2 id="ablauf-title" class="section-title">Fünf Schritte, die zusammengehören</h2>
           <p class="section-lead">
             Fällt einer davon aus, bleibt von den übrigen wenig übrig. Ein sauber ausgewerteter
             Bericht hilft nicht, wenn die zugrunde liegende Messung Lücken hat.
           </p>
         </div>
 
-        <div class="section-main">
-          <ol class="grid gap-8 sm:grid-cols-2" role="list">
-            <li class="border-t border-ink-300 pt-5">
-              <span class="font-display text-2xl text-ink-400" aria-hidden="true">01</span>
-              <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Daten entstehen lassen</h3>
-              <p class="mt-2 text-ink-800">
-                Welche Ereignisse hält ein Unternehmen überhaupt fest? Anfragen, Bestellungen,
-                Termine, Angebote, Stornos. Was nirgends erfasst wird, kann später keine
-                Entscheidung tragen.
-              </p>
-            </li>
-            <li class="border-t border-ink-300 pt-5">
-              <span class="font-display text-2xl text-ink-400" aria-hidden="true">02</span>
-              <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Messung absichern</h3>
-              <p class="mt-2 text-ink-800">
-                Die Ereignisse müssen vollständig und mit dem richtigen Wert dort ankommen, wo
-                entschieden wird. Das ist der Teil, an dem in der Praxis am häufigsten etwas
-                fehlt.
-              </p>
-            </li>
-            <li class="border-t border-ink-300 pt-5">
-              <span class="font-display text-2xl text-ink-400" aria-hidden="true">03</span>
-              <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Zahlen einordnen</h3>
-              <p class="mt-2 text-ink-800">
-                Jede Kennzahl beantwortet eine bestimmte Frage. Wer wissen will, ob sich eine
-                Kampagne lohnt, braucht eine andere Größe als jemand, der Reichweite beurteilt.
-              </p>
-            </li>
-            <li class="border-t border-ink-300 pt-5">
-              <span class="font-display text-2xl text-ink-400" aria-hidden="true">04</span>
-              <h3 class="mt-2 font-body text-lg font-medium text-ink-950">Entscheidungen ableiten</h3>
-              <p class="mt-2 text-ink-800">
-                Budget, Kanäle und Zielwerte folgen aus den Zahlen. Und es wird festgehalten,
-                welche Zahl eine Entscheidung getragen hat, damit sie später überprüfbar bleibt.
-              </p>
-            </li>
-          </ol>
-        </div>
+        <ol class="journey-rail-5 mt-12" role="list">
+          <li>
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-950">
+              <span class="text-accent-600">01</span> Daten
+            </p>
+            <p class="mt-1 text-sm text-ink-700">Website · CRM · Kanäle</p>
+            <p class="mt-3 text-sm leading-relaxed text-ink-800">
+              Anfragen, Bestellungen, Termine und Abbrüche entstehen in verschiedenen Systemen.
+              Was nirgends erfasst wird, kann später keine Entscheidung tragen.
+            </p>
+          </li>
+          <li>
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-950">
+              <span class="text-accent-600">02</span> Analyse
+            </p>
+            <p class="mt-1 text-sm text-ink-700">Zusammenhänge messen</p>
+            <p class="mt-3 text-sm leading-relaxed text-ink-800">
+              Bevor gerechnet wird, muss die Messung selbst tragen: vollständig, mit dem richtigen
+              Wert, an der Stelle, an der entschieden wird. Daran fehlt es in der Praxis am
+              häufigsten.
+            </p>
+          </li>
+          <li>
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-950">
+              <span class="text-accent-600">03</span> Erkenntnis
+            </p>
+            <p class="mt-1 text-sm text-ink-700">Hebel identifizieren</p>
+            <p class="mt-3 text-sm leading-relaxed text-ink-800">
+              Aus den Zahlen wird ablesbar, welche Kanäle, Zielgruppen und Angebote wirtschaftlich
+              tragen. Jede Kennzahl beantwortet dabei eine bestimmte Frage.
+            </p>
+          </li>
+          <li>
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-950">
+              <span class="text-accent-600">04</span> Entscheidung
+            </p>
+            <p class="mt-1 text-sm text-ink-700">Budget und Maßnahmen steuern</p>
+            <p class="mt-3 text-sm leading-relaxed text-ink-800">
+              Budget, Kanäle und Zielwerte folgen aus dem Befund. Festgehalten wird auch, welche
+              Zahl eine Entscheidung getragen hat, damit sie überprüfbar bleibt.
+            </p>
+          </li>
+          <li>
+            <p class="font-body text-xs font-medium uppercase tracking-wide text-ink-950">
+              <span class="text-accent-600">05</span> Ergebnis
+            </p>
+            <p class="mt-1 text-sm text-ink-700">Anfragen · Conversions · Umsatz</p>
+            <p class="mt-3 text-sm leading-relaxed text-ink-800">
+              Gemessen wird am Geschäftsergebnis. Der nächste Durchlauf beginnt mit den Daten, die
+              dabei entstehen.
+            </p>
+          </li>
+        </ol>
       </div>
     </section>
 
