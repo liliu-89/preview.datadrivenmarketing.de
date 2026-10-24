@@ -50,7 +50,7 @@ const SEITEN = [
   'cases/google-ads-leadgenerierung.html', 'cases/microsoft-ads-profitabel-machen.html',
   'cases/google-ads-budget-effizienz.html', 'cases/google-ads-account-aufbau.html',
   'cases/seo-b2b-sichtbarkeit.html',
-  'jobs/sea-performance-marketing-manager/index.html',
+  'jobs/index.html', 'jobs/sea-performance-marketing-manager/index.html',
 ];
 /* Die vier Icons liegen bewusst im Wurzelverzeichnis: /favicon.ico wird
    von Browsern auch ohne Tag dort gesucht, und die absoluten Pfade im
