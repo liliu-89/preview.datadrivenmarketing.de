@@ -482,4 +482,16 @@
     }
   })();
 
+  /* ─── Leistungs-Motive: Bewegung nur im Bild ──────────────────────────
+     Die Animationen stehen im CSS und sind dort pausiert. Hier wird nur die
+     Klasse gesetzt, solange eine Karte zu sehen ist, beim Verlassen hält das
+     Motiv an der Stelle an, an der es gerade ist. */
+  const angebote = $$('.angebot');
+  if (angebote.length && 'IntersectionObserver' in window) {
+    const sichtbarkeit = new IntersectionObserver((entries) => {
+      entries.forEach(e => e.target.classList.toggle('ist-sichtbar', e.isIntersecting));
+    }, { threshold: 0.2 });
+    angebote.forEach(a => sichtbarkeit.observe(a));
+  }
+
 })();

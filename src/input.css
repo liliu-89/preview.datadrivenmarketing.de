@@ -920,6 +920,549 @@
     transform-origin: center;
   }
 
+  /* ─── Leistungskarten ─────────────────────────────────────────────────
+     Unter lg sitzt das Motiv als Fläche über dem Text. Ab lg liegt es rechts
+     hinter dem Text: Die Maske lässt es nach links auslaufen, und der Text
+     reicht nur über 58 % der Breite, steht also nie auf dem Motiv. Die Maske
+     ist kein Dekorverlauf, sie blendet nur aus. */
+  .angebot {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+    isolation: isolate;
+    padding: 1.75rem;
+  }
+  /* minmax(0, 1fr): Sonst wächst die Spalte auf die Motivbreite und schiebt
+     das Motiv bei schmalen Karten aus der Mitte. */
+  .angebot-grafik {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    place-items: center;
+    height: 9.5rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-radius: var(--radius-control);
+    background-color: var(--color-accent-50);
+    pointer-events: none;
+  }
+  .angebot-inhalt {
+    position: relative;
+  }
+  @media (min-width: 40rem) {
+    .angebot {
+      padding: 2rem;
+    }
+  }
+  @media (min-width: 64rem) {
+    .angebot {
+      min-height: 22rem;
+    }
+    .angebot-grafik {
+      position: absolute;
+      z-index: -1;
+      inset-block: 1.5rem;
+      right: 1.25rem;
+      width: 40%;
+      height: auto;
+      margin: 0;
+      background: none;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%);
+      mask-image: linear-gradient(90deg, transparent, #000 22%);
+    }
+    .angebot-inhalt {
+      max-width: 58%;
+    }
+  }
+  /* Zwischen 1024 und 1280 px sind die Karten schmaler als das Motiv. 0,8
+     passt bei 1024 px mit Luft in die Fläche von 186 px. */
+  @media (min-width: 64rem) and (max-width: 79.99rem) {
+    .motiv {
+      scale: 0.8;
+    }
+  }
+
+  /* ─── Motive ──────────────────────────────────────────────────────────
+     Alles in ink und accent, Flächen mit dem Kontrollradius. Jedes Motiv ist
+     im Grundzustand ein fertiges Bild; die Keyframes nennen nur, was sich
+     zwischendurch ändert. Darum zeigt ein angehaltenes Motiv nie eine Lücke. */
+  .motiv {
+    position: relative;
+    flex: none;
+    height: 8.5rem;
+    width: 14rem;
+  }
+  .motiv :is(b, s, i, em) {
+    display: block;
+  }
+  .mj-kopf,
+  .mt-ereignis,
+  .mt-konto,
+  .ms-feld,
+  .mk-spalte i,
+  .mk-lead {
+    border: 1px solid var(--color-ink-100);
+    border-radius: var(--radius-control);
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Analyse: Kundenprofil und Journey, ein Punkt läuft die Stationen ab. */
+  .mj-kopf {
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.25rem;
+    width: 7rem;
+    padding: 0 0.55rem;
+  }
+  .mj-kopf i {
+    flex: none;
+    height: 1.1rem;
+    width: 1.1rem;
+    border-radius: 9999px;
+    background-color: var(--color-accent-200);
+  }
+  .mj-kopf > span {
+    display: grid;
+    flex: 1;
+    gap: 4px;
+  }
+  .mj-kopf b,
+  .mj-kopf s {
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--color-ink-200);
+  }
+  .mj-kopf s {
+    width: 60%;
+  }
+  .mj-spur {
+    position: absolute;
+    left: 0.7rem;
+    right: 0.7rem;
+    top: 5.25rem;
+    height: 0;
+  }
+  .mj-linie {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    height: 2px;
+    background-color: var(--color-ink-200);
+  }
+  .mj-station,
+  .mj-label,
+  .mj-punkt {
+    position: absolute;
+    top: 0;
+  }
+  .mj-station {
+    left: calc(var(--p) * 100%);
+    height: 0.75rem;
+    width: 0.75rem;
+    border: 2px solid var(--color-ink-300);
+    border-radius: 9999px;
+    background-color: var(--color-white);
+    translate: -50% -50%;
+  }
+  .mj-station--ziel {
+    border-color: var(--color-accent-600);
+  }
+  .mj-label {
+    left: calc(var(--p) * 100%);
+    top: 1rem;
+    height: 4px;
+    width: 2rem;
+    border-radius: 2px;
+    background-color: var(--color-ink-200);
+    translate: -50% 0;
+  }
+  /* Die Hülle ist so breit wie die Spur: translateX(100%) führt den Punkt
+     damit genau von der ersten zur letzten Station. */
+  .mj-reise {
+    position: absolute;
+    inset: 0;
+    transform: translateX(100%);
+  }
+  .mj-punkt {
+    left: 0;
+    height: 1.4rem;
+    width: 1.4rem;
+    border: 2px solid var(--color-accent-600);
+    border-radius: 9999px;
+    background-color: var(--color-accent-100);
+    translate: -50% -50%;
+  }
+
+  /* Tracking: Ereignisse wandern ins Werbekonto und werden abgehakt. */
+  .mt-ereignis {
+    position: absolute;
+    left: 0;
+    top: calc(0.75rem + var(--n) * 2.4rem);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    height: 1.75rem;
+    width: 5.75rem;
+    padding: 0 0.5rem;
+  }
+  .mt-ereignis i {
+    flex: none;
+    height: 0.55rem;
+    width: 0.55rem;
+    background-color: var(--color-accent-600);
+  }
+  .mt-ereignis b {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--color-ink-200);
+  }
+  .mt-linie,
+  .mt-weg {
+    position: absolute;
+    left: 6.1rem;
+    top: 4.25rem;
+    width: 3.4rem;
+  }
+  .mt-linie {
+    border-top: 2px dashed var(--color-ink-300);
+  }
+  .mt-weg {
+    height: 0;
+    opacity: 0;
+  }
+  .mt-paket {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    height: 0.6rem;
+    width: 0.6rem;
+    background-color: var(--color-accent-600);
+    translate: -50% -50%;
+  }
+  .mt-konto {
+    position: absolute;
+    right: 0;
+    top: 1.25rem;
+    display: grid;
+    align-content: start;
+    gap: 0.4rem;
+    height: 6rem;
+    width: 4.4rem;
+    padding: 0.6rem;
+  }
+  .mt-konto b {
+    height: 6px;
+    width: 70%;
+    border-radius: 2px;
+    background-color: var(--color-accent-200);
+  }
+  .mt-konto s {
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--color-ink-200);
+  }
+  .mt-haken {
+    position: absolute;
+    left: 50%;
+    bottom: 0.6rem;
+    display: grid;
+    place-items: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 9999px;
+    background-color: var(--color-accent-600);
+    translate: -50% 0;
+  }
+  .mt-haken svg {
+    height: 1rem;
+    width: 1rem;
+    fill: none;
+    stroke: var(--color-white);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Performance: Kampagnen nach Deckungsbeitrag, Break-even als Linie.
+     Aufsteigend von links nach rechts: Absteigend las es sich wie sinkende
+     Leistung. Die zwei Balken unter der Linie stehen links. */
+  .md-plot {
+    position: absolute;
+    inset: 0.75rem 0.5rem 0.75rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--color-ink-300);
+  }
+  .md-balken {
+    flex: 1;
+    height: calc(var(--h) * 100%);
+    background-color: var(--color-ink-200);
+    transform-origin: bottom;
+  }
+  .md-balken--plus {
+    background-color: var(--color-accent-300);
+  }
+  .md-linie {
+    position: absolute;
+    left: -0.35rem;
+    right: -0.35rem;
+    bottom: 45%;
+    border-top: 2px dashed var(--color-accent-600);
+  }
+
+  /* Sichtbarkeit: das eigene Ergebnis rückt Platz um Platz nach oben. */
+  .ms-feld {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 1.65rem;
+    padding: 0 0.65rem;
+  }
+  .ms-feld i {
+    flex: none;
+    height: 0.65rem;
+    width: 0.65rem;
+    border: 2px solid var(--color-ink-400);
+    border-radius: 9999px;
+  }
+  .ms-feld b {
+    height: 4px;
+    width: 45%;
+    border-radius: 2px;
+    background-color: var(--color-ink-200);
+  }
+  .ms-zeile {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(2.4rem + var(--s) * 1.5rem);
+    display: grid;
+    align-content: center;
+    gap: 4px;
+    height: 1.25rem;
+    padding: 0 0.65rem;
+  }
+  .ms-zeile b {
+    height: 5px;
+    width: 60%;
+    border-radius: 2px;
+    background-color: var(--color-ink-300);
+  }
+  .ms-zeile s {
+    height: 4px;
+    width: 85%;
+    border-radius: 2px;
+    background-color: var(--color-ink-200);
+  }
+  .ms-wir {
+    border: 1px solid var(--color-accent-100);
+    border-radius: var(--radius-control);
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-card);
+  }
+  .ms-wir b {
+    background-color: var(--color-accent-600);
+  }
+
+  /* Conversion: Besucher fallen durch den Trichter, der Abschluss wächst. */
+  .motiv-trichter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .mf-stufe {
+    display: block;
+    height: 0.95rem;
+    width: calc(var(--b) * 100%);
+    border: 1px solid var(--color-ink-200);
+    background-color: var(--color-ink-100);
+  }
+  .mf-stufe--abschluss {
+    border-color: var(--color-accent-600);
+    background-color: var(--color-accent-600);
+  }
+  .mf-punkt {
+    position: absolute;
+    left: calc(50% + (var(--i) - 1) * 1.25rem);
+    top: 0.35rem;
+    height: 0.45rem;
+    width: 0.45rem;
+    border-radius: 9999px;
+    background-color: var(--color-accent-400);
+    opacity: 0;
+  }
+
+  /* CRM: der Lead geht zum Vertrieb, die Rückmeldung kommt zurück. */
+  .mk-spalte {
+    position: absolute;
+    top: 0.25rem;
+    display: grid;
+    gap: 0.45rem;
+    width: 5.25rem;
+  }
+  .mk-spalte--links {
+    left: 0;
+  }
+  .mk-spalte--rechts {
+    right: 0;
+  }
+  .mk-spalte b {
+    height: 6px;
+    width: 60%;
+    border-radius: 2px;
+    background-color: var(--color-accent-200);
+  }
+  .mk-spalte--rechts b {
+    background-color: var(--color-ink-300);
+  }
+  .mk-spalte i {
+    height: 1.6rem;
+  }
+  .mk-weg {
+    position: absolute;
+    left: 0;
+    top: calc(0.25rem + 6px + 0.45rem);
+    height: 1.6rem;
+    width: calc(100% - 5.25rem);
+  }
+  .mk-lead {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1.6rem;
+    width: 5.25rem;
+    border-color: var(--color-accent-600);
+    background-color: var(--color-accent-50);
+  }
+  .mk-rueck {
+    position: absolute;
+    left: 2.625rem;
+    right: 2.625rem;
+    bottom: 0.75rem;
+    height: 1.5rem;
+    border: 2px dashed var(--color-ink-300);
+    border-top: 0;
+    border-radius: 0 0 var(--radius-control) var(--radius-control);
+  }
+  .mk-rueckweg {
+    position: absolute;
+    right: 2.625rem;
+    bottom: 0.75rem;
+    height: 0;
+    width: calc(100% - 5.25rem);
+    opacity: 0;
+  }
+  .mk-punkt {
+    position: absolute;
+    right: 0;
+    top: 1px;
+    height: 0.6rem;
+    width: 0.6rem;
+    border-radius: 9999px;
+    background-color: var(--color-accent-600);
+    translate: 50% -50%;
+  }
+
+  /* Bewegung: ruhige Schleifen von 4 bis 9 s, nur transform und opacity.
+     Pausiert, bis script.js die Karte als sichtbar meldet. Die Spezifität der
+     Pause liegt über den einzelnen Motiven, deren Kurzschreibweise sie sonst
+     zurücksetzen würde. */
+  @media (prefers-reduced-motion: no-preference) {
+    .mj-reise {
+      animation: mj-reise 8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+    .mt-weg {
+      animation: mt-paket 6s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+    }
+    .mt-weg--zwei {
+      animation-delay: -3s;
+    }
+    .mt-haken {
+      animation: mt-haken 3s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+    }
+    .md-balken {
+      animation: md-welle 4.5s ease-in-out infinite;
+      animation-delay: calc(var(--i) * -0.35s);
+    }
+    .ms-wir {
+      animation: ms-wir 9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+    .ms-zeile--1 {
+      animation: ms-zeile-1 9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+    .ms-zeile--2 {
+      animation: ms-zeile-2 9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+    .ms-zeile--3 {
+      animation: ms-zeile-3 9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+    .mf-punkt {
+      animation: mf-fallen 3.6s cubic-bezier(0.5, 0, 0.75, 0) infinite;
+      animation-delay: calc(var(--i) * -1.2s);
+    }
+    .mf-stufe--abschluss {
+      animation: mf-abschluss 7.2s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+    }
+    .mk-weg {
+      animation: mk-lead 8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+    .mk-rueckweg {
+      animation: mk-rueck 8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+    .angebot .angebot-grafik * {
+      animation-play-state: paused;
+    }
+    .angebot.ist-sichtbar .angebot-grafik * {
+      animation-play-state: running;
+    }
+  }
+  .leistung-titel {
+    @apply font-display text-2xl font-normal text-ink-950;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    /* Ohne Silbentrennung: Automatisch brach sie Custom-er Understanding. */
+    hyphens: manual;
+  }
+  .leistung-links {
+    @apply grid content-start gap-2;
+  }
+
+  /* ─── Einblenden beim Scrollen ───────────────────────────────────────
+     Der Browser koppelt die Animation an den Scrollstand, es läuft kein
+     Skript. Ohne Unterstützung, im Druck und bei Reduced Motion greift der
+     Block nicht, die Karten stehen dann sofort da. Weil der Stand allein von
+     der Scrollposition abhängt, kann nichts unsichtbar hängen bleiben.
+     --i staffelt Geschwister um je 50 px Weg. Vorfahren bewegter Elemente
+     brauchen overflow-clip: overflow-hidden macht sie zum Scroll-Container,
+     und view() misst dann gegen sie. */
+  @supports (animation-timeline: view()) {
+    @media screen and (prefers-reduced-motion: no-preference) {
+      .auftritt {
+        animation-name: auftritt-rein;
+        animation-duration: auto;
+        animation-fill-mode: backwards;
+        animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+        animation-timeline: view();
+        animation-range: entry calc(40px + var(--i, 0) * 50px) entry calc(300px + var(--i, 0) * 50px);
+      }
+    }
+  }
+
   /* Endlos-Marquee für die Kunden-Logo-Leiste */
   .logo-marquee-track {
     display: flex;
@@ -1041,6 +1584,249 @@
 
 @keyframes type-cursor-blink {
   50% {
+    opacity: 0;
+  }
+}
+
+@keyframes auftritt-rein {
+  from {
+    opacity: 0;
+    transform: translateY(2.5rem);
+  }
+}
+
+/* ─── Motive der Leistungskarten ───────────────────────────────────────── */
+@keyframes mj-reise {
+  8% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  12% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  14% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  18%,
+  28% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  40%,
+  50% {
+    transform: translateX(33.333%);
+  }
+  62%,
+  72% {
+    transform: translateX(66.667%);
+  }
+  84% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes mt-paket {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  56%,
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes mt-haken {
+  6% {
+    transform: scale(1.18);
+  }
+  20% {
+    transform: scale(1);
+  }
+}
+
+@keyframes md-welle {
+  50% {
+    transform: scaleY(0.86);
+  }
+}
+
+@keyframes ms-wir {
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  14% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  16% {
+    transform: translateY(4.5rem);
+    opacity: 0;
+  }
+  20%,
+  32% {
+    transform: translateY(4.5rem);
+    opacity: 1;
+  }
+  42%,
+  52% {
+    transform: translateY(3rem);
+  }
+  62%,
+  72% {
+    transform: translateY(1.5rem);
+  }
+  82% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes ms-zeile-3 {
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  14% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  16% {
+    transform: translateY(-1.5rem);
+    opacity: 0;
+  }
+  20%,
+  32% {
+    transform: translateY(-1.5rem);
+    opacity: 1;
+  }
+  42% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes ms-zeile-2 {
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  14% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  16% {
+    transform: translateY(-1.5rem);
+    opacity: 0;
+  }
+  20%,
+  52% {
+    transform: translateY(-1.5rem);
+    opacity: 1;
+  }
+  62% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes ms-zeile-1 {
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  14% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  16% {
+    transform: translateY(-1.5rem);
+    opacity: 0;
+  }
+  20%,
+  72% {
+    transform: translateY(-1.5rem);
+    opacity: 1;
+  }
+  82% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mf-fallen {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(var(--tief));
+    opacity: 0;
+  }
+}
+
+@keyframes mf-abschluss {
+  6% {
+    transform: scaleX(0.55);
+  }
+  70% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes mk-lead {
+  12% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  42%,
+  52% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  58% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  62% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes mk-rueck {
+  0%,
+  50% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  54% {
+    opacity: 1;
+  }
+  84% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    transform: translateX(-100%);
     opacity: 0;
   }
 }
